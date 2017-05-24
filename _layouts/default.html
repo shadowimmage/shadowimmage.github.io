@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ page.title }}</title>
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/d17e268084.js"></script>
+        <!-- link to main stylesheet -->
+        <link rel="stylesheet" type="text/css" href="{{ site.github.url }}/css/main.css">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/cv">CV</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+        
+        {{ content }}
+        
+        </div><!-- /.container -->
+        <footer>
+            <ul>
+                <li><a href="mailto:[[ site.email ]]">email</a></li>
+                <li><a href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>
