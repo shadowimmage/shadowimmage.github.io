@@ -1,13 +1,8 @@
-general:
-experimental:
-machine:
-checkout:
+
 dependencies:
     post:
         - bundle exec jekyll build
-database:
-compile:
+
 test:
     post:
         - bundle exec htmlproofer ./_site --check-html --disable-external
-deployment:
