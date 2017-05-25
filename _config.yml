@@ -21,6 +21,7 @@ gems:
   - jekyll-coffeescript
   - jekyll-paginate
 exclude:
+  - [vendor]
   - Gemfile
   - Gemfile.lock
   - README.md
