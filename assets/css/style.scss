@@ -4,4 +4,8 @@
 @import "{{ site.theme }}";
 #project_title > a {
     text-decoration: none;
+    color: white;
+}
+#project_title > a:hover {
+    color: white;
 }
