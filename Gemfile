@@ -11,11 +11,14 @@ ruby RUBY_VERSION
 # Happy Jekylling!
 gem "jekyll", "~> 3.3"
 
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
+# Select a theme that is suppored by GitHub Pages
 gem "jekyll-theme-slate"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
    gem "jekyll-feed"
    gem "github-pages"
+   gem "html-proofer"
+   gem "jemoji"
+   gem "jekyll-sitemap"
 end
