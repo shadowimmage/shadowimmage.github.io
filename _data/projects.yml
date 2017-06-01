@@ -1,0 +1,13 @@
+# descriptions of projects
+project:
+  name: Access Control Project
+  img:
+  link:
+  desc: >
+    We built a system that uses UW members' HuskyCards (campus ID) to allow them to unlock classroom control systems and equipment drawers in classroom podia. The technology uses RFID to read tags built into the HuskyCards and use that to look up that user in the university's database, and pull that user's membership to determine whether or not they are allowed to access the classroom equipment. As each user is separately identifiable via HuskyCard, the control system will now be able to remember users' last used settings and, upon tapping their HuskyCard, will recall those settings for their convenience. For example, if an instructor uses a laptop every day, upon tapping their HuskyCard the control system will turn on the projector and then route the laptop input to the projector.
+project:
+  name: Dust Collector Replacement
+  img:
+  link:
+  desc: >
+    We have a hammer drill that has a vacuum collector attachment, and we wanted a collector that could use different kinds of filters. I took the existing dust collector and designed an exact replacement that would take any kind of 3M respirator filter as the filter element. This allows using different kinds of filters and for the filters to be replaced. The parts involved were designed in Autodesk Fusion360 and 3D printed on a Prusa i3 MK2.
