@@ -2,6 +2,13 @@
 ---
 
 @import "{{ site.theme }}";
+#header_container {
+    padding: 0px 0px 0px 0px;
+}
+#profile {
+    padding: 0px 0px 0px 0px;
+}
+// default header id
 #project_title > a {
     text-decoration: none;
     color: white;
@@ -12,15 +19,21 @@
 #project_title {
     display: inline;
 }
+// Navigation icons
 div#nav li > a {
     color: white;
 }
 div#nav li > a:hover {
     color: black;
 }
+// homepage listing of projects worked on
 #projects-container > div.row {
     box-shadow: 2px 2px 5px;
 }
+.projects_titles {
+    padding-left: 1em;
+}
+// Footer
 footer a {
     text-decoration: none;
 }
