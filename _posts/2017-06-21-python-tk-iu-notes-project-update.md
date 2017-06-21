@@ -4,7 +4,7 @@ title: Python Tk UI Notes, Project Update
 date: 2017-06-21
 categories: python gui update
 ---
-I've been making a lot of progress on the python-LEDSerialController project. There's been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it's baked into Python already, and there's nothing to configure to get it working. It doesn't look nearly as nice as something that would come out of using a more advanced UI toolkit, but it's also had a lower bar to entry, despite some drawbacks with Tk's documentation. Googling around for solutions to problems as they arise has proved to be effective though.
+I've been making a lot of progress on the [python-LEDSerialController](https://github.com/shadowimmage/python-LEDSerialController) project. There's been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it's baked into Python already, and there's nothing to configure to get it working. It doesn't look nearly as nice as something that would come out of using a more advanced UI toolkit, but it's also had a lower bar to entry, despite some drawbacks with Tk's documentation. Googling around for solutions to problems as they arise has proved to be effective though.
 
 Getting this project to run smoothly has been a challenge because I'm using one thread to accomplish everything, which comes with the restriction that nothing can be blocking (at least not for long) without causing UI lag (bad) or causing responsiveness on the LED controller (Arduino) to lag. This is further complicated by the way that I've built up the Arduino code to allow it to perform animations with the LED strips and check in on the serial buffer.
 
