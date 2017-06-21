@@ -61,14 +61,14 @@
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        {% if site.github.is_project_page %}
-        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
         <ul class="list-inline">
           <li><a href="https://www.linkedin.com/in/chase-sawyer/"><i class="fa fa-linkedin-square" aria-hidden="true"></i>Linkedin Profile</a></li>
           <li><a href="https://github.com/shadowimmage"><i class="fa fa-github-square" aria-hidden="true"></i>Github Profile</a></li>
         </ul>
+        {% if site.github.is_project_page %}
+        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
 
