@@ -1,0 +1,83 @@
+baseURL = "https://shadowimmage.github.io/"
+languageCode = "en-us"
+title = "Chase Sawyer, Developer"
+theme = "beautifulhugo"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+#pygmentsUseClassic = true
+pygmentsStyle = "trac"
+#pygmentOptions = "linenos=inline"
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
+
+[Params]
+  logo = "img/profile.jpg"
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  readingTime = true
+  socialShare = true
+
+[Author]
+  name = "Chase Sawyer"
+  website = "shadowimmage.github.io"
+  email = "shadowimmage@gmail.com"
+#   facebook = "username"
+#   googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
+  github = "shadowimmage"
+  freecodecamp = "shadowimmage"
+#   gitlab = "username"
+#   bitbucket = "username"
+#   twitter = "username"
+#   reddit = "username"
+  linkedin = "chase-sawyer"
+#   xing = "username"
+#   stackoverflow = "users/XXXXXXX/username"
+#   snapchat = "username"
+#   instagram = "username"
+#   youtube = "user/username" # or channel/channelname
+#   soundcloud = "usern/ame"
+#   spotify = "username"
+#   bandcamp = "username"
+#   itchio = "username"
+#   vk = "username"
+#   paypal = "username"
+#   telegram = "username"
+
+[[menu.main]]
+    name = "Blog"
+    url = "post/"
+    weight = 1
+
+[[menu.main]]
+    name = "About"
+    url = "page/about/"
+    weight = 3
+
+[[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    weight = 2
+
+[[menu.main]]
+    parent = "projects"
+    name = "R25 Slack Bot"
+    url = "post/2017-03-07-bigimg-sample"
+    weight = 1
+
+[[menu.main]]
+    parent = "projects"
+    name = "Math Sample"
+    url = "post/2017-03-05-math-sample"
+    weight = 2
+
+[[menu.main]]
+    parent = "projects"
+    name = "Code Sample"
+    url = "post/2016-03-08-code-sample"
+    weight = 3
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 3
