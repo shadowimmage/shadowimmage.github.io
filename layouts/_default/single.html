@@ -13,7 +13,7 @@
           </div>
         {{ end }}
 
-        {{ if and (.Site.Params.socialShare) (eq .Type "post") }}
+        {{ if and (.Site.Params.socialShare) (and (ne (isset .Params "shareoff") true) (eq .Type "post")) }}
             <hr/>
             <section id="social-share">
               <ul class="list-inline footer-links">
