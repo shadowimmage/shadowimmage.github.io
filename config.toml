@@ -10,6 +10,7 @@ pygmentsStyle = "trac"
 #pygmentOptions = "linenos=inline"
 #disqusShortname = "XXX"
 #googleAnalytics = "XXX"
+enableEmoji = true
 
 [Params]
   logo = "img/profile.jpg"
@@ -78,6 +79,11 @@ pygmentsStyle = "trac"
     weight = 3
 
 [[menu.main]]
+    name = "Samples"
+    url = "tags/sample/"
+    weight = 3
+
+[[menu.main]]
     name = "Tags"
     url = "tags"
-    weight = 3
+    weight = 4
