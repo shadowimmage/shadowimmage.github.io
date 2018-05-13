@@ -1,11 +1,51 @@
-machine:
-    ruby:
-        version: 2.4.0
+version: 2
 
-dependencies:
-    post:
-        - bundle exec jekyll build
+jobs:
+  build:
+    docker:
+      - image: cibuilds/hugo:0.40.2
+    working_directory: ~/project
+    steps:
+      - checkout
+      - run:
+        name: "Run Hugo"
+        command: HUGO_ENV=production hugo -v
 
-test:
-    post:
-        - bundle exec htmlproofer ./_site --check-html --disable-external
+  test:
+    working_directory: ~/project
+      steps:
+      - run:
+        name: "html check"
+        command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore
+
+  deploy-master:
+    working_directory: ~/project
+    steps:
+      - add_ssh_keys:
+        fingerprints:
+          - "44:a7:27:96:24:30:76:b2:61:d3:fa:07:ec:8d:f0:5a"
+      - run:
+        name: "Deploy to Master"
+        command: |
+          cd ./public
+          git init
+          git remote add origin https://github.com/shadowimmage/shadowimmage.github.io
+          git add *
+          git commit -m "circleci update"
+          git push origin master -f
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+        filters:
+          branches:
+            - only:
+              - hugo
+      - test:
+        requires:
+          - build
+      - deploy-master:
+        requires:
+          - test
