@@ -2,6 +2,7 @@
 title: "New Site Structure"
 date: 2018-05-09T22:19:41-07:00
 tags: [post, update]
+lastmod: 2018-05-11
 draft: true
 shareOff: true
 ---
@@ -11,9 +12,15 @@ With the redesign of _this_ site, I have the opportunity to collect and organize
 
 # Structure
 
-- Profile (<https://shadowimmage.github.io>)
+Proposed structure for the site arrangement and layout:
+
+- Profile / home page (<https://shadowimmage.github.io>)
     - Projects/Ideas
         - MyApps (Heroku: App Demos)
+            - keysApp
+            - rttApp
+        - Work stuff
+            - SlackR25Bot
     - Samples
         - FreeCodeCamp challenges, etc (Heroku: fcc-challenges)
     - About Me
@@ -29,4 +36,3 @@ Aside:
 > [Here is the gotchas page]({{< relref "post/2018-05-10-Hugo Gotchas.md" >}})
 
 ## :weary:
-

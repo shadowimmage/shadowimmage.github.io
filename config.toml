@@ -1,6 +1,6 @@
 baseURL = "https://shadowimmage.github.io/"
 languageCode = "en-us"
-title = "Chase Sawyer, Developer"
+title = "Chase Sawyer"
 theme = "beautifulhugo"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
@@ -63,19 +63,19 @@ enableEmoji = true
 [[menu.main]]
     parent = "projects"
     name = "R25 Slack Bot"
-    url = "post/2017-03-07-bigimg-sample"
+    url = "project/slackr25bot"
     weight = 1
 
 [[menu.main]]
     parent = "projects"
-    name = "Math Sample"
-    url = "post/2017-03-05-math-sample"
+    name = "Access Control (UW)"
+    url = "project/accesscontrolproject"
     weight = 2
 
 [[menu.main]]
     parent = "projects"
-    name = "Code Sample"
-    url = "post/2016-03-08-code-sample"
+    name = "Dust Collector CAD (UW)"
+    url = "project/dustcollector"
     weight = 3
 
 [[menu.main]]

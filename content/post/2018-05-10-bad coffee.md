@@ -1,6 +1,8 @@
 ---
 title: "Bad Coffee"
+subtitle: "A silly complaint"
 date: 2018-05-10T08:45:29-07:00
+lastmod: 2018-05-12
 tags: [blog, coffee, fwp, short]
 draft: false
 ---

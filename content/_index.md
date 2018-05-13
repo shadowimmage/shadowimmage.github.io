@@ -1,1 +1,1 @@
-## Front Page
+## Welcome :wave:
