@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Chase Sawyer</title>
+    <link>https://shadowimmage.github.io/page/</link>
+    <description>Recent content in Pages on Chase Sawyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
+    <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
+    
+	<atom:link href="https://shadowimmage.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About me</title>
+      <link>https://shadowimmage.github.io/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/page/about/</guid>
+      <description>My name is Chase Sawyer. I&amp;rsquo;m an aspiring software maker working at the University of Washington in Seattle. I got my BFA from the UW back in 2013, making robots that make drawings. Since then I&amp;rsquo;ve built websites and learned the intricacies of HD AV installation, maintenance, and design. I&amp;rsquo;ve been part of teams that have redesigned and defined the metrics and reporting systems for UW-IT, and have been working with my colleagues at Classroom Technologies &amp;amp; Events to modernize our classroom AV systems.</description>
+    </item>
+    
+  </channel>
+</rss>

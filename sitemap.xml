@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</loc>
+    <lastmod>2018-05-12T19:05:29-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/post/2018-05-12-urlshortener/</loc>
+    <lastmod>2018-05-12T18:13:23-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/post/2018-05-12-headerparserms/</loc>
+    <lastmod>2018-05-12T17:55:20-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/post/2018-05-12-timestampms/</loc>
+    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/post/2018-05-10-hugo-gotchas/</loc>
+    <lastmod>2018-05-10T21:04:59-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/post/2018-05-10-bad-coffee/</loc>
+    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/post/2018-05-09-new-static-site-with-hugo/</loc>
+    <lastmod>2018-05-09T20:51:48-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/project/slackr25bot/</loc>
+    <lastmod>2018-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/post/2017-06-21-python-tk-iu-notes-project-update/</loc>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</loc>
+    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/project/dustcollector/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/</loc>
+    <lastmod>2018-05-12T19:05:29-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/3d-printing/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/aws/</loc>
+    <lastmod>2018-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/blog/</loc>
+    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/coffee/</loc>
+    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/demo/</loc>
+    <lastmod>2018-05-12T19:05:29-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/freecodecamp/</loc>
+    <lastmod>2018-05-12T19:05:29-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/fusion360/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/fwp/</loc>
+    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/fyi/</loc>
+    <lastmod>2018-05-10T21:04:59-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/gui/</loc>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/help/</loc>
+    <lastmod>2018-05-10T21:04:59-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/hugo/</loc>
+    <lastmod>2018-05-09T20:51:48-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/javascript/</loc>
+    <lastmod>2018-05-12T19:05:29-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/jekyll/</loc>
+    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/lambda/</loc>
+    <lastmod>2018-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/learning/</loc>
+    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/mongodb/</loc>
+    <lastmod>2018-05-12T18:13:23-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/note/</loc>
+    <lastmod>2018-05-10T21:04:59-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/page/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/post/</loc>
+    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/post/</loc>
+    <lastmod>2018-05-12T19:05:29-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/project/</loc>
+    <lastmod>2018-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/project/</loc>
+    <lastmod>2018-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/python/</loc>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/sample/</loc>
+    <lastmod>2018-05-12T19:05:29-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/short/</loc>
+    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/slack/</loc>
+    <lastmod>2018-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/sns/</loc>
+    <lastmod>2018-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/update/</loc>
+    <lastmod>2018-05-09T20:51:48-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shadowimmage.github.io/tags/uw/</loc>
+    <lastmod>2018-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

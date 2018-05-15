@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Chase Sawyer</title>
+    <link>https://shadowimmage.github.io/post/</link>
+    <description>Recent content in Posts on Chase Sawyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
+    <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
+    <lastBuildDate>Sat, 12 May 2018 19:05:29 -0700</lastBuildDate>
+    
+	<atom:link href="https://shadowimmage.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>File Metadata Microservice</title>
+      <link>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</link>
+      <pubDate>Sat, 12 May 2018 19:05:29 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Url Shortener Microservice</title>
+      <link>https://shadowimmage.github.io/post/2018-05-12-urlshortener/</link>
+      <pubDate>Sat, 12 May 2018 18:13:23 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-12-urlshortener/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;The challenge here was to create a URL Shortener microservice. It uses a database to associate a short url ID with the original url, and once created, the microservice will redirect visitors of the short URL to the original URL.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Request Header Parser Microservice</title>
+      <link>https://shadowimmage.github.io/post/2018-05-12-headerparserms/</link>
+      <pubDate>Sat, 12 May 2018 17:55:20 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-12-headerparserms/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;The goal for this one is to get return to the user the IP address, language, and operating system of the browser/user making the request.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Timestamp Microservice</title>
+      <link>https://shadowimmage.github.io/post/2018-05-12-timestampms/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-12-timestampms/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;The goal is to create a microservice that will take a date string or a unix timestamp and make a JSON response with both versions of the given timestamp / date.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo Gotchas</title>
+      <link>https://shadowimmage.github.io/post/2018-05-10-hugo-gotchas/</link>
+      <pubDate>Thu, 10 May 2018 21:04:59 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-10-hugo-gotchas/</guid>
+      <description>Gotchas In order of the issue being found:
+Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for conditional statements, Hugo uses Polish or prefix notation for the operators. This meas that instead of writing if this and that, you have to write if and this that. For more complex arrangements of logical conditions, say for a situation in which you need to check three conditions, you have to write it as: if and (first) ( and (second) (third)) which, in a infix notation style, would have been written if first and second and third.</description>
+    </item>
+    
+    <item>
+      <title>Bad Coffee</title>
+      <link>https://shadowimmage.github.io/post/2018-05-10-bad-coffee/</link>
+      <pubDate>Thu, 10 May 2018 08:45:29 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-10-bad-coffee/</guid>
+      <description>I woke up late today, so I didn&amp;rsquo;t have time to make coffee. And instead of going to my usual place where I know there&amp;rsquo;s going to be great coffee available, I decided to get a doughnut and some coffee from the doughnut shop. The first warning that this wasn&amp;rsquo;t going to go well was when I got my travel mug back and there was coffee all over the outside of the mug.</description>
+    </item>
+    
+    <item>
+      <title>New Static Site with Hugo</title>
+      <link>https://shadowimmage.github.io/post/2018-05-09-new-static-site-with-hugo/</link>
+      <pubDate>Wed, 09 May 2018 20:51:48 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-09-new-static-site-with-hugo/</guid>
+      <description>Built a new site, leaving Jekyll for Hugo, for my github.io page.
+Changes Moved all my old Jekyll files to a new subdirectory in order to maintain access to the old code and posts, and then transition all the content over to the main Hugo site as settings come together. One major advantage of Hugo is that the build process is super fast, so I&amp;rsquo;ve been looking at how to integrate CircleCI with Hugo builds.</description>
+    </item>
+    
+    <item>
+      <title>Python Tk UI Notes, Project Update</title>
+      <link>https://shadowimmage.github.io/post/2017-06-21-python-tk-iu-notes-project-update/</link>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2017-06-21-python-tk-iu-notes-project-update/</guid>
+      <description>I&amp;rsquo;ve been making a lot of progress on the python-LEDSerialController project. There&amp;rsquo;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&amp;rsquo;s baked into Python already, and there&amp;rsquo;s nothing to configure to get it working. It doesn&amp;rsquo;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&amp;rsquo;s also had a lower bar to entry, despite some drawbacks with Tk&amp;rsquo;s documentation.</description>
+    </item>
+    
+    <item>
+      <title>Learning Jekyll and Getting Started with Github Pages</title>
+      <link>https://shadowimmage.github.io/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</link>
+      <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</guid>
+      <description>First Post!
+Learning how to set up Jekyll on GitHub Pages is actually a little harder than I was expecting from the outset. Mostly because most of the things that you need to set up Jekyll for local development, and a lot of the things that come prepackaged with it aren&amp;rsquo;t actually necessary for running it on GitHub Pages.
+Here is the Gemfile content for this page when I first started and got things working:</description>
+    </item>
+    
+  </channel>
+</rss>

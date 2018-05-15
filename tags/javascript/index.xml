@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on Chase Sawyer</title>
+    <link>https://shadowimmage.github.io/tags/javascript/</link>
+    <description>Recent content in Javascript on Chase Sawyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
+    <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
+    <lastBuildDate>Sat, 12 May 2018 19:05:29 -0700</lastBuildDate>
+    
+	<atom:link href="https://shadowimmage.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>File Metadata Microservice</title>
+      <link>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</link>
+      <pubDate>Sat, 12 May 2018 19:05:29 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Url Shortener Microservice</title>
+      <link>https://shadowimmage.github.io/post/2018-05-12-urlshortener/</link>
+      <pubDate>Sat, 12 May 2018 18:13:23 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-12-urlshortener/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;The challenge here was to create a URL Shortener microservice. It uses a database to associate a short url ID with the original url, and once created, the microservice will redirect visitors of the short URL to the original URL.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Request Header Parser Microservice</title>
+      <link>https://shadowimmage.github.io/post/2018-05-12-headerparserms/</link>
+      <pubDate>Sat, 12 May 2018 17:55:20 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-12-headerparserms/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;The goal for this one is to get return to the user the IP address, language, and operating system of the browser/user making the request.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
