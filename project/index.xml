@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Chase Sawyer</title>
+    <link>https://shadowimmage.github.io/project/</link>
+    <description>Recent content in Projects on Chase Sawyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
+    <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
+    <lastBuildDate>Wed, 02 May 2018 21:24:58 -0700</lastBuildDate>
+    
+	<atom:link href="https://shadowimmage.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SlackR25Bot - UW</title>
+      <link>https://shadowimmage.github.io/project/slackr25bot/</link>
+      <pubDate>Wed, 02 May 2018 21:24:58 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/project/slackr25bot/</guid>
+      <description>&lt;p&gt;This project was built for &lt;a href=&#34;https://www.cte.uw.edu/wordpress/&#34;&gt;Classroom Technologies &amp;amp; Events&lt;/a&gt; at the &lt;a href=&#34;https://www.washington.edu/&#34;&gt;University of Washington&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dust Collector - UW</title>
+      <link>https://shadowimmage.github.io/project/dustcollector/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/project/dustcollector/</guid>
+      <description>&lt;p&gt;We have a hammer drill that has a vacuum collector attachment, and we wanted a collector that could use different kinds of filters. I took the existing dust collector and designed an exact replacement that would take any kind of 3M respirator filter as the filter element. This allows using different kinds of filters and for the filters to be replaced. The parts involved were manually reverse-engineered on paper with the device and a set of good digital calipers. The replacement parts were designed in Autodesk &lt;a href=&#34;https://www.autodesk.com/products/fusion-360/overview&#34;&gt;Fusion360&lt;/a&gt; and 3D printed on a &lt;a href=&#34;https://www.prusa3d.com/&#34;&gt;Prusa&lt;/a&gt; i3 MK2.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
