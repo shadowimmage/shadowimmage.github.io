@@ -1,5 +1,4 @@
 version: 2
-
 jobs:
   build:
     docker:
@@ -8,54 +7,54 @@ jobs:
     steps:
       - checkout
       - run:
-        name: "Run Hugo"
-        command: HUGO_ENV=production hugo -v
+          name: "Run Hugo"
+          command: HUGO_ENV=production hugo -v
 
   test:
     working_directory: ~/project
     steps:
       - run:
-        name: "html check"
-        command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore
+          name: "html check"
+          command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore
 
   deploy-master:
     working_directory: ~/project
     steps:
       - add_ssh_keys:
-        fingerprints:
-          - "44:a7:27:96:24:30:76:b2:61:d3:fa:07:ec:8d:f0:5a"
+          fingerprints:
+            - "44:a7:27:96:24:30:76:b2:61:d3:fa:07:ec:8d:f0:5a"
       - run:
-        name: "Update master with changes"
-        command: |
-          cd ./public
-          mv ./* ../tmp
-          git init
-          git remote add origin git@github.com:shadowimmage/shadowimmage.github.io.git
-          git pull origin master
-          git checkout -b update
-          rm -r ./*
-          git add *
-          git commit -m "clean"
-          mv ../tmp/* .
-          git add *
-          commitMsg="CircleCI site rebuild at `date`"
-          git commit -m "$commitMsg"
-          git checkout -b master
-          git merge update
-          git push origin master
+          name: "Update master with changes"
+          command: |
+            cd ./public
+            mv ./* ../tmp
+            git init
+            git remote add origin git@github.com:shadowimmage/shadowimmage.github.io.git
+            git pull origin master
+            git checkout -b update
+            rm -r ./*
+            git add *
+            git commit -m "clean"
+            mv ../tmp/* .
+            git add *
+            commitMsg="CircleCI site rebuild at `date`"
+            git commit -m "$commitMsg"
+            git checkout -b master
+            git merge update
+            git push origin master
 
 workflows:
   version: 2
   build-and-deploy:
     jobs:
       - build:
-        filters:
-          branches:
-            - only:
-              - hugo
+          filters:
+            branches:
+              only:
+                - hugo
       - test:
-        requires:
-          - build
+          requires:
+            - build
       - deploy-master:
-        requires:
-          - test
+          requires:
+            - test
