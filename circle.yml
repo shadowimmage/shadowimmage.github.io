@@ -23,6 +23,8 @@ jobs:
       - image: cibuilds/hugo:0.40.2
     steps:
       - checkout
+      - run: git submodule sync
+      - run: git submodule update --init
       - run:
           name: Run Hugo
           command: HUGO_ENV=production hugo -v
