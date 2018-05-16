@@ -25,14 +25,24 @@ jobs:
         fingerprints:
           - "44:a7:27:96:24:30:76:b2:61:d3:fa:07:ec:8d:f0:5a"
       - run:
-        name: "Deploy to Master"
+        name: "Update master with changes"
         command: |
           cd ./public
+          mv ./* ../tmp
           git init
-          git remote add origin https://github.com/shadowimmage/shadowimmage.github.io
+          git remote add origin git@github.com:shadowimmage/shadowimmage.github.io.git
+          git pull origin master
+          git checkout -b update
+          rm -r ./*
           git add *
-          git commit -m "circleci update"
-          git push origin master -f
+          git commit -m "clean"
+          mv ../tmp/* .
+          git add *
+          commitMsg="CircleCI site rebuild at `date`"
+          git commit -m "$commitMsg"
+          git checkout -b master
+          git merge update
+          git push origin master
 
 workflows:
   version: 2
