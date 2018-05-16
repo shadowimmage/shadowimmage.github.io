@@ -13,7 +13,7 @@ jobs:
 
   test:
     working_directory: ~/project
-      steps:
+    steps:
       - run:
         name: "html check"
         command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore
