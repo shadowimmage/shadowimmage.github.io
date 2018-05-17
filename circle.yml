@@ -16,12 +16,19 @@ jobs:
             git remote add origin git@github.com:shadowimmage/shadowimmage.github.io.git
             git pull origin master
             git checkout -b update
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - public
+          
 
   build:
     working_directory: ~/project
     docker:
       - image: cibuilds/hugo:0.40.2
     steps:
+      - attach_workspace:
+          at: ~/project/public
       - add_ssh_keys:
           fingerprints:
             - "44:a7:27:96:24:30:76:b2:61:d3:fa:07:ec:8d:f0:5a"
@@ -31,12 +38,18 @@ jobs:
       - run:
           name: Run Hugo
           command: HUGO_ENV=production hugo -v
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - public
 
   test:
     working_directory: ~/project
     docker:
       - image: cibuilds/hugo:0.40.2
     steps:
+      - attach_workspace:
+          at: ~/project/public
       - run:
           name: html check
           command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore
@@ -46,6 +59,8 @@ jobs:
       enabled: true
     working_directory: ~/project
     steps:
+      - attach_workspace:
+          at: ~/project/public
       - add_ssh_keys:
           fingerprints:
             - "44:a7:27:96:24:30:76:b2:61:d3:fa:07:ec:8d:f0:5a"
@@ -53,12 +68,6 @@ jobs:
           name: Update master with changes
           command: |
             cd ./public
-            # mv ./* ../tmp
-            
-            # rm -r ./*
-            # git add *
-            # git commit -m "clean"
-            # mv ../tmp/* .
             git add *
             commitMsg="CircleCI site rebuild at `date`"
             git commit -m "$commitMsg"
