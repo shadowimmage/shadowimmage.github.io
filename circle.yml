@@ -28,7 +28,7 @@ jobs:
       - image: cibuilds/hugo:0.40.2
     steps:
       - attach_workspace:
-          at: ~/tmp/public
+          at: ~/tmp
       - add_ssh_keys:
           fingerprints:
             - "44:a7:27:96:24:30:76:b2:61:d3:fa:07:ec:8d:f0:5a"
@@ -37,7 +37,7 @@ jobs:
       - run: git submodule update --init
       - run:
           name: copy old files up
-          command: cp ~/tmp/public ~/project/public
+          command: cp -r ~/tmp/public ~/project/public
       - run:
           name: Run Hugo
           command: HUGO_ENV=production hugo -v
@@ -52,7 +52,7 @@ jobs:
       - image: cibuilds/hugo:0.40.2
     steps:
       - attach_workspace:
-          at: ~/project/public
+          at: ~/project
       - run:
           name: html check
           command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore
@@ -63,7 +63,7 @@ jobs:
     working_directory: ~/project
     steps:
       - attach_workspace:
-          at: ~/project/public
+          at: ~/project
       - add_ssh_keys:
           fingerprints:
             - "44:a7:27:96:24:30:76:b2:61:d3:fa:07:ec:8d:f0:5a"
