@@ -21,7 +21,7 @@ enableEmoji = true
 
 [Author]
   name = "Chase Sawyer"
-  website = "shadowimmage.github.io"
+  website = "https://shadowimmage.github.io"
   email = "shadowimmage@gmail.com"
 #   facebook = "username"
 #   googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
@@ -66,11 +66,11 @@ enableEmoji = true
     url = "project/slackr25bot"
     weight = 1
 
-[[menu.main]]
-    parent = "projects"
-    name = "Access Control (UW)"
-    url = "project/accesscontrolproject"
-    weight = 2
+# [[menu.main]]
+#     parent = "projects"
+#     name = "Access Control (UW)"
+#     url = "project/accesscontrolproject"
+#     weight = 2
 
 [[menu.main]]
     parent = "projects"
