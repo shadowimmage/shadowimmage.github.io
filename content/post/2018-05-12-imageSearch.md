@@ -11,8 +11,6 @@ type: "post"
 draft: true
 ---
 
-## Description
-
 This microservice creates an abstraction layer (and history) between the user and the Google Images search API.
 
 <!--more-->

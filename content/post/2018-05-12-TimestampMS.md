@@ -11,8 +11,6 @@ type: "post"
 draft: false
 ---
 
-## Description
-
 The goal is to create a microservice that will take a date string or a unix timestamp and make a JSON response with both versions of the given timestamp / date.
 
 <!--more-->

@@ -11,8 +11,6 @@ type: "post"
 draft: false
 ---
 
-## Description
-
 The goal for this one is to get return to the user the IP address, language, and operating system of the browser/user making the request.
 
 <!--more-->

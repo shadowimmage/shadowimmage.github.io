@@ -11,8 +11,6 @@ type: "post"
 draft: false
 ---
 
-## Description
-
 The challenge here was to create a URL Shortener microservice. It uses a database to associate a short url ID with the original url, and once created, the microservice will redirect visitors of the short URL to the original URL.
 
 <!--more-->

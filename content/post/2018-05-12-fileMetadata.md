@@ -11,8 +11,6 @@ type: "post"
 draft: false
 ---
 
-## Description
-
 Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.
 
 <!--more-->
