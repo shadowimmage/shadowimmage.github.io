@@ -33,11 +33,6 @@
   </url>
   
   <url>
-    <loc>https://shadowimmage.github.io/post/2018-05-09-new-site-structure/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://shadowimmage.github.io/post/2018-05-09-new-static-site-with-hugo/</loc>
     <lastmod>2018-05-09T20:51:48-07:00</lastmod>
   </url>
@@ -251,7 +246,7 @@
   
   <url>
     <loc>https://shadowimmage.github.io/tags/update/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-09T20:51:48-07:00</lastmod>
     <priority>0</priority>
   </url>
   

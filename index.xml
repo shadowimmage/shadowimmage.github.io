@@ -19,9 +19,7 @@
       <pubDate>Sat, 12 May 2018 19:05:29 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.&lt;/p&gt;
+      <description>&lt;p&gt;Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -32,9 +30,7 @@
       <pubDate>Sat, 12 May 2018 18:13:23 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/post/2018-05-12-urlshortener/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;The challenge here was to create a URL Shortener microservice. It uses a database to associate a short url ID with the original url, and once created, the microservice will redirect visitors of the short URL to the original URL.&lt;/p&gt;
+      <description>&lt;p&gt;The challenge here was to create a URL Shortener microservice. It uses a database to associate a short url ID with the original url, and once created, the microservice will redirect visitors of the short URL to the original URL.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -45,9 +41,7 @@
       <pubDate>Sat, 12 May 2018 17:55:20 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/post/2018-05-12-headerparserms/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;The goal for this one is to get return to the user the IP address, language, and operating system of the browser/user making the request.&lt;/p&gt;
+      <description>&lt;p&gt;The goal for this one is to get return to the user the IP address, language, and operating system of the browser/user making the request.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -58,9 +52,7 @@
       <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/post/2018-05-12-timestampms/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;The goal is to create a microservice that will take a date string or a unix timestamp and make a JSON response with both versions of the given timestamp / date.&lt;/p&gt;
+      <description>&lt;p&gt;The goal is to create a microservice that will take a date string or a unix timestamp and make a JSON response with both versions of the given timestamp / date.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -82,15 +74,6 @@ Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for condit
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/post/2018-05-10-bad-coffee/</guid>
       <description>I woke up late today, so I didn&amp;rsquo;t have time to make coffee. And instead of going to my usual place where I know there&amp;rsquo;s going to be great coffee available, I decided to get a doughnut and some coffee from the doughnut shop. The first warning that this wasn&amp;rsquo;t going to go well was when I got my travel mug back and there was coffee all over the outside of the mug.</description>
-    </item>
-    
-    <item>
-      <title>New Site Structure</title>
-      <link>https://shadowimmage.github.io/post/2018-05-09-new-site-structure/</link>
-      <pubDate>Wed, 09 May 2018 22:19:41 -0700</pubDate>
-      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-09-new-site-structure/</guid>
-      <description>I took some time this week to look into all the code that I&amp;rsquo;ve been collecting and producing over the last year or more and began to assess where everything was being stored and hosted. Since I build a lot of demos and try out new technologies on a pretty consistent (if not sporadic) basis, this has led me to a state where I have several projects hosted on Heroku, on AWS, and offline.</description>
     </item>
     
     <item>

@@ -8,19 +8,10 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Wed, 09 May 2018 22:19:41 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 09 May 2018 20:51:48 -0700</lastBuildDate>
     
 	<atom:link href="https://shadowimmage.github.io/tags/update/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>New Site Structure</title>
-      <link>https://shadowimmage.github.io/post/2018-05-09-new-site-structure/</link>
-      <pubDate>Wed, 09 May 2018 22:19:41 -0700</pubDate>
-      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-09-new-site-structure/</guid>
-      <description>I took some time this week to look into all the code that I&amp;rsquo;ve been collecting and producing over the last year or more and began to assess where everything was being stored and hosted. Since I build a lot of demos and try out new technologies on a pretty consistent (if not sporadic) basis, this has led me to a state where I have several projects hosted on Heroku, on AWS, and offline.</description>
-    </item>
     
     <item>
       <title>New Static Site with Hugo</title>

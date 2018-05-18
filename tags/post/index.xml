@@ -19,9 +19,7 @@
       <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/post/2018-05-12-timestampms/</guid>
-      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;The goal is to create a microservice that will take a date string or a unix timestamp and make a JSON response with both versions of the given timestamp / date.&lt;/p&gt;
+      <description>&lt;p&gt;The goal is to create a microservice that will take a date string or a unix timestamp and make a JSON response with both versions of the given timestamp / date.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -34,15 +32,6 @@
       <guid>https://shadowimmage.github.io/post/2018-05-10-hugo-gotchas/</guid>
       <description>Gotchas In order of the issue being found:
 Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for conditional statements, Hugo uses Polish or prefix notation for the operators. This meas that instead of writing if this and that, you have to write if and this that. For more complex arrangements of logical conditions, say for a situation in which you need to check three conditions, you have to write it as: if and (first) ( and (second) (third)) which, in a infix notation style, would have been written if first and second and third.</description>
-    </item>
-    
-    <item>
-      <title>New Site Structure</title>
-      <link>https://shadowimmage.github.io/post/2018-05-09-new-site-structure/</link>
-      <pubDate>Wed, 09 May 2018 22:19:41 -0700</pubDate>
-      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-09-new-site-structure/</guid>
-      <description>I took some time this week to look into all the code that I&amp;rsquo;ve been collecting and producing over the last year or more and began to assess where everything was being stored and hosted. Since I build a lot of demos and try out new technologies on a pretty consistent (if not sporadic) basis, this has led me to a state where I have several projects hosted on Heroku, on AWS, and offline.</description>
     </item>
     
     <item>

@@ -1,92 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-  <title>Hugo Gotchas</title>
-  <meta property="og:title" content="Hugo Gotchas" />
-  <meta name="twitter:title" content="Hugo Gotchas" />
-  <meta name="description" content="Gotchas In order of the issue being found:
-Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for conditional statements, Hugo uses Polish or prefix notation for the operators. This meas that instead of writing if this and that, you have to write if and this that. For more complex arrangements of logical conditions, say for a situation in which you need to check three conditions, you have to write it as: if and (first) ( and (second) (third)) which, in a infix notation style, would have been written if first and second and third.">
-  <meta property="og:description" content="Gotchas In order of the issue being found:
-Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for conditional statements, Hugo uses Polish or prefix notation for the operators. This meas that instead of writing if this and that, you have to write if and this that. For more complex arrangements of logical conditions, say for a situation in which you need to check three conditions, you have to write it as: if and (first) ( and (second) (third)) which, in a infix notation style, would have been written if first and second and third.">
-  <meta name="twitter:description" content="Gotchas In order of the issue being found:
-Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for conditional statements, Hugo uses Polish or prefix notation for the operators. This …">
-  <meta name="author" content="Chase Sawyer"/>
-  <link href='https://shadowimmage.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta property="og:image" content="https://shadowimmage.github.io/img/profile.jpg" />
-  <meta name="twitter:image" content="https://shadowimmage.github.io/img/profile.jpg" />
-  <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://shadowimmage.github.io/post/2018-05-10-hugo-gotchas/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Chase Sawyer" />
-
-  <meta name="generator" content="Hugo 0.40.2" />
-  <link rel="canonical" href="https://shadowimmage.github.io/post/2018-05-10-hugo-gotchas/" />
-  <link rel="alternate" href="https://shadowimmage.github.io/index.xml" type="application/rss+xml" title="Chase Sawyer">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://shadowimmage.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://shadowimmage.github.io/css/syntax.css" /><link rel="stylesheet" href="https://shadowimmage.github.io/css/codeblock.css" />
-
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    
+        <title>Hugo Gotchas</title>
+        <meta property="og:title" content="Hugo Gotchas" />
+        <meta name="twitter:title" content="Hugo Gotchas" />
+        <meta name="description" content="Gotchas In order of the issue being found:
+Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for conditional statements, Hugo uses Polish or prefix notation for the operators. This meas that instead of writing if this and that, you have to write if and this that. For more complex arrangements of logical conditions, say for a situation in which you need to check three conditions, you have to write it as: if and (first) ( and (second) (third)) which, in a infix notation style, would have been written if first and second and third." />
+        <meta property="og:description" content="Gotchas In order of the issue being found:
+Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for conditional statements, Hugo uses Polish or prefix notation for the operators. This meas that instead of writing if this and that, you have to write if and this that. For more complex arrangements of logical conditions, say for a situation in which you need to check three conditions, you have to write it as: if and (first) ( and (second) (third)) which, in a infix notation style, would have been written if first and second and third." />
+        <meta name="twitter:description" content="Gotchas In order of the issue being found:
+Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for conditional statements, Hugo uses Polish or prefix notation for the operators. This …" />
+    <meta name="author" content="Chase Sawyer" />
+        <link href="https://shadowimmage.github.io/img/favicon.ico" rel="icon" type="image/x-icon" />
+        <meta property="og:image" content="https://shadowimmage.github.io/img/profile.jpg" />
+        <meta name="twitter:image" content="https://shadowimmage.github.io/img/profile.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://shadowimmage.github.io/post/2018-05-10-hugo-gotchas/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Chase Sawyer" />
+    
+    <meta name="generator" content="Hugo 0.40.2" />
+    <link rel="canonical" href="https://shadowimmage.github.io/post/2018-05-10-hugo-gotchas/" />
+        <link rel="alternate" href="https://shadowimmage.github.io/index.xml" type="application/rss+xml" title="Chase Sawyer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://shadowimmage.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://shadowimmage.github.io/css/syntax.css" /><link rel="stylesheet" href="https://shadowimmage.github.io/css/codeblock.css" />
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous" />
 
+
+    
+</head>
+    <body>
+        
 
 
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
+    <div class="pswp__bg"></div>
     
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
+    <div class="pswp__scroll-wrap">
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
         </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
     </div>
 </div>
-
-</head>
-
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
@@ -113,8 +110,6 @@ Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for condit
               <div class="navlinks-children">
                 
                   <a href="/project/slackr25bot">R25 Slack Bot</a>
-                
-                  <a href="/project/accesscontrolproject">Access Control (UW)</a>
                 
                   <a href="/project/dustcollector">Dust Collector CAD (UW)</a>
                 
@@ -163,7 +158,7 @@ Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for condit
 
 
 
-    
+        
   
   
   
@@ -206,7 +201,7 @@ Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for condit
   </header>
 
 
-    
+        
 <div class="container" role="main">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -374,7 +369,7 @@ Can I catch this / use markdownlint in CircleCI builds?</p>
   </div>
 </div>
 
-    <footer>
+        <footer>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -405,7 +400,7 @@ Can I catch this / use markdownlint in CircleCI builds?</p>
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com/in/chase-sawyer" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/chase-sawyer" title="LinkedIn">
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -417,7 +412,7 @@ Can I catch this / use markdownlint in CircleCI builds?</p>
         <p class="credits copyright text-muted">
           
             
-              <a href="shadowimmage.github.io">Chase Sawyer</a>
+              <a href="https://shadowimmage.github.io">Chase Sawyer</a>
             
           
 
@@ -453,6 +448,6 @@ Can I catch this / use markdownlint in CircleCI builds?</p>
 
 
 
-  </body>
+    </body>
 </html>
 
