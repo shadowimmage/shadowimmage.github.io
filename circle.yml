@@ -82,14 +82,14 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - checkout-existing
-      - build:
-          requires:
-            - checkout-existing
+      - checkout-existing:
           filters:
             branches:
               only:
                 - hugo
+      - build:
+          requires:
+            - checkout-existing
       - test:
           requires:
             - build
