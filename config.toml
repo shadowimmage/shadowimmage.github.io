@@ -13,7 +13,8 @@ pygmentsStyle = "trac"
 enableEmoji = true
 
 [Params]
-  logo = "img/profile.jpg"
+  logo = "img/logo-plain.svg"
+  profileImg = "img/profile.jpg"
   favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
   readingTime = true

@@ -13,9 +13,19 @@
         <meta name="twitter:description" content="{{ . | truncate 200 }}" />
     {{- end }}
     <meta name="author" content="{{ .Site.Author.name }}" />
-    {{- with .Site.Params.favicon }}
+    <!-- {{- with .Site.Params.favicon }}
         <link href="{{ . | absURL }}" rel="icon" type="image/x-icon" />
-    {{- end -}}
+        {{ end }}
+         -->
+    <!-- new favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "img/apple-touch-icon.png" | absURL }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "img/favicon-32x32.png" | absURL }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "img/favicon-16x16.png" | absURL }}">
+    <link rel="manifest" href="{{ "img/site.webmanifest" | absURL }}">
+    <link rel="mask-icon" href="{{ "img/safari-pinned-tab.svg" | absURL }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- end favicon -->
     <!-- Social Media Tags -->
     {{- with .Params.share_img | default .Params.image | default .Site.Params.logo }}
         <meta property="og:image" content="{{ . | absURL }}" />
