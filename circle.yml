@@ -90,9 +90,9 @@ workflows:
       - build:
           requires:
             - checkout-existing
-      - test:
-          requires:
-            - build
+      # - test:
+      #     requires:
+      #       - build
       - deploy-master:
           requires:
-            - test
+            - build
