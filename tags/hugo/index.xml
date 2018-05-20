@@ -8,10 +8,19 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Wed, 09 May 2018 20:51:48 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 18 May 2018 14:45:08 -0700</lastBuildDate>
     
 	<atom:link href="https://shadowimmage.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Logo Design</title>
+      <link>https://shadowimmage.github.io/post/2018-05-18-logo-design/</link>
+      <pubDate>Fri, 18 May 2018 14:45:08 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-18-logo-design/</guid>
+      <description>I spent my sick day today designing a new logo for the site using Inkscape. I knew that it had to be something that was unique, so I went online looking around for resources on designing and producing a logo. I know that SVGs are great, because you will never have scaling issues - if you need a larger version, you can simply export it at higher resolution. Or lower.</description>
+    </item>
     
     <item>
       <title>New Static Site with Hugo</title>
