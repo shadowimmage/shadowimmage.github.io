@@ -74,8 +74,8 @@ jobs:
             git add *
             commitMsg="CircleCI site rebuild at `date`"
             git commit -m "$commitMsg"
-            git config user.email "shadowimmage@gmail.com"
-            git config user.name "CircleCI"
+            git config --global user.email "shadowimmage@gmail.com"
+            git config --global user.name "CircleCI"
             git checkout -b master
             git merge update
             git push origin master
