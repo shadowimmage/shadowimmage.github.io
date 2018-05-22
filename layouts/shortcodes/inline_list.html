@@ -1,0 +1,14 @@
+<!-- Inline list for small items that collapses correctly for mobile experience -->
+
+{{ $file := .Get "data" }}
+{{ $section := .Get "section" }}
+{{ $list := (index (index .Site.Data $file) $section) }}
+<ul class="inline-list">
+    {{ range $list }}
+    {{ if .link }}<a href="{{ .link }}">{{ end }}
+        <li class="inline-list-item">
+            <i class="skillicon {{ .fa_icon }}"></i>{{ .skill }}
+        </li>
+    {{ if .link }}</a>{{ end }}
+    {{ end }}
+</ul>

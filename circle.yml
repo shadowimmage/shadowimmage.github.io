@@ -71,11 +71,11 @@ jobs:
           name: Update master with changes
           command: |
             cd ./public
-            git add *
-            commitMsg="CircleCI site rebuild at `date`"
-            git commit -m "$commitMsg"
             git config --global user.email "shadowimmage@gmail.com"
             git config --global user.name "CircleCI"
+            git add *
+            commitMsg="CircleCI site rebuild at `date` [skip ci]"
+            git commit -m "$commitMsg"
             git checkout -b master
             git merge update
             git push origin master

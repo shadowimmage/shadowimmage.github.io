@@ -2,3 +2,19 @@
     padding: 10px 10px;
     display: inline;
 }
+
+.inline-list {
+    border-collapse: collapse;
+}
+
+.inline-list-item {
+    display: inline-block;
+}
+
+.inline-list-item:not(:last-child) {
+    margin-right: 1rem;
+}
+
+i.skillicon {
+    margin-right: .5rem;
+}

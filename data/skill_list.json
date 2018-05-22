@@ -1,0 +1,41 @@
+{
+    "architecture": null,
+    "languages": [
+        {
+            "skill": "Python",
+            "fa_icon": "fab fa-python",
+            "link": "https://www.python.org/"
+        },
+        {
+            "skill": "Django",
+            "fa_icon": null,
+            "link": null
+        },
+        {
+            "skill": "Javascript",
+            "fa_icon": "fab fa-js-square",
+            "link": null
+        },
+        {
+            "skill": "Node",
+            "fa_icon": "fab fa-node-js",
+            "link": null
+        },
+        {
+            "skill": "git",
+            "fa_icon": "fas fa-code-branch",
+            "link": null
+        },
+        {
+            "skill": "Linux",
+            "fa_icon": "fab fa-linux",
+            "link": null
+        },
+        {
+            "skill": "Windows",
+            "fa_icon": "fab fa-windows",
+            "link": null
+        }
+    ],
+    "cloud": null
+}
