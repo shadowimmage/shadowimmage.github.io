@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/shadowimmage
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://shadowimmage.github.io
+  * I am shadowimmage (https://keybase.io/shadowimmage) on keybase.
+  * I have a public key ASDfFATGVUJkKw5HfyszhN7ackOFfZNfXIy6jFQCOvk5kAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120df1404c65542642b0e477f2b3384deda7243857d935f5c8cba8c54023af939900a",
+      "host": "keybase.io",
+      "kid": "0120df1404c65542642b0e477f2b3384deda7243857d935f5c8cba8c54023af939900a",
+      "uid": "a3274549d4a2f720077f339ccf7a3f19",
+      "username": "shadowimmage"
+    },
+    "merkle_root": {
+      "ctime": 1527017503,
+      "hash": "719d084bd42ab86cd8096f1538c73c4af3d45d49518e1cb28e16815b71a0fcf80d87dabf49f0586dde6c4c72268ab8e9b43f7caebcc237ef1b17ebfdc6be41d7",
+      "hash_meta": "0980f39e978964aded1391e2624afc8bb0d4a126a7c4fdffabfa1fa1279dcdfc",
+      "seqno": 2871395
+    },
+    "service": {
+      "entropy": "Iamw7trYEYLDPSn4mlac/UTz",
+      "hostname": "shadowimmage.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.48"
+  },
+  "ctime": 1527017519,
+  "expire_in": 504576000,
+  "prev": "0c20d42d285db038f35aeb5643c1781dbfb628d89e500304ae4c832423d2fee3",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg3xQExlVCZCsOR38rM4Te2nJDhX2TX1yMuoxUAjr5OZAKp3BheWxvYWTESpcCDsQgDCDULShdsDjzWutWQ8F4Hb+2KNieUAMErkyDJCPS/uPEIBj5Ls5uz/dOzABhbEKA5c3w5CCgdNQqkY972+Oo6pYNAgHCo3NpZ8RAjTQh3xjNE7mCXjBiaBjImWydRSZhje/kM+l62zlCQbn2NiLB7MMHt8Jlxgqz+8bjAqHmMHUDCH1Kk1vfWRf9CqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIPBSMCYgYaGGOyLvKTwwJs0/KjkPqp7wKSvA8BxIipsNo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/shadowimmage
+
+==================================================================
