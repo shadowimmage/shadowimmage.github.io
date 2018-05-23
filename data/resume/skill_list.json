@@ -1,0 +1,107 @@
+{
+    "architecture": [
+        {
+            "skill": "Serverless",
+            "fa_icon": "fas fa-terminal",
+            "link": "https://serverless.com/"
+        },
+        {
+            "skill": "IP Networking",
+            "fa_icon": "fas fa-terminal",
+            "link": null
+        },
+        {
+            "skill": "RESTful APIs",
+            "fa_icon": "fas fa-code",
+            "link": null
+        }
+    ],
+    "languages": [
+        {
+            "skill": "Python",
+            "fa_icon": "fab fa-python",
+            "link": "https://www.python.org/"
+        },
+        {
+            "skill": "Javascript",
+            "fa_icon": "fab fa-js-square",
+            "link": null
+        },
+        {
+            "skill": "Node",
+            "fa_icon": "fab fa-node-js",
+            "link": "https://nodejs.org/"
+        },
+        {
+            "skill": "git",
+            "fa_icon": "fas fa-code-branch",
+            "link": null
+        },
+        {
+            "skill": "Linux",
+            "fa_icon": "fab fa-linux",
+            "link": null
+        },
+        {
+            "skill": "Windows",
+            "fa_icon": "fab fa-windows",
+            "link": null
+        }
+    ],
+    "frameworks": [
+        {
+            "skill": "Vue",
+            "fa_icon": "fab fa-vuejs",
+            "link": "https://vuejs.org/"
+        },
+        {
+            "skill": "React",
+            "fa_icon": "fab fa-react",
+            "link": "https://reactjs.org/"
+        },
+        {
+            "skill": "Django",
+            "fa_icon": "devicons devicons-django",
+            "link": "https://www.djangoproject.com/"
+        }
+    ],
+    "databases": [
+        {
+            "skill": "MySQL",
+            "fa_icon": "devicons devicons-mysql",
+            "link": null
+        },
+        {
+            "skill": "MongoDB",
+            "fa_icon": "devicons devicons-mongodb",
+            "link": "https://www.mongodb.com/"
+        },
+        {
+            "skill": "SQL Server",
+            "fa_icon": "devicons devicons-msql_server",
+            "link": null
+        },
+        {
+            "skill": "GraphQL",
+            "fa_icon": "fas fa-code",
+            "link": "https://graphql.org/"
+        }
+    ],
+    "cloud": [
+        {
+            "skill": "AWS",
+            "fa_icon": "devicons devicons-aws",
+            "link": "https://aws.amazon.com/"
+        },
+        {
+            "skill": "Heroku",
+            "fa_icon": "devicons devicons-heroku",
+            "link": "https://www.heroku.com/"
+        },
+        {
+            "skill": "Continuous Integration / Continuous Delivery",
+            "fa_icon": null,
+            "link": null
+        }
+    ]
+}

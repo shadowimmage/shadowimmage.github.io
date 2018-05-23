@@ -5,10 +5,10 @@
 {{ $list := (index (index .Site.Data $file) $section) }}
 <ul class="inline-list">
     {{ range $list }}
-    {{ if .link }}<a href="{{ .link }}">{{ end }}
-        <li class="inline-list-item">
+    <li class="inline-list-item">
+        {{ if .link }}<a href="{{ .link }}">{{ end }}
             <i class="skillicon {{ .fa_icon }}"></i>{{ .skill }}
-        </li>
-    {{ if .link }}</a>{{ end }}
+        {{ if .link }}</a>{{ end }}
+    </li>
     {{ end }}
 </ul>
