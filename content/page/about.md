@@ -17,23 +17,23 @@ My interests are manifold, from art to computer science. I've built my skillset 
 
 ### :hammer_and_wrench: Languages, Tools, & Operating Systems
 
-{{< inline_list data="skill_list" section="languages" >}}
+{{< inline_list data="resume\skill_list" section="languages" >}}
 
 #### Databases
 
-{{< inline_list data="skill_list" section="databases" >}}
+{{< inline_list data="resume.skill_list" section="databases" >}}
 
 #### Frameworks
 
-{{< inline_list data="skill_list" section="frameworks" >}}
+{{< inline_list data="resume.skill_list" section="frameworks" >}}
 
 ### Architecture
 
-{{< inline_list data="resume/skill_list" section="architecture" >}}
+{{< inline_list data="resume.skill_list" section="architecture" >}}
 
 ### Cloud Technologies
 
-{{< inline_list data="resume/skill_list" section="cloud" >}}
+{{< inline_list data="resume.skill_list" section="cloud" >}}
 
 ## <i class="fas fa-briefcase"></i> Experience
 
