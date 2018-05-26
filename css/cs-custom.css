@@ -2,3 +2,67 @@
     padding: 10px 10px;
     display: inline;
 }
+
+/* Site font overrides */
+
+body {
+    font-family: 'Neuton', 'Segoe UI',  Helvetica, sans-serif;
+    background-color: #FCFCFC;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+i.button-icon {
+    font-size: 2rem;
+}
+
+/* Data Lists */
+
+.inline-list {
+    border-collapse: collapse;
+}
+
+.inline-list-item {
+    display: inline-block;
+}
+
+.inline-list-item:not(:last-child) {
+    margin-right: 1rem;
+}
+
+/* About Page // Skills */
+
+i.skillicon {
+    margin-right: .5rem;
+}
+
+/* About Page // Experience */
+
+h3.exp-head {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: -15px;
+}
+
+span.exp-subtitle {
+    font-variant: small-caps;
+}
+
+.exp-left {
+    margin-top: 2rem;
+}
+
+.exp-right {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+.exp-right span {
+    font-size: 16px;
+}
+
+.experience>.row {
+    margin: 0px 0px;
+}
