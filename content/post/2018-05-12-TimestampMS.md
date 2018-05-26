@@ -17,7 +17,7 @@ The goal is to create a microservice that will take a date string or a unix time
 
 ## Code
 
-### [<button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub&nbsp;&nbsp;<span style="vertical-align:middle"><i class="fab fa-github"></i></span></button>][1]
+### [<button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub&nbsp;&nbsp;<span style="vertical-align:middle"><i class="fab fa-github button-icon"></i></span></button>][1]
 
 ```javascript
 // timestamp.js

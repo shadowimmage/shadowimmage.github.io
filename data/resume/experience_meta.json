@@ -1,0 +1,30 @@
+{
+    "scs": {
+        "title": "Senior Computer Specialist",
+        "subtitle": "University of Washington",
+        "start": "May 2016",
+        "end": "Present",
+        "location": "Seattle, WA"
+    },
+    "pss": {
+        "title": "Program Support Supervisor",
+        "subtitle": "University of Washington",
+        "start": "Aug 2013",
+        "end": "May 2016",
+        "location": "Seattle, WA"
+    },
+    "lhda": {
+        "title": "Lead Help Desk Analyst",
+        "subtitle": "University of Washington",
+        "start": "Apr 2009",
+        "end": "Jun 2013",
+        "location": "Seattle, WA"
+    },
+    "uwbfa": {
+        "title": "BFA, 3D4M",
+        "subtitle":"University of Washington School of Art",
+        "start": "2008",
+        "end": "2013",
+        "location": "Seattle, WA"
+    }
+}

@@ -45,6 +45,7 @@ enableEmoji = true
 #   vk = "username"
 #   paypal = "username"
 #   telegram = "username"
+  keybase = "shadowimmage"
 
 [[menu.main]]
     name = "Blog"

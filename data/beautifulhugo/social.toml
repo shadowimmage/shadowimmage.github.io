@@ -116,7 +116,7 @@ icon = "fab fa-gamepad"
 id = "keybase"
 url = "https://keybase.io/%s"
 title = "Keybase"
-icon = "fab fa-key"
+icon = "fab fa-keybase"
 
 [[social_icons]]
 id = "vk"

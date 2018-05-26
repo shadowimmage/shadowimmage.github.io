@@ -46,7 +46,7 @@ View this code live on Heroku at fcc-challenges.herokuapp.com/shortener/...
 
 ## Code
 
-### [<button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub&nbsp;&nbsp;<span style="vertical-align:middle"><i class="fab fa-github"></i></span></button>][1]
+### [<button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub&nbsp;&nbsp;<span style="vertical-align:middle"><i class="fab fa-github button-icon"></i></span></button>][1]
 
 #### Shortener
 

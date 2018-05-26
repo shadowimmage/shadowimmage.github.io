@@ -1,11 +1,9 @@
 ---
 title: About me
-subtitle: This is a work in progress
+subtitle: A brief Summary
 comments: false
 draft: false
 ---
-
-:warning: work in progress :warning:
 
 ## Summary
 
@@ -13,34 +11,62 @@ I'm a person living in Seattle, Washington where I work for Classroom Technology
 
 My interests are manifold, from art to computer science. I've built my skillset from a position of curiosity, using an analytical approach to problems and their possible solutions, always researching what I don't know. I love to learn. I solve difficult problems by combining my learning and experience into novel approaches and solutions.
 
-## Skills
+## :hammer_and_wrench: Skills
 
-### :hammer_and_wrench: Languages, Tools, & Operating Systems
+### Languages, Tools, & Operating Systems
 
-{{< inline_list data="resume\skill_list" section="languages" >}}
+{{< inline_list datadir="resume" data="skill_list" section="languages" >}}
 
 #### Databases
 
-{{< inline_list data="resume.skill_list" section="databases" >}}
+{{< inline_list datadir="resume" data="skill_list" section="databases" >}}
 
 #### Frameworks
 
-{{< inline_list data="resume.skill_list" section="frameworks" >}}
+{{< inline_list datadir="resume" data="skill_list" section="frameworks" >}}
+
+#### BI Tools
+
+{{< inline_list datadir="resume" data="skill_list" section="bi_tools" >}}
 
 ### Architecture
 
-{{< inline_list data="resume.skill_list" section="architecture" >}}
+{{< inline_list datadir="resume" data="skill_list" section="architecture" >}}
 
-### Cloud Technologies
+### Cloud Platforms & Technologies
 
-{{< inline_list data="resume.skill_list" section="cloud" >}}
+{{< inline_list datadir="resume" data="skill_list" section="cloud" >}}
 
 ## <i class="fas fa-briefcase"></i> Experience
 
-### Senior Computer Specialist
+{{< experience datadir="resume" data="experience_meta" section="scs" >}}
+Create business intelligence solutions and tools, informing service improvement. Develop software tools to automate processes, saving hundreds of hours of staff time. Manage communications and outreach campaigns with wide customer base. Manage and maintain 400+ desktop and laptop computers.
+{{< /experience >}}
+
+{{% experience datadir="resume" data="experience_meta" section="pss" %}}
+Managed a team of help desk analysts, including hiring and training. Performed Tier 2 and 3 support and maintenance of HD AV Systems adn infrastructure while providing excellent customer support and service. Certified in Biamp Audio DSPs and Crestron DigitalMedia.
+{{% /experience %}}
+
+{{< experience datadir="resume" data="experience_meta" section="lhda" >}}
+
+{{< /experience >}}
+
+## <i class="fas fa-university"></i> Education
+
+{{< experience datadir="resume" data="experience_meta" section="uwbfa" >}}
+Undergraduate degree culminating in a synthesis of computer science and art in the form of live drawing robots within the gallery space and finished works displayed in the gallery.
+
+Coursework involved (but was not limited to) CS fundamentals, data structures and algorithms, networking, databases, studio art, sculpture, and acoustics.
+{{< /experience >}}
+
+## Additional Details
+
+[<button style="background-color:#0077b5" type="button" class="btn btn-primary">Check me out on Linkedin&nbsp;&nbsp;<span style="vertical-align:middle"><i class="fab fa-linkedin github-button"></i></span></button>][1]
+
+[1]: "www.linkedin.com/in/chase-sawyer"
 
 
-
+<!-- 
 Development of both commercial and open source software applications and database systems that generate complex metrics and reports used by CTE and UW-IT management and other high level staff throughout the organization.
 
 Manage and maintain 500+ desktop and laptop computers used in classrooms and by departmental staff. Provide technical evaluation, installation, maintenance and support of integrated classroom technology systems and related components. Provide Tier 2 support and perform configuration, diagnostic, repair, and testing functions.
@@ -57,4 +83,4 @@ I've been working at the University of Washington since 2009 as a(n):
 - Lead Help Desk Analyst
 - Program Support Supervisor I
 - Senior Computer Specialist (current)
-
+ -->

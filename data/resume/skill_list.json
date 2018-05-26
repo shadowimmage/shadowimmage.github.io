@@ -38,6 +38,11 @@
             "link": null
         },
         {
+            "skill": "virtualenv",
+            "fa_icon": "fas fa-cogs",
+            "link": null
+        },
+        {
             "skill": "Linux",
             "fa_icon": "fab fa-linux",
             "link": null
@@ -90,7 +95,7 @@
     "cloud": [
         {
             "skill": "AWS",
-            "fa_icon": "devicons devicons-aws",
+            "fa_icon": "fab fa-aws",
             "link": "https://aws.amazon.com/"
         },
         {
@@ -100,8 +105,20 @@
         },
         {
             "skill": "Continuous Integration / Continuous Delivery",
-            "fa_icon": null,
+            "fa_icon": "fas fa-cogs",
             "link": null
+        }
+    ],
+    "bi_tools": [
+        {
+            "skill": "Tableau",
+            "fa_icon": "fas fa-chart-area",
+            "link": "https://www.tableau.com/"
+        },
+        {
+            "skill": "Knime",
+            "fa_icon": "fas fa-table",
+            "link": "https://www.knime.com/"
         }
     ]
 }

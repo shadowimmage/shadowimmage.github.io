@@ -23,7 +23,7 @@ This microservice creates an abstraction layer (and history) between the user an
 
 ## Code
 
-### [<button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub&nbsp;&nbsp;<span style="vertical-align:middle"><i class="fab fa-github"></i></span></button>][1]
+### [<button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub&nbsp;&nbsp;<span style="vertical-align:middle"><i class="fab fa-github button-icon"></i></span></button>][1]
 
 ```javascript
 const https = require('https')

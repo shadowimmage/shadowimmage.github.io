@@ -1,8 +1,9 @@
-<!-- Inline list for small items that collapses correctly for mobile experience -->
+<!-- Inline list for small items that stack left, and collapse correctly for mobile experience -->
 
 {{ $file := .Get "data" }}
+{{ $dir := .Get "datadir" }}
 {{ $section := .Get "section" }}
-{{ $list := (index (index .Site.Data $file) $section) }}
+{{ $list := (index (index (index .Site.Data $dir) $file) $section) }}
 <ul class="inline-list">
     {{ range $list }}
     <li class="inline-list-item">

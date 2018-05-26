@@ -1,0 +1,33 @@
+ <!-- Creates a header section with titles left and details right, containing info below -->
+ 
+ {{ $file := .Get "data"}}
+ {{ $dir := .Get "datadir" }}
+ {{ $section := .Get "section" }}
+ 
+<div class="experience">
+    <div class="row">
+        {{ with index (index (index .Site.Data $dir) $file) $section}}
+        <div class="col-md-9 exp-left">
+            <div>
+                <h3 class="exp-head">{{ .title }}</h3>
+            </div>
+            <div class="exp-sub">
+                <span class="exp-subtitle">{{ .subtitle }}</span>
+            </div>
+        </div>
+        <div class="col-md-3 exp-right">
+            <div class="dates">
+                <span class="exp-dates">{{ .start }} - {{ .end }}</span>
+            </div>
+            <div class="location">
+                <span class="exp-location">{{ .location }}</span>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+    <div class="row">
+       <div class="exp-description">
+            <p>{{ .Inner }}</p>
+        </div>
+    </div> 
+ </div>
