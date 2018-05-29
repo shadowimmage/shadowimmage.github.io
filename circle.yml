@@ -15,7 +15,6 @@ jobs:
             git init
             git remote add origin git@github.com:shadowimmage/shadowimmage.github.io.git
             git pull origin master
-            git checkout -b update
       - persist_to_workspace:
           root: ~/project
           paths:
@@ -76,7 +75,6 @@ jobs:
             git add *
             commitMsg="CircleCI site rebuild at `date` [skip ci]"
             git commit -m "$commitMsg"
-            git checkout -b master
             git merge update
             git push origin master
 
