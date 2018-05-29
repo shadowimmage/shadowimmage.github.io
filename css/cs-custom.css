@@ -6,7 +6,7 @@
 /* Site font overrides */
 
 body {
-    font-family: 'Neuton', 'Segoe UI',  Helvetica, sans-serif;
+    font-family: 'Neuton', 'Segoe UI',  Helvetica, Arial, sans-serif;
     background-color: #FCFCFC;
 }
 
@@ -17,6 +17,10 @@ h1,h2,h3,h4,h5,h6 {
 i.button-icon {
     font-size: 2rem;
 }
+
+.post-preview .post-entry {
+    font-family: 'Neuton', 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
 
 /* Data Lists */
 
