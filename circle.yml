@@ -75,7 +75,6 @@ jobs:
             git add *
             commitMsg="CircleCI site rebuild at `date` [skip ci]"
             git commit -m "$commitMsg"
-            git merge update
             git push origin master
 
 workflows:
