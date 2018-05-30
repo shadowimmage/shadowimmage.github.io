@@ -47,14 +47,30 @@ enableEmoji = true
 #   telegram = "username"
   keybase = "shadowimmage"
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [[menu.main]]
     name = "Blog"
+    identifier = "blog"
+    weight = 1
+
+[[menu.main]]
+    parent = "blog"
+    name = "All Posts"
     url = "post/"
     weight = 1
 
 [[menu.main]]
-    name = "About"
-    url = "page/about/"
+    parent = "blog"
+    name = "Tags"
+    url = "tags"
+    weight = 2
+
+[[menu.main]]
+    parent = "blog"
+    name = "Search"
+    url = "search"
     weight = 3
 
 [[menu.main]]
@@ -79,6 +95,12 @@ enableEmoji = true
     name = "Dust Collector CAD (UW)"
     url = "project/dustcollector"
     weight = 3
+    
+[[menu.main]]
+    parent = "projects"
+    name = "All Projects"
+    url = "tags/project/"
+    weight = 99
 
 [[menu.main]]
     name = "Samples"
@@ -86,6 +108,6 @@ enableEmoji = true
     weight = 3
 
 [[menu.main]]
-    name = "Tags"
-    url = "tags"
+    name = "About"
+    url = "page/about/"
     weight = 4
