@@ -27,7 +27,7 @@ The University has been updating their course scheduling from an onsite instance
 
 ### Timeline
 
-I came up with the idea for this project around April 18th, 2018, after talking to some colleagues about transitioning other internal tools that leveraged the local SQL database over to the R25 web service after the system transitioned to the cloud. Our department had recently been granted access to the web service, and I had spent the earlier part of the month translating Python scripts that had been digesting local SQL results to talking to the R25 web service and digesting XML instead. I spent about a week researching the possible integrations between Slack and external apps, and decided to use a Slack Slash Command for the integration's implementation.
+I came up with the idea for this project around April 18th, 2018, after talking to some colleagues about transitioning other internal tools that leveraged the local SQL database over to the R25 web service after the system transitioned to the cloud. Our department had recently been granted access to the web service, and I had spent the earlier part of the month translating Python scripts that had been digesting local SQL results to talking to the R25 web service and digesting XML instead. I spent about a week researching the possible integrations between Slack and external apps, and decided to use a Slack Slash Command for the integration's implementation. The first version of the app was released on May 4th.
 
 ## Implementation
 
