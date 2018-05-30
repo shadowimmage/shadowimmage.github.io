@@ -46,7 +46,7 @@ Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for condit
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous" />
 
 
-<link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
+<link href='https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
 
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Neuton" rel="stylesheet"> 
 
@@ -124,8 +124,17 @@ ga('send', 'pageview');
       <ul class="nav navbar-nav navbar-right">
         
           
-            <li>
-              <a title="Blog" href="/post/">Blog</a>
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Blog</a>
+              <div class="navlinks-children">
+                
+                  <a href="/post/">All Posts</a>
+                
+                  <a href="/tags">Tags</a>
+                
+                  <a href="/search">Search</a>
+                
+              </div>
             </li>
           
         
@@ -138,13 +147,9 @@ ga('send', 'pageview');
                 
                   <a href="/project/dustcollector">Dust Collector CAD (UW)</a>
                 
+                  <a href="/tags/project/">All Projects</a>
+                
               </div>
-            </li>
-          
-        
-          
-            <li>
-              <a title="About" href="/page/about/">About</a>
             </li>
           
         
@@ -156,7 +161,7 @@ ga('send', 'pageview');
         
           
             <li>
-              <a title="Tags" href="/tags">Tags</a>
+              <a title="About" href="/page/about/">About</a>
             </li>
           
         
@@ -394,6 +399,7 @@ Can I catch this / use markdownlint in CircleCI builds?</p>
   </div>
 </div>
 
+        
         <footer>
   <div class="container">
     <div class="row">
