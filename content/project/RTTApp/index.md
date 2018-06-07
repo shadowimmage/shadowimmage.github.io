@@ -16,7 +16,7 @@ RTT is a full stack app that addresses the needs of a computer hardware manageme
 
 ### Developement Status
 
-This project is ongoing development. Project details are in the project [readme][1].
+This project is ongoing development. Progress details are in the project [readme][1].
 
 ## Technologies
 
@@ -26,5 +26,10 @@ RTT is a single-page-app built in Vue.js and served from a Python/Django server 
 
 The backend database schema has been completed; the frontend is still under development. The latest snapshot is live on [heroku][2].
 
+{{< gallery >}}
+{{< figure src="images/issues.png" caption="Display of all open issues in the database" >}}
+{{< figure src="images/IssueDetail.png" caption="Detail page and update fields for selected issue" >}}
+{{< /gallery >}}
+
 [1]: https://github.com/shadowimmage/django-server-apps#development-info---rttapp
-[2]: 
+[2]: https://chase-sawyer-demos.herokuapp.com/rttApp/

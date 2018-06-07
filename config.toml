@@ -92,9 +92,21 @@ enableEmoji = true
 
 [[menu.main]]
     parent = "projects"
+    name = "Keys App"
+    url = "project/keysapp"
+    weight = 3
+    
+[[menu.main]]
+    parent = "projects"
+    name = "RTT App"
+    url = "project/rttapp"
+    weight = 4
+
+[[menu.main]]
+    parent = "projects"
     name = "Dust Collector CAD (UW)"
     url = "project/dustcollector"
-    weight = 3
+    weight = 50
     
 [[menu.main]]
     parent = "projects"
