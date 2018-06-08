@@ -1,6 +1,6 @@
 ---
 title: About Me
-subtitle: Who Else?
+subtitle:
 comments: false
 draft: false
 ---
@@ -10,6 +10,8 @@ draft: false
 I'm a person living in Seattle, Washington where I work for Classroom Technology & Events (CTE) at the University of Washington.
 
 My interests are manifold, from art to computer science. I've built my skill set from a position of curiosity, using an analytical approach to problems and their possible solutions, always researching what I don't know. I love to learn. I solve difficult problems by combining my learning and experience into novel approaches and solutions.
+
+I'm really interested in security, privacy, and ensuring that data is protected. Encryption is fascinating and I think that it should be accessible and usable by everyone to protect themselves and their data. I also love diving into data and using it to build automation and business intelligence tools.
 
 ## :hammer_and_wrench: Skills
 
@@ -44,7 +46,7 @@ Create business intelligence solutions and tools, informing service improvement.
 {{< /experience >}}
 
 {{% experience datadir="resume" data="experience_meta" section="pss" %}}
-Managed a team of help desk analysts, including hiring and training. Performed Tier 2 and 3 support and maintenance of HD AV Systems adn infrastructure while providing excellent customer support and service. Certified in Biamp Audio DSPs and Crestron DigitalMedia.
+Managed a team of help desk analysts, including hiring and training. Performed Tier 2 and 3 support and maintenance of HD AV Systems and infrastructure while providing excellent customer support and service. Certified in Biamp Audio DSPs and Crestron DigitalMedia.
 {{% /experience %}}
 
 {{< experience datadir="resume" data="experience_meta" section="lhda" >}}
@@ -59,11 +61,19 @@ Undergraduate degree culminating in a synthesis of computer science and art in t
 Coursework involved (but was not limited to) CS fundamentals, data structures and algorithms, networking, databases, studio art, sculpture, and acoustics.
 {{< /experience >}}
 
+## <i class="far fa-id-badge"></i> Certificates
+
+{{< experience datadir="resume" data="experience_meta" section="fcc-api" >}}
+Experience building APIs and Microservices. Check out my samples and projects sections for examples.
+<br/>
+<a href="https://www.freecodecamp.org/certification/shadowimmage/apis-and-microservices" target="blank">Free Code Camp Certificate</a>
+{{< /experience >}}
+
 ## Additional Details
 
 [<button style="background-color:#0077b5" type="button" class="btn btn-primary">Check me out on Linkedin&nbsp;&nbsp;<span style="vertical-align:middle"><i class="fab fa-linkedin github-button"></i></span></button>][1]
 
-[1]: "www.linkedin.com/in/chase-sawyer"
+[1]: https://www.linkedin.com/in/chase-sawyer
 
 
 <!-- scraps and other junk

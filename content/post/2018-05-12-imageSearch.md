@@ -8,7 +8,7 @@ publishDate:
 tags: [sample, freecodecamp, javascript, mongodb, demo]
 keywords: [code, freecodecamp, javascript, mongodb, js]
 type: "post"
-draft: true
+draft: false
 ---
 
 This microservice creates an abstraction layer (and history) between the user and the Google Images search API.

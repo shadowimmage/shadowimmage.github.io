@@ -26,5 +26,12 @@
         "start": "2008",
         "end": "2013",
         "location": "Seattle, WA"
+    },
+    "fcc-api": {
+        "title": "APIs and Microservices",
+        "subtitle": "Free Code Camp",
+        "start": null,
+        "end": 2018,
+        "location": null
     }
 }

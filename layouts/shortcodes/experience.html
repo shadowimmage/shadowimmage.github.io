@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-3 exp-right">
             <div class="dates">
-                <span class="exp-dates">{{ .start }} - {{ .end }}</span>
+                <span class="exp-dates">{{ if .start }}{{ .start }} - {{ end }}{{ .end }}</span>
             </div>
             <div class="location">
                 <span class="exp-location">{{ .location }}</span>

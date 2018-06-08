@@ -11,8 +11,6 @@ type: "post"
 draft: true
 ---
 
-## Description
-
 text
 
 ## Code
