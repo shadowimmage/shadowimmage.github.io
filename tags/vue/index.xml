@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on Chase Sawyer</title>
+    <link>https://shadowimmage.github.io/tags/vue/</link>
+    <description>Recent content in Vue on Chase Sawyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
+    <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
+    <lastBuildDate>Wed, 30 May 2018 10:06:45 -0700</lastBuildDate>
+    
+	<atom:link href="https://shadowimmage.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RTTApp</title>
+      <link>https://shadowimmage.github.io/project/rttapp/</link>
+      <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/project/rttapp/</guid>
+      <description>Repair Task Tracker RTT is a full stack app that addresses the needs of a computer hardware management process, allowing the tracking and resolution of issues/problems with the hardware, as well as the configuration and components of each major hardware item. RTT is meant to be a back-of-house tool, replacing paper tickets and spreadsheets. The goal of this project was to implement a GraphQL app, with useful data, allowing a seamless user experience as they operate through the app, and data is downloaded and uploaded in the background.</description>
+    </item>
+    
+  </channel>
+</rss>

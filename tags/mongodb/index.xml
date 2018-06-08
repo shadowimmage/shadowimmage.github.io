@@ -8,10 +8,21 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Sat, 12 May 2018 18:13:23 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 12 May 2018 18:50:14 -0700</lastBuildDate>
     
 	<atom:link href="https://shadowimmage.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Image Search Abstraction Layer</title>
+      <link>https://shadowimmage.github.io/post/2018-05-12-imagesearch/</link>
+      <pubDate>Sat, 12 May 2018 18:50:14 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-12-imagesearch/</guid>
+      <description>&lt;p&gt;This microservice creates an abstraction layer (and history) between the user and the Google Images search API.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Url Shortener Microservice</title>

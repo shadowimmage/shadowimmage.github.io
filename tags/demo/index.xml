@@ -8,10 +8,19 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Sat, 12 May 2018 19:05:29 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 30 May 2018 10:01:41 -0700</lastBuildDate>
     
 	<atom:link href="https://shadowimmage.github.io/tags/demo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>KeysApp</title>
+      <link>https://shadowimmage.github.io/project/keysapp/</link>
+      <pubDate>Wed, 30 May 2018 10:01:41 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/project/keysapp/</guid>
+      <description>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university&amp;rsquo;s AV department and it&amp;rsquo;s instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can&amp;rsquo;t be checked out twice; etc.</description>
+    </item>
     
     <item>
       <title>File Metadata Microservice</title>
@@ -20,6 +29,17 @@
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</guid>
       <description>&lt;p&gt;Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Image Search Abstraction Layer</title>
+      <link>https://shadowimmage.github.io/post/2018-05-12-imagesearch/</link>
+      <pubDate>Sat, 12 May 2018 18:50:14 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-12-imagesearch/</guid>
+      <description>&lt;p&gt;This microservice creates an abstraction layer (and history) between the user and the Google Images search API.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Certificate on Chase Sawyer</title>
+    <link>https://shadowimmage.github.io/tags/certificate/</link>
+    <description>Recent content in Certificate on Chase Sawyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
+    <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
+    <lastBuildDate>Tue, 05 Jun 2018 23:04:02 -0700</lastBuildDate>
+    
+	<atom:link href="https://shadowimmage.github.io/tags/certificate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New Free Code Camp Cert</title>
+      <link>https://shadowimmage.github.io/post/2018-06-05-new_free_code_camp_cert/</link>
+      <pubDate>Tue, 05 Jun 2018 23:04:02 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-06-05-new_free_code_camp_cert/</guid>
+      <description>I got my back-end (now API and Microservice) cert today from Free Code Camp! https://www.freecodecamp.org/certification/shadowimmage/apis-and-microservices Hooray!
+It&amp;rsquo;s been a year since I started working through the Free Code Camp curriculum, and it feels good to finally have finished the API work. I feel like I have a pretty solid grasp now on how to build and arrange an API, which I hope will help me in the future when I try to do more API work.</description>
+    </item>
+    
+  </channel>
+</rss>

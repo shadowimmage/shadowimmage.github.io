@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nonesense on Chase Sawyer</title>
+    <link>https://shadowimmage.github.io/tags/nonesense/</link>
+    <description>Recent content in Nonesense on Chase Sawyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
+    <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
+    <lastBuildDate>Wed, 06 Jun 2018 20:43:45 -0700</lastBuildDate>
+    
+	<atom:link href="https://shadowimmage.github.io/tags/nonesense/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Code Editors vs. Word Processors</title>
+      <link>https://shadowimmage.github.io/post/2018-06-06_code_editors_vs_word_processors/</link>
+      <pubDate>Wed, 06 Jun 2018 20:43:45 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-06-06_code_editors_vs_word_processors/</guid>
+      <description>Word processors are great for creating documents with a lot of rich formatting, but all that stuff can be a huge distraction. Code editors on the other hand are amazingly good for writing - the writing where the only thing that actually matters is the content, and not the format.
+While it&amp;rsquo;s probably been hashed out and written about a lot by other people, the one thing, the killer aspect of it for me, is the ability to scroll the page down, so that whenever you want, you can always return to that feeling of having a blank canvas to write upon.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -8,10 +8,30 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Fri, 18 May 2018 14:45:08 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jun 2018 20:43:45 -0700</lastBuildDate>
     
 	<atom:link href="https://shadowimmage.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Code Editors vs. Word Processors</title>
+      <link>https://shadowimmage.github.io/post/2018-06-06_code_editors_vs_word_processors/</link>
+      <pubDate>Wed, 06 Jun 2018 20:43:45 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-06-06_code_editors_vs_word_processors/</guid>
+      <description>Word processors are great for creating documents with a lot of rich formatting, but all that stuff can be a huge distraction. Code editors on the other hand are amazingly good for writing - the writing where the only thing that actually matters is the content, and not the format.
+While it&amp;rsquo;s probably been hashed out and written about a lot by other people, the one thing, the killer aspect of it for me, is the ability to scroll the page down, so that whenever you want, you can always return to that feeling of having a blank canvas to write upon.</description>
+    </item>
+    
+    <item>
+      <title>New Free Code Camp Cert</title>
+      <link>https://shadowimmage.github.io/post/2018-06-05-new_free_code_camp_cert/</link>
+      <pubDate>Tue, 05 Jun 2018 23:04:02 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-06-05-new_free_code_camp_cert/</guid>
+      <description>I got my back-end (now API and Microservice) cert today from Free Code Camp! https://www.freecodecamp.org/certification/shadowimmage/apis-and-microservices Hooray!
+It&amp;rsquo;s been a year since I started working through the Free Code Camp curriculum, and it feels good to finally have finished the API work. I feel like I have a pretty solid grasp now on how to build and arrange an API, which I hope will help me in the future when I try to do more API work.</description>
+    </item>
     
     <item>
       <title>Logo Design</title>
@@ -29,6 +49,17 @@
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</guid>
       <description>&lt;p&gt;Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Image Search Abstraction Layer</title>
+      <link>https://shadowimmage.github.io/post/2018-05-12-imagesearch/</link>
+      <pubDate>Sat, 12 May 2018 18:50:14 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-05-12-imagesearch/</guid>
+      <description>&lt;p&gt;This microservice creates an abstraction layer (and history) between the user and the Google Images search API.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

@@ -23,6 +23,15 @@
     </item>
     
     <item>
+      <title>Apollo</title>
+      <link>https://shadowimmage.github.io/tags/apollo/</link>
+      <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/tags/apollo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Aws</title>
       <link>https://shadowimmage.github.io/tags/aws/</link>
       <pubDate>Wed, 02 May 2018 21:24:58 -0700</pubDate>
@@ -34,9 +43,18 @@
     <item>
       <title>Blog</title>
       <link>https://shadowimmage.github.io/tags/blog/</link>
-      <pubDate>Thu, 10 May 2018 08:45:29 -0700</pubDate>
+      <pubDate>Wed, 06 Jun 2018 20:43:45 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Certificate</title>
+      <link>https://shadowimmage.github.io/tags/certificate/</link>
+      <pubDate>Tue, 05 Jun 2018 23:04:02 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/tags/certificate/</guid>
       <description></description>
     </item>
     
@@ -52,9 +70,18 @@
     <item>
       <title>Demo</title>
       <link>https://shadowimmage.github.io/tags/demo/</link>
-      <pubDate>Sat, 12 May 2018 19:05:29 -0700</pubDate>
+      <pubDate>Wed, 30 May 2018 10:01:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/tags/demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>https://shadowimmage.github.io/tags/django/</link>
+      <pubDate>Wed, 30 May 2018 10:01:41 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/tags/django/</guid>
       <description></description>
     </item>
     
@@ -95,6 +122,24 @@
     </item>
     
     <item>
+      <title>Graphene</title>
+      <link>https://shadowimmage.github.io/tags/graphene/</link>
+      <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/tags/graphene/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graphql</title>
+      <link>https://shadowimmage.github.io/tags/graphql/</link>
+      <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/tags/graphql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gui</title>
       <link>https://shadowimmage.github.io/tags/gui/</link>
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
@@ -113,6 +158,15 @@
     </item>
     
     <item>
+      <title>Heroku</title>
+      <link>https://shadowimmage.github.io/tags/heroku/</link>
+      <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/tags/heroku/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Hugo</title>
       <link>https://shadowimmage.github.io/tags/hugo/</link>
       <pubDate>Fri, 18 May 2018 14:45:08 -0700</pubDate>
@@ -124,7 +178,7 @@
     <item>
       <title>Javascript</title>
       <link>https://shadowimmage.github.io/tags/javascript/</link>
-      <pubDate>Sat, 12 May 2018 19:05:29 -0700</pubDate>
+      <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/tags/javascript/</guid>
       <description></description>
@@ -160,9 +214,18 @@
     <item>
       <title>Mongodb</title>
       <link>https://shadowimmage.github.io/tags/mongodb/</link>
-      <pubDate>Sat, 12 May 2018 18:13:23 -0700</pubDate>
+      <pubDate>Sat, 12 May 2018 18:50:14 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nonesense</title>
+      <link>https://shadowimmage.github.io/tags/nonesense/</link>
+      <pubDate>Wed, 06 Jun 2018 20:43:45 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/tags/nonesense/</guid>
       <description></description>
     </item>
     
@@ -178,16 +241,25 @@
     <item>
       <title>Post</title>
       <link>https://shadowimmage.github.io/tags/post/</link>
-      <pubDate>Fri, 18 May 2018 14:45:08 -0700</pubDate>
+      <pubDate>Wed, 06 Jun 2018 20:43:45 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/tags/post/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Postgresql</title>
+      <link>https://shadowimmage.github.io/tags/postgresql/</link>
+      <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Project</title>
       <link>https://shadowimmage.github.io/tags/project/</link>
-      <pubDate>Wed, 02 May 2018 21:24:58 -0700</pubDate>
+      <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/tags/project/</guid>
       <description></description>
@@ -196,7 +268,7 @@
     <item>
       <title>Python</title>
       <link>https://shadowimmage.github.io/tags/python/</link>
-      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/tags/python/</guid>
       <description></description>
@@ -241,7 +313,7 @@
     <item>
       <title>Update</title>
       <link>https://shadowimmage.github.io/tags/update/</link>
-      <pubDate>Fri, 18 May 2018 14:45:08 -0700</pubDate>
+      <pubDate>Tue, 05 Jun 2018 23:04:02 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/tags/update/</guid>
       <description></description>
@@ -253,6 +325,15 @@
       <pubDate>Wed, 02 May 2018 21:24:58 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/tags/uw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>https://shadowimmage.github.io/tags/vue/</link>
+      <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/tags/vue/</guid>
       <description></description>
     </item>
     
