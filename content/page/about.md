@@ -1,6 +1,6 @@
 ---
-title: About me
-subtitle: A brief Summary
+title: About Me
+subtitle: Who Else?
 comments: false
 draft: false
 ---
@@ -9,7 +9,7 @@ draft: false
 
 I'm a person living in Seattle, Washington where I work for Classroom Technology & Events (CTE) at the University of Washington.
 
-My interests are manifold, from art to computer science. I've built my skillset from a position of curiosity, using an analytical approach to problems and their possible solutions, always researching what I don't know. I love to learn. I solve difficult problems by combining my learning and experience into novel approaches and solutions.
+My interests are manifold, from art to computer science. I've built my skill set from a position of curiosity, using an analytical approach to problems and their possible solutions, always researching what I don't know. I love to learn. I solve difficult problems by combining my learning and experience into novel approaches and solutions.
 
 ## :hammer_and_wrench: Skills
 
@@ -66,7 +66,8 @@ Coursework involved (but was not limited to) CS fundamentals, data structures an
 [1]: "www.linkedin.com/in/chase-sawyer"
 
 
-<!-- 
+<!-- scraps and other junk
+
 Development of both commercial and open source software applications and database systems that generate complex metrics and reports used by CTE and UW-IT management and other high level staff throughout the organization.
 
 Manage and maintain 500+ desktop and laptop computers used in classrooms and by departmental staff. Provide technical evaluation, installation, maintenance and support of integrated classroom technology systems and related components. Provide Tier 2 support and perform configuration, diagnostic, repair, and testing functions.
