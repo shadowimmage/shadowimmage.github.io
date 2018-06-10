@@ -10,13 +10,13 @@ draft: false
 shareOff: false
 ---
 
-This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with filesystems and path resolution.
+This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.
 
 When static file loaders can't or don't load something, it's often not called  out as an error because when you tell the computer where the static files are, it doesn't make any assumptions about the contents there. And later on when you're trying to load your custom CSS or images and getting nothing loaded, and quiet browser 404 errors for the resource, but not the page overall, the result can be a maddening series of digging into documentation that doesn't often make clear the particulars of path names and how a single dot or slash can make all the difference in the world between success and failure.
 
 ## File Paths
 
-A path to a file on a computer, and to an extent, a path to a resource on the internet looks like this: `/rootDirectory/subDirectory/file` with the `file` part usually having some kind of type after a dot, such as `.txt` or `.exe`. For Windows users, the beginning will have a drive letter at the beginning, most commonly C: `C:\\rootDirectory\\subDirectory\\file`.
+A path to a file on a computer, and to an extent, a path to a resource on the internet looks like this: `/rootDirectory/subDirectory/file` with the `file` part usually having some kind of type after a dot, such as `.txt` or `.exe`. For Windows users, the beginning will have a drive letter at the beginning, most commonly C: `C:\rootDirectory\subDirectory\file`.
 
 What happened to me, and I'm sure has happened to others - such as the individual I was talking to this week - is that nothing in the documentation about static paths goes deeply into path resolution. I guess it's just kind of assumed that you as the developer in control of things should know what's happening in the background, but many do not.
 
@@ -28,7 +28,7 @@ When you give Node a path such as `'public'`, a function goes through and makes 
 
 So, what is the difference between `'public'`, `'/public'`, and `'./public'`?
 
-The first and the last actually resolve to the same destination: _relative_ to the current working directory, find a directory called 'public' and serve the contents as static files. However, the second example resolves to something else entirely: find a directory called 'public' at the _root_ of the file system. Or more explicitly: instead of resolving to `/rootDirectory/subDirectory/project/public/` it will resolve to `/public/`. Or in Windows,  `C:\\public\\`
+The first and the last actually resolve to the same destination: _relative_ to the current working directory, find a directory called 'public' and serve the contents as static files. However, the second example resolves to something else entirely: find a directory called 'public' at the _root_ of the file system. Or more explicitly: instead of resolving to `/rootDirectory/subDirectory/project/public/` it will resolve to `/public/`. Or in Windows,  `C:\public\`
 
 When path.js (in Node) runs through resolve() for a given path name, there's this comment in the function:
 
