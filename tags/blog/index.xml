@@ -8,10 +8,19 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Wed, 06 Jun 2018 20:43:45 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 09 Jun 2018 18:52:55 -0700</lastBuildDate>
     
 	<atom:link href="https://shadowimmage.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>File Paths in Node</title>
+      <link>https://shadowimmage.github.io/post/2018-06-09-paths_in_node/</link>
+      <pubDate>Sat, 09 Jun 2018 18:52:55 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-06-09-paths_in_node/</guid>
+      <description>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with filesystems and path resolution.</description>
+    </item>
     
     <item>
       <title>Code Editors vs. Word Processors</title>

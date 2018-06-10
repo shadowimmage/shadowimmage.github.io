@@ -8,10 +8,25 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Sat, 12 May 2018 19:05:29 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jun 2018 18:20:43 -0700</lastBuildDate>
     
 	<atom:link href="https://shadowimmage.github.io/tags/freecodecamp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exercise Tracker Full-Stack App</title>
+      <link>https://shadowimmage.github.io/post/2018-06-08-exercisetracker/</link>
+      <pubDate>Fri, 08 Jun 2018 18:20:43 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-06-08-exercisetracker/</guid>
+      <description>&lt;p&gt;This project involved setting up a couple MongoDB collections and then building a responsive frontend for user interaction. This app allows adding users by name, then using that user&amp;rsquo;s ID to add activities. The API allows for querying for user activities by user ID as well.&lt;/p&gt;
+
+&lt;p&gt;The UI uses a pug template and bootstrap for most styling, and some custom css rules to fine tune elements.&lt;/p&gt;
+
+&lt;p&gt;This was actually the first project that I completed out of the new Free Code Camp curriculum, and replaced the previous Google Image Search Abstraction project that I had already completed previously.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>File Metadata Microservice</title>
