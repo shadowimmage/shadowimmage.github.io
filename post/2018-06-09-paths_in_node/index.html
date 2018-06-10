@@ -221,7 +221,7 @@ ga('send', 'pageview');
   
   
   &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 4 minutes (724 words)
+  <i class="fa fa-clock-o"></i> 4 minutes (725 words)
   
   
 </span>
@@ -243,13 +243,13 @@ ga('send', 'pageview');
       <article role="main" class="blog-post">
         
 
-<p>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with filesystems and path resolution.</p>
+<p>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.</p>
 
 <p>When static file loaders can&rsquo;t or don&rsquo;t load something, it&rsquo;s often not called  out as an error because when you tell the computer where the static files are, it doesn&rsquo;t make any assumptions about the contents there. And later on when you&rsquo;re trying to load your custom CSS or images and getting nothing loaded, and quiet browser 404 errors for the resource, but not the page overall, the result can be a maddening series of digging into documentation that doesn&rsquo;t often make clear the particulars of path names and how a single dot or slash can make all the difference in the world between success and failure.</p>
 
 <h2 id="file-paths">File Paths</h2>
 
-<p>A path to a file on a computer, and to an extent, a path to a resource on the internet looks like this: <code>/rootDirectory/subDirectory/file</code> with the <code>file</code> part usually having some kind of type after a dot, such as <code>.txt</code> or <code>.exe</code>. For Windows users, the beginning will have a drive letter at the beginning, most commonly C: <code>C:\\rootDirectory\\subDirectory\\file</code>.</p>
+<p>A path to a file on a computer, and to an extent, a path to a resource on the internet looks like this: <code>/rootDirectory/subDirectory/file</code> with the <code>file</code> part usually having some kind of type after a dot, such as <code>.txt</code> or <code>.exe</code>. For Windows users, the beginning will have a drive letter at the beginning, most commonly C: <code>C:\rootDirectory\subDirectory\file</code>.</p>
 
 <p>What happened to me, and I&rsquo;m sure has happened to others - such as the individual I was talking to this week - is that nothing in the documentation about static paths goes deeply into path resolution. I guess it&rsquo;s just kind of assumed that you as the developer in control of things should know what&rsquo;s happening in the background, but many do not.</p>
 
@@ -261,7 +261,7 @@ ga('send', 'pageview');
 
 <p>So, what is the difference between <code>'public'</code>, <code>'/public'</code>, and <code>'./public'</code>?</p>
 
-<p>The first and the last actually resolve to the same destination: <em>relative</em> to the current working directory, find a directory called &lsquo;public&rsquo; and serve the contents as static files. However, the second example resolves to something else entirely: find a directory called &lsquo;public&rsquo; at the <em>root</em> of the file system. Or more explicitly: instead of resolving to <code>/rootDirectory/subDirectory/project/public/</code> it will resolve to <code>/public/</code>. Or in Windows,  <code>C:\\public\\</code></p>
+<p>The first and the last actually resolve to the same destination: <em>relative</em> to the current working directory, find a directory called &lsquo;public&rsquo; and serve the contents as static files. However, the second example resolves to something else entirely: find a directory called &lsquo;public&rsquo; at the <em>root</em> of the file system. Or more explicitly: instead of resolving to <code>/rootDirectory/subDirectory/project/public/</code> it will resolve to <code>/public/</code>. Or in Windows,  <code>C:\public\</code></p>
 
 <p>When path.js (in Node) runs through resolve() for a given path name, there&rsquo;s this comment in the function:</p>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/* Lines 201 - 206 of path.js */</span>
