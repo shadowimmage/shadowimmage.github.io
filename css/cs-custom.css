@@ -3,6 +3,18 @@
     display: inline;
 }
 
+/* NAV Overrides */
+
+a.navexpand-custom {
+    display: inline !important;
+    padding: 10px !important;
+}
+
+a.navexpand-parent-custom {
+    display: inline-block !important;
+    padding-right: 0px !important;
+}
+
 /* Site font overrides */
 
 body {
