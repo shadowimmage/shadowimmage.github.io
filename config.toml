@@ -54,12 +54,13 @@ enableEmoji = true
     name = "Blog"
     identifier = "blog"
     weight = 1
+    url = "post/"
 
 [[menu.main]]
     parent = "blog"
     name = "All Posts"
     url = "post/"
-    weight = 1
+    weight = 99
 
 [[menu.main]]
     parent = "blog"
@@ -77,6 +78,7 @@ enableEmoji = true
     identifier = "projects"
     name = "Projects"
     weight = 2
+    url = "tags/project/"
 
 [[menu.main]]
     parent = "projects"
