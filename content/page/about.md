@@ -7,7 +7,7 @@ draft: false
 
 ## Summary
 
-I'm a person living in Seattle, Washington where I work for Classroom Technology & Events (CTE) at the University of Washington.
+I'm a software engineer living in Seattle, Washington, currently working for Classroom Technology & Events (CTE) at the University of Washington.
 
 My interests are manifold, from art to computer science. I've built my skill set from a position of curiosity, using an analytical approach to problems and their possible solutions, always researching what I don't know. I love to learn. I solve difficult problems by combining my learning and experience into novel approaches and solutions.
 
