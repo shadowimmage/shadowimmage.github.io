@@ -23,6 +23,11 @@
             "link": "https://www.python.org/"
         },
         {
+            "skill": "Java",
+            "fa_icon": "fab fa-java",
+            "link": null
+        },
+        {
             "skill": "Javascript",
             "fa_icon": "fab fa-js-square",
             "link": null
@@ -50,6 +55,11 @@
         {
             "skill": "Windows",
             "fa_icon": "fab fa-windows",
+            "link": null
+        },
+        {
+            "skill": "Arduino",
+            "fa_icon": null,
             "link": null
         }
     ],
