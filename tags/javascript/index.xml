@@ -8,10 +8,19 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Sat, 09 Jun 2018 18:52:55 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jun 2018 13:04:19 -0700</lastBuildDate>
     
 	<atom:link href="https://shadowimmage.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Debugging Node Applications</title>
+      <link>https://shadowimmage.github.io/post/2018-06-11-debugging-node-applications/</link>
+      <pubDate>Mon, 11 Jun 2018 13:04:19 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-06-11-debugging-node-applications/</guid>
+      <description>When developing an application or project with Node.js, debugging is an important aspect to getting to the bottom of issues. If you use an IDE (integrated development environment) or code editor that has built-in or supported debugging capacities, such as Visual Studio Code, then you have that ability already. But if you are someone who&amp;rsquo;s developing with a more basic code editor - such as Sublime Text, then you can still debug your Node.</description>
+    </item>
     
     <item>
       <title>File Paths in Node</title>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://shadowimmage.github.io/post/2018-06-11-debugging-node-applications/</loc>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://shadowimmage.github.io/post/2018-06-09-paths_in_node/</loc>
     <lastmod>2018-06-09T18:52:55-07:00</lastmod>
   </url>
@@ -99,7 +104,7 @@
   
   <url>
     <loc>https://shadowimmage.github.io/</loc>
-    <lastmod>2018-06-09T18:52:55-07:00</lastmod>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -126,7 +131,7 @@
   
   <url>
     <loc>https://shadowimmage.github.io/tags/blog/</loc>
-    <lastmod>2018-06-09T18:52:55-07:00</lastmod>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -149,7 +154,7 @@
   
   <url>
     <loc>https://shadowimmage.github.io/tags/debugging/</loc>
-    <lastmod>2018-06-09T18:52:55-07:00</lastmod>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -239,7 +244,7 @@
   
   <url>
     <loc>https://shadowimmage.github.io/tags/javascript/</loc>
-    <lastmod>2018-06-09T18:52:55-07:00</lastmod>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -269,7 +274,7 @@
   
   <url>
     <loc>https://shadowimmage.github.io/tags/node/</loc>
-    <lastmod>2018-06-09T18:52:55-07:00</lastmod>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -292,7 +297,7 @@
   
   <url>
     <loc>https://shadowimmage.github.io/tags/post/</loc>
-    <lastmod>2018-06-09T18:52:55-07:00</lastmod>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -304,7 +309,7 @@
   
   <url>
     <loc>https://shadowimmage.github.io/post/</loc>
-    <lastmod>2018-06-09T18:52:55-07:00</lastmod>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
