@@ -7,9 +7,11 @@ draft: false
 
 ## Summary
 
-I'm a software engineer living in Seattle, Washington, currently working for Classroom Technology & Events (CTE) at the University of Washington.
+{{< text_cycle >}}
 
-My interests are manifold, from art to computer science. I've built my skill set from a position of curiosity, using an analytical approach to problems and their possible solutions, always researching what I don't know. I love to learn. I solve difficult problems by combining my learning and experience into novel approaches and solutions.
+I'm a software engineer living in Seattle, Washington, currently working for Academic Technologies at the University of Washington.
+
+My interests span across industries and disciplines, from art to computer science, and games to business intelligence. I've built my skill set from a position of curiosity, using an analytical approach to problems and their possible solutions, always learning whenever I have the opportunity. I love to learn. I solve difficult problems by combining my learning and experience into novel approaches and solutions.
 
 I'm really interested in security, privacy, and ensuring that data is protected. Encryption is fascinating and I think that it should be accessible and usable by everyone to protect themselves and their data. I also love diving into data and using it to build automation and business intelligence tools.
 

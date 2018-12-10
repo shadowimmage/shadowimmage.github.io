@@ -49,7 +49,7 @@
         },
         {
             "skill": "Linux",
-            "fa_icon": "fab fa-linux",
+            "fa_icon": "devicon-linux-plain",
             "link": null
         },
         {
@@ -59,8 +59,8 @@
         },
         {
             "skill": "Arduino",
-            "fa_icon": null,
-            "link": null
+            "fa_icon": "fas fa-cogs",
+            "link": "https://www.arduino.cc/"
         }
     ],
     "frameworks": [
@@ -76,25 +76,30 @@
         },
         {
             "skill": "Django",
-            "fa_icon": "devicons devicons-django",
+            "fa_icon": "devicon-django-line",
             "link": "https://www.djangoproject.com/"
         }
     ],
     "databases": [
         {
             "skill": "MySQL",
-            "fa_icon": "devicons devicons-mysql",
+            "fa_icon": "devicon-mysql-plain",
             "link": null
         },
         {
             "skill": "MongoDB",
-            "fa_icon": "devicons devicons-mongodb",
+            "fa_icon": "devicon-mongodb-plain",
             "link": "https://www.mongodb.com/"
         },
         {
             "skill": "SQL Server",
             "fa_icon": "devicons devicons-msql_server",
             "link": null
+        },
+        {
+            "skill": "PostgreSQL",
+            "fa_icon": "devicon-postgresql-plain",
+            "link": "https://www.postgresql.org/"
         },
         {
             "skill": "GraphQL",
@@ -109,8 +114,13 @@
             "link": "https://aws.amazon.com/"
         },
         {
+            "skill": "Google Cloud Platform",
+            "fa_icon": "devicon-google-plain",
+            "link": "https://cloud.google.com/"
+        },
+        {
             "skill": "Heroku",
-            "fa_icon": "devicons devicons-heroku",
+            "fa_icon": "devicon-heroku-original",
             "link": "https://www.heroku.com/"
         },
         {
