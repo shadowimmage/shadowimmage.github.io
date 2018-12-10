@@ -8,10 +8,23 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Mon, 11 Jun 2018 13:04:19 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 20 Oct 2018 19:06:53 -0700</lastBuildDate>
     
 	<atom:link href="https://shadowimmage.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Long Time Update; New Projects</title>
+      <link>https://shadowimmage.github.io/post/2018-10-29-long-time-update/</link>
+      <pubDate>Sat, 20 Oct 2018 19:06:53 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-10-29-long-time-update/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Author&amp;rsquo;s Note: this post has taken a long time to get written - so long, that I already have my 2018 Hactoberfest t-shirt and stickers! It&amp;rsquo;s content spans mid-October through December. I&amp;rsquo;ve done my best to make it a cohesive whole.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Debugging Node Applications</title>
@@ -225,8 +238,8 @@ Here is the Gemfile content for this page when I first started and got things wo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://shadowimmage.github.io/page/about/</guid>
-      <description>Summary I&amp;rsquo;m a software engineer living in Seattle, Washington, currently working for Classroom Technology &amp;amp; Events (CTE) at the University of Washington.
-My interests are manifold, from art to computer science. I&amp;rsquo;ve built my skill set from a position of curiosity, using an analytical approach to problems and their possible solutions, always researching what I don&amp;rsquo;t know. I love to learn. I solve difficult problems by combining my learning and experience into novel approaches and solutions.</description>
+      <description>Summary   Hello   I&amp;rsquo;m a software engineer living in Seattle, Washington, currently working for Academic Technologies at the University of Washington.
+My interests span across industries and disciplines, from art to computer science, and games to business intelligence. I&amp;rsquo;ve built my skill set from a position of curiosity, using an analytical approach to problems and their possible solutions, always learning whenever I have the opportunity. I love to learn.</description>
     </item>
     
     <item>

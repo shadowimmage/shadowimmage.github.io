@@ -8,10 +8,23 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Tue, 05 Jun 2018 23:04:02 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 20 Oct 2018 19:06:53 -0700</lastBuildDate>
     
 	<atom:link href="https://shadowimmage.github.io/tags/update/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Long Time Update; New Projects</title>
+      <link>https://shadowimmage.github.io/post/2018-10-29-long-time-update/</link>
+      <pubDate>Sat, 20 Oct 2018 19:06:53 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://shadowimmage.github.io/post/2018-10-29-long-time-update/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Author&amp;rsquo;s Note: this post has taken a long time to get written - so long, that I already have my 2018 Hactoberfest t-shirt and stickers! It&amp;rsquo;s content spans mid-October through December. I&amp;rsquo;ve done my best to make it a cohesive whole.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>New Free Code Camp Cert</title>
