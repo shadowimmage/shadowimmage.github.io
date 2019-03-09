@@ -1,4 +1,4 @@
-baseURL = "https://shadowimmage.github.io/"
+baseURL = "https://chasesawyer.dev/"
 languageCode = "en-us"
 title = "Chase Sawyer"
 theme = "beautifulhugo"
@@ -22,7 +22,7 @@ enableEmoji = true
 
 [Author]
   name = "Chase Sawyer"
-  website = "https://shadowimmage.github.io"
+  website = "https://chasesawyer.dev"
   email = "shadowimmage@gmail.com"
 #   facebook = "username"
 #   googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
@@ -122,6 +122,6 @@ enableEmoji = true
     weight = 3
 
 [[menu.main]]
-    name = "About"
+    name = "About / CV"
     url = "page/about/"
     weight = 4
