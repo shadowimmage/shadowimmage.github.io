@@ -2,23 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Django on Chase Sawyer</title>
-    <link>https://shadowimmage.github.io/tags/django/</link>
+    <link>https://chasesawyer.dev/tags/django/</link>
     <description>Recent content in Django on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Wed, 30 May 2018 10:01:41 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 21 Feb 2019 09:26:35 -0800</lastBuildDate>
     
-	<atom:link href="https://shadowimmage.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Maintaining Older Django and Python Projects</title>
+      <link>https://chasesawyer.dev/post/2019-02-21-updating_older_django_and_python_projects/</link>
+      <pubDate>Thu, 21 Feb 2019 09:26:35 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/post/2019-02-21-updating_older_django_and_python_projects/</guid>
+      <description>I have been working on the backend for a project that I&amp;rsquo;ve written about {{previously&amp;ndash;link}}. The established tools server that will be supporting my new React frontend app(s) will be using a backend built on Python 2.7 and Django 1.11, and thus I&amp;rsquo;ve had to remember how to get a development environment set up that will appropriately support the project running locally on my machine. I have a personal site that runs on the same version of Django, but with Python 3.</description>
+    </item>
+    
+    <item>
       <title>KeysApp</title>
-      <link>https://shadowimmage.github.io/project/keysapp/</link>
+      <link>https://chasesawyer.dev/project/keysapp/</link>
       <pubDate>Wed, 30 May 2018 10:01:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/project/keysapp/</guid>
+      <guid>https://chasesawyer.dev/project/keysapp/</guid>
       <description>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university&amp;rsquo;s AV department and it&amp;rsquo;s instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can&amp;rsquo;t be checked out twice; etc.</description>
     </item>
     

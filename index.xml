@@ -2,23 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chase Sawyer</title>
-    <link>https://shadowimmage.github.io/</link>
+    <link>https://chasesawyer.dev/</link>
     <description>Recent content on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Sat, 20 Oct 2018 19:06:53 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 21 Feb 2019 09:26:35 -0800</lastBuildDate>
     
-	<atom:link href="https://shadowimmage.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Maintaining Older Django and Python Projects</title>
+      <link>https://chasesawyer.dev/post/2019-02-21-updating_older_django_and_python_projects/</link>
+      <pubDate>Thu, 21 Feb 2019 09:26:35 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/post/2019-02-21-updating_older_django_and_python_projects/</guid>
+      <description>I have been working on the backend for a project that I&amp;rsquo;ve written about {{previously&amp;ndash;link}}. The established tools server that will be supporting my new React frontend app(s) will be using a backend built on Python 2.7 and Django 1.11, and thus I&amp;rsquo;ve had to remember how to get a development environment set up that will appropriately support the project running locally on my machine. I have a personal site that runs on the same version of Django, but with Python 3.</description>
+    </item>
+    
+    <item>
       <title>Long Time Update; New Projects</title>
-      <link>https://shadowimmage.github.io/post/2018-10-29-long-time-update/</link>
+      <link>https://chasesawyer.dev/post/2018-10-29-long-time-update/</link>
       <pubDate>Sat, 20 Oct 2018 19:06:53 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-10-29-long-time-update/</guid>
+      <guid>https://chasesawyer.dev/post/2018-10-29-long-time-update/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Author&amp;rsquo;s Note: this post has taken a long time to get written - so long, that I already have my 2018 Hactoberfest t-shirt and stickers! It&amp;rsquo;s content spans mid-October through December. I&amp;rsquo;ve done my best to make it a cohesive whole.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -28,28 +37,28 @@
     
     <item>
       <title>Debugging Node Applications</title>
-      <link>https://shadowimmage.github.io/post/2018-06-11-debugging-node-applications/</link>
+      <link>https://chasesawyer.dev/post/2018-06-11-debugging-node-applications/</link>
       <pubDate>Mon, 11 Jun 2018 13:04:19 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-06-11-debugging-node-applications/</guid>
+      <guid>https://chasesawyer.dev/post/2018-06-11-debugging-node-applications/</guid>
       <description>When developing an application or project with Node.js, debugging is an important aspect to getting to the bottom of issues. If you use an IDE (integrated development environment) or code editor that has built-in or supported debugging capacities, such as Visual Studio Code, then you have that ability already. But if you are someone who&amp;rsquo;s developing with a more basic code editor - such as Sublime Text, then you can still debug your Node.</description>
     </item>
     
     <item>
       <title>File Paths in Node</title>
-      <link>https://shadowimmage.github.io/post/2018-06-09-paths_in_node/</link>
+      <link>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</link>
       <pubDate>Sat, 09 Jun 2018 18:52:55 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-06-09-paths_in_node/</guid>
+      <guid>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</guid>
       <description>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.</description>
     </item>
     
     <item>
       <title>Exercise Tracker Full-Stack App</title>
-      <link>https://shadowimmage.github.io/post/2018-06-08-exercisetracker/</link>
+      <link>https://chasesawyer.dev/post/2018-06-08-exercisetracker/</link>
       <pubDate>Fri, 08 Jun 2018 18:20:43 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-06-08-exercisetracker/</guid>
+      <guid>https://chasesawyer.dev/post/2018-06-08-exercisetracker/</guid>
       <description>&lt;p&gt;This project involved setting up a couple MongoDB collections and then building a responsive frontend for user interaction. This app allows adding users by name, then using that user&amp;rsquo;s ID to add activities. The API allows for querying for user activities by user ID as well.&lt;/p&gt;
 
 &lt;p&gt;The UI uses a pug template and bootstrap for most styling, and some custom css rules to fine tune elements.&lt;/p&gt;
@@ -61,57 +70,57 @@
     
     <item>
       <title>Code Editors vs. Word Processors</title>
-      <link>https://shadowimmage.github.io/post/2018-06-06_code_editors_vs_word_processors/</link>
+      <link>https://chasesawyer.dev/post/2018-06-06_code_editors_vs_word_processors/</link>
       <pubDate>Wed, 06 Jun 2018 20:43:45 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-06-06_code_editors_vs_word_processors/</guid>
+      <guid>https://chasesawyer.dev/post/2018-06-06_code_editors_vs_word_processors/</guid>
       <description>Word processors are great for creating documents with a lot of rich formatting, but all that stuff can be a huge distraction. Code editors on the other hand are amazingly good for writing - the writing where the only thing that actually matters is the content, and not the format.
 While it&amp;rsquo;s probably been hashed out and written about a lot by other people, the one thing, the killer aspect of it for me, is the ability to scroll the page down, so that whenever you want, you can always return to that feeling of having a blank canvas to write upon.</description>
     </item>
     
     <item>
       <title>New Free Code Camp Cert</title>
-      <link>https://shadowimmage.github.io/post/2018-06-05-new_free_code_camp_cert/</link>
+      <link>https://chasesawyer.dev/post/2018-06-05-new_free_code_camp_cert/</link>
       <pubDate>Tue, 05 Jun 2018 23:04:02 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-06-05-new_free_code_camp_cert/</guid>
+      <guid>https://chasesawyer.dev/post/2018-06-05-new_free_code_camp_cert/</guid>
       <description>I got my back-end (now API and Microservice) cert today from Free Code Camp! https://www.freecodecamp.org/certification/shadowimmage/apis-and-microservices Hooray!
 It&amp;rsquo;s been a year since I started working through the Free Code Camp curriculum, and it feels good to finally have finished the API work. I feel like I have a pretty solid grasp now on how to build and arrange an API, which I hope will help me in the future when I try to do more API work.</description>
     </item>
     
     <item>
       <title>RTTApp</title>
-      <link>https://shadowimmage.github.io/project/rttapp/</link>
+      <link>https://chasesawyer.dev/project/rttapp/</link>
       <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/project/rttapp/</guid>
+      <guid>https://chasesawyer.dev/project/rttapp/</guid>
       <description>Repair Task Tracker RTT is a full stack app that addresses the needs of a computer hardware management process, allowing the tracking and resolution of issues/problems with the hardware, as well as the configuration and components of each major hardware item. RTT is meant to be a back-of-house tool, replacing paper tickets and spreadsheets. The goal of this project was to implement a GraphQL app, with useful data, allowing a seamless user experience as they operate through the app, and data is downloaded and uploaded in the background.</description>
     </item>
     
     <item>
       <title>KeysApp</title>
-      <link>https://shadowimmage.github.io/project/keysapp/</link>
+      <link>https://chasesawyer.dev/project/keysapp/</link>
       <pubDate>Wed, 30 May 2018 10:01:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/project/keysapp/</guid>
+      <guid>https://chasesawyer.dev/project/keysapp/</guid>
       <description>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university&amp;rsquo;s AV department and it&amp;rsquo;s instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can&amp;rsquo;t be checked out twice; etc.</description>
     </item>
     
     <item>
       <title>Logo Design</title>
-      <link>https://shadowimmage.github.io/post/2018-05-18-logo-design/</link>
+      <link>https://chasesawyer.dev/post/2018-05-18-logo-design/</link>
       <pubDate>Fri, 18 May 2018 14:45:08 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-18-logo-design/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-18-logo-design/</guid>
       <description>I spent my sick day today designing a new logo for the site using Inkscape. I knew that it had to be something that was unique, so I went online looking around for resources on designing and producing a logo. I know that SVGs are great, because you will never have scaling issues - if you need a larger version, you can simply export it at higher resolution. Or lower.</description>
     </item>
     
     <item>
       <title>File Metadata Microservice</title>
-      <link>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</link>
+      <link>https://chasesawyer.dev/post/2018-05-12-filemetadata/</link>
       <pubDate>Sat, 12 May 2018 19:05:29 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-12-filemetadata/</guid>
       <description>&lt;p&gt;Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -119,10 +128,10 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
     
     <item>
       <title>Image Search Abstraction Layer</title>
-      <link>https://shadowimmage.github.io/post/2018-05-12-imagesearch/</link>
+      <link>https://chasesawyer.dev/post/2018-05-12-imagesearch/</link>
       <pubDate>Sat, 12 May 2018 18:50:14 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-12-imagesearch/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-12-imagesearch/</guid>
       <description>&lt;p&gt;This microservice creates an abstraction layer (and history) between the user and the Google Images search API.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -130,10 +139,10 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
     
     <item>
       <title>Url Shortener Microservice</title>
-      <link>https://shadowimmage.github.io/post/2018-05-12-urlshortener/</link>
+      <link>https://chasesawyer.dev/post/2018-05-12-urlshortener/</link>
       <pubDate>Sat, 12 May 2018 18:13:23 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-12-urlshortener/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-12-urlshortener/</guid>
       <description>&lt;p&gt;The challenge here was to create a URL Shortener microservice. It uses a database to associate a short url ID with the original url, and once created, the microservice will redirect visitors of the short URL to the original URL.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -141,10 +150,10 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
     
     <item>
       <title>Request Header Parser Microservice</title>
-      <link>https://shadowimmage.github.io/post/2018-05-12-headerparserms/</link>
+      <link>https://chasesawyer.dev/post/2018-05-12-headerparserms/</link>
       <pubDate>Sat, 12 May 2018 17:55:20 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-12-headerparserms/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-12-headerparserms/</guid>
       <description>&lt;p&gt;The goal for this one is to get return to the user the IP address, language, and operating system of the browser/user making the request.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -152,10 +161,10 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
     
     <item>
       <title>Timestamp Microservice</title>
-      <link>https://shadowimmage.github.io/post/2018-05-12-timestampms/</link>
+      <link>https://chasesawyer.dev/post/2018-05-12-timestampms/</link>
       <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-12-timestampms/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-12-timestampms/</guid>
       <description>&lt;p&gt;The goal is to create a microservice that will take a date string or a unix timestamp and make a JSON response with both versions of the given timestamp / date.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -163,39 +172,39 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
     
     <item>
       <title>Hugo Gotchas</title>
-      <link>https://shadowimmage.github.io/post/2018-05-10-hugo-gotchas/</link>
+      <link>https://chasesawyer.dev/post/2018-05-10-hugo-gotchas/</link>
       <pubDate>Thu, 10 May 2018 21:04:59 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-10-hugo-gotchas/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-10-hugo-gotchas/</guid>
       <description>Gotchas In order of the issue being found:
 Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for conditional statements, Hugo uses Polish or prefix notation for the operators. This meas that instead of writing if this and that, you have to write if and this that. For more complex arrangements of logical conditions, say for a situation in which you need to check three conditions, you have to write it as: if and (first) ( and (second) (third)) which, in a infix notation style, would have been written if first and second and third.</description>
     </item>
     
     <item>
       <title>Bad Coffee</title>
-      <link>https://shadowimmage.github.io/post/2018-05-10-bad-coffee/</link>
+      <link>https://chasesawyer.dev/post/2018-05-10-bad-coffee/</link>
       <pubDate>Thu, 10 May 2018 08:45:29 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-10-bad-coffee/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-10-bad-coffee/</guid>
       <description>I woke up late today, so I didn&amp;rsquo;t have time to make coffee. And instead of going to my usual place where I know there&amp;rsquo;s going to be great coffee available, I decided to get a doughnut and some coffee from the doughnut shop. The first warning that this wasn&amp;rsquo;t going to go well was when I got my travel mug back and there was coffee all over the outside of the mug.</description>
     </item>
     
     <item>
       <title>New Static Site with Hugo</title>
-      <link>https://shadowimmage.github.io/post/2018-05-09-new-static-site-with-hugo/</link>
+      <link>https://chasesawyer.dev/post/2018-05-09-new-static-site-with-hugo/</link>
       <pubDate>Wed, 09 May 2018 20:51:48 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-09-new-static-site-with-hugo/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-09-new-static-site-with-hugo/</guid>
       <description>Built a new site, leaving Jekyll for Hugo, for my github.io page.
 Changes Moved all my old Jekyll files to a new subdirectory in order to maintain access to the old code and posts, and then transition all the content over to the main Hugo site as settings come together. One major advantage of Hugo is that the build process is super fast, so I&amp;rsquo;ve been looking at how to integrate CircleCI with Hugo builds.</description>
     </item>
     
     <item>
       <title>SlackR25Bot - UW</title>
-      <link>https://shadowimmage.github.io/project/slackr25bot/</link>
+      <link>https://chasesawyer.dev/project/slackr25bot/</link>
       <pubDate>Wed, 02 May 2018 21:24:58 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/project/slackr25bot/</guid>
+      <guid>https://chasesawyer.dev/project/slackr25bot/</guid>
       <description>&lt;p&gt;This project was built for &lt;a href=&#34;https://www.cte.uw.edu/wordpress/&#34;&gt;Classroom Technologies &amp;amp; Events&lt;/a&gt; at the &lt;a href=&#34;https://www.washington.edu/&#34;&gt;University of Washington&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -203,19 +212,19 @@ Changes Moved all my old Jekyll files to a new subdirectory in order to maintain
     
     <item>
       <title>Python Tk UI Notes, Project Update</title>
-      <link>https://shadowimmage.github.io/post/2017-06-21-python-tk-iu-notes-project-update/</link>
+      <link>https://chasesawyer.dev/post/2017-06-21-python-tk-iu-notes-project-update/</link>
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2017-06-21-python-tk-iu-notes-project-update/</guid>
+      <guid>https://chasesawyer.dev/post/2017-06-21-python-tk-iu-notes-project-update/</guid>
       <description>I&amp;rsquo;ve been making a lot of progress on the python-LEDSerialController project. There&amp;rsquo;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&amp;rsquo;s baked into Python already, and there&amp;rsquo;s nothing to configure to get it working. It doesn&amp;rsquo;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&amp;rsquo;s also had a lower bar to entry, despite some drawbacks with Tk&amp;rsquo;s documentation.</description>
     </item>
     
     <item>
       <title>Learning Jekyll and Getting Started with Github Pages</title>
-      <link>https://shadowimmage.github.io/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</link>
+      <link>https://chasesawyer.dev/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</link>
       <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</guid>
+      <guid>https://chasesawyer.dev/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</guid>
       <description>First Post!
 Learning how to set up Jekyll on GitHub Pages is actually a little harder than I was expecting from the outset. Mostly because most of the things that you need to set up Jekyll for local development, and a lot of the things that come prepackaged with it aren&amp;rsquo;t actually necessary for running it on GitHub Pages.
 Here is the Gemfile content for this page when I first started and got things working:</description>
@@ -223,10 +232,10 @@ Here is the Gemfile content for this page when I first started and got things wo
     
     <item>
       <title>Dust Collector - UW</title>
-      <link>https://shadowimmage.github.io/project/dustcollector/</link>
+      <link>https://chasesawyer.dev/project/dustcollector/</link>
       <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/project/dustcollector/</guid>
+      <guid>https://chasesawyer.dev/project/dustcollector/</guid>
       <description>&lt;p&gt;We have a hammer drill that has a vacuum collector attachment, and we wanted a collector that could use different kinds of filters. I took the existing dust collector and designed an exact replacement that would take any kind of 3M respirator filter as the filter element. This allows using different kinds of filters and for the filters to be replaced. The parts involved were manually reverse-engineered on paper with the device and a set of good digital calipers. The replacement parts were designed in Autodesk &lt;a href=&#34;https://www.autodesk.com/products/fusion-360/overview&#34;&gt;Fusion360&lt;/a&gt; and 3D printed on a &lt;a href=&#34;https://www.prusa3d.com/&#34;&gt;Prusa&lt;/a&gt; i3 MK2.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -234,20 +243,20 @@ Here is the Gemfile content for this page when I first started and got things wo
     
     <item>
       <title>About Me</title>
-      <link>https://shadowimmage.github.io/page/about/</link>
+      <link>https://chasesawyer.dev/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/page/about/</guid>
+      <guid>https://chasesawyer.dev/page/about/</guid>
       <description>Summary   Hello   I&amp;rsquo;m a software engineer living in Seattle, Washington, currently working for Academic Technologies at the University of Washington.
 My interests span across industries and disciplines, from art to computer science, and games to business intelligence. I&amp;rsquo;ve built my skill set from a position of curiosity, using an analytical approach to problems and their possible solutions, always learning whenever I have the opportunity. I love to learn.</description>
     </item>
     
     <item>
       <title>Search Results</title>
-      <link>https://shadowimmage.github.io/search/</link>
+      <link>https://chasesawyer.dev/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/search/</guid>
+      <guid>https://chasesawyer.dev/search/</guid>
       <description>This file exists solely to respond to /search URL with the related search layout template.
 No content shown here is rendered, all content is based in the template layouts/page/search.html
 Setting a very low sitemap priority will tell search engines this is not important content.

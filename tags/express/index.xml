@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Express on Chase Sawyer</title>
-    <link>https://shadowimmage.github.io/tags/express/</link>
+    <link>https://chasesawyer.dev/tags/express/</link>
     <description>Recent content in Express on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,24 +10,24 @@
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
     <lastBuildDate>Sat, 09 Jun 2018 18:52:55 -0700</lastBuildDate>
     
-	<atom:link href="https://shadowimmage.github.io/tags/express/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/tags/express/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>File Paths in Node</title>
-      <link>https://shadowimmage.github.io/post/2018-06-09-paths_in_node/</link>
+      <link>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</link>
       <pubDate>Sat, 09 Jun 2018 18:52:55 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-06-09-paths_in_node/</guid>
+      <guid>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</guid>
       <description>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.</description>
     </item>
     
     <item>
       <title>Exercise Tracker Full-Stack App</title>
-      <link>https://shadowimmage.github.io/post/2018-06-08-exercisetracker/</link>
+      <link>https://chasesawyer.dev/post/2018-06-08-exercisetracker/</link>
       <pubDate>Fri, 08 Jun 2018 18:20:43 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-06-08-exercisetracker/</guid>
+      <guid>https://chasesawyer.dev/post/2018-06-08-exercisetracker/</guid>
       <description>&lt;p&gt;This project involved setting up a couple MongoDB collections and then building a responsive frontend for user interaction. This app allows adding users by name, then using that user&amp;rsquo;s ID to add activities. The API allows for querying for user activities by user ID as well.&lt;/p&gt;
 
 &lt;p&gt;The UI uses a pug template and bootstrap for most styling, and some custom css rules to fine tune elements.&lt;/p&gt;

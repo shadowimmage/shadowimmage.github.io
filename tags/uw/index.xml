@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Uw on Chase Sawyer</title>
-    <link>https://shadowimmage.github.io/tags/uw/</link>
+    <link>https://chasesawyer.dev/tags/uw/</link>
     <description>Recent content in Uw on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
     <lastBuildDate>Sat, 20 Oct 2018 19:06:53 -0700</lastBuildDate>
     
-	<atom:link href="https://shadowimmage.github.io/tags/uw/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/tags/uw/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Long Time Update; New Projects</title>
-      <link>https://shadowimmage.github.io/post/2018-10-29-long-time-update/</link>
+      <link>https://chasesawyer.dev/post/2018-10-29-long-time-update/</link>
       <pubDate>Sat, 20 Oct 2018 19:06:53 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-10-29-long-time-update/</guid>
+      <guid>https://chasesawyer.dev/post/2018-10-29-long-time-update/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Author&amp;rsquo;s Note: this post has taken a long time to get written - so long, that I already have my 2018 Hactoberfest t-shirt and stickers! It&amp;rsquo;s content spans mid-October through December. I&amp;rsquo;ve done my best to make it a cohesive whole.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -28,10 +28,10 @@
     
     <item>
       <title>SlackR25Bot - UW</title>
-      <link>https://shadowimmage.github.io/project/slackr25bot/</link>
+      <link>https://chasesawyer.dev/project/slackr25bot/</link>
       <pubDate>Wed, 02 May 2018 21:24:58 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/project/slackr25bot/</guid>
+      <guid>https://chasesawyer.dev/project/slackr25bot/</guid>
       <description>&lt;p&gt;This project was built for &lt;a href=&#34;https://www.cte.uw.edu/wordpress/&#34;&gt;Classroom Technologies &amp;amp; Events&lt;/a&gt; at the &lt;a href=&#34;https://www.washington.edu/&#34;&gt;University of Washington&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -39,10 +39,10 @@
     
     <item>
       <title>Dust Collector - UW</title>
-      <link>https://shadowimmage.github.io/project/dustcollector/</link>
+      <link>https://chasesawyer.dev/project/dustcollector/</link>
       <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/project/dustcollector/</guid>
+      <guid>https://chasesawyer.dev/project/dustcollector/</guid>
       <description>&lt;p&gt;We have a hammer drill that has a vacuum collector attachment, and we wanted a collector that could use different kinds of filters. I took the existing dust collector and designed an exact replacement that would take any kind of 3M respirator filter as the filter element. This allows using different kinds of filters and for the filters to be replaced. The parts involved were manually reverse-engineered on paper with the device and a set of good digital calipers. The replacement parts were designed in Autodesk &lt;a href=&#34;https://www.autodesk.com/products/fusion-360/overview&#34;&gt;Fusion360&lt;/a&gt; and 3D printed on a &lt;a href=&#34;https://www.prusa3d.com/&#34;&gt;Prusa&lt;/a&gt; i3 MK2.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

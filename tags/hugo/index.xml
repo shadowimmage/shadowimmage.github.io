@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Chase Sawyer</title>
-    <link>https://shadowimmage.github.io/tags/hugo/</link>
+    <link>https://chasesawyer.dev/tags/hugo/</link>
     <description>Recent content in Hugo on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,24 +10,24 @@
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
     <lastBuildDate>Fri, 18 May 2018 14:45:08 -0700</lastBuildDate>
     
-	<atom:link href="https://shadowimmage.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Logo Design</title>
-      <link>https://shadowimmage.github.io/post/2018-05-18-logo-design/</link>
+      <link>https://chasesawyer.dev/post/2018-05-18-logo-design/</link>
       <pubDate>Fri, 18 May 2018 14:45:08 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-18-logo-design/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-18-logo-design/</guid>
       <description>I spent my sick day today designing a new logo for the site using Inkscape. I knew that it had to be something that was unique, so I went online looking around for resources on designing and producing a logo. I know that SVGs are great, because you will never have scaling issues - if you need a larger version, you can simply export it at higher resolution. Or lower.</description>
     </item>
     
     <item>
       <title>New Static Site with Hugo</title>
-      <link>https://shadowimmage.github.io/post/2018-05-09-new-static-site-with-hugo/</link>
+      <link>https://chasesawyer.dev/post/2018-05-09-new-static-site-with-hugo/</link>
       <pubDate>Wed, 09 May 2018 20:51:48 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-09-new-static-site-with-hugo/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-09-new-static-site-with-hugo/</guid>
       <description>Built a new site, leaving Jekyll for Hugo, for my github.io page.
 Changes Moved all my old Jekyll files to a new subdirectory in order to maintain access to the old code and posts, and then transition all the content over to the main Hugo site as settings come together. One major advantage of Hugo is that the build process is super fast, so I&amp;rsquo;ve been looking at how to integrate CircleCI with Hugo builds.</description>
     </item>

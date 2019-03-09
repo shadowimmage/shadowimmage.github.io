@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Short on Chase Sawyer</title>
-    <link>https://shadowimmage.github.io/tags/short/</link>
+    <link>https://chasesawyer.dev/tags/short/</link>
     <description>Recent content in Short on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
     <lastBuildDate>Thu, 10 May 2018 08:45:29 -0700</lastBuildDate>
     
-	<atom:link href="https://shadowimmage.github.io/tags/short/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/tags/short/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bad Coffee</title>
-      <link>https://shadowimmage.github.io/post/2018-05-10-bad-coffee/</link>
+      <link>https://chasesawyer.dev/post/2018-05-10-bad-coffee/</link>
       <pubDate>Thu, 10 May 2018 08:45:29 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-10-bad-coffee/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-10-bad-coffee/</guid>
       <description>I woke up late today, so I didn&amp;rsquo;t have time to make coffee. And instead of going to my usual place where I know there&amp;rsquo;s going to be great coffee available, I decided to get a doughnut and some coffee from the doughnut shop. The first warning that this wasn&amp;rsquo;t going to go well was when I got my travel mug back and there was coffee all over the outside of the mug.</description>
     </item>
     

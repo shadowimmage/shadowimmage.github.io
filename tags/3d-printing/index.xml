@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>3d Printing on Chase Sawyer</title>
-    <link>https://shadowimmage.github.io/tags/3d-printing/</link>
+    <link>https://chasesawyer.dev/tags/3d-printing/</link>
     <description>Recent content in 3d Printing on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
     <lastBuildDate>Fri, 10 Mar 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://shadowimmage.github.io/tags/3d-printing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/tags/3d-printing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dust Collector - UW</title>
-      <link>https://shadowimmage.github.io/project/dustcollector/</link>
+      <link>https://chasesawyer.dev/project/dustcollector/</link>
       <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/project/dustcollector/</guid>
+      <guid>https://chasesawyer.dev/project/dustcollector/</guid>
       <description>&lt;p&gt;We have a hammer drill that has a vacuum collector attachment, and we wanted a collector that could use different kinds of filters. I took the existing dust collector and designed an exact replacement that would take any kind of 3M respirator filter as the filter element. This allows using different kinds of filters and for the filters to be replaced. The parts involved were manually reverse-engineered on paper with the device and a set of good digital calipers. The replacement parts were designed in Autodesk &lt;a href=&#34;https://www.autodesk.com/products/fusion-360/overview&#34;&gt;Fusion360&lt;/a&gt; and 3D printed on a &lt;a href=&#34;https://www.prusa3d.com/&#34;&gt;Prusa&lt;/a&gt; i3 MK2.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

@@ -2,41 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Chase Sawyer</title>
-    <link>https://shadowimmage.github.io/tags/python/</link>
+    <link>https://chasesawyer.dev/tags/python/</link>
     <description>Recent content in Python on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Wed, 30 May 2018 10:06:45 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 21 Feb 2019 09:26:35 -0800</lastBuildDate>
     
-	<atom:link href="https://shadowimmage.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Maintaining Older Django and Python Projects</title>
+      <link>https://chasesawyer.dev/post/2019-02-21-updating_older_django_and_python_projects/</link>
+      <pubDate>Thu, 21 Feb 2019 09:26:35 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/post/2019-02-21-updating_older_django_and_python_projects/</guid>
+      <description>I have been working on the backend for a project that I&amp;rsquo;ve written about {{previously&amp;ndash;link}}. The established tools server that will be supporting my new React frontend app(s) will be using a backend built on Python 2.7 and Django 1.11, and thus I&amp;rsquo;ve had to remember how to get a development environment set up that will appropriately support the project running locally on my machine. I have a personal site that runs on the same version of Django, but with Python 3.</description>
+    </item>
+    
+    <item>
       <title>RTTApp</title>
-      <link>https://shadowimmage.github.io/project/rttapp/</link>
+      <link>https://chasesawyer.dev/project/rttapp/</link>
       <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/project/rttapp/</guid>
+      <guid>https://chasesawyer.dev/project/rttapp/</guid>
       <description>Repair Task Tracker RTT is a full stack app that addresses the needs of a computer hardware management process, allowing the tracking and resolution of issues/problems with the hardware, as well as the configuration and components of each major hardware item. RTT is meant to be a back-of-house tool, replacing paper tickets and spreadsheets. The goal of this project was to implement a GraphQL app, with useful data, allowing a seamless user experience as they operate through the app, and data is downloaded and uploaded in the background.</description>
     </item>
     
     <item>
       <title>KeysApp</title>
-      <link>https://shadowimmage.github.io/project/keysapp/</link>
+      <link>https://chasesawyer.dev/project/keysapp/</link>
       <pubDate>Wed, 30 May 2018 10:01:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/project/keysapp/</guid>
+      <guid>https://chasesawyer.dev/project/keysapp/</guid>
       <description>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university&amp;rsquo;s AV department and it&amp;rsquo;s instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can&amp;rsquo;t be checked out twice; etc.</description>
     </item>
     
     <item>
       <title>Python Tk UI Notes, Project Update</title>
-      <link>https://shadowimmage.github.io/post/2017-06-21-python-tk-iu-notes-project-update/</link>
+      <link>https://chasesawyer.dev/post/2017-06-21-python-tk-iu-notes-project-update/</link>
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2017-06-21-python-tk-iu-notes-project-update/</guid>
+      <guid>https://chasesawyer.dev/post/2017-06-21-python-tk-iu-notes-project-update/</guid>
       <description>I&amp;rsquo;ve been making a lot of progress on the python-LEDSerialController project. There&amp;rsquo;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&amp;rsquo;s baked into Python already, and there&amp;rsquo;s nothing to configure to get it working. It doesn&amp;rsquo;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&amp;rsquo;s also had a lower bar to entry, despite some drawbacks with Tk&amp;rsquo;s documentation.</description>
     </item>
     

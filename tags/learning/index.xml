@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Learning on Chase Sawyer</title>
-    <link>https://shadowimmage.github.io/tags/learning/</link>
+    <link>https://chasesawyer.dev/tags/learning/</link>
     <description>Recent content in Learning on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
     <lastBuildDate>Thu, 25 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://shadowimmage.github.io/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/tags/learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Learning Jekyll and Getting Started with Github Pages</title>
-      <link>https://shadowimmage.github.io/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</link>
+      <link>https://chasesawyer.dev/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</link>
       <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</guid>
+      <guid>https://chasesawyer.dev/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</guid>
       <description>First Post!
 Learning how to set up Jekyll on GitHub Pages is actually a little harder than I was expecting from the outset. Mostly because most of the things that you need to set up Jekyll for local development, and a lot of the things that come prepackaged with it aren&amp;rsquo;t actually necessary for running it on GitHub Pages.
 Here is the Gemfile content for this page when I first started and got things working:</description>

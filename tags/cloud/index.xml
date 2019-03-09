@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud on Chase Sawyer</title>
-    <link>https://shadowimmage.github.io/tags/cloud/</link>
+    <link>https://chasesawyer.dev/tags/cloud/</link>
     <description>Recent content in Cloud on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
     <lastBuildDate>Sat, 20 Oct 2018 19:06:53 -0700</lastBuildDate>
     
-	<atom:link href="https://shadowimmage.github.io/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Long Time Update; New Projects</title>
-      <link>https://shadowimmage.github.io/post/2018-10-29-long-time-update/</link>
+      <link>https://chasesawyer.dev/post/2018-10-29-long-time-update/</link>
       <pubDate>Sat, 20 Oct 2018 19:06:53 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-10-29-long-time-update/</guid>
+      <guid>https://chasesawyer.dev/post/2018-10-29-long-time-update/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Author&amp;rsquo;s Note: this post has taken a long time to get written - so long, that I already have my 2018 Hactoberfest t-shirt and stickers! It&amp;rsquo;s content spans mid-October through December. I&amp;rsquo;ve done my best to make it a cohesive whole.&lt;/p&gt;
 &lt;/blockquote&gt;

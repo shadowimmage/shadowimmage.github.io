@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript on Chase Sawyer</title>
-    <link>https://shadowimmage.github.io/tags/javascript/</link>
+    <link>https://chasesawyer.dev/tags/javascript/</link>
     <description>Recent content in Javascript on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,33 +10,33 @@
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
     <lastBuildDate>Mon, 11 Jun 2018 13:04:19 -0700</lastBuildDate>
     
-	<atom:link href="https://shadowimmage.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Debugging Node Applications</title>
-      <link>https://shadowimmage.github.io/post/2018-06-11-debugging-node-applications/</link>
+      <link>https://chasesawyer.dev/post/2018-06-11-debugging-node-applications/</link>
       <pubDate>Mon, 11 Jun 2018 13:04:19 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-06-11-debugging-node-applications/</guid>
+      <guid>https://chasesawyer.dev/post/2018-06-11-debugging-node-applications/</guid>
       <description>When developing an application or project with Node.js, debugging is an important aspect to getting to the bottom of issues. If you use an IDE (integrated development environment) or code editor that has built-in or supported debugging capacities, such as Visual Studio Code, then you have that ability already. But if you are someone who&amp;rsquo;s developing with a more basic code editor - such as Sublime Text, then you can still debug your Node.</description>
     </item>
     
     <item>
       <title>File Paths in Node</title>
-      <link>https://shadowimmage.github.io/post/2018-06-09-paths_in_node/</link>
+      <link>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</link>
       <pubDate>Sat, 09 Jun 2018 18:52:55 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-06-09-paths_in_node/</guid>
+      <guid>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</guid>
       <description>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.</description>
     </item>
     
     <item>
       <title>Exercise Tracker Full-Stack App</title>
-      <link>https://shadowimmage.github.io/post/2018-06-08-exercisetracker/</link>
+      <link>https://chasesawyer.dev/post/2018-06-08-exercisetracker/</link>
       <pubDate>Fri, 08 Jun 2018 18:20:43 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-06-08-exercisetracker/</guid>
+      <guid>https://chasesawyer.dev/post/2018-06-08-exercisetracker/</guid>
       <description>&lt;p&gt;This project involved setting up a couple MongoDB collections and then building a responsive frontend for user interaction. This app allows adding users by name, then using that user&amp;rsquo;s ID to add activities. The API allows for querying for user activities by user ID as well.&lt;/p&gt;
 
 &lt;p&gt;The UI uses a pug template and bootstrap for most styling, and some custom css rules to fine tune elements.&lt;/p&gt;
@@ -48,19 +48,19 @@
     
     <item>
       <title>RTTApp</title>
-      <link>https://shadowimmage.github.io/project/rttapp/</link>
+      <link>https://chasesawyer.dev/project/rttapp/</link>
       <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/project/rttapp/</guid>
+      <guid>https://chasesawyer.dev/project/rttapp/</guid>
       <description>Repair Task Tracker RTT is a full stack app that addresses the needs of a computer hardware management process, allowing the tracking and resolution of issues/problems with the hardware, as well as the configuration and components of each major hardware item. RTT is meant to be a back-of-house tool, replacing paper tickets and spreadsheets. The goal of this project was to implement a GraphQL app, with useful data, allowing a seamless user experience as they operate through the app, and data is downloaded and uploaded in the background.</description>
     </item>
     
     <item>
       <title>File Metadata Microservice</title>
-      <link>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</link>
+      <link>https://chasesawyer.dev/post/2018-05-12-filemetadata/</link>
       <pubDate>Sat, 12 May 2018 19:05:29 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-12-filemetadata/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-12-filemetadata/</guid>
       <description>&lt;p&gt;Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -68,10 +68,10 @@
     
     <item>
       <title>Image Search Abstraction Layer</title>
-      <link>https://shadowimmage.github.io/post/2018-05-12-imagesearch/</link>
+      <link>https://chasesawyer.dev/post/2018-05-12-imagesearch/</link>
       <pubDate>Sat, 12 May 2018 18:50:14 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-12-imagesearch/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-12-imagesearch/</guid>
       <description>&lt;p&gt;This microservice creates an abstraction layer (and history) between the user and the Google Images search API.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -79,10 +79,10 @@
     
     <item>
       <title>Url Shortener Microservice</title>
-      <link>https://shadowimmage.github.io/post/2018-05-12-urlshortener/</link>
+      <link>https://chasesawyer.dev/post/2018-05-12-urlshortener/</link>
       <pubDate>Sat, 12 May 2018 18:13:23 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-12-urlshortener/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-12-urlshortener/</guid>
       <description>&lt;p&gt;The challenge here was to create a URL Shortener microservice. It uses a database to associate a short url ID with the original url, and once created, the microservice will redirect visitors of the short URL to the original URL.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -90,10 +90,10 @@
     
     <item>
       <title>Request Header Parser Microservice</title>
-      <link>https://shadowimmage.github.io/post/2018-05-12-headerparserms/</link>
+      <link>https://chasesawyer.dev/post/2018-05-12-headerparserms/</link>
       <pubDate>Sat, 12 May 2018 17:55:20 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://shadowimmage.github.io/post/2018-05-12-headerparserms/</guid>
+      <guid>https://chasesawyer.dev/post/2018-05-12-headerparserms/</guid>
       <description>&lt;p&gt;The goal for this one is to get return to the user the IP address, language, and operating system of the browser/user making the request.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
