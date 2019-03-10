@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    
+        <title>Code Editors vs. Word Processors</title>
+        <meta property="og:title" content="Code Editors vs. Word Processors" />
+        <meta name="twitter:title" content="Code Editors vs. Word Processors" />
+        <meta name="description" content="Why I think code editors are so much better" />
+        <meta property="og:description" content="Why I think code editors are so much better" />
+        <meta name="twitter:description" content="Why I think code editors are so much better" />
+    <meta name="author" content="Chase Sawyer" />
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://chasesawyer.dev/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://chasesawyer.dev/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://chasesawyer.dev/img/favicon-16x16.png">
+    <link rel="manifest" href="https://chasesawyer.dev/img/site.webmanifest">
+    <link rel="mask-icon" href="https://chasesawyer.dev/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+        <meta property="og:image" content="https://chasesawyer.dev/img/logo-plain.svg" />
+        <meta name="twitter:image" content="https://chasesawyer.dev/img/logo-plain.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://chasesawyer.dev/post/2018/06/code-editors-vs.-word-processors/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Chase Sawyer" />
+    
+    <meta name="generator" content="Hugo 0.50" />
+    <link rel="canonical" href="https://chasesawyer.dev/post/2018/06/code-editors-vs.-word-processors/" />
+        <link rel="alternate" href="https://chasesawyer.dev/index.xml" type="application/rss+xml" title="Chase Sawyer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://chasesawyer.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://chasesawyer.dev/css/syntax.css" /><link rel="stylesheet" href="https://chasesawyer.dev/css/codeblock.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Neuton"> 
+
+<link rel="stylesheet" href="https://chasesawyer.dev/css/cs-custom.css" />
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-119999962-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+    <body>
+        
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="pswp__bg"></div>
+    
+    <div class="pswp__scroll-wrap">
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+        <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="https://chasesawyer.dev/"><img class="navbar-brand" id="site-logo" src="https://chasesawyer.dev/img/logo-plain.svg" alt="Chase Sawyer" /></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://chasesawyer.dev/">
+        Chase Sawyer
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              
+                <a class="navexpand-parent-custom" title="Blog" href="/post/">Blog</a>
+                <a class="navlinks-parent hidden-sm hidden-md hidden-lg navexpand-custom" href="javascript:void(0)"></a>
+              
+              <div class="navlinks-children">
+                
+                  <a href="/tags">Tags</a>
+                
+                  <a href="/search">Search</a>
+                
+                  <a href="/post/">All Posts</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              
+                <a class="navexpand-parent-custom" title="Projects" href="/tags/project/">Projects</a>
+                <a class="navlinks-parent hidden-sm hidden-md hidden-lg navexpand-custom" href="javascript:void(0)"></a>
+              
+              <div class="navlinks-children">
+                
+                  <a href="/project/slackr25bot">R25 Slack Bot</a>
+                
+                  <a href="/project/keysapp">Keys App</a>
+                
+                  <a href="/project/rttapp">RTT App</a>
+                
+                  <a href="/project/dustcollector">Dust Collector CAD (UW)</a>
+                
+                  <a href="/tags/project/">All Projects</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Samples" href="/tags/sample/">Samples</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About / CV" href="/page/about/">About / CV</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Chase Sawyer" href="https://chasesawyer.dev/">
+            <img class="avatar-img" src="https://chasesawyer.dev/img/profile.jpg" alt="Chase Sawyer" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+        
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="pswp__bg"></div>
+    
+    <div class="pswp__scroll-wrap">
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Code Editors vs. Word Processors</h1>
+              
+              
+              
+                
+                  <h2 class="post-subheading">Why I think code editors are so much better</h2>
+                
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 6, 2018
+  
+    &nbsp;(Last modified on June 7, 2018)
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+        
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Word processors are great for creating documents with a lot of rich formatting, but all that <em>stuff</em> can be a huge distraction. Code editors on the other hand are amazingly good for writing - the writing where the only thing that actually matters is the content, and not the format.</p>
+
+<p>While it&rsquo;s probably been hashed out and written about a lot by other people, the one thing, the killer aspect of it for me, is the ability to scroll the page down, so that whenever you want, you can always return to that feeling of having a blank canvas to write upon. I really love the blank page, and I love writing on something <em>fresh</em>, and so far, code editors are the only things that I&rsquo;ve seen do this. The word processors - think Google Docs, Microsoft Word, etc. - all stop you at the bottom of the current virtual piece of paper you&rsquo;re writing on and won&rsquo;t let you progress until you flow over onto the next page. Now, of course there&rsquo;s hacks around this, including just inserting a page break or two at the end of whatever it is you&rsquo;re working on. However, this has always felt really artificial to me. Plus there&rsquo;s always those page breaks and virtual pieces of paper that physically break apart your writing. It can be distracting.</p>
+
+<p>But to be fair to word processors, I don&rsquo;t think anyone writes their blog posts in them, and I don&rsquo;t think that anyone writes their papers that are meant to be printed in a blog editor. There are always exceptions, of course, such as those that use LaTex for all their typesetting needs (I don&rsquo;t really know much about LaTex other than that it exists and that it is very useful for document formatting, and printing math equations).</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://chasesawyer.dev//tags/post/">post</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/blog/">blog</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/nonesense/">nonesense</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://chasesawyer.dev/post/2018/06/new-free-code-camp-cert/" data-toggle="tooltip" data-placement="top" title="New Free Code Camp Cert">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://chasesawyer.dev/post/2018/06/exercise-tracker-full-stack-app/" data-toggle="tooltip" data-placement="top" title="Exercise Tracker Full-Stack App">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+        
+        <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:shadowimmage@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/shadowimmage" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.freecodecamp.org/shadowimmage" title="FreeCodeCamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-free-code-camp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/chase-sawyer" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://keybase.io/shadowimmage" title="Keybase">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-keybase fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://chasesawyer.dev">Chase Sawyer</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2019
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://chasesawyer.dev/">Chase Sawyer</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.50</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://chasesawyer.dev/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://chasesawyer.dev/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+    </body>
+</html>
+

@@ -15,10 +15,10 @@
     
     <item>
       <title>Learning Jekyll and Getting Started with Github Pages</title>
-      <link>https://chasesawyer.dev/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</link>
+      <link>https://chasesawyer.dev/post/2017/05/learning-jekyll-and-getting-started-with-github-pages/</link>
       <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2017-05-25-learning-jekyll-and-getting-started-with-github-pages/</guid>
+      <guid>https://chasesawyer.dev/post/2017/05/learning-jekyll-and-getting-started-with-github-pages/</guid>
       <description>First Post!
 Learning how to set up Jekyll on GitHub Pages is actually a little harder than I was expecting from the outset. Mostly because most of the things that you need to set up Jekyll for local development, and a lot of the things that come prepackaged with it aren&amp;rsquo;t actually necessary for running it on GitHub Pages.
 Here is the Gemfile content for this page when I first started and got things working:</description>

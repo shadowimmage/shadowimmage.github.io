@@ -15,19 +15,19 @@
     
     <item>
       <title>Debugging Node Applications</title>
-      <link>https://chasesawyer.dev/post/2018-06-11-debugging-node-applications/</link>
+      <link>https://chasesawyer.dev/post/2018/06/debugging-node-applications/</link>
       <pubDate>Mon, 11 Jun 2018 13:04:19 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2018-06-11-debugging-node-applications/</guid>
+      <guid>https://chasesawyer.dev/post/2018/06/debugging-node-applications/</guid>
       <description>When developing an application or project with Node.js, debugging is an important aspect to getting to the bottom of issues. If you use an IDE (integrated development environment) or code editor that has built-in or supported debugging capacities, such as Visual Studio Code, then you have that ability already. But if you are someone who&amp;rsquo;s developing with a more basic code editor - such as Sublime Text, then you can still debug your Node.</description>
     </item>
     
     <item>
       <title>File Paths in Node</title>
-      <link>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</link>
+      <link>https://chasesawyer.dev/post/2018/06/file-paths-in-node/</link>
       <pubDate>Sat, 09 Jun 2018 18:52:55 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</guid>
+      <guid>https://chasesawyer.dev/post/2018/06/file-paths-in-node/</guid>
       <description>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.</description>
     </item>
     

@@ -15,10 +15,10 @@
     
     <item>
       <title>Python Tk UI Notes, Project Update</title>
-      <link>https://chasesawyer.dev/post/2017-06-21-python-tk-iu-notes-project-update/</link>
+      <link>https://chasesawyer.dev/post/2017/06/python-tk-ui-notes-project-update/</link>
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2017-06-21-python-tk-iu-notes-project-update/</guid>
+      <guid>https://chasesawyer.dev/post/2017/06/python-tk-ui-notes-project-update/</guid>
       <description>I&amp;rsquo;ve been making a lot of progress on the python-LEDSerialController project. There&amp;rsquo;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&amp;rsquo;s baked into Python already, and there&amp;rsquo;s nothing to configure to get it working. It doesn&amp;rsquo;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&amp;rsquo;s also had a lower bar to entry, despite some drawbacks with Tk&amp;rsquo;s documentation.</description>
     </item>
     

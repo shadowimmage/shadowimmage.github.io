@@ -15,58 +15,58 @@
     
     <item>
       <title>Google .dev Domains, GitHub Pages, and Heroku Apps</title>
-      <link>https://chasesawyer.dev/post/2019-03-09-google-dev-domains-github-pages-and-heroku-apps/</link>
+      <link>https://chasesawyer.dev/post/2019/03/google-.dev-domains-github-pages-and-heroku-apps/</link>
       <pubDate>Sat, 09 Mar 2019 11:51:59 -0800</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2019-03-09-google-dev-domains-github-pages-and-heroku-apps/</guid>
+      <guid>https://chasesawyer.dev/post/2019/03/google-.dev-domains-github-pages-and-heroku-apps/</guid>
       <description>At the end of February 2019, Google released general access to the .dev top level domain. I had heard about this happening about a year ago, and am now the happy owner of two .dev domains! One of these is chasesawyer.dev and will soon be the new home of this site!
 But how to get it set up? When you buy a domain name, nothing is really set up for them - going to those addresses doesn&amp;rsquo;t point to anything Firefox and Google will just say &amp;ldquo;Server not found.</description>
     </item>
     
     <item>
       <title>Debugging Node Applications</title>
-      <link>https://chasesawyer.dev/post/2018-06-11-debugging-node-applications/</link>
+      <link>https://chasesawyer.dev/post/2018/06/debugging-node-applications/</link>
       <pubDate>Mon, 11 Jun 2018 13:04:19 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2018-06-11-debugging-node-applications/</guid>
+      <guid>https://chasesawyer.dev/post/2018/06/debugging-node-applications/</guid>
       <description>When developing an application or project with Node.js, debugging is an important aspect to getting to the bottom of issues. If you use an IDE (integrated development environment) or code editor that has built-in or supported debugging capacities, such as Visual Studio Code, then you have that ability already. But if you are someone who&amp;rsquo;s developing with a more basic code editor - such as Sublime Text, then you can still debug your Node.</description>
     </item>
     
     <item>
       <title>File Paths in Node</title>
-      <link>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</link>
+      <link>https://chasesawyer.dev/post/2018/06/file-paths-in-node/</link>
       <pubDate>Sat, 09 Jun 2018 18:52:55 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</guid>
+      <guid>https://chasesawyer.dev/post/2018/06/file-paths-in-node/</guid>
       <description>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.</description>
     </item>
     
     <item>
       <title>Code Editors vs. Word Processors</title>
-      <link>https://chasesawyer.dev/post/2018-06-06_code_editors_vs_word_processors/</link>
+      <link>https://chasesawyer.dev/post/2018/06/code-editors-vs.-word-processors/</link>
       <pubDate>Wed, 06 Jun 2018 20:43:45 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2018-06-06_code_editors_vs_word_processors/</guid>
+      <guid>https://chasesawyer.dev/post/2018/06/code-editors-vs.-word-processors/</guid>
       <description>Word processors are great for creating documents with a lot of rich formatting, but all that stuff can be a huge distraction. Code editors on the other hand are amazingly good for writing - the writing where the only thing that actually matters is the content, and not the format.
 While it&amp;rsquo;s probably been hashed out and written about a lot by other people, the one thing, the killer aspect of it for me, is the ability to scroll the page down, so that whenever you want, you can always return to that feeling of having a blank canvas to write upon.</description>
     </item>
     
     <item>
       <title>New Free Code Camp Cert</title>
-      <link>https://chasesawyer.dev/post/2018-06-05-new_free_code_camp_cert/</link>
+      <link>https://chasesawyer.dev/post/2018/06/new-free-code-camp-cert/</link>
       <pubDate>Tue, 05 Jun 2018 23:04:02 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2018-06-05-new_free_code_camp_cert/</guid>
+      <guid>https://chasesawyer.dev/post/2018/06/new-free-code-camp-cert/</guid>
       <description>I got my back-end (now API and Microservice) cert today from Free Code Camp! https://www.freecodecamp.org/certification/shadowimmage/apis-and-microservices Hooray!
 It&amp;rsquo;s been a year since I started working through the Free Code Camp curriculum, and it feels good to finally have finished the API work. I feel like I have a pretty solid grasp now on how to build and arrange an API, which I hope will help me in the future when I try to do more API work.</description>
     </item>
     
     <item>
       <title>Bad Coffee</title>
-      <link>https://chasesawyer.dev/post/2018-05-10-bad-coffee/</link>
+      <link>https://chasesawyer.dev/post/2018/05/bad-coffee/</link>
       <pubDate>Thu, 10 May 2018 08:45:29 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2018-05-10-bad-coffee/</guid>
+      <guid>https://chasesawyer.dev/post/2018/05/bad-coffee/</guid>
       <description>I woke up late today, so I didn&amp;rsquo;t have time to make coffee. And instead of going to my usual place where I know there&amp;rsquo;s going to be great coffee available, I decided to get a doughnut and some coffee from the doughnut shop. The first warning that this wasn&amp;rsquo;t going to go well was when I got my travel mug back and there was coffee all over the outside of the mug.</description>
     </item>
     

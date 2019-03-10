@@ -15,10 +15,10 @@
     
     <item>
       <title>File Paths in Node</title>
-      <link>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</link>
+      <link>https://chasesawyer.dev/post/2018/06/file-paths-in-node/</link>
       <pubDate>Sat, 09 Jun 2018 18:52:55 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2018-06-09-paths_in_node/</guid>
+      <guid>https://chasesawyer.dev/post/2018/06/file-paths-in-node/</guid>
       <description>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.</description>
     </item>
     

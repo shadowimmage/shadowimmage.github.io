@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    
+        <title>Google .dev Domains, GitHub Pages, and Heroku Apps</title>
+        <meta property="og:title" content="Google .dev Domains, GitHub Pages, and Heroku Apps" />
+        <meta name="twitter:title" content="Google .dev Domains, GitHub Pages, and Heroku Apps" />
+        <meta name="description" content="How to get things wired up now that you have that sweet, sweet .dev domain name" />
+        <meta property="og:description" content="How to get things wired up now that you have that sweet, sweet .dev domain name" />
+        <meta name="twitter:description" content="How to get things wired up now that you have that sweet, sweet .dev domain name" />
+    <meta name="author" content="Chase Sawyer" />
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://chasesawyer.dev/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://chasesawyer.dev/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://chasesawyer.dev/img/favicon-16x16.png">
+    <link rel="manifest" href="https://chasesawyer.dev/img/site.webmanifest">
+    <link rel="mask-icon" href="https://chasesawyer.dev/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+        <meta property="og:image" content="https://chasesawyer.dev/img/logo-plain.svg" />
+        <meta name="twitter:image" content="https://chasesawyer.dev/img/logo-plain.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://chasesawyer.dev/post/2019/03/google-.dev-domains-github-pages-and-heroku-apps/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Chase Sawyer" />
+    
+    <meta name="generator" content="Hugo 0.50" />
+    <link rel="canonical" href="https://chasesawyer.dev/post/2019/03/google-.dev-domains-github-pages-and-heroku-apps/" />
+        <link rel="alternate" href="https://chasesawyer.dev/index.xml" type="application/rss+xml" title="Chase Sawyer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://chasesawyer.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://chasesawyer.dev/css/syntax.css" /><link rel="stylesheet" href="https://chasesawyer.dev/css/codeblock.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Neuton"> 
+
+<link rel="stylesheet" href="https://chasesawyer.dev/css/cs-custom.css" />
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-119999962-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+    <body>
+        
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="pswp__bg"></div>
+    
+    <div class="pswp__scroll-wrap">
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+        <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="https://chasesawyer.dev/"><img class="navbar-brand" id="site-logo" src="https://chasesawyer.dev/img/logo-plain.svg" alt="Chase Sawyer" /></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://chasesawyer.dev/">
+        Chase Sawyer
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              
+                <a class="navexpand-parent-custom" title="Blog" href="/post/">Blog</a>
+                <a class="navlinks-parent hidden-sm hidden-md hidden-lg navexpand-custom" href="javascript:void(0)"></a>
+              
+              <div class="navlinks-children">
+                
+                  <a href="/tags">Tags</a>
+                
+                  <a href="/search">Search</a>
+                
+                  <a href="/post/">All Posts</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              
+                <a class="navexpand-parent-custom" title="Projects" href="/tags/project/">Projects</a>
+                <a class="navlinks-parent hidden-sm hidden-md hidden-lg navexpand-custom" href="javascript:void(0)"></a>
+              
+              <div class="navlinks-children">
+                
+                  <a href="/project/slackr25bot">R25 Slack Bot</a>
+                
+                  <a href="/project/keysapp">Keys App</a>
+                
+                  <a href="/project/rttapp">RTT App</a>
+                
+                  <a href="/project/dustcollector">Dust Collector CAD (UW)</a>
+                
+                  <a href="/tags/project/">All Projects</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Samples" href="/tags/sample/">Samples</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About / CV" href="/page/about/">About / CV</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Chase Sawyer" href="https://chasesawyer.dev/">
+            <img class="avatar-img" src="https://chasesawyer.dev/img/profile.jpg" alt="Chase Sawyer" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+        
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="pswp__bg"></div>
+    
+    <div class="pswp__scroll-wrap">
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Google .dev Domains, GitHub Pages, and Heroku Apps</h1>
+              
+              
+              
+                
+                  <h2 class="post-subheading">How to get things wired up now that you have that sweet, sweet .dev domain name</h2>
+                
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 9, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+        
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>At the end of February 2019, Google released general access to the .dev top level domain. I had heard about this happening about a year ago, and am now the happy owner of two .dev domains! One of these is chasesawyer.dev and will soon be the new home of this site!</p>
+
+<p>But how to get it set up? When you buy a domain name, nothing is really set up for them - going to those addresses doesn&rsquo;t point to anything Firefox and Google will just say &ldquo;Server not found.&rdquo; So here&rsquo;s how to change that.</p>
+
+<p>Theres a few things I want to set up for these domains, and I&rsquo;m going to go through the steps for each. This is also part one of a series of posts on how to accomplish these tasks. Other parts will be linked when they&rsquo;ve been figured out and done!</p>
+
+<ul>
+<li>Custom domain setup for this site, while maintaining hosting via <a href="https://pages.github.com/">Github Pages</a></li>
+<li>Email forwarding to <a href="https://protonmail.com">ProtonMail</a></li>
+<li>Custom domain setup for my apps on Heroku</li>
+</ul>
+
+<h2 id="some-quick-assumptions">Some Quick Assumptions</h2>
+
+<p>I&rsquo;m going to be making some assumptions throughout this article, most of which can probably be translated to other platforms, but your mileage may vary.</p>
+
+<ul>
+<li>You&rsquo;re using a .dev domain - part of the <a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">HSTS list</a> (this will come up later)</li>
+<li>You bought your domain, are administering your domain through <a href="https://domains.google/#/">Google Domains</a> (rather than godaddy or namecheap or something else - those are probably fine, I just went with Google Domains for expediency when they launched .dev)</li>
+</ul>
+
+<h2 id="github-pages-and-custom-domains">GitHub Pages and Custom Domains</h2>
+
+<p>This first one is pretty straightforward - you need to do two things:</p>
+
+<ol>
+<li>Determine if you want your GitHub Pages site to be at the root of your custom domain (ie, going to chasesawyer.dev without any prefixes) or if you want it to be at a subdomain (ie, <strong>blog</strong>.chasesawyer.dev or <strong>pages</strong>.chasesawyer.dev)</li>
+<li>Create a the appropriate DNS record on google domains (domains.google.com/m/registrar/{yourdomainname}/dns) under &ldquo;Custom resource records.
+
+<ul>
+<li>For the former case (Apex domain), see <a href="https://help.github.com/en/articles/setting-up-an-apex-domain">setting up an apex domain</a>. For this use case, the way that worked best for me was not by using <a href="https://support.google.com/domains/answer/4522141">forwarding</a>, but by using <a href="https://help.github.com/en/articles/setting-up-an-apex-domain#configuring-a-records-with-your-dns-provider">A records</a> in the Google Domains DNS settings for my domain name.</li>
+<li>For the latter case (subdomain), see <a href="https://help.github.com/en/articles/setting-up-a-custom-subdomain">setting up a custom subdomain</a></li>
+</ul></li>
+<li>Update the custom domain option on your GitHub Pages repository to match the domain that you&rsquo;re using. If you don&rsquo;t do this, then your site won&rsquo;t load properly, and, since the .dev domain can only be used via HTTPS, you&rsquo;ll have security problems with your site! (more below)</li>
+<li>Wait for a little while - your DNS settings need some time to propagate through the DNS system, so that requests to {yourdomain}.dev will properly redirect to your GitHub Pages site. GitHub Pages also has to have time to set up a certificate for your new site.</li>
+</ol>
+
+<h3 id="security-https-certificates">Security, HTTPS, Certificates</h3>
+
+<p>If, like me, you enjoy using GitHub Pages for hosting your site, you&rsquo;ve enjoyed having your site having an https address, and all the security baked into GitHub Pages. When you are setting up sites on a .dev domain since it&rsquo;s part of the <a href="https://domains.google/#/">HSTS</a> preload list in most modern browsers, your whatever.dev site can only be loaded via https. This means that you&rsquo;ll need a security certificate for the site you set up on .dev! But how do you do this if you&rsquo;re using GitHub Pages? You don&rsquo;t have access to their webserver, so the <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> <a href="https://certbot.eff.org/">certbot</a> won&rsquo;t work for you. But you need a security certificate for your domain!</p>
+
+<p>What isn&rsquo;t really explained anywhere where I can see, is that this process of getting a security certificate through Let&rsquo;s Encrypt for your GitHub Pages site at your custom domain <em>is completely automated!</em> That&rsquo;s right! <em>GitHub Pages just does it for you.</em> This is why step 4 above takes a little while to complete - whatever mechanism at GitHub that serves up pages from your github.io pages site that gets set up on {your custom domain} needs to have a security certificate set up, and that system takes care of getting one through Let&rsquo;s Encrypt.</p>
+
+<p>This is also why I decided to go through with setting up this site with <code>A</code> DNS records, because for whatever reason, DNS forwarding didn&rsquo;t work properly, and didn&rsquo;t trigger whatever automated system that sets up a security certificate for your custom domain served through GitHub Pages.</p>
+
+<p>Will this cause problems later on? I am not sure yet. I haven&rsquo;t set up subdomain records on Google Domains yet (like {something}.chasesawyer.dev) but that is gonna be the subject of my next post!</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://chasesawyer.dev//tags/post/">post</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/blog/">blog</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/dev/">dev</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/heroku/">heroku</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/google/">google</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/domains/">domains</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/dns/">dns</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/security/">security</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/hsts/">hsts</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://chasesawyer.dev/post/2019/02/maintaining-older-django-and-python-projects/" data-toggle="tooltip" data-placement="top" title="Maintaining Older Django and Python Projects">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+        
+        <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:shadowimmage@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/shadowimmage" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.freecodecamp.org/shadowimmage" title="FreeCodeCamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-free-code-camp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/chase-sawyer" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://keybase.io/shadowimmage" title="Keybase">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-keybase fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://chasesawyer.dev">Chase Sawyer</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2019
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://chasesawyer.dev/">Chase Sawyer</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.50</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://chasesawyer.dev/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://chasesawyer.dev/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+    </body>
+</html>
+
