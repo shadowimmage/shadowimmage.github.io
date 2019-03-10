@@ -48,7 +48,7 @@ jobs:
   test:
     working_directory: ~/project
     docker:
-      - image: cibuilds/hugo:0.40.2
+      - image: cibuilds/hugo:0.54
     steps:
       - attach_workspace:
           at: ~/project
