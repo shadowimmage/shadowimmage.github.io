@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google on Chase Sawyer</title>
+    <link>https://chasesawyer.dev/tags/google/</link>
+    <description>Recent content in Google on Chase Sawyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
+    <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
+    <lastBuildDate>Sat, 09 Mar 2019 11:51:59 -0800</lastBuildDate>
+    
+	<atom:link href="https://chasesawyer.dev/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google .dev Domains, GitHub Pages, and Heroku Apps</title>
+      <link>https://chasesawyer.dev/post/2019-03-09-google-dev-domains-github-pages-and-heroku-apps/</link>
+      <pubDate>Sat, 09 Mar 2019 11:51:59 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/post/2019-03-09-google-dev-domains-github-pages-and-heroku-apps/</guid>
+      <description>At the end of February 2019, Google released general access to the .dev top level domain. I had heard about this happening about a year ago, and am now the happy owner of two .dev domains! One of these is chasesawyer.dev and will soon be the new home of this site!
+But how to get it set up? When you buy a domain name, nothing is really set up for them - going to those addresses doesn&amp;rsquo;t point to anything Firefox and Google will just say &amp;ldquo;Server not found.</description>
+    </item>
+    
+  </channel>
+</rss>

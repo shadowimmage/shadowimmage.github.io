@@ -43,7 +43,7 @@
     <item>
       <title>Blog</title>
       <link>https://chasesawyer.dev/tags/blog/</link>
-      <pubDate>Mon, 11 Jun 2018 13:04:19 -0700</pubDate>
+      <pubDate>Sat, 09 Mar 2019 11:51:59 -0800</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/blog/</guid>
       <description></description>
@@ -95,11 +95,38 @@
     </item>
     
     <item>
+      <title>Dev</title>
+      <link>https://chasesawyer.dev/tags/dev/</link>
+      <pubDate>Sat, 09 Mar 2019 11:51:59 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/tags/dev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Django</title>
       <link>https://chasesawyer.dev/tags/django/</link>
       <pubDate>Thu, 21 Feb 2019 09:26:35 -0800</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dns</title>
+      <link>https://chasesawyer.dev/tags/dns/</link>
+      <pubDate>Sat, 09 Mar 2019 11:51:59 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Domains</title>
+      <link>https://chasesawyer.dev/tags/domains/</link>
+      <pubDate>Sat, 09 Mar 2019 11:51:59 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/tags/domains/</guid>
       <description></description>
     </item>
     
@@ -158,6 +185,15 @@
     </item>
     
     <item>
+      <title>Google</title>
+      <link>https://chasesawyer.dev/tags/google/</link>
+      <pubDate>Sat, 09 Mar 2019 11:51:59 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/tags/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Graphene</title>
       <link>https://chasesawyer.dev/tags/graphene/</link>
       <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
@@ -196,9 +232,18 @@
     <item>
       <title>Heroku</title>
       <link>https://chasesawyer.dev/tags/heroku/</link>
-      <pubDate>Wed, 30 May 2018 10:06:45 -0700</pubDate>
+      <pubDate>Sat, 09 Mar 2019 11:51:59 -0800</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/heroku/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hsts</title>
+      <link>https://chasesawyer.dev/tags/hsts/</link>
+      <pubDate>Sat, 09 Mar 2019 11:51:59 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/tags/hsts/</guid>
       <description></description>
     </item>
     
@@ -286,7 +331,7 @@
     <item>
       <title>Post</title>
       <link>https://chasesawyer.dev/tags/post/</link>
-      <pubDate>Thu, 21 Feb 2019 09:26:35 -0800</pubDate>
+      <pubDate>Sat, 09 Mar 2019 11:51:59 -0800</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/post/</guid>
       <description></description>
@@ -334,6 +379,15 @@
       <pubDate>Fri, 08 Jun 2018 18:20:43 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/sample/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://chasesawyer.dev/tags/security/</link>
+      <pubDate>Sat, 09 Mar 2019 11:51:59 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/tags/security/</guid>
       <description></description>
     </item>
     

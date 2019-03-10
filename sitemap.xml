@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chasesawyer.dev/post/2019-03-09-google-dev-domains-github-pages-and-heroku-apps/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chasesawyer.dev/post/2019-02-21-updating_older_django_and_python_projects/</loc>
     <lastmod>2019-03-09T12:34:56-08:00</lastmod>
   </url>
@@ -114,7 +119,7 @@
   
   <url>
     <loc>https://chasesawyer.dev/</loc>
-    <lastmod>2019-03-09T12:34:56-08:00</lastmod>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
   </url>
   
   <url>
@@ -141,7 +146,7 @@
   
   <url>
     <loc>https://chasesawyer.dev/tags/blog/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -181,8 +186,26 @@
   </url>
   
   <url>
+    <loc>https://chasesawyer.dev/tags/dev/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chasesawyer.dev/tags/django/</loc>
     <lastmod>2019-03-09T12:34:56-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/dns/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/domains/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -223,6 +246,12 @@
   </url>
   
   <url>
+    <loc>https://chasesawyer.dev/tags/google/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chasesawyer.dev/tags/graphene/</loc>
     <lastmod>2018-05-30T10:06:45-07:00</lastmod>
     <priority>0</priority>
@@ -248,7 +277,13 @@
   
   <url>
     <loc>https://chasesawyer.dev/tags/heroku/</loc>
-    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/hsts/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -313,7 +348,7 @@
   
   <url>
     <loc>https://chasesawyer.dev/tags/post/</loc>
-    <lastmod>2019-03-09T12:34:56-08:00</lastmod>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -325,7 +360,7 @@
   
   <url>
     <loc>https://chasesawyer.dev/post/</loc>
-    <lastmod>2019-03-09T12:34:56-08:00</lastmod>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -362,6 +397,12 @@
   <url>
     <loc>https://chasesawyer.dev/search/</loc>
     <priority>0.1</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/security/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
