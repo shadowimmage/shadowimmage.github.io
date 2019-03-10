@@ -11,6 +11,8 @@ pygmentsStyle = "trac"
 #disqusShortname = "XXX"
 googleAnalytics = "UA-119999962-1"
 enableEmoji = true
+[permalinks]
+  post = "/post/:year/:month/:title/"
 
 [Params]
   logo = "img/logo-plain.svg"
