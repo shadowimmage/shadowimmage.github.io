@@ -3,8 +3,103 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chasesawyer.dev/</loc>
+    <lastmod>2019-05-01T11:44:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/post/2019/05/hyper-v-local-networking/</loc>
+    <lastmod>2019-05-01T11:44:57-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/post/</loc>
+    <lastmod>2019-05-01T11:44:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/</loc>
+    <lastmod>2019-05-01T11:44:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/hyperv/</loc>
+    <lastmod>2019-05-01T11:44:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/networking/</loc>
+    <lastmod>2019-05-01T11:44:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/post/</loc>
+    <lastmod>2019-05-01T11:44:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/virtualization/</loc>
+    <lastmod>2019-05-01T11:44:57-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chasesawyer.dev/post/2019/03/google-.dev-domains-github-pages-and-heroku-apps/</loc>
     <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/blog/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/dev/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/dns/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/domains/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/google/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/heroku/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/hsts/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/security/</loc>
+    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -13,8 +108,44 @@
   </url>
   
   <url>
+    <loc>https://chasesawyer.dev/tags/django/</loc>
+    <lastmod>2019-03-09T12:34:56-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/python/</loc>
+    <lastmod>2019-03-09T12:34:56-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/virtualenv/</loc>
+    <lastmod>2019-03-09T12:34:56-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chasesawyer.dev/post/2018/10/long-time-update-new-projects/</loc>
     <lastmod>2018-12-09T16:26:45-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/cloud/</loc>
+    <lastmod>2018-12-09T16:26:45-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/update/</loc>
+    <lastmod>2018-12-09T16:26:45-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/uw/</loc>
+    <lastmod>2018-12-09T16:26:45-07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -23,8 +154,38 @@
   </url>
   
   <url>
+    <loc>https://chasesawyer.dev/tags/debugging/</loc>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/javascript/</loc>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/node/</loc>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chasesawyer.dev/post/2018/06/file-paths-in-node/</loc>
     <lastmod>2018-06-09T18:52:55-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/express/</loc>
+    <lastmod>2018-06-09T18:52:55-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/filesystem/</loc>
+    <lastmod>2018-06-09T18:52:55-07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -33,8 +194,38 @@
   </url>
   
   <url>
+    <loc>https://chasesawyer.dev/tags/freecodecamp/</loc>
+    <lastmod>2018-06-08T18:20:43-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/mongodb/</loc>
+    <lastmod>2018-06-08T18:20:43-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/pug/</loc>
+    <lastmod>2018-06-08T18:20:43-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/sample/</loc>
+    <lastmod>2018-06-08T18:20:43-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chasesawyer.dev/post/2018/06/code-editors-vs.-word-processors/</loc>
     <lastmod>2018-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/nonesense/</loc>
+    <lastmod>2018-06-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -43,13 +234,73 @@
   </url>
   
   <url>
+    <loc>https://chasesawyer.dev/tags/certificate/</loc>
+    <lastmod>2018-06-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/project/</loc>
+    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chasesawyer.dev/project/rttapp/</loc>
     <lastmod>2018-05-30T10:06:45-07:00</lastmod>
   </url>
   
   <url>
+    <loc>https://chasesawyer.dev/tags/apollo/</loc>
+    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/graphene/</loc>
+    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/graphql/</loc>
+    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/postgresql/</loc>
+    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/project/</loc>
+    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/vue/</loc>
+    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chasesawyer.dev/project/keysapp/</loc>
     <lastmod>2018-05-30T10:01:41-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/demo/</loc>
+    <lastmod>2018-05-30T10:01:41-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/hugo/</loc>
+    <lastmod>2018-05-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -88,8 +339,44 @@
   </url>
   
   <url>
+    <loc>https://chasesawyer.dev/tags/fyi/</loc>
+    <lastmod>2018-05-10T21:04:59-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/help/</loc>
+    <lastmod>2018-05-10T21:04:59-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/note/</loc>
+    <lastmod>2018-05-10T21:04:59-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chasesawyer.dev/post/2018/05/bad-coffee/</loc>
     <lastmod>2018-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/coffee/</loc>
+    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/fwp/</loc>
+    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/short/</loc>
+    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -103,311 +390,14 @@
   </url>
   
   <url>
-    <loc>https://chasesawyer.dev/post/2017/06/python-tk-ui-notes-project-update/</loc>
-    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/post/2017/05/learning-jekyll-and-getting-started-with-github-pages/</loc>
-    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/project/dustcollector/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/</loc>
-    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/3d-printing/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/page/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/apollo/</loc>
-    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://chasesawyer.dev/tags/aws/</loc>
     <lastmod>2018-05-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://chasesawyer.dev/tags/blog/</loc>
-    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/certificate/</loc>
-    <lastmod>2018-06-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/cloud/</loc>
-    <lastmod>2018-12-09T16:26:45-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/coffee/</loc>
-    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/debugging/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/demo/</loc>
-    <lastmod>2018-05-30T10:01:41-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/dev/</loc>
-    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/django/</loc>
-    <lastmod>2019-03-09T12:34:56-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/dns/</loc>
-    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/domains/</loc>
-    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/express/</loc>
-    <lastmod>2018-06-09T18:52:55-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/filesystem/</loc>
-    <lastmod>2018-06-09T18:52:55-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/freecodecamp/</loc>
-    <lastmod>2018-06-08T18:20:43-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/fusion360/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/fwp/</loc>
-    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/fyi/</loc>
-    <lastmod>2018-05-10T21:04:59-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/google/</loc>
-    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/graphene/</loc>
-    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/graphql/</loc>
-    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/gui/</loc>
-    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/help/</loc>
-    <lastmod>2018-05-10T21:04:59-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/heroku/</loc>
-    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/hsts/</loc>
-    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/hugo/</loc>
-    <lastmod>2018-05-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/javascript/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/jekyll/</loc>
-    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://chasesawyer.dev/tags/lambda/</loc>
     <lastmod>2018-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/learning/</loc>
-    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/mongodb/</loc>
-    <lastmod>2018-06-08T18:20:43-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/node/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/nonesense/</loc>
-    <lastmod>2018-06-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/note/</loc>
-    <lastmod>2018-05-10T21:04:59-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/page/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/post/</loc>
-    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/postgresql/</loc>
-    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/post/</loc>
-    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/project/</loc>
-    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/project/</loc>
-    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/pug/</loc>
-    <lastmod>2018-06-08T18:20:43-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/python/</loc>
-    <lastmod>2019-03-09T12:34:56-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/sample/</loc>
-    <lastmod>2018-06-08T18:20:43-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/search/</loc>
-    <priority>0.1</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/security/</loc>
-    <lastmod>2019-03-09T19:10:35-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/short/</loc>
-    <lastmod>2018-05-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -424,33 +414,67 @@
   </url>
   
   <url>
-    <loc>https://chasesawyer.dev/tags/</loc>
+    <loc>https://chasesawyer.dev/post/2017/06/python-tk-ui-notes-project-update/</loc>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/gui/</loc>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/post/2017/05/learning-jekyll-and-getting-started-with-github-pages/</loc>
+    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/jekyll/</loc>
+    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/learning/</loc>
+    <lastmod>2017-05-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/3d-printing/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://chasesawyer.dev/tags/update/</loc>
-    <lastmod>2018-12-09T16:26:45-07:00</lastmod>
+    <loc>https://chasesawyer.dev/project/dustcollector/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/fusion360/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://chasesawyer.dev/tags/uw/</loc>
-    <lastmod>2018-12-09T16:26:45-07:00</lastmod>
+    <loc>https://chasesawyer.dev/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://chasesawyer.dev/tags/virtualenv/</loc>
-    <lastmod>2019-03-09T12:34:56-08:00</lastmod>
+    <loc>https://chasesawyer.dev/page/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://chasesawyer.dev/tags/vue/</loc>
-    <lastmod>2018-05-30T10:06:45-07:00</lastmod>
-    <priority>0</priority>
+    <loc>https://chasesawyer.dev/search/</loc>
+    <priority>0.1</priority>
   </url>
   
 </urlset>

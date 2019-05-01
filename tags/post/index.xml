@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Post on Chase Sawyer</title>
+    <title>post on Chase Sawyer</title>
     <link>https://chasesawyer.dev/tags/post/</link>
-    <description>Recent content in Post on Chase Sawyer</description>
+    <description>Recent content in post on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Sat, 09 Mar 2019 11:51:59 -0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 May 2019 11:44:57 -0700</lastBuildDate>
     
 	<atom:link href="https://chasesawyer.dev/tags/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hyper-V Local Networking</title>
+      <link>https://chasesawyer.dev/post/2019/05/hyper-v-local-networking/</link>
+      <pubDate>Wed, 01 May 2019 11:44:57 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/post/2019/05/hyper-v-local-networking/</guid>
+      <description>I had to set up an Ubuntu VM (Virtual Machine) on my machine recently and because I also use Docker, I had to learn exactly how Hyper-V handles networking tasks between the host machine and the virtual machines you set up. Hyper-V, as far as I understand, has 3 main networking methods called virtual switches. There&amp;rsquo;s actually a 4th option that comes out of the box, which is something of a hybrid between an &amp;ldquo;Internal Switch&amp;rdquo; and an &amp;ldquo;External Switch&amp;rdquo;.</description>
+    </item>
     
     <item>
       <title>Google .dev Domains, GitHub Pages, and Heroku Apps</title>
@@ -40,9 +49,7 @@ But how to get it set up? When you buy a domain name, nothing is really set up f
       <guid>https://chasesawyer.dev/post/2018/10/long-time-update-new-projects/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Author&amp;rsquo;s Note: this post has taken a long time to get written - so long, that I already have my 2018 Hactoberfest t-shirt and stickers! It&amp;rsquo;s content spans mid-October through December. I&amp;rsquo;ve done my best to make it a cohesive whole.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -60,7 +67,7 @@ But how to get it set up? When you buy a domain name, nothing is really set up f
       <pubDate>Sat, 09 Jun 2018 18:52:55 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/06/file-paths-in-node/</guid>
-      <description>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.</description>
+      <description></description>
     </item>
     
     <item>
@@ -79,8 +86,7 @@ While it&amp;rsquo;s probably been hashed out and written about a lot by other p
       <pubDate>Tue, 05 Jun 2018 23:04:02 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/06/new-free-code-camp-cert/</guid>
-      <description>I got my back-end (now API and Microservice) cert today from Free Code Camp! https://www.freecodecamp.org/certification/shadowimmage/apis-and-microservices Hooray!
-It&amp;rsquo;s been a year since I started working through the Free Code Camp curriculum, and it feels good to finally have finished the API work. I feel like I have a pretty solid grasp now on how to build and arrange an API, which I hope will help me in the future when I try to do more API work.</description>
+      <description></description>
     </item>
     
     <item>
@@ -98,9 +104,7 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
       <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/timestamp-microservice/</guid>
-      <description>&lt;p&gt;The goal is to create a microservice that will take a date string or a unix timestamp and make a JSON response with both versions of the given timestamp / date.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;The goal is to create a microservice that will take a date string or a unix timestamp and make a JSON response with both versions of the given timestamp / date.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -109,8 +113,7 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
       <pubDate>Thu, 10 May 2018 21:04:59 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/hugo-gotchas/</guid>
-      <description>Gotchas In order of the issue being found:
-Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for conditional statements, Hugo uses Polish or prefix notation for the operators. This meas that instead of writing if this and that, you have to write if and this that. For more complex arrangements of logical conditions, say for a situation in which you need to check three conditions, you have to write it as: if and (first) ( and (second) (third)) which, in a infix notation style, would have been written if first and second and third.</description>
+      <description></description>
     </item>
     
     <item>

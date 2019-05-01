@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>3d Printing on Chase Sawyer</title>
+    <title>3d printing on Chase Sawyer</title>
     <link>https://chasesawyer.dev/tags/3d-printing/</link>
-    <description>Recent content in 3d Printing on Chase Sawyer</description>
+    <description>Recent content in 3d printing on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
@@ -19,9 +19,7 @@
       <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/project/dustcollector/</guid>
-      <description>&lt;p&gt;We have a hammer drill that has a vacuum collector attachment, and we wanted a collector that could use different kinds of filters. I took the existing dust collector and designed an exact replacement that would take any kind of 3M respirator filter as the filter element. This allows using different kinds of filters and for the filters to be replaced. The parts involved were manually reverse-engineered on paper with the device and a set of good digital calipers. The replacement parts were designed in Autodesk &lt;a href=&#34;https://www.autodesk.com/products/fusion-360/overview&#34;&gt;Fusion360&lt;/a&gt; and 3D printed on a &lt;a href=&#34;https://www.prusa3d.com/&#34;&gt;Prusa&lt;/a&gt; i3 MK2.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;We have a hammer drill that has a vacuum collector attachment, and we wanted a collector that could use different kinds of filters. I took the existing dust collector and designed an exact replacement that would take any kind of 3M respirator filter as the filter element. This allows using different kinds of filters and for the filters to be replaced. The parts involved were manually reverse-engineered on paper with the device and a set of good digital calipers. The replacement parts were designed in Autodesk &lt;a href=&#34;https://www.autodesk.com/products/fusion-360/overview&#34;&gt;Fusion360&lt;/a&gt; and 3D printed on a &lt;a href=&#34;https://www.prusa3d.com/&#34;&gt;Prusa&lt;/a&gt; i3 MK2.&lt;/p&gt;</description>
     </item>
     
   </channel>

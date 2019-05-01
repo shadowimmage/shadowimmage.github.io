@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript on Chase Sawyer</title>
+    <title>javascript on Chase Sawyer</title>
     <link>https://chasesawyer.dev/tags/javascript/</link>
-    <description>Recent content in Javascript on Chase Sawyer</description>
+    <description>Recent content in javascript on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
@@ -28,7 +28,7 @@
       <pubDate>Sat, 09 Jun 2018 18:52:55 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/06/file-paths-in-node/</guid>
-      <description>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.</description>
+      <description></description>
     </item>
     
     <item>
@@ -41,9 +41,7 @@
 
 &lt;p&gt;The UI uses a pug template and bootstrap for most styling, and some custom css rules to fine tune elements.&lt;/p&gt;
 
-&lt;p&gt;This was actually the first project that I completed out of the new Free Code Camp curriculum, and replaced the previous Google Image Search Abstraction project that I had already completed previously.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This was actually the first project that I completed out of the new Free Code Camp curriculum, and replaced the previous Google Image Search Abstraction project that I had already completed previously.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -61,9 +59,7 @@
       <pubDate>Sat, 12 May 2018 19:05:29 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/file-metadata-microservice/</guid>
-      <description>&lt;p&gt;Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -72,9 +68,7 @@
       <pubDate>Sat, 12 May 2018 18:50:14 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/image-search-abstraction-layer/</guid>
-      <description>&lt;p&gt;This microservice creates an abstraction layer (and history) between the user and the Google Images search API.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;This microservice creates an abstraction layer (and history) between the user and the Google Images search API.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -83,9 +77,7 @@
       <pubDate>Sat, 12 May 2018 18:13:23 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/url-shortener-microservice/</guid>
-      <description>&lt;p&gt;The challenge here was to create a URL Shortener microservice. It uses a database to associate a short url ID with the original url, and once created, the microservice will redirect visitors of the short URL to the original URL.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;The challenge here was to create a URL Shortener microservice. It uses a database to associate a short url ID with the original url, and once created, the microservice will redirect visitors of the short URL to the original URL.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -94,9 +86,7 @@
       <pubDate>Sat, 12 May 2018 17:55:20 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/request-header-parser-microservice/</guid>
-      <description>&lt;p&gt;The goal for this one is to get return to the user the IP address, language, and operating system of the browser/user making the request.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;The goal for this one is to get return to the user the IP address, language, and operating system of the browser/user making the request.&lt;/p&gt;</description>
     </item>
     
   </channel>

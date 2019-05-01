@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pug on Chase Sawyer</title>
+    <title>pug on Chase Sawyer</title>
     <link>https://chasesawyer.dev/tags/pug/</link>
-    <description>Recent content in Pug on Chase Sawyer</description>
+    <description>Recent content in pug on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
@@ -23,9 +23,7 @@
 
 &lt;p&gt;The UI uses a pug template and bootstrap for most styling, and some custom css rules to fine tune elements.&lt;/p&gt;
 
-&lt;p&gt;This was actually the first project that I completed out of the new Free Code Camp curriculum, and replaced the previous Google Image Search Abstraction project that I had already completed previously.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This was actually the first project that I completed out of the new Free Code Camp curriculum, and replaced the previous Google Image Search Abstraction project that I had already completed previously.&lt;/p&gt;</description>
     </item>
     
   </channel>
