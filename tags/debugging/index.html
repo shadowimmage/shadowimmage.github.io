@@ -26,7 +26,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.4" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <link rel="canonical" href="https://chasesawyer.dev/tags/debugging/" />
         <link rel="alternate" href="https://chasesawyer.dev/tags/debugging/index.xml" type="application/rss+xml" title="Chase Sawyer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
@@ -291,7 +291,7 @@ if (!doNotTrack) {
   
   
   &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 0 minutes (0 words)
+  <i class="fa fa-clock-o"></i> 4 minutes (725 words)
   
   
 </span>
@@ -300,43 +300,8 @@ if (!doNotTrack) {
               </p>
               <div class="post-entry">
                 
-                  
-
-<p>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.</p>
-
-<p>When static file loaders can&rsquo;t or don&rsquo;t load something, it&rsquo;s often not called  out as an error because when you tell the computer where the static files are, it doesn&rsquo;t make any assumptions about the contents there. And later on when you&rsquo;re trying to load your custom CSS or images and getting nothing loaded, and quiet browser 404 errors for the resource, but not the page overall, the result can be a maddening series of digging into documentation that doesn&rsquo;t often make clear the particulars of path names and how a single dot or slash can make all the difference in the world between success and failure.</p>
-
-<h2 id="file-paths">File Paths</h2>
-
-<p>A path to a file on a computer, and to an extent, a path to a resource on the internet looks like this: <code>/rootDirectory/subDirectory/file</code> with the <code>file</code> part usually having some kind of type after a dot, such as <code>.txt</code> or <code>.exe</code>. For Windows users, the beginning will have a drive letter at the beginning, most commonly C: <code>C:\rootDirectory\subDirectory\file</code>.</p>
-
-<p>What happened to me, and I&rsquo;m sure has happened to others - such as the individual I was talking to this week - is that nothing in the documentation about static paths goes deeply into path resolution. I guess it&rsquo;s just kind of assumed that you as the developer in control of things should know what&rsquo;s happening in the background, but many do not.</p>
-
-<h3 id="path-resolution">Path Resolution</h3>
-
-<p>When you give Express.js (Node) a path to load, it&rsquo;s generally going to be in a <em>relative</em> format. The documentation gives the most basic setup as something like <code>app.use(express.static('public'))</code>. The mechanics behind this statement are a bit more complicated than it might seem at first glance.</p>
-
-<p>When you give Node a path such as <code>'public'</code>, a function goes through and makes a best guess as to where you mean to point it. Why doesn&rsquo;t it just <em>know</em> that you mean the folder called &lsquo;public&rsquo; (or &lsquo;static&rsquo; or &lsquo;img&rsquo; or whatever)? Because Node needs the <em>absolute</em> path on the file system to that directory, and thus the files and folders inside. And this function is pretty lenient about what it will accept in terms of file paths, and will assume that you know what you&rsquo;re doing.</p>
-
-<p>So, what is the difference between <code>'public'</code>, <code>'/public'</code>, and <code>'./public'</code>?</p>
-
-<p>The first and the last actually resolve to the same destination: <em>relative</em> to the current working directory, find a directory called &lsquo;public&rsquo; and serve the contents as static files. However, the second example resolves to something else entirely: find a directory called &lsquo;public&rsquo; at the <em>root</em> of the file system. Or more explicitly: instead of resolving to <code>/rootDirectory/subDirectory/project/public/</code> it will resolve to <code>/public/</code>. Or in Windows,  <code>C:\public\</code></p>
-
-<p>When path.js (in Node) runs through resolve() for a given path name, there&rsquo;s this comment in the function:</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/* Lines 201 - 206 of path.js */</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">code</span> <span class="o">===</span> <span class="mi">47</span><span class="cm">/*/*/</span> <span class="o">||</span> <span class="nx">code</span> <span class="o">===</span> <span class="mi">92</span><span class="cm">/*\*/</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Possible UNC root
-</span><span class="c1"></span>
-    <span class="c1">// If we started with a separator, we know we at least have an
-</span><span class="c1"></span>    <span class="c1">// absolute path of some kind (UNC or otherwise)
-</span><span class="c1"></span>    <span class="nx">isAbsolute</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-</code></pre></div>
-<p>Which if you walk through debugger with the above three options, it becomes clear that the middle option <code>'/public'</code> will resolve to an <em>absolute</em> path, rather than a relative path to the current directory where you&rsquo;re working, and that will make all the difference in the world.</p>
-
-<p>Now, if you do want to give an absolute path from the root of the drive you&rsquo;re working on, then you have a way of doing that by starting the path off with a &lsquo;/&rsquo; -  otherwise you&rsquo;ll need to use relative paths with either a &lsquo;./&rsquo; or just the folder/file you&rsquo;re looking for without anything else.</p>
-
-<p>I hope that this helps someone out there understand file paths and relieves some frustration around what <code>app.use(express.static('public'))</code> actually means.</p>
-
+                  This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.
+                  <a href="https://chasesawyer.dev/post/2018/06/file-paths-in-node/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -434,7 +399,7 @@ if (!doNotTrack) {
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.4</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

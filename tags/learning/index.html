@@ -26,7 +26,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.4" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <link rel="canonical" href="https://chasesawyer.dev/tags/learning/" />
         <link rel="alternate" href="https://chasesawyer.dev/tags/learning/index.xml" type="application/rss+xml" title="Chase Sawyer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
@@ -234,7 +234,7 @@ if (!doNotTrack) {
   
   
   &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 0 minutes (0 words)
+  <i class="fa fa-clock-o"></i> 3 minutes (568 words)
   
   
 </span>
@@ -243,61 +243,10 @@ if (!doNotTrack) {
               </p>
               <div class="post-entry">
                 
-                  <p><del>First Post!</del></p>
-
-<p>Learning how to set up Jekyll on GitHub Pages is actually a little harder than I was expecting from the outset. Mostly because most of the things that you need to set up Jekyll for local development, and a lot of the things that come prepackaged with it aren&rsquo;t actually necessary for running it on GitHub Pages.</p>
-
-<p>Here is the Gemfile content for this page when I first started and got things working:</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="s2">&#34;https://rubygems.org&#34;</span>
-<span class="n">ruby</span> <span class="no">RUBY_VERSION</span>
-<span class="c1"># ...</span>
-<span class="n">gem</span> <span class="s2">&#34;jekyll&#34;</span><span class="p">,</span> <span class="s2">&#34;~&gt; 3.3&#34;</span>
-
-<span class="n">gem</span> <span class="s2">&#34;jekyll-theme-slate&#34;</span>
-
-<span class="c1"># If you have any plugins, put them here!</span>
-<span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
-    <span class="n">gem</span> <span class="s2">&#34;jekyll-feed&#34;</span>
-    <span class="n">gem</span> <span class="s2">&#34;github-pages&#34;</span>
-<span class="k">end</span></code></pre></div>
-<p>This is actually a mix of what you end up with when you <a href="https://help.github.com/articles/creating-a-github-pages-site-with-the-jekyll-theme-chooser/#using-the-jekyll-theme-chooser-with-a-new-repository">create a site from scratch on GitHub Pages using the theme chooser</a> with an empty repository. And it&rsquo;s also different from the one you&rsquo;d get by starting locally using the <a href="https://jekyllrb.com/docs/quickstart/">Jekyll Quick-start guide</a>. While the Quick-start mentions <a href="http://jmcglone.com/guides/github-pages/">this</a> helpful guide to getting started using Jekyll on GitHub Pages (which I worked through and found to bve educational in getting things set up), it doesn&rsquo;t make use of the nice (an easy to use) templates / themes that you can select through the GitHub Pages repository settings. To do that, you need to use the template HTML / CSS from the theme baked into GitHub Pages by copying <code>default.html</code> according to <a href="https://help.github.com/articles/customizing-css-and-html-in-your-jekyll-theme/">this</a> article on GitHub Help.</p>
-
-<p>Once you have your theme working, and you have a working website that you can reach, and your content is showing up the way you expect, you can begin customizing and adding in plugins, custom CSS, etc.</p>
-
-<p>One final issue I ran into was a dependency issue with the <code>Gemfile.lock</code> vs. the <code>Gemfile</code> when trying to set up this site to use <a href="https://circleci.com/">CircleCI</a> (more for fun getting to know CircleCI than anything else). The issue was that when I created a local Jekyll deployment for testing with the same repository as the one I was using for GitHub Pages, I had been making a lot of ignorant changes to my <code>Gemfile</code>. There were conflicting entries between the two and my resolution (since there wasn&rsquo;t much here to break yet) was to rename <code>Gemfile.lock</code> to <code>Gemfile.lock.old</code> left my <code>Gemfile</code> as it was, and then reran <code>bundle install</code>, which will regenerate <code>Gemfile.lock</code>, without any conflicts between them.</p>
-
-<p>Once that was ironed out, CircleCI was able to complete without errors, but without a <code>circle.yml</code>, it also didn&rsquo;t have any tests to run in order to say anything about the state of the project. So I put together a basic configuration:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml">machine<span class="p">:</span><span class="w">
-</span><span class="w">    </span>ruby<span class="p">:</span><span class="w">
-</span><span class="w">        </span>version<span class="p">:</span><span class="w"> </span><span class="m">2.4</span>.<span class="m">0</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span>dependencies<span class="p">:</span><span class="w">
-</span><span class="w">    </span>post<span class="p">:</span><span class="w">
-</span><span class="w">        </span>-<span class="w"> </span>bundle<span class="w"> </span>exec<span class="w"> </span>jekyll<span class="w"> </span>build<span class="w">
-</span><span class="w">
-</span><span class="w"></span>test<span class="p">:</span><span class="w">
-</span><span class="w">    </span>post<span class="p">:</span><span class="w">
-</span><span class="w">        </span>-<span class="w"> </span>bundle<span class="w"> </span>exec<span class="w"> </span>htmlproofer<span class="w"> </span>./_site<span class="w"> </span>--check-html<span class="w"> </span>--disable-external</code></pre></div>
-<p>The above is basically lifted from the <a href="https://jekyllrb.com/docs/continuous-integration/circleci/">CircleCI page in the Jekyll docs</a>, plus specifying the ruby version that&rsquo;s currently being used by GitHub Pages.</p>
-
-<p><em>Another</em> issue that I ran into trying to get this page to build on CircleCI was <a href="https://github.com/jekyll/jekyll/issues/2938">this Jekyll issue (#2938)</a>. So I had to add &ldquo;vendor&rdquo; to the exclude list - this was not immediately clear (since I hardly know YAML at all) because it&rsquo;s listed on the fixes as
-&gt; <code>yml
-&gt; exclude: [vendor]
-&gt;</code>
-But if you want it in a YAML list, it needs to be noted as</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml">exclude<span class="p">:</span><span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>vendor<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>....<span class="w"> </span>other<span class="w"> </span>excludes<span class="w"> </span>....</code></pre></div>
-<hr />
-
-<p>So after all that, do I have a passing build? No.</p>
-
-<p>htmlproofer found some <code>&lt;a href=&quot;#&quot;&gt;</code> placeholder tags and failed.</p>
-
-<p>But at least now it&rsquo;s failing because of something I wrote, rather than because of a configuration issue!</p>
-
-<p>Success and progress.</p>
-
+                  First Post!
+Learning how to set up Jekyll on GitHub Pages is actually a little harder than I was expecting from the outset. Mostly because most of the things that you need to set up Jekyll for local development, and a lot of the things that come prepackaged with it aren&rsquo;t actually necessary for running it on GitHub Pages.
+Here is the Gemfile content for this page when I first started and got things working:
+                  <a href="https://chasesawyer.dev/post/2017/05/learning-jekyll-and-getting-started-with-github-pages/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -387,7 +336,7 @@ But if you want it in a YAML list, it needs to be noted as</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.4</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>
