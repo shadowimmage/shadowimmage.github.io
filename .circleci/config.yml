@@ -24,7 +24,7 @@ jobs:
   build:
     working_directory: ~/project
     docker:
-      - image: cibuilds/hugo:0.55.4
+      - image: cibuilds/hugo:0.55.6
     steps:
       - attach_workspace:
           at: ~/tmp

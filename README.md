@@ -1,4 +1,5 @@
 # Chase Sawyer
+
 [![CircleCI](https://circleci.com/gh/shadowimmage/shadowimmage.github.io.svg?style=svg)](https://circleci.com/gh/shadowimmage/shadowimmage.github.io)
 [Go to site](https://chasesawyer.dev/)
 
@@ -6,7 +7,7 @@
 
 The following are some notes for maintaining the site and repository.
 
-### Updating Dependencies - Hugo v0.50
+### Updating Dependencies - Hugo v0.55.6
 
 Hugo itself can be updated by grabbing the latest release from the [Hugo GitHub Releases](https://github.com/gohugoio/hugo/releases) page and downloading the latest release version of the Hugo executable.
 

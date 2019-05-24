@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: "Chase Sawyer"
 subtitle:
 comments: false
 draft: false
