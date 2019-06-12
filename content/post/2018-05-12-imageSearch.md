@@ -120,7 +120,7 @@ View this code live on Heroku, usage:
 
 Search for images by replacing {query} with your query, and paginate through results with {page}.
 
-- https://fcc-challenges.herokuapp.com/api/imagesearch/q/{query}?offset={page}
+- `https://fcc-challenges.herokuapp.com/api/imagesearch/q/{query}?offset={page}`
 
 Show recent queries at the endpoint:
 

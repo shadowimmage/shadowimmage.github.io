@@ -47,9 +47,9 @@ I'm really interested in security, privacy, and ensuring that data is protected.
 Create business intelligence solutions and tools, informing service improvement. Develop software tools to automate processes, saving hundreds of hours of staff time. Manage communications and outreach campaigns with wide customer base. Manage and maintain 400+ desktop and laptop computers.
 {{< /experience >}}
 
-{{% experience datadir="resume" data="experience_meta" section="pss" %}}
+{{< experience datadir="resume" data="experience_meta" section="pss" >}}
 Managed a team of help desk analysts, including hiring and training. Performed Tier 2 and 3 support and maintenance of HD AV Systems and infrastructure while providing excellent customer support and service. Certified in Biamp Audio DSPs and Crestron DigitalMedia.
-{{% /experience %}}
+{{< /experience >}}
 
 {{< experience datadir="resume" data="experience_meta" section="lhda" >}}
 

@@ -48,13 +48,15 @@ jobs:
   test:
     working_directory: ~/project
     docker:
-      - image: cibuilds/hugo:0.55.4
+      - image: cibuilds/hugo:0.55.6
     steps:
       - attach_workspace:
           at: ~/project
       - run:
           name: html check
-          command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore
+          command: |
+            htmlproofer ~/project/public --allow-hash-href --check-html \
+            --empty-alt-ignore --disable-external
 
   deploy-master:
     machine:
@@ -89,9 +91,9 @@ workflows:
       - build:
           requires:
             - checkout-existing
-      # - test:
-      #     requires:
-      #       - build
+      - test:
+          requires:
+            - build
       - deploy-master:
           requires:
             - build
