@@ -60,3 +60,11 @@ Assuming you do want to make changes and to have those changes checked into the 
 4. Add a branch to your local submodule to begin tracking changes (get out of 'detached head' mode)
 5. Add the original repository back as an 'upstream' remote to be able to pull updates from the original source repository
 6. Manage your forked submodule as if it were any other project on GitHub - make and commit changes, upload those to your remote repository, then make pull requests to the upstream repository with your changes to contribute
+
+## Testing
+
+Html-proofer comes baked into the circleci image, should be useful in production if Hugo is producing good code.
+
+For development I can use html5validator which is a bit more draconian and hasn't been maintained since August 2018. To run that run:
+
+`html5validator --root ./public -l --ignore 'aria-labelledby' 'role=tab' 'itemprop' 'not allowed on element' 'An ID must not be the empty string' 'Use an HTTP Content-Type header on the linked resource instead.' 'must not appear as a descendant' --blacklist 'fonts' --match 'index.html'`
