@@ -14,7 +14,7 @@ With the redesign of _this_ site, I have the opportunity to collect and organize
 
 Proposed structure for the site arrangement and layout:
 
-- Profile / home page ([https://shadowimmage.github.io][0])
+- Profile / home page ([https://chasesawyer.dev][0])
     - Projects/Ideas
         - MyApps (Heroku: App Demos)
             - keysApp
@@ -37,4 +37,4 @@ Aside:
 
 ## :weary:
 
-[0]: https://shadowimmage.github.io
+[0]: https://chasesawyer.dev

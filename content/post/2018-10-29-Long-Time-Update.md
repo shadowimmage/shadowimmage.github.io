@@ -20,8 +20,8 @@ I've started working through the project prompts on The Odin Project - Still fin
 
 The following have been completed:
 
-- [etch-a-sketch](https://shadowimmage.github.io/odin-project_etch-a-sketch/)
-- [Rock-Paper-Scissors](https://shadowimmage.github.io/odin_project-Rock-Paper-Scissors/)
+- [etch-a-sketch](https://chasesawyer.dev/odin-project_etch-a-sketch/)
+- [Rock-Paper-Scissors](https://chasesawyer.dev/odin_project-Rock-Paper-Scissors/)
 
 I'll admit, it's not a terribly impressive list. But in my defense, work has come up with a way to keep me thoroughly engaged by giving me the capacity to pitch, prioritize, and execute upon projects of my own to improve processes and practices. What this has boiled down to is:
 
