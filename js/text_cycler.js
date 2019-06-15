@@ -31,6 +31,8 @@ const setupCycler = () => {
     'Analyst;',
     'Polyglot;',
     'Natural Language Processor;',
+    'Technologist',
+    'DIYer',
   ]
   setInterval(() => postText(text, element), 5000);
 }
