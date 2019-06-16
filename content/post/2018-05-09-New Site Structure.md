@@ -2,8 +2,8 @@
 title: "New Site Structure"
 date: 2018-05-09T22:19:41-07:00
 tags: [post, update]
-lastmod: 2018-05-11
-draft: true
+lastmod: 2019-06-15
+draft: false
 shareOff: true
 ---
 I took some time this week to look into all the code that I've been collecting and producing over the last year or more and began to assess where everything was being stored and hosted. Since I build a lot of demos and try out new technologies on a pretty consistent (if not sporadic) basis, this has led me to a state where I have several projects hosted on Heroku, on AWS, and offline. So I've been looking for an efficient way to bring all these projects, ideas, code samples, demos, etc into one central hub or site.
