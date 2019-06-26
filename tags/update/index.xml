@@ -44,6 +44,15 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
     </item>
     
     <item>
+      <title>New Site Structure</title>
+      <link>https://chasesawyer.dev/post/2018/05/new-site-structure/</link>
+      <pubDate>Wed, 09 May 2018 22:19:41 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/post/2018/05/new-site-structure/</guid>
+      <description>I took some time this week to look into all the code that I&amp;rsquo;ve been collecting and producing over the last year or more and began to assess where everything was being stored and hosted. Since I build a lot of demos and try out new technologies on a pretty consistent (if not sporadic) basis, this has led me to a state where I have several projects hosted on Heroku, on AWS, and offline.</description>
+    </item>
+    
+    <item>
       <title>New Static Site with Hugo</title>
       <link>https://chasesawyer.dev/post/2018/05/new-static-site-with-hugo/</link>
       <pubDate>Wed, 09 May 2018 20:51:48 -0700</pubDate>
