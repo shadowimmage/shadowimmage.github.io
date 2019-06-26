@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    
+        <title>Docker Infrastructure Project</title>
+        <meta property="og:title" content="Docker Infrastructure Project" />
+        <meta name="twitter:title" content="Docker Infrastructure Project" />
+        <meta name="description" content="Part one of [some number] of posts implementing a docker service architecture" />
+        <meta property="og:description" content="Part one of [some number] of posts implementing a docker service architecture" />
+        <meta name="twitter:description" content="Part one of [some number] of posts implementing a docker service architecture" />
+    <meta name="author" content="Chase Sawyer" />
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://chasesawyer.dev/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://chasesawyer.dev/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://chasesawyer.dev/img/favicon-16x16.png">
+    <link rel="manifest" href="https://chasesawyer.dev/img/site.webmanifest">
+    <link rel="mask-icon" href="https://chasesawyer.dev/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+        <meta property="og:image" content="https://chasesawyer.dev/img/logo-plain.svg" />
+        <meta name="twitter:image" content="https://chasesawyer.dev/img/logo-plain.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://chasesawyer.dev/post/2019/05/docker-infrastructure-project/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Chase Sawyer" />
+    
+    <meta name="generator" content="Hugo 0.55.6" />
+    <link rel="canonical" href="https://chasesawyer.dev/post/2019/05/docker-infrastructure-project/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://chasesawyer.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://chasesawyer.dev/css/syntax.css" /><link rel="stylesheet" href="https://chasesawyer.dev/css/codeblock.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+
+<link rel="stylesheet" href="https://chasesawyer.dev/css/cs-custom.css" />
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-119999962-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+    <body>
+        
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="pswp__bg"></div>
+    
+    <div class="pswp__scroll-wrap">
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+        <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="https://chasesawyer.dev/"><img class="navbar-brand" id="site-logo" src="https://chasesawyer.dev/img/logo-plain.svg" alt="Chase Sawyer" /></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://chasesawyer.dev/">
+        Chase Sawyer
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              
+                <a class="navexpand-parent-custom" title="Blog" href="/post/">Blog</a>
+                <a class="navlinks-parent hidden-sm hidden-md hidden-lg navexpand-custom" href="javascript:void(0)"></a>
+              
+              <div class="navlinks-children">
+                
+                  <a href="/tags">Tags</a>
+                
+                  <a href="/search">Search</a>
+                
+                  <a href="/post/">All Posts</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              
+                <a class="navexpand-parent-custom" title="Projects" href="/tags/project/">Projects</a>
+                <a class="navlinks-parent hidden-sm hidden-md hidden-lg navexpand-custom" href="javascript:void(0)"></a>
+              
+              <div class="navlinks-children">
+                
+                  <a href="/project/slackr25bot">R25 Slack Bot</a>
+                
+                  <a href="/project/keysapp">Keys App</a>
+                
+                  <a href="/project/rttapp">RTT App</a>
+                
+                  <a href="/project/dustcollector">Dust Collector CAD (UW)</a>
+                
+                  <a href="/tags/project/">All Projects</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Samples" href="/tags/sample/">Samples</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About / CV" href="/page/about/">About / CV</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Chase Sawyer" href="https://chasesawyer.dev/">
+            <img class="avatar-img" src="https://chasesawyer.dev/img/profile.jpg" alt="Chase Sawyer" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+        
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="pswp__bg"></div>
+    
+    <div class="pswp__scroll-wrap">
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Docker Infrastructure Project</h1>
+              
+              
+              
+                
+                  <h2 class="post-subheading">Part one of [some number] of posts implementing a docker service architecture</h2>
+                
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on May 20, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;8&nbsp;minutes
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+        
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>I&rsquo;m building a web infrastructure project that&rsquo;s based around the project <a href="https://verbose-equals-true.tk/">verbose-equals-true</a> (referred to as VET from now on), which sets out to create a set of services to support modern web apps, using several Docker based images to collect everything into separate concerns. I like the philosophy behind the project, and it looks well thought out, however, as things are always changing in this landscape and nobody has the same development environment, there&rsquo;s always going to be stumbling blocks. It&rsquo;s also my goal to use this other project as more of a framework or set of guidelines that <strong>should</strong> work, and then branch out from there, changing things as I go along so that it works for me.</p>
+
+<p>So with credit to the original creator of this project, <a href="https://briancaffey.github.io">Brian Caffey</a>, here are some of my notes on what I found difficult, what problems I ran into, and the things I changed.</p>
+
+<h2 id="operating-systems">Operating Systems</h2>
+
+<p>The project is built in a Linux environment, which has excellent support for Docker, but it&rsquo;s not my primary environment to be working in. I use Windows primarily, and all of my computers are Windows boxes. However, I have some Linux environments set up in Hyper-V already, so I&rsquo;m using Linux in Windows to implement this Docker project (what could possibly go wrong? Networking, mostly).</p>
+
+<h2 id="dns">DNS</h2>
+
+<p>This is in the Docker documentation <a href="https://docs.docker.com/get-started/part2/">here</a>, but not in the <a href="https://verbose-equals-true.tk/">VET</a> documentation: (quoted below from docs.docker.com)</p>
+
+<blockquote>
+<p>Troubleshoting for Linux users</p>
+
+<p>&hellip;</p>
+
+<p><em>DNS settings</em></p>
+
+<p>DNS misconfigurations can generate problems with <code>pip</code>. You need to set your own DNS server address to make <code>pip</code> work properly. You might want to change the DNS settings of the Docker daemon. You can edit (or create) the configuration file at <code>/etc/docker/daemon.json</code> with the <code>dns</code> key, as following:</p>
+
+<p><code>{
+  &quot;dns&quot;: [&quot;your_dns_address&quot;, &quot;8.8.8.8&quot;]
+}</code></p>
+
+<p>[&hellip;]</p>
+
+<p>Before proceeding, save <code>daemon.json</code> and restart the docker service.
+<code>sudo service docker restart</code></p>
+</blockquote>
+
+<p>The example they give above has you set the IP address(s) for your local DNS provider, with a fallback address to Google&rsquo;s public DNS. I set my DNS address list to use my local DNS first, falling back to <code>1.1.1.1</code> (Cloudflare) and finally <code>8.8.8.8</code> for Google&rsquo;s public DNS.</p>
+
+<p>The line in the VET docs that gave me trouble was when it says to first run this line in the terminal:</p>
+
+<p><code>sudo docker-compose run backend django-admin.py startproject backend .</code></p>
+
+<p>This line will spin up a docker container that will try to run <code>pip install</code> for the required packages in <code>requirements.txt</code> which failed for me because the docker container didn&rsquo;t know where to look for DNS resolution, and so <code>pip</code> couldn&rsquo;t find and install any requisite packages.</p>
+
+<p>After setting up my DNS setting for the Docker daemon as specified above and restarting the docker service, pip install worked as expected 🙌.</p>
+
+<h2 id="ci">CI</h2>
+
+<p>The VET <a href="https://verbose-equals-true.tk/docs/guide/project-setup/#code-coverage">docs</a> on have you use the GitLab built-in CI offering, which, if I used <a href="https://about.gitlab.com/">GitLab</a> at all, would probably be really easy! But I don&rsquo;t use GitLab and don&rsquo;t really want to get set up with another code repository when I already have <a href="https://github.com/">GitHub</a> set up and have integration with <a href="https://circleci.com/">CircleCI</a> already set up. So here&rsquo;s my modifications to the project to get set up with GitHub and CircleCI.</p>
+
+<p>Not really knowing anything about how GitLab&rsquo;s CI systems work, it&rsquo;s hard to translate what it&rsquo;s doing to what needs to be done with CircleCI, so this is maybe not the best solution, but it does work, and I believe that it does the thing it&rsquo;s supposed to do.</p>
+
+<h3 id="working-version-of-circleci-config">Working Version of CircleCI Config</h3>
+
+<p>Here&rsquo;s the first version of the CircleCI configuration file that successfully passed all tests and was able to store testing data in a way that CircleCI could store and parse in results.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="c">#.circleci/config.yml</span><span class="w">
+</span><span class="w"></span>version<span class="p">:</span><span class="w"> </span><span class="m">2.1</span><span class="w">
+</span><span class="w"></span><span class="c"># CircleCI</span><span class="w">
+</span><span class="w"></span>jobs<span class="p">:</span><span class="w">
+</span><span class="w">  </span>lint_test_coverage<span class="p">:</span><span class="w">
+</span><span class="w">    </span>working_directory<span class="p">:</span><span class="w"> </span>~/project<span class="w"> </span><span class="c"># this is the default</span><span class="w">
+</span><span class="w">    </span>docker<span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="c"># The first image listed is the primary image and runs all commands</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>image<span class="p">:</span><span class="w"> </span>circleci/python<span class="p">:</span><span class="m">3.6</span><span class="w">
+</span><span class="w">        </span>environment<span class="p">:</span><span class="w">
+</span><span class="w">          </span>TEST_DATABASE_URL<span class="p">:</span><span class="w"> </span>postgresql<span class="p">:</span>//postgres@localhost/circle_test<span class="p">?</span>sslmode=disable<span class="w">
+</span><span class="w">          </span>DJANGO_SETTINGS_MODULE<span class="p">:</span><span class="w"> </span>backend.settings-circleci<span class="w">
+</span><span class="w">    </span><span class="c"># Subsequent images listed run on a common network with the primary image</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>image<span class="p">:</span><span class="w"> </span>circleci/postgres<span class="p">:</span><span class="m">9.6</span>.<span class="m">9</span><span class="w">
+</span><span class="w">        </span>environment<span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="c"># these settings affect how the test database is going to be set up - use to connect later</span><span class="w">
+</span><span class="w">          </span>POSTGRES_USER<span class="p">:</span><span class="w"> </span>postgres<span class="w">
+</span><span class="w">          </span>POSTGRES_DB<span class="p">:</span><span class="w"> </span>circle_test<span class="w">
+</span><span class="w">          </span>POSTGRES_PASSWORD<span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
+</span><span class="w">    </span>steps<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>checkout<span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>run<span class="p">:</span><span class="w"> </span>mkdir<span class="w"> </span>test-reports<span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>restore_cache<span class="p">:</span><span class="w">
+</span><span class="w">          </span>key<span class="p">:</span><span class="w"> </span>deps1-{{<span class="w"> </span>.Branch<span class="w"> </span>}}-{{<span class="w"> </span>checksum<span class="w"> </span><span class="s2">&#34;backend/requirements.txt&#34;</span><span class="w"> </span>}}<span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>run<span class="p">:</span><span class="w">
+</span><span class="w">          </span>name<span class="p">:</span><span class="w"> </span>Install<span class="w"> </span>Python<span class="w"> </span>Dependencies<span class="w">
+</span><span class="w">          </span>command<span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">            python3 -m venv .venv</span><span class="w">
+</span><span class="w">            </span>.<span class="w"> </span>.venv/bin/activate<span class="w">
+</span><span class="w">            </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>backend/requirements.txt<span class="w">
+</span><span class="w">      </span><span class="c"># Save installed environment dependencies in cache for later steps/jobs</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>save_cache<span class="p">:</span><span class="w">
+</span><span class="w">          </span>key<span class="p">:</span><span class="w"> </span>deps1-{{<span class="w"> </span>.Branch<span class="w"> </span>}}-{{<span class="w"> </span>checksum<span class="w"> </span><span class="s2">&#34;backend/requirements.txt&#34;</span><span class="w"> </span>}}<span class="w">
+</span><span class="w">          </span>paths<span class="p">:</span><span class="w">
+</span><span class="w">            </span>-<span class="w"> </span><span class="s2">&#34;.venv&#34;</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>run<span class="p">:</span><span class="w">
+</span><span class="w">          </span>name<span class="p">:</span><span class="w"> </span>install<span class="w"> </span>dockerize<span class="w">
+</span><span class="w">          </span>command<span class="p">:</span><span class="w"> </span>wget<span class="w"> </span>https<span class="p">:</span>//github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz<span class="w"> </span><span class="cp">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>tar<span class="w"> </span>-C<span class="w"> </span>/usr/local/bin<span class="w"> </span>-xzvf<span class="w"> </span>dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz<span class="w"> </span><span class="cp">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz<span class="w">
+</span><span class="w">          </span>environment<span class="p">:</span><span class="w">
+</span><span class="w">            </span>DOCKERIZE_VERSION<span class="p">:</span><span class="w"> </span>v0.<span class="m">3.0</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>run<span class="p">:</span><span class="w">
+</span><span class="w">          </span>name<span class="p">:</span><span class="w"> </span>Wait<span class="w"> </span>for<span class="w"> </span>db<span class="w">
+</span><span class="w">          </span>command<span class="p">:</span><span class="w"> </span>dockerize<span class="w"> </span>-wait<span class="w"> </span>tcp<span class="p">:</span>//localhost<span class="p">:</span><span class="m">5432</span><span class="w"> </span>-timeout<span class="w"> </span>1m<span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>run<span class="p">:</span><span class="w">
+</span><span class="w">          </span>name<span class="p">:</span><span class="w"> </span>Linting<span class="w"> </span>test<span class="w">
+</span><span class="w">          </span>command<span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">            . .venv/bin/activate</span><span class="w">
+</span><span class="w">            </span>cd<span class="w"> </span>backend<span class="w">
+</span><span class="w">            </span>flake8<span class="w"> </span>--output-file=../test-reports/flake8.txt<span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>run<span class="p">:</span><span class="w">
+</span><span class="w">          </span>name<span class="p">:</span><span class="w"> </span>coverage<span class="w"> </span>test<span class="w">
+</span><span class="w">          </span>command<span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">            . .venv/bin/activate</span><span class="w">
+</span><span class="w">            </span>cd<span class="w"> </span>backend<span class="w">
+</span><span class="w">            </span>pytest<span class="w"> </span>--cov<span class="w"> </span>--junitxml=../test-reports/pytest<span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>store_artifacts<span class="p">:</span><span class="w">
+</span><span class="w">          </span>path<span class="p">:</span><span class="w"> </span>test-reports/<span class="w">
+</span><span class="w">          </span>destination<span class="p">:</span><span class="w"> </span>tr1<span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>store_test_results<span class="p">:</span><span class="w">
+</span><span class="w">          </span>path<span class="p">:</span><span class="w"> </span>test-reports/<span class="w">
+</span><span class="w">
+</span><span class="w"></span>workflows<span class="p">:</span><span class="w">
+</span><span class="w">  </span>version<span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="w">  </span>lint_test<span class="p">:</span><span class="w">
+</span><span class="w">    </span>jobs<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>lint_test_coverage<span class="p">:</span><span class="w">
+</span><span class="w">          </span>filters<span class="p">:</span><span class="w">
+</span><span class="w">            </span>branches<span class="p">:</span><span class="w">
+</span><span class="w">              </span>only<span class="p">:</span><span class="w"> </span>master</code></pre></div>
+<h3 id="issue-1-db-credentials">Issue 1: DB Credentials</h3>
+
+<p>Need to make sure that the postgres configuration passed to the secondary docker image sets up a user and database name that django is later going to connect to. In this case this is called out here:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml">-<span class="w"> </span>image<span class="p">:</span><span class="w"> </span>circleci/postgres<span class="p">:</span><span class="m">9.6</span>.<span class="m">9</span><span class="w">
+</span><span class="w">  </span>environment<span class="p">:</span><span class="w">
+</span><span class="w">    </span>POSTGRES_USER<span class="p">:</span><span class="w"> </span>postgres<span class="w">
+</span><span class="w">    </span>POSTGRES_DB<span class="p">:</span><span class="w"> </span>circle_test<span class="w">
+</span><span class="w">    </span>POSTGRES_PASS<span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span></code></pre></div>
+<p>Which needs to be loaded into django&rsquo;s settings from <code>settings-circleci.py</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">.settings</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># noqa</span>
+
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.postgresql_psycopg2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;circle_test&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;USER&#39;</span><span class="p">:</span> <span class="s1">&#39;postgres&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="s1">&#39;5432&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span></code></pre></div>
+<p>Which are loaded when pytest runs because of the environment variable on the main docker image that is running the tests. I also declared the <code>TEST_DATABASE_URL</code> environment variable there, but decided not to make use of it in my <code>settings-circleci.py</code> file, finding that it seems to work better to declare the individual parts, rather than to use the URL string.</p>
+
+<h3 id="issue-2-difference-in-caching-methods">Issue #2: Difference in Caching Methods</h3>
+
+<p>The source documentation for GitLab lets you declare a cache with a path. With CircleCI it&rsquo;s a little more complicated. For caching things like python dependencies, you need to add steps bracketing the dependency installation, with the same naming scheme for the cache. CircleCI leys you define the naming convention to use as the &ldquo;key&rdquo; for the cache file, so for any project make sure the <code>restore_cache</code> and <code>save_cache</code> use the same key generation method. In this case (from the circleci examples) we use the git branch name (<code>{{ .Branch }}</code>) and the checksum of the requirements file (<code>{{ checksum &quot;backend/requirements.txt&quot; }}</code>) so that we can maintain separate caches based on the required dependencies, and what git branch is actively being tested.</p>
+
+<h3 id="issue-3-translating-before-script">Issue #3: Translating <code>before_script</code></h3>
+
+<p>For GitLab, this runs the pip installation of project requirements. This is basically the same, only in this case, we need to define a virtual environment (that can later be backed up) with venv, then install the dependencies there, much like what we would achieve with local development.</p>
+
+<p>These lines:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="w">      </span>-<span class="w"> </span>run<span class="p">:</span><span class="w">
+</span><span class="w">          </span>name<span class="p">:</span><span class="w"> </span>Install<span class="w"> </span>Python<span class="w"> </span>Dependencies<span class="w">
+</span><span class="w">          </span>command<span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">            python3 -m venv .venv</span><span class="w">
+</span><span class="w">            </span>.<span class="w"> </span>.venv/bin/activate<span class="w">
+</span><span class="w">            </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>backend/requirements.txt</code></pre></div>
+<p>achieve the goal of installing project dependencies, which in the next step are cached for use on the next run (potentially).</p>
+
+<h3 id="issue-4-database-not-ready">Issue #4: Database not Ready</h3>
+
+<p>In preliminary test runs, I ran into the issue that django was complaining about the database not being set up. To solve this, and to ensure that the database will always be ready, I install dockerize and use it to wait for port 5432 on localhost to be ready (with a max time limit of 1 minute) in order to be sure that our postgres container is running and accepting connections. This could also be achieved with a curl command, but this works fine too.</p>
+
+<h3 id="issue-5-remember-where-you-re-working">Issue #5: Remember where you&rsquo;re working</h3>
+
+<p>I ran into a lot of failed runs with CircleCI simply because I wasn&rsquo;t calling commands in the right location, trying to change into directories that didn&rsquo;t exist (because I was already there) or tried to save things into directories that were incorrectly named or not in the places I expected them to be in.</p>
+
+<h4 id="working-direcory">Working Direcory</h4>
+
+<p>CircleCI defaults to <code>~/project</code> for the current working directory. This is where code gets checked out to and is where the console is pointing when it starts any <code>- run:</code> stanza. You can change the working directory to something else that makes sense if you want to. Some trouble I ran into was trying to cd in to project (which doesn&rsquo;t exist as a subdirectory of project for this project).</p>
+
+<h4 id="saving-test-results">Saving Test Results</h4>
+
+<p>Early on I create the folder <code>test-reports</code> (line is <code>- run: mkdir test-reports</code>) right after the checkout step. This folder is at <code>~project/test-reports/</code>, right at the top level of the project folder, alongside all my top level code folders and files when they&rsquo;re checked out.</p>
+
+<p>During my Linting step and Test step, I tried to save the results to <code>./test-reports/{whatever}</code> - but if you look closely, in those two steps, I&rsquo;ve cd&rsquo;d down to the <code>backend</code> folder (<code>~/project/backend/</code>) which does not contain a <code>test-reports</code> folder! So my tests failed because they could not write to that direcory. After testing I realized my mistake and changed <code>./test-reports/{whatever}</code> to <code>../test-reports/{whatever}</code>.</p>
+
+<p>A single dot, but an important one.</p>
+
+<h3 id="issue-6-pytest-won-t-set-up-django">Issue #6: pytest Won&rsquo;t Set Up Django</h3>
+
+<p>This was completely missed in the VET documentation, and I&rsquo;m pretty sure I didn&rsquo;t miss anything in there that I was supposed to do, but installing <code>pytest</code> as part of the <code>requirements.txt</code> alone is insufficient to get <code>pytest</code> to get Django working properly to run tests against. For that you need to also add <code>pytest-django</code> to the project requirements. After I aded that package, Django would come up, connect to the test database and run the simple test that I have defined. Success!</p>
+
+<p>Here&rsquo;s my full <code>requirements.txt</code> after that change:</p>
+<div class="highlight"><pre class="chroma">Django==2.2.1
+psycopg2==2.8.2
+flake8==3.7
+pytest
+pytest-django # &lt;- Add this
+pytest-cov</pre></div>
+<h2 id="conclusion-of-project-setup">Conclusion of Project Setup</h2>
+
+<p>That&rsquo;s it for this post, and ends the alterations I needed to make for the Project Setup phase of the Verbose Equals True clone I&rsquo;m making. Up next is the Backend API additions to Django, which will also include my first deep dive into Django REST Framework - since in the past I&rsquo;ve only really used plain responses, and Apollo/GraphQl for my Django APIs.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://chasesawyer.dev//tags/post/">post</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/docker/">docker</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/django/">django</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/python/">python</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/infrastructure/">infrastructure</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://chasesawyer.dev/post/2019/05/hyper-v-local-networking/" data-toggle="tooltip" data-placement="top" title="Hyper-V Local Networking">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+        
+        <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:shadowimmage@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/shadowimmage" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.freecodecamp.org/shadowimmage" title="FreeCodeCamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-free-code-camp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/chase-sawyer" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://keybase.io/shadowimmage" title="Keybase">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-keybase fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://chasesawyer.dev">Chase Sawyer</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2019
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://chasesawyer.dev/">Chase Sawyer</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://chasesawyer.dev/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://chasesawyer.dev/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+    </body>
+</html>
+
