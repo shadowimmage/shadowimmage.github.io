@@ -4,7 +4,66 @@
   
   <url>
     <loc>https://chasesawyer.dev/</loc>
-    <lastmod>2019-06-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-24T19:27:04-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/post/2019/06/docker/balena/electron/raspberry-pi-digital-signage/</loc>
+    <lastmod>2019-07-24T19:27:04-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/post/</loc>
+    <lastmod>2019-07-24T19:27:04-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/</loc>
+    <lastmod>2019-07-24T19:27:04-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/balenacloud/</loc>
+    <lastmod>2019-07-24T19:27:04-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/docker/</loc>
+    <lastmod>2019-07-24T19:27:04-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/electron/</loc>
+    <lastmod>2019-07-24T19:27:04-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/javascript/</loc>
+    <lastmod>2019-07-24T19:27:04-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/js/</loc>
+    <lastmod>2019-07-24T19:27:04-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/post/</loc>
+    <lastmod>2019-07-24T19:27:04-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chasesawyer.dev/tags/raspberrypi/</loc>
+    <lastmod>2019-07-24T19:27:04-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -14,25 +73,7 @@
   </url>
   
   <url>
-    <loc>https://chasesawyer.dev/post/</loc>
-    <lastmod>2019-06-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/</loc>
-    <lastmod>2019-06-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://chasesawyer.dev/tags/django/</loc>
-    <lastmod>2019-05-20T10:41:23-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/docker/</loc>
     <lastmod>2019-05-20T10:41:23-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -40,12 +81,6 @@
   <url>
     <loc>https://chasesawyer.dev/tags/infrastructure/</loc>
     <lastmod>2019-05-20T10:41:23-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/post/</loc>
-    <lastmod>2019-06-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -172,12 +207,6 @@
   
   <url>
     <loc>https://chasesawyer.dev/tags/debugging/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/javascript/</loc>
     <lastmod>2018-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -315,14 +344,14 @@
   </url>
   
   <url>
-    <loc>https://chasesawyer.dev/tags/hugo/</loc>
+    <loc>https://chasesawyer.dev/post/2018/05/logo-design/</loc>
     <lastmod>2018-05-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://chasesawyer.dev/post/2018/05/logo-design/</loc>
+    <loc>https://chasesawyer.dev/tags/hugo/</loc>
     <lastmod>2018-05-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

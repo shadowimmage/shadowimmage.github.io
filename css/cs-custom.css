@@ -60,7 +60,19 @@ a.navexpand-parent-custom {
     padding-right: 0px !important;
 }
 
-/* Site font overrides */
+/* Tech badge horizontal float */
+a.sourcerer-badge {
+  float: left;
+  margin-right: 2px;
+}
+
+/* Code Highlight Tweaks - Allow horizontal scroll on large blocks */
+
+.highlight pre {
+  overflow-x: scroll;
+}
+
+/* Site font overrides - should use loaded static fonts */
 
 body {
     font-family: 'Neuton', 'Segoe UI',  Helvetica, Arial, sans-serif;

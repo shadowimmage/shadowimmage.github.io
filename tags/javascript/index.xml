@@ -8,10 +8,21 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Mon, 11 Jun 2018 13:04:19 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2019 18:43:25 -0700</lastBuildDate>
     
 	<atom:link href="https://chasesawyer.dev/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker/Balena/Electron/Raspberry Pi Digital Signage</title>
+      <link>https://chasesawyer.dev/post/2019/06/docker/balena/electron/raspberry-pi-digital-signage/</link>
+      <pubDate>Thu, 27 Jun 2019 18:43:25 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/post/2019/06/docker/balena/electron/raspberry-pi-digital-signage/</guid>
+      <description>Fair warning: This is a work in progress, and I&amp;rsquo;m still working out the details for this project.
+Github Repository
+I have started to work on getting a digital signage solution set up where I can set up a Raspberry Pi3 to display information on a screen, and that has no local interaction (no UI, running headless without any keyboard/mouse). I wanted a solution to control updates to the app, which is where BalenaCloud comes in (along with their handy OS for the Raspberry Pi).</description>
+    </item>
     
     <item>
       <title>Debugging Node Applications</title>

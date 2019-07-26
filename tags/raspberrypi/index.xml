@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on Chase Sawyer</title>
-    <link>https://chasesawyer.dev/tags/docker/</link>
-    <description>Recent content in docker on Chase Sawyer</description>
+    <title>raspberrypi on Chase Sawyer</title>
+    <link>https://chasesawyer.dev/tags/raspberrypi/</link>
+    <description>Recent content in raspberrypi on Chase Sawyer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
     <lastBuildDate>Thu, 27 Jun 2019 18:43:25 -0700</lastBuildDate>
     
-	<atom:link href="https://chasesawyer.dev/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chasesawyer.dev/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,15 +22,6 @@
       <description>Fair warning: This is a work in progress, and I&amp;rsquo;m still working out the details for this project.
 Github Repository
 I have started to work on getting a digital signage solution set up where I can set up a Raspberry Pi3 to display information on a screen, and that has no local interaction (no UI, running headless without any keyboard/mouse). I wanted a solution to control updates to the app, which is where BalenaCloud comes in (along with their handy OS for the Raspberry Pi).</description>
-    </item>
-    
-    <item>
-      <title>Docker Infrastructure Project</title>
-      <link>https://chasesawyer.dev/post/2019/05/docker-infrastructure-project/</link>
-      <pubDate>Mon, 20 May 2019 10:41:23 -0700</pubDate>
-      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/post/2019/05/docker-infrastructure-project/</guid>
-      <description>I&amp;rsquo;m building a web infrastructure project that&amp;rsquo;s based around the project verbose-equals-true (referred to as VET from now on), which sets out to create a set of services to support modern web apps, using several Docker based images to collect everything into separate concerns. I like the philosophy behind the project, and it looks well thought out, however, as things are always changing in this landscape and nobody has the same development environment, there&amp;rsquo;s always going to be stumbling blocks.</description>
     </item>
     
   </channel>

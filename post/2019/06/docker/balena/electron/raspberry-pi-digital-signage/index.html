@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    
+        <title>Docker/Balena/Electron/Raspberry Pi Digital Signage</title>
+        <meta property="og:title" content="Docker/Balena/Electron/Raspberry Pi Digital Signage" />
+        <meta name="twitter:title" content="Docker/Balena/Electron/Raspberry Pi Digital Signage" />
+        <meta name="description" content="Building an Environment to Develop and Run an Electron App on a Raspberry Pi 3" />
+        <meta property="og:description" content="Building an Environment to Develop and Run an Electron App on a Raspberry Pi 3" />
+        <meta name="twitter:description" content="Building an Environment to Develop and Run an Electron App on a Raspberry Pi 3" />
+    <meta name="author" content="Chase Sawyer" />
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://chasesawyer.dev/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://chasesawyer.dev/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://chasesawyer.dev/img/favicon-16x16.png">
+    <link rel="manifest" href="https://chasesawyer.dev/img/site.webmanifest">
+    <link rel="mask-icon" href="https://chasesawyer.dev/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+        <meta property="og:image" content="https://chasesawyer.dev/img/logo-plain.svg" />
+        <meta name="twitter:image" content="https://chasesawyer.dev/img/logo-plain.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://chasesawyer.dev/post/2019/06/docker/balena/electron/raspberry-pi-digital-signage/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Chase Sawyer" />
+    
+    <meta name="generator" content="Hugo 0.55.6" />
+    <link rel="canonical" href="https://chasesawyer.dev/post/2019/06/docker/balena/electron/raspberry-pi-digital-signage/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://chasesawyer.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://chasesawyer.dev/css/syntax.css" /><link rel="stylesheet" href="https://chasesawyer.dev/css/codeblock.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+
+<link rel="stylesheet" href="https://chasesawyer.dev/css/cs-custom.css" />
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-119999962-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+    <body>
+        
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="pswp__bg"></div>
+    
+    <div class="pswp__scroll-wrap">
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+        <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="https://chasesawyer.dev/"><img class="navbar-brand" id="site-logo" src="https://chasesawyer.dev/img/logo-plain.svg" alt="Chase Sawyer" /></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://chasesawyer.dev/">
+        Chase Sawyer
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              
+                <a class="navexpand-parent-custom" title="Blog" href="/post/">Blog</a>
+                <a class="navlinks-parent hidden-sm hidden-md hidden-lg navexpand-custom" href="javascript:void(0)"></a>
+              
+              <div class="navlinks-children">
+                
+                  <a href="/tags">Tags</a>
+                
+                  <a href="/search">Search</a>
+                
+                  <a href="/post/">All Posts</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              
+                <a class="navexpand-parent-custom" title="Projects" href="/tags/project/">Projects</a>
+                <a class="navlinks-parent hidden-sm hidden-md hidden-lg navexpand-custom" href="javascript:void(0)"></a>
+              
+              <div class="navlinks-children">
+                
+                  <a href="/project/slackr25bot">R25 Slack Bot</a>
+                
+                  <a href="/project/keysapp">Keys App</a>
+                
+                  <a href="/project/rttapp">RTT App</a>
+                
+                  <a href="/project/dustcollector">Dust Collector CAD (UW)</a>
+                
+                  <a href="/tags/project/">All Projects</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Samples" href="/tags/sample/">Samples</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About / CV" href="/page/about/">About / CV</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Chase Sawyer" href="https://chasesawyer.dev/">
+            <img class="avatar-img" src="https://chasesawyer.dev/img/profile.jpg" alt="Chase Sawyer" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+        
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="pswp__bg"></div>
+    
+    <div class="pswp__scroll-wrap">
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Docker/Balena/Electron/Raspberry Pi Digital Signage</h1>
+              
+              
+              
+                
+                  <h2 class="post-subheading">Building an Environment to Develop and Run an Electron App on a Raspberry Pi 3</h2>
+                
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 27, 2019
+  
+    &nbsp;(Last modified on July 24, 2019)
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;10&nbsp;minutes
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+        
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Fair warning: This is a work in progress, and I&rsquo;m still working out the details for this project.</p>
+
+<p><a href="https://github.com/uw-it-cte/wiw-events-shifts-display">Github Repository</a></p>
+
+<p>I have started to work on getting a digital signage solution set up where I can set up a <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/">Raspberry Pi3</a> to display information on a screen, and that has no local interaction (no UI, running headless without any keyboard/mouse). I wanted a solution to control updates to the app, which is where <a href="https://www.balena.io/">BalenaCloud</a> comes in (along with their handy <a href="https://www.balena.io/os/">OS</a> for the Raspberry Pi). I also wanted to figure out a way to develop the app that would display on the screen locally on my Windows machine, and still be able to push the same app to the Raspberry Pi.</p>
+
+<p>The biggest stumbling block or at least the steepest part of the learning curve for this project for me is that I&rsquo;m deploying several new tools in ways that I&rsquo;ve never done before. For one thing, I&rsquo;ve never used <a href="https://electronjs.org/">Electron</a> to create an app. I&rsquo;ve never used Balena or BalenaCloud. And I still don&rsquo;t completely understand <a href="https://www.docker.com/">Docker</a> core images and how they&rsquo;re created or how you might go about creating your own. On top of that, the architecture (which?) for a Raspberry Pi is different from the architecture (which?) on a Windows PC, which means that I can&rsquo;t run the same docker image on my PC as I need to run on the Pi, but have to either use a completely different core image with the same resources, or just trust that the Electron app will run the same on both (I haven&rsquo;t worked out all the bugs yet). Another block I had to get through was that most of the examples for running Electron on a Pi3 are about a year or more old, and there&rsquo;s been several updates to multiple components since then, and I want to use the latest versions of all the software if possible. Finally, I had some trouble finding an exact example from someone else that had this exact use case, and so I am taking pieces of lots of examples and putting them together to hopefully end up with a final product that achieves my goals.</p>
+
+<h2 id="project-overview">Project Overview!</h2>
+
+<p>Briefly, this is what I want this thing to do:</p>
+
+<ul>
+<li>Connect to an API and load data
+
+<ul>
+<li>API is REST-ful</li>
+<li>API uses tokens for app authentication</li>
+<li>API token is unrestricted and needs to be secret (it has read/write permission)</li>
+</ul></li>
+<li>Transform and resolve multiple data aspects through multiple API requests
+
+<ul>
+<li>API has endpoints for schedule, users, locations, etc.</li>
+</ul></li>
+<li>Display data on a screen in a semi-public space
+
+<ul>
+<li>Screen is wall-mounted</li>
+<li>24x7 uptime</li>
+<li>1080p</li>
+<li>Installation location is in an office, but not monitored, can be accessed any time by any staff</li>
+</ul></li>
+<li>Refresh data periodically
+
+<ul>
+<li>Use cache/local database to avoid excessive API calls</li>
+<li>Update as often as 5 minutes, or as infrequently as every hour</li>
+</ul></li>
+<li>Display status info
+
+<ul>
+<li>Iconography to display online/offline state, last update time, clock, etc.</li>
+</ul></li>
+<li>Be graceful with errors
+
+<ul>
+<li>What does an API rejection look like vs offline? (use HTTP status codes, probably)</li>
+</ul></li>
+<li>Allow remote management (BalenaCloud or OpenBalena)
+
+<ul>
+<li>Git repository watch</li>
+<li>CI/CD integration</li>
+<li>Slack integration</li>
+<li>Display endpoint remote reboot, shutdown, wipe, etc.</li>
+</ul></li>
+</ul>
+
+<p>BalenaCloud allows up to ten endpoints (managed display devices) for free. Since this project only needs to support 1 display at the moment, this is perfect. If I end up needing more than ten displays, then I&rsquo;ll probably set up OpenBalena, rather than pay for a cloud plan.</p>
+
+<p>Many of the dockerfile examples from balena / resin.io are kind of out of date, so I&rsquo;m going to be re-working a dockerfile from scratch. I also am using electron.js v5, which has an <a href="https://github.com/electron/electron/issues/17972">issue</a> with sandboxing the main chrome process that I have found a <a href="https://github.com/electron/electron/issues/17972#issuecomment-503647871">workaround</a> (pass Electron executable the <code>--no-sandbox</code> option) for, so that&rsquo;s good. I now have a working dockerfile that will build on the pi (or on balenaCloud) and display an electron app. The dockerfile is below.</p>
+
+<h2 id="basic-config">Basic Config</h2>
+
+<h3 id="support-tools">Support tools</h3>
+
+<p>Since I&rsquo;m using balena / balenaCloud, I installed the <a href="https://github.com/balena-io/balena-cli">balena-cli</a> - I had trouble with getting it working from npm and so I just went with the &lsquo;download and extract to a location and add that to your system path&rsquo; method (standalone zip package) (similar to how I use <a href="https://gohugo.io/">Hugo</a>), since I didn&rsquo;t want to use the executable installer for a simple tool like this. Other than that, I&rsquo;m using Windows 10, <a href="https://code.visualstudio.com/">Visual Studio Code</a>, and <a href="https://www.getpostman.com/">Postman</a>. Postman is really helpful for exploring and testing the target API service, since it lets me run calls without needing all the code set up first. Typically I use Postman to mock all the example calls I&rsquo;m going to make to the target API, and then translate those over into code (usually Python, but for this it&rsquo;s in Node, same idea though).</p>
+
+<h3 id="dockerfile">Dockerfile</h3>
+<div class="highlight"><pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="c"># Specify balena&#39;s maintained core image for Raspberry Pi3, Node 10.16, and Ubuntu Bionic</span><span class="err">
+</span><span class="err"></span><span class="k">FROM</span><span class="s"> balenalib/raspberrypi3-ubuntu-node:10.16-bionic</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Install necessary modules to support Electron.js runtime, including xorg display and supporting libraries</span><span class="err">
+</span><span class="err"></span><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get install -y --no-install-recommends <span class="se">\
+</span><span class="se"></span>  apt-utils <span class="se">\
+</span><span class="se"></span>  clang <span class="se">\
+</span><span class="se"></span>  xserver-xorg-core <span class="se">\
+</span><span class="se"></span>  xserver-xorg-input-all <span class="se">\
+</span><span class="se"></span>  xserver-xorg-video-fbdev <span class="se">\
+</span><span class="se"></span>  xorg <span class="se">\
+</span><span class="se"></span>  libxcb-image0 <span class="se">\
+</span><span class="se"></span>  libxcb-util1 <span class="se">\
+</span><span class="se"></span>  xdg-utils <span class="se">\
+</span><span class="se"></span>  libdbus-1-dev <span class="se">\
+</span><span class="se"></span>  libgtk2.0-dev <span class="se">\
+</span><span class="se"></span>  libnotify-dev <span class="se">\
+</span><span class="se"></span>  libgnome-keyring-dev <span class="se">\
+</span><span class="se"></span>  libgconf2-dev <span class="se">\
+</span><span class="se"></span>  libasound2-dev <span class="se">\
+</span><span class="se"></span>  libcap-dev <span class="se">\
+</span><span class="se"></span>  libcups2-dev <span class="se">\
+</span><span class="se"></span>  libxtst-dev <span class="se">\
+</span><span class="se"></span>  libxss1 <span class="se">\
+</span><span class="se"></span>  libnss3-dev <span class="se">\
+</span><span class="se"></span>  libsmbclient <span class="se">\
+</span><span class="se"></span>  libssh-4 <span class="se">\
+</span><span class="se"></span>  fbset <span class="se">\
+</span><span class="se"></span>  libexpat-dev <span class="o">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Set app working directory</span><span class="err">
+</span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /usr/src/app</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Move package.json to app dir for dependency installation</span><span class="err">
+</span><span class="err"></span>COPY ./package.json .<span class="err">
+</span><span class="err"></span><span class="k">RUN</span> npm install <span class="o">&amp;&amp;</span> npm cache clean --force <span class="o">&amp;&amp;</span> rm -rf /tmp/*<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Copy over app source code</span><span class="err">
+</span><span class="err"></span>COPY . .<span class="err">
+</span><span class="err"></span><span class="c"># Systemd</span><span class="err">
+</span><span class="err"></span><span class="k">ENV</span><span class="s"> INITSYSTEM on</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># set Xorg and FLUXBOX preferences</span><span class="err">
+</span><span class="err"></span><span class="k">RUN</span> mkdir ~/.fluxbox<span class="err">
+</span><span class="err"></span><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;xset s off&#34;</span> &gt; ~?.fluxbox/startup <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;xserver-command=X -s 0 dpms&#34;</span> &gt;&gt; ~/.fluxbox/startup<span class="err">
+</span><span class="err"></span><span class="c"># Set xserver to run</span><span class="err">
+</span><span class="err"></span><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;#!/bin/bash&#34;</span> &gt; /etc/X11/xinit/xserverrc <span class="se">\
+</span><span class="se"></span>  <span class="nb">echo</span> <span class="s2">&#34;&#34;</span> &gt;&gt; /etc/X11/xinit/xserverrc <span class="se">\
+</span><span class="se"></span>  <span class="nb">echo</span> <span class="s1">&#39;exec /usr/bin/X -s 0 dpms -nocursor -nolisten tcp &#34;$@&#34;&#39;</span> &gt;&gt; /etc/X11/xinit/xserverrc<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Start Electron app using a script</span><span class="err">
+</span><span class="err"></span><span class="k">CMD</span><span class="s"> [&#34;bash&#34;, &#34;/usr/src/app/start.sh&#34;]</span></code></pre></div>
+<h2 id="main">Main</h2>
+
+<h3 id="start-sh">start.sh</h3>
+
+<p>The electron app / executable is started and displayed through the connected screen using the following shell script. This runs in one of the dedicated docker containers running on the Pi3, so similar to running a GUI app on a desktop from within a docker container, you need to tell it how to connect the output visuals to the display.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="nb">export</span> <span class="nv">URL_LAUNCHER_NODE</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span> <span class="nv">NODE_ENV</span><span class="o">=</span>production
+<span class="c1"># By default Docker gives 64MB of shared memory, but to display heavy pages we need more:</span>
+umount /dev/shm <span class="o">&amp;&amp;</span> mount -t tmpfs shm /dev/shm
+
+<span class="c1"># use the locally installed electron module, rather than any that might be installed globally.</span>
+<span class="c1"># this also gives control to package.json as to which exact version of electron to use.</span>
+<span class="c1"># Below also sets an X instance with ONLY electronjs running, rather than a full desktop environment</span>
+<span class="c1"># saving a lot of resources (especially since this is for a headless display without any UI).</span>
+
+rm /tmp/.X0-lock <span class="p">&amp;</span>&gt;/dev/null <span class="o">||</span> <span class="nb">true</span>
+
+<span class="c1"># Set whether we&#39;re using the PI TFT screen, rotation, etc. and start X else, using HDMI output, just start X</span>
+<span class="k">if</span> <span class="o">[</span> ! -c /dev/fb1 <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;TFT&#34;</span> <span class="o">=</span> <span class="s2">&#34;1&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  modprobe spi-bcm2708 <span class="o">||</span> <span class="nb">true</span>
+  modprobe fbtft_device <span class="nv">name</span><span class="o">=</span>pitft <span class="nv">verbose</span><span class="o">=</span><span class="m">0</span> <span class="nv">rotate</span><span class="o">=</span><span class="si">${</span><span class="nv">TFT_ROTATE</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span> <span class="o">||</span> <span class="nb">true</span>
+  sleep <span class="m">1</span>
+  mknod /dev/fb1 c <span class="k">$(</span>cat /sys/class/graphics/fb1/dev <span class="p">|</span> tr <span class="s1">&#39;:&#39;</span> <span class="s1">&#39; &#39;</span><span class="k">)</span> <span class="o">||</span> <span class="nb">true</span>
+  <span class="nv">FRAMEBUFFER</span><span class="o">=</span>/dev/fb1 startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app --enable-logging --no-sandbox
+<span class="k">else</span>
+  startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app --enable-logging --no-sandbox</code></pre></div>
+<h3 id="electron-app-notes">Electron App Notes</h3>
+
+<p>This app is really basic, since it only connects to one API and blindly presents that information on to a screen - there&rsquo;s no user input to handle, no other cycles beyond updating the screen every minute with new information from the API and perhaps displaying things like the current time. Since it doesn&rsquo;t need to handle a lot of complex items, I&rsquo;m not including anything exceptional, like a full framework like Vue or React, since these are somewhat overblown for what I need on this project. The most I&rsquo;m including for presentation is a minified compiled version of <a href="https://">Bootstrap</a>.</p>
+
+<p>The trick is scheduling the screen refresh and how it&rsquo;s supposed to handle different states in terms of what the API returns, network status, etc. To handle this I&rsquo;m implementing a supervisory style main loop that deals with handling the cached data, loads up the environment variables, and reacts to differing application states from the environment (network link up/down/connected, API response codes - such as how to handle a 503 code).</p>
+
+<p>Figuring out where to put these elements (looping to refresh data, handling response codes, etc.) was a little tricky, since I couldn&rsquo;t decide if this should be something in the <code>renderer.js</code> file or <code>main.js</code>. The answer came from <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval#Ensure_that_execution_duration_is_shorter_than_interval_frequency">here (mdn)</a>. I was considering using <code>setInterval()</code> to create a never-ending loop, but instead decided to go with a recursive loop that never really ends, but recursively calls <code>setTimeout()</code>, with changing values of timeout intervals reacting to changes in app state, such as receiving a non-200 HTML status from the remote API, and using a multiplier on the recursive timeout to wait longer and longer between API requests, in the hopes of eventually receiving a good response again. So normally each data refresh is every 30 seconds. If an API call fails to return or returns a non-200 code, then the next call will wait 60 seconds, then 120 seconds, then 240, and so on. After a successful response, the state returns to a 30-second interval. The idea for this is partially inspired by <a href="https://en.wikipedia.org/wiki/Exponential_backoff">Exponential Backoff</a>, used in <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">TCP</a>.</p>
+
+<h4 id="renderer-js-starting-up">Renderer.js - Starting up</h4>
+
+<p>Starting up the loop for API requests is pretty simple. Once the page is loaded, fire up a couple recursive loops to handle 2 main things: 1.) the clock a the bottom of the screen and 2.) the API data fetch.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">handleReload</span><span class="p">(</span><span class="nx">interval</span><span class="p">,</span> <span class="nx">initialInterval</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// display the active reload interval in the page footer
+</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">reloadSpan</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;reload-interval&#39;</span><span class="p">);</span>
+  <span class="nx">reloadSpan</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`Reloading every </span><span class="si">${</span><span class="nx">interval</span> <span class="o">/</span> <span class="mi">1000</span><span class="si">}</span><span class="sb">s`</span><span class="p">;</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">getSchedule</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">const</span> <span class="nx">target</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">);</span>
+        <span class="nx">target</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">markupResults</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span> <span class="c1">// markupResults returns an array of HTML elements
+</span><span class="c1"></span>        <span class="nx">handleReload</span><span class="p">(</span><span class="nx">initialInterval</span><span class="p">,</span> <span class="nx">initialInterval</span><span class="p">);</span> <span class="c1">// resets interval to initial state
+</span><span class="c1"></span>      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// didn&#39;t receive a 200 code :( wait a bit longer before trying next time
+</span><span class="c1"></span>        <span class="nx">handleReload</span><span class="p">(</span><span class="nx">interval</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">initialInterval</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">},</span> <span class="nx">interval</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">showClock</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="nx">target</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;clock-row&#39;</span><span class="p">);</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">markupClock</span><span class="p">();</span>
+    <span class="nx">showClock</span><span class="p">();</span>
+  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="nx">initialInterval</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">;</span> <span class="c1">// milliseconds - TODO: make this an Environment Variable
+</span><span class="c1"></span>  <span class="nx">handleReload</span><span class="p">(</span><span class="nx">initialInterval</span><span class="p">,</span> <span class="nx">initialInterval</span><span class="p">);</span>
+  <span class="nx">showClock</span><span class="p">();</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>As soon as the page on the electron app has finished its initial load, the <code>window.onload</code> handler starts both recursive loops. This process continues indefinitely.</p>
+
+<h3 id="deployment">Deployment</h3>
+
+<ol>
+<li>Set up the Raspberry Pi on the BalenaCloud dashboard, download and flash the BalenaOS image to the microSD card that will run the Pi.</li>
+<li>Update application- or device-level environment variables. These will allow devices in production to access the API using the key provided through the environment variables. This also allows a unified and quick location to update the key should it be changed or compromised. Note: updating environment variables will cause endpoint devices to reboot.</li>
+<li>Push the code in the repository to Balena using the balena-cli - this will use the project&rsquo;s Dockerfile to build the application image and then distribute it to all devices assigned to the application on the BalenaCloud Dashboard.</li>
+<li>Wait for the code to download onto the target device(s) and begin running.</li>
+</ol>
+
+<h2 id="local-development">Local Development</h2>
+
+<p>Runs fine with <code>npm start</code> which will run a local electron session, loading the code and opening a window on the desktop. Using dotenv, environment variables stored in a <code>.env</code> file will be loaded into the main process. When deployed via balena, these environment variables will not be loaded from the .env file (which should contain and store secrets that are not committed to source control) but from the environment variables loaded into the balena console (which are pushed down to target devices within scope).</p>
+
+<p>The .env file should contain API keys and any other things specific to this particular implementation that might change over time, but that wouldn&rsquo;t require any kind of code change / recompilation of the docker image.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://chasesawyer.dev//tags/post/">post</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/balenacloud/">balenacloud</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/electron/">electron</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/js/">js</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/javascript/">javascript</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/raspberrypi/">raspberrypi</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/docker/">docker</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://chasesawyer.dev/post/2019/05/docker-infrastructure-project/" data-toggle="tooltip" data-placement="top" title="Docker Infrastructure Project">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+        
+        <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:shadowimmage@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/shadowimmage" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.freecodecamp.org/shadowimmage" title="FreeCodeCamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-free-code-camp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/chase-sawyer" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://keybase.io/shadowimmage" title="Keybase">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-keybase fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://chasesawyer.dev">Chase Sawyer</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2019
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://chasesawyer.dev/">Chase Sawyer</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://chasesawyer.dev/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://chasesawyer.dev/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+    </body>
+</html>
+
