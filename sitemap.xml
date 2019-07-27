@@ -9,7 +9,7 @@
   </url>
   
   <url>
-    <loc>https://chasesawyer.dev/post/2019/06/docker/balena/electron/raspberry-pi-digital-signage/</loc>
+    <loc>https://chasesawyer.dev/post/2019/06/docker-balena-electron-raspberry-pi-digital-signage/</loc>
     <lastmod>2019-07-24T19:27:04-07:00</lastmod>
   </url>
   
@@ -183,6 +183,12 @@
   </url>
   
   <url>
+    <loc>https://chasesawyer.dev/tags/uw/</loc>
+    <lastmod>2018-12-09T16:26:45-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chasesawyer.dev/tags/cloud/</loc>
     <lastmod>2018-12-09T16:26:45-07:00</lastmod>
     <priority>0</priority>
@@ -191,12 +197,6 @@
   <url>
     <loc>https://chasesawyer.dev/tags/update/</loc>
     <lastmod>2019-06-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chasesawyer.dev/tags/uw/</loc>
-    <lastmod>2018-12-09T16:26:45-07:00</lastmod>
     <priority>0</priority>
   </url>
   
