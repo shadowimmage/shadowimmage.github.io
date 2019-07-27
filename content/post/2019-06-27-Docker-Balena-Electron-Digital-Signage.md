@@ -1,5 +1,5 @@
 ---
-title: "Docker/Balena/Electron/Raspberry Pi Digital Signage"
+title: "Docker-Balena-Electron-Raspberry Pi Digital Signage"
 subtitle: "Building an Environment to Develop and Run an Electron App on a Raspberry Pi 3"
 linkTitle:
 description:
@@ -216,7 +216,7 @@ The .env file should contain API keys and any other things specific to this part
 [9]: https://gohugo.io/
 [10]: https://code.visualstudio.com/
 [11]: https://www.getpostman.com/
-[12]: https://
+[12]: https://getbootstrap.com/docs/4.3/getting-started/download/
 [13]: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval#Ensure_that_execution_duration_is_shorter_than_interval_frequency
 [14]: https://en.wikipedia.org/wiki/Exponential_backoff
 [15]: https://en.wikipedia.org/wiki/Transmission_Control_Protocol
