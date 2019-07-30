@@ -8,10 +8,21 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Mon, 20 May 2019 10:41:23 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jul 2019 09:11:41 -0700</lastBuildDate>
     
 	<atom:link href="https://chasesawyer.dev/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Car Maintenance App</title>
+      <link>https://chasesawyer.dev/post/2019/07/car-maintenance-app/</link>
+      <pubDate>Thu, 25 Jul 2019 09:11:41 -0700</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/post/2019/07/car-maintenance-app/</guid>
+      <description>New app in progress! Hopefully it won&amp;rsquo;t take months to complete. Should be pretty simple. Especially since this app is going to be primarily for me - and I&amp;rsquo;m not going to worry too too much about the UI elements. Thinking this is going to be primarily a django based app with templates and model-based views like the keys app.
+Current State: Developing database models
+Purpose Provide myself and whoever wants it a place to track their car maintenance, and to make sure that they know when the next scheduled service for a particular maintenance item is due.</description>
+    </item>
     
     <item>
       <title>Docker Infrastructure Project</title>
