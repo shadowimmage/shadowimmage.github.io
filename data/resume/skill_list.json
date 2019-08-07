@@ -16,6 +16,11 @@
             "link": null
         },
         {
+            "skill": "GraphQL",
+            "fa_icon": "fas fa-code",
+            "link": "https://graphql.org/"
+        },
+        {
             "skill": "Docker",
             "fa_icon": "fab fa-docker",
             "link": "https://www.docker.com"
@@ -105,11 +110,6 @@
             "skill": "PostgreSQL",
             "fa_icon": "devicon-postgresql-plain",
             "link": "https://www.postgresql.org/"
-        },
-        {
-            "skill": "GraphQL",
-            "fa_icon": "fas fa-code",
-            "link": "https://graphql.org/"
         }
     ],
     "cloud": [
