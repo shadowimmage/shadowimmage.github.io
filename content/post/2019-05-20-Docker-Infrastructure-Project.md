@@ -136,7 +136,7 @@ workflows:
 
 Need to make sure that the postgres configuration passed to the secondary docker image sets up a user and database name that django is later going to connect to. In this case this is called out here:
 
-```yml
+```yml {linenostart=14}
 - image: circleci/postgres:9.6.9
   environment:
     POSTGRES_USER: postgres
@@ -173,7 +173,7 @@ For GitLab, this runs the pip installation of project requirements. This is basi
 
 These lines:
 
-```yml
+```yml {linenostart=25}
       - run:
           name: Install Python Dependencies
           command: |
@@ -210,7 +210,7 @@ This was completely missed in the VET documentation, and I'm pretty sure I didn'
 
 Here's my full `requirements.txt` after that change:
 
-```
+```txt
 Django==2.2.1
 psycopg2==2.8.2
 flake8==3.7

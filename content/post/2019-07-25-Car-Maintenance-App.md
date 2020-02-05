@@ -4,7 +4,7 @@ subtitle:
 linkTitle:
 description:
 date: 2019-07-25T09:11:41-07:00
-lastmod: 2019-07-29T09:36:00-07:00
+lastmod: 2019-10-31T16:36:00-07:00
 tags: [post,project,heroku,django,app,dev,]
 draft: false
 shareOff: false
@@ -25,7 +25,7 @@ Provide myself and whoever wants it a place to track their car maintenance, and 
     - Model
     - Year
 - Maintenance Items \[MI\]
-    - (FK) Car
+    - (FK/multiple) Car
     - Item
         - Title
         - Mileage Interval (opt)

@@ -1,6 +1,7 @@
 ---
 title: Python Tk UI Notes, Project Update
 date: 2017-06-21
+lastmod: 2020-01-20
 draft: false
 tags: [python, gui, update]
 ---

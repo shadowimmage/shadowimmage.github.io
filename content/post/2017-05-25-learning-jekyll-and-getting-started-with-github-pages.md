@@ -1,6 +1,7 @@
 ---
 title:  "Learning Jekyll and Getting Started with Github Pages"
 date:   2017-05-25
+lastmod: 2020-01-20
 tags: [jekyll, update, learning]
 ---
 ~~First Post!~~

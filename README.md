@@ -68,3 +68,5 @@ Html-proofer comes baked into the circleci image, should be useful in production
 For development I can use html5validator which is a bit more draconian and hasn't been maintained since August 2018. To run that run:
 
 `html5validator --root ./public -l --ignore 'aria-labelledby' 'role=tab' 'itemprop' 'not allowed on element' 'An ID must not be the empty string' 'Use an HTTP Content-Type header on the linked resource instead.' 'must not appear as a descendant' --blacklist 'fonts' --match 'index.html'`
+
+(html5validator is a python script)

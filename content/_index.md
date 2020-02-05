@@ -1,10 +1,10 @@
 ## Welcome
 
-<a class="sourcerer-badge" href="https://sourcerer.io/shadowimmage"><img src="https://img.shields.io/badge/JavaScript-271%20commits-orange.svg" alt=""></a>
-<a class="sourcerer-badge" href="https://sourcerer.io/shadowimmage"><img src="https://img.shields.io/badge/Python-137%20commits-orange.svg" alt=""></a>
-<a class="sourcerer-badge" href="https://sourcerer.io/shadowimmage"><img src="https://img.shields.io/badge/SQL-73%20commits-orange.svg" alt=""></a>
-<a class="sourcerer-badge" href="https://sourcerer.io/shadowimmage"><img src="https://img.shields.io/badge/HTML-180%20commits-orange.svg" alt=""></a>
-<a class="sourcerer-badge" href="https://sourcerer.io/shadowimmage"><img src="https://img.shields.io/badge/CSS-115%20commits-orange.svg" alt=""></a>
+<a class="sourcerer-badge" href="https://sourcerer.io/shadowimmage"><img src="https://img.shields.io/badge/JavaScript-502%20commits-orange.svg" alt=""></a>
+<a class="sourcerer-badge" href="https://sourcerer.io/shadowimmage"><img src="https://img.shields.io/badge/Python-159%20commits-orange.svg" alt=""></a>
+<a class="sourcerer-badge" href="https://sourcerer.io/shadowimmage"><img src="https://img.shields.io/badge/SQL-74%20commits-orange.svg" alt=""></a>
+<a class="sourcerer-badge" href="https://sourcerer.io/shadowimmage"><img src="https://img.shields.io/badge/HTML-373%20commits-orange.svg" alt=""></a>
+<a class="sourcerer-badge" href="https://sourcerer.io/shadowimmage"><img src="https://img.shields.io/badge/CSS-325%20commits-orange.svg" alt=""></a>
 
 -----------
 

@@ -1,6 +1,7 @@
 ---
 title: "Hugo Gotchas"
 date: 2018-05-10T21:04:59-07:00
+lastmod: 2020-01-20
 tags: [post, fyi, note, help]
 draft: false
 ---
@@ -20,12 +21,24 @@ Hugo uses [blackfriday](https://github.com/russross/blackfriday) as it's markdow
     - second
         - third
 
+(in markdown:)
+
+```md
+- first
+    - second
+        - third
+```
+
 In the above case, blackfriday normally will collapse the _second_ and _third_ levels both into the _second_ level. I say normally because most linters and stye guides specify an indent of 2 spaces for markdown [citation needed]. If you come from github markdown style, then this is likely the case for you. Unfortunately there's an annoying bug in blackfriday that requires that the indent for each level be 4 spaces. If you don't notice this when scanning through the Hugo documentation on [content formats](https://gohugo.io/content-management/formats/), you'll likely run into a situation where you're confused about your list ending up somewhat flattened.
 
 Fortunately, most linters can be configured to have different indent settings. For Visual Studio Code (my current editor of choice), markdownlint can be configured with a `.markdownlint.json` file in the root of your project directory or in your `.vscode\settings.json` workspace settings file. This isn't a show stopper, but for me, wasted some time while I had to dig through to find the [issue report](https://github.com/russross/blackfriday/issues/329) in blackfriday and then more time to read the markdownlint documentation and figure out how to reconfigure the indent setting to make sure that my lists in my Hugo site markdown will pass.
 
 Question for later:  
 Can I catch this / use markdownlint in CircleCI builds?
+
+### Update January 2020
+
+Hugo has grown since 
 
 ## Hugo Supports Emoji in Markdown
 
