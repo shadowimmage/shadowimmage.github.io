@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>update on Chase Sawyer</title>
@@ -20,7 +20,7 @@
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/10/long-time-update-new-projects/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;Author&amp;rsquo;s Note: this post has taken a long time to get written - so long, that I already have my 2018 Hactoberfest t-shirt and stickers! It&amp;rsquo;s content spans mid-October through December. I&amp;rsquo;ve done my best to make it a cohesive whole.&lt;/p&gt;
+&lt;p&gt;Author&#39;s Note: this post has taken a long time to get written - so long, that I already have my 2018 Hactoberfest t-shirt and stickers! It&#39;s content spans mid-October through December. I&#39;ve done my best to make it a cohesive whole.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -31,7 +31,7 @@
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/06/new-free-code-camp-cert/</guid>
       <description>I got my back-end (now API and Microservice) cert today from Free Code Camp! https://www.freecodecamp.org/certification/shadowimmage/apis-and-microservices Hooray!
-It&amp;rsquo;s been a year since I started working through the Free Code Camp curriculum, and it feels good to finally have finished the API work. I feel like I have a pretty solid grasp now on how to build and arrange an API, which I hope will help me in the future when I try to do more API work.</description>
+It&#39;s been a year since I started working through the Free Code Camp curriculum, and it feels good to finally have finished the API work. I feel like I have a pretty solid grasp now on how to build and arrange an API, which I hope will help me in the future when I try to do more API work.</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
       <pubDate>Fri, 18 May 2018 14:45:08 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/logo-design/</guid>
-      <description>I spent my sick day today designing a new logo for the site using Inkscape. I knew that it had to be something that was unique, so I went online looking around for resources on designing and producing a logo. I know that SVGs are great, because you will never have scaling issues - if you need a larger version, you can simply export it at higher resolution. Or lower.</description>
+      <description>I spent my sick day today designing a new logo for the site using Inkscape. I knew that it had to be something that was unique, so I went online looking around for resources on designing and producing a logo. I know that SVGs are great, because you will never have scaling issues - if you need a larger version, you can simply export it at higher resolution. Or lower. Or whatever.</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
       <pubDate>Wed, 09 May 2018 22:19:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/new-site-structure/</guid>
-      <description>I took some time this week to look into all the code that I&amp;rsquo;ve been collecting and producing over the last year or more and began to assess where everything was being stored and hosted. Since I build a lot of demos and try out new technologies on a pretty consistent (if not sporadic) basis, this has led me to a state where I have several projects hosted on Heroku, on AWS, and offline.</description>
+      <description>I took some time this week to look into all the code that I&#39;ve been collecting and producing over the last year or more and began to assess where everything was being stored and hosted. Since I build a lot of demos and try out new technologies on a pretty consistent (if not sporadic) basis, this has led me to a state where I have several projects hosted on Heroku, on AWS, and offline.</description>
     </item>
     
     <item>
@@ -59,7 +59,7 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/new-static-site-with-hugo/</guid>
       <description>Built a new site, leaving Jekyll for Hugo, for my github.io page.
-Changes Moved all my old Jekyll files to a new subdirectory in order to maintain access to the old code and posts, and then transition all the content over to the main Hugo site as settings come together. One major advantage of Hugo is that the build process is super fast, so I&amp;rsquo;ve been looking at how to integrate CircleCI with Hugo builds.</description>
+Changes Moved all my old Jekyll files to a new subdirectory in order to maintain access to the old code and posts, and then transition all the content over to the main Hugo site as settings come together. One major advantage of Hugo is that the build process is super fast, so I&#39;ve been looking at how to integrate CircleCI with Hugo builds.</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ Changes Moved all my old Jekyll files to a new subdirectory in order to maintain
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2017/06/python-tk-ui-notes-project-update/</guid>
-      <description>I&amp;rsquo;ve been making a lot of progress on the python-LEDSerialController project. There&amp;rsquo;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&amp;rsquo;s baked into Python already, and there&amp;rsquo;s nothing to configure to get it working. It doesn&amp;rsquo;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&amp;rsquo;s also had a lower bar to entry, despite some drawbacks with Tk&amp;rsquo;s documentation.</description>
+      <description>I&#39;ve been making a lot of progress on the python-LEDSerialController project. There&#39;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&#39;s baked into Python already, and there&#39;s nothing to configure to get it working. It doesn&#39;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&#39;s also had a lower bar to entry, despite some drawbacks with Tk&#39;s documentation.</description>
     </item>
     
     <item>
@@ -78,7 +78,7 @@ Changes Moved all my old Jekyll files to a new subdirectory in order to maintain
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2017/05/learning-jekyll-and-getting-started-with-github-pages/</guid>
       <description>First Post!
-Learning how to set up Jekyll on GitHub Pages is actually a little harder than I was expecting from the outset. Mostly because most of the things that you need to set up Jekyll for local development, and a lot of the things that come prepackaged with it aren&amp;rsquo;t actually necessary for running it on GitHub Pages.
+Learning how to set up Jekyll on GitHub Pages is actually a little harder than I was expecting from the outset. Mostly because most of the things that you need to set up Jekyll for local development, and a lot of the things that come prepackaged with it aren&#39;t actually necessary for running it on GitHub Pages.
 Here is the Gemfile content for this page when I first started and got things working:</description>
     </item>
     

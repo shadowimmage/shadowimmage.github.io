@@ -29,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <link rel="canonical" href="https://chasesawyer.dev/project/dustcollector/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -278,7 +278,9 @@ if (!doNotTrack) {
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
   
   
 </span>
@@ -299,26 +301,19 @@ if (!doNotTrack) {
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>We have a hammer drill that has a vacuum collector attachment, and we wanted a collector that could use different kinds of filters. I took the existing dust collector and designed an exact replacement that would take any kind of 3M respirator filter as the filter element. This allows using different kinds of filters and for the filters to be replaced. The parts involved were manually reverse-engineered on paper with the device and a set of good digital calipers. The replacement parts were designed in Autodesk <a href="https://www.autodesk.com/products/fusion-360/overview">Fusion360</a> and 3D printed on a <a href="https://www.prusa3d.com/">Prusa</a> i3 MK2.</p>
-
 <h2 id="reverse-engineering-a-device">Reverse Engineering a Device</h2>
-
-<p>Digital calipers are infinitely helpful when trying to reverse engineer or copy a physical object with 3D CAD and 3D Printing. Dimension all the parts on a drawing and then use those measurements to create the 3D model in CAD. This was a challenging project, and one of the most complex models that I&rsquo;ve ever had to engineer. The result was a device that was a perfect 1:1 fit in the overall vacuum body.</p>
-
+<p>Digital calipers are infinitely helpful when trying to reverse engineer or copy a physical object with 3D CAD and 3D Printing. Dimension all the parts on a drawing and then use those measurements to create the 3D model in CAD. This was a challenging project, and one of the most complex models that I've ever had to engineer. The result was a device that was a perfect 1:1 fit in the overall vacuum body.</p>
 <h2 id="challenges">Challenges</h2>
-
-<p>The original filter device didn&rsquo;t need to have any moving parts, and the filter was build into the wall between the chamber and the outlet. For my design I had to get a round filter to attach to a rectangular shaft, and also position the connection point somewhere where the filter could be folded around into the rectangular space of the dust chamber. Using a lofted profile allowed me to blend the rectangular outlet port into a circular tube to connect with the filter body. This worked well and maintained equal or greater volume between the filter connection point and the outlet port (no pinch point for the airflow).</p>
-
+<p>The original filter device didn't need to have any moving parts, and the filter was build into the wall between the chamber and the outlet. For my design I had to get a round filter to attach to a rectangular shaft, and also position the connection point somewhere where the filter could be folded around into the rectangular space of the dust chamber. Using a lofted profile allowed me to blend the rectangular outlet port into a circular tube to connect with the filter body. This worked well and maintained equal or greater volume between the filter connection point and the outlet port (no pinch point for the airflow).</p>
 <p>The other challenge was designing a sliding joint that would hopefully be tight enough to seal, keeping the dust contained within the chamber and maintaining vacuum pressure. It took several test prints with small cut-away sections of the sliding joint between the two halves to get the tolerances just right to be tight without being loose or impossible to slide. This was definitely helped by making sure that the 3D printer was well calibrated and consistent throughout the entire print.</p>
-
 <h2 id="drawings">Drawings</h2>
-
 
 
 
 <div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
 	  
 
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<link rel="stylesheet" href="https://chasesawyer.dev/css/hugo-easy-gallery.css" />
 <div class="box" >
   <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <div class="img" style="background-image: url('https://chasesawyer.dev/images/dustCollectorDrawing.jpg');">
@@ -348,11 +343,8 @@ if (!doNotTrack) {
 
 </div>
 
-
 <h2 id="results">Results</h2>
-
 <p>Below is a rendering of the 3D model from Fusion360. Unfortunately I neglected to take any photos of the finished 3D print.</p>
-
 
 
 <div class="box" >
@@ -364,8 +356,7 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-
-<hr />
+<hr>
 
         
           <div class="blog-tags">
@@ -394,26 +385,6 @@ if (!doNotTrack) {
         <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fchasesawyer.dev%2fproject%2fdustcollector%2f" target="_blank" title="Share on Google Plus">
-         <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-google-plus fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fchasesawyer.dev%2fproject%2fdustcollector%2f" target="_blank" title="Share on Facebook">
-        <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
               </span>
     </a>
 </li>
@@ -541,7 +512,7 @@ if (!doNotTrack) {
           
 
           &nbsp;&bull;&nbsp;
-          2019
+          2020
 
           
             &nbsp;&bull;&nbsp;
@@ -550,7 +521,7 @@ if (!doNotTrack) {
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

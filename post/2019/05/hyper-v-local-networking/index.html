@@ -29,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <link rel="canonical" href="https://chasesawyer.dev/post/2019/05/hyper-v-local-networking/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -280,7 +280,9 @@ if (!doNotTrack) {
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
   
   
 </span>
@@ -300,32 +302,18 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-
-<p>I had to set up an <a href="https://www.ubuntu.com/">Ubuntu</a> VM (<a href="https://en.wikipedia.org/wiki/Virtual_machine">Virtual Machine</a>) on my machine recently and because I also use <a href="https://www.docker.com/">Docker</a>, I had to learn exactly how <a href="https://en.wikipedia.org/wiki/Hyper-V">Hyper-V</a> handles networking tasks between the host machine and the virtual machines you set up. Hyper-V, as far as I understand, has 3 main networking methods called virtual switches. There&rsquo;s actually a 4th option that comes out of the box, which is something of a hybrid between an &ldquo;Internal Switch&rdquo; and an &ldquo;External Switch&rdquo;. The default switch is interesting, and not particularly intuitive, but after getting used to it, I find it really convenient, if a bit tedious to deal with. It is <strong>absolutely</strong> not something I recommend running anything in for long periods of time, or for anything upon which other people rely. It is, however, good for getting something set up quick and dirty - so long as you understand what it&rsquo;s doing.</p>
-
+        <p>I had to set up an <a href="https://www.ubuntu.com/">Ubuntu</a> VM (<a href="https://en.wikipedia.org/wiki/Virtual_machine">Virtual Machine</a>) on my machine recently and because I also use <a href="https://www.docker.com/">Docker</a>, I had to learn exactly how <a href="https://en.wikipedia.org/wiki/Hyper-V">Hyper-V</a> handles networking tasks between the host machine and the virtual machines you set up. Hyper-V, as far as I understand, has 3 main networking methods called virtual switches. There's actually a 4th option that comes out of the box, which is something of a hybrid between an &ldquo;Internal Switch&rdquo; and an &ldquo;External Switch&rdquo;. The default switch is interesting, and not particularly intuitive, but after getting used to it, I find it really convenient, if a bit tedious to deal with. It is <strong>absolutely</strong> not something I recommend running anything in for long periods of time, or for anything upon which other people rely. It is, however, good for getting something set up quick and dirty - so long as you understand what it's doing.</p>
 <p>For the length of this article, it will be good to understand what a switch is, so read <a href="https://en.wikipedia.org/wiki/Network_switch">this Wikipedia article</a> if you are unfamiliar.</p>
-
-<p>So with that, here&rsquo;s a quick overview of what the Hyper-V switches are and can do.</p>
-
-<p>First, there&rsquo;s the <strong>Internal Switch</strong>. This is a virtual switch that allows Host&lt;-&gt;Guest connections with static IP addressing allowing inter-machine communication. The downside of this, however, is that the Guest OS is <em>isolated</em> from the wider internet that the Host may be connected to.</p>
-
-<p>Second, there&rsquo;s the <strong>External Switch</strong>. This is a virtual switch that is <em>not</em> connected to the Host directly, and <strong>consumes a physical host network interface</strong>. This interface is given over to the exclusive use of any VM set up to use the External Switch. The benefit of this is that all VMs on that switch can talk to each other, and can communicate to whatever is connected to that physical network, which may also be the same physical network as your Host (via an external switch, routing, etc. and separate physical network interface). If you have two network interfaces for your computer, then this may be a good solution for long term use. Other benefits include: Static IP addressing of your guest virtual machines, the VMs behave exactly as if they had their own wired (or wireless) network connection to the rest of your physical network, and internet connections are thus possible to and from the Guest machines. Basically, this is just like having real physically separate computers sitting on your desk, with the caveat that you need more than 1 physical network interface (which I don&rsquo;t currently have).</p>
-
-<p>Lastly, there&rsquo;s the <strong>Private Switch</strong>. This is an interesting situation, and I can only think of a couple uses for it, but what it does is only allow VM&lt;-&gt;VM communication. There&rsquo;s no way for Host&lt;-&gt;VM or Internet&lt;-&gt;VM connections with this switch. I think the only situation you&rsquo;d want to use this is for VM-VM relay communication, where each VM has more than 1 virtual network connection enabled, such as a Router VM, Firewall VM, and other(s), where 1 VM is connected to the internet, relays traffic to an isolated Firewall VM, which then allows traffic through to even deeper VM(s) that are thus protected via layers of networking, without the need for a rack full of hardware. This might theoretically be a useful application for a clustered network simulation or something where everything is isolated from external interference, but that&rsquo;s beyond my interest or skill.</p>
-
-<h2 id="the-default-switch-getting-up-and-running-without-configuring-a-bunch-of-stuff">The &ldquo;Default Switch&rdquo; - Getting Up and Running Without Configuring a Bunch of Stuff</h2>
-
-<p>The thing that makes the Default Switch work well is that it is the only version of virtual switch that Hyper-V has that has NAT or Network Address Translation. The default switch behaves somewhat like a home router, allowing Guest VMs internet access, as well as Host&lt;-&gt;VM communication, without the hardware requirements or setup needs of an External Switch. It also does all the work for you, but also doesn&rsquo;t allow you to take control of it. What this means is that <em>you cannot set static IPs for your VMs</em>. Hyper-V gives them DHCP addresses in a limited range, which is randomly selected in the <code>192.168.xxx.xxx/28</code> space. The Host can communicate with services running on a Guest at the given IP address that the VM is given, and the Guest(s) can communicate with the Host at it&rsquo;s external IP address via NAT. Guests will get new random IP addresses every (or almost every) time the VM is rebooted, and each time the Host is rebooted, Hyper-V will choose a new random local address space to set up it&rsquo;s DHCP range in, before passing those off to the guest VMs. You also can&rsquo;t disable or remove the Default Switch (as far as I can tell) - but it won&rsquo;t hurt anything being there. If you don&rsquo;t use it, just ignore it.</p>
-
+<p>So with that, here's a quick overview of what the Hyper-V switches are and can do.</p>
+<p>First, there's the <strong>Internal Switch</strong>. This is a virtual switch that allows Host&lt;-&gt;Guest connections with static IP addressing allowing inter-machine communication. The downside of this, however, is that the Guest OS is <em>isolated</em> from the wider internet that the Host may be connected to.</p>
+<p>Second, there's the <strong>External Switch</strong>. This is a virtual switch that is <em>not</em> connected to the Host directly, and <strong>consumes a physical host network interface</strong>. This interface is given over to the exclusive use of any VM set up to use the External Switch. The benefit of this is that all VMs on that switch can talk to each other, and can communicate to whatever is connected to that physical network, which may also be the same physical network as your Host (via an external switch, routing, etc. and separate physical network interface). If you have two network interfaces for your computer, then this may be a good solution for long term use. Other benefits include: Static IP addressing of your guest virtual machines, the VMs behave exactly as if they had their own wired (or wireless) network connection to the rest of your physical network, and internet connections are thus possible to and from the Guest machines. Basically, this is just like having real physically separate computers sitting on your desk, with the caveat that you need more than 1 physical network interface (which I don't currently have).</p>
+<p>Lastly, there's the <strong>Private Switch</strong>. This is an interesting situation, and I can only think of a couple uses for it, but what it does is only allow VM&lt;-&gt;VM communication. There's no way for Host&lt;-&gt;VM or Internet&lt;-&gt;VM connections with this switch. I think the only situation you'd want to use this is for VM-VM relay communication, where each VM has more than 1 virtual network connection enabled, such as a Router VM, Firewall VM, and other(s), where 1 VM is connected to the internet, relays traffic to an isolated Firewall VM, which then allows traffic through to even deeper VM(s) that are thus protected via layers of networking, without the need for a rack full of hardware. This might theoretically be a useful application for a clustered network simulation or something where everything is isolated from external interference, but that's beyond my interest or skill.</p>
+<h2 id="the-default-switch---getting-up-and-running-without-configuring-a-bunch-of-stuff">The &ldquo;Default Switch&rdquo; - Getting Up and Running Without Configuring a Bunch of Stuff</h2>
+<p>The thing that makes the Default Switch work well is that it is the only version of virtual switch that Hyper-V has that has NAT or Network Address Translation. The default switch behaves somewhat like a home router, allowing Guest VMs internet access, as well as Host&lt;-&gt;VM communication, without the hardware requirements or setup needs of an External Switch. It also does all the work for you, but also doesn't allow you to take control of it. What this means is that <em>you cannot set static IPs for your VMs</em>. Hyper-V gives them DHCP addresses in a limited range, which is randomly selected in the <code>192.168.xxx.xxx/28</code> space. The Host can communicate with services running on a Guest at the given IP address that the VM is given, and the Guest(s) can communicate with the Host at it's external IP address via NAT. Guests will get new random IP addresses every (or almost every) time the VM is rebooted, and each time the Host is rebooted, Hyper-V will choose a new random local address space to set up it's DHCP range in, before passing those off to the guest VMs. You also can't disable or remove the Default Switch (as far as I can tell) - but it won't hurt anything being there. If you don't use it, just ignore it.</p>
 <p>So, how to get things talking to each other?</p>
-
-<p>Step 1: Gather information. You need to retrieve 2 things: Your Host computer&rsquo;s IP address. This is what you computer is addressed according to your company / home network if another physical computer on that network were to ping it. For me, it&rsquo;s <code>192.168.1.10</code> at home and <code>10.155.43.82</code> at work. Then you need to get the IP of your VM. In this case I just opened the ethernet settings in Ubuntu and checked the assigned IP address. You can also get this information from the Hyper-V manager window to see what IP your VM got assigned. At the time of taking notes, this was <code>192.168.18.187</code>.</p>
-
-<p>Step 2: Set up services on VM: Say you want to run a test web server on your VM and access it from your Host&rsquo;s browser. You&rsquo;ll need to tell your server to bind to the VM IP at whatever port you want to use, for instance <code>192.168.18.187:8000</code>. For a <a href="https://www.djangoproject.com/">Django</a> server, I&rsquo;d run: <code>python manage.py runserver 192.168.18.187:8000</code>. Then (if it successfully starts up) you can go to your Host browser and go to that address and the Default Switch should route your traffic to the VM running that webserver.</p>
-
-<p>From the VM, if you want to communicate with the Host services (say, a Docker image running <a href="https://www.pgadmin.org/">PgAdmin</a>; or your PostgreSQL server that&rsquo;s running on the Host), you can address them from the VM by using your Host&rsquo;s external IP address. For the above example, my Django web server running in my Ubuntu VM, would communicate with my Host&rsquo;s PostgreSQL database server at <code>10.155.43.82:5432</code>.</p>
-
+<p>Step 1: Gather information. You need to retrieve 2 things: Your Host computer's IP address. This is what you computer is addressed according to your company / home network if another physical computer on that network were to ping it. For me, it's <code>192.168.1.10</code> at home and <code>10.155.43.82</code> at work. Then you need to get the IP of your VM. In this case I just opened the ethernet settings in Ubuntu and checked the assigned IP address. You can also get this information from the Hyper-V manager window to see what IP your VM got assigned. At the time of taking notes, this was <code>192.168.18.187</code>.</p>
+<p>Step 2: Set up services on VM: Say you want to run a test web server on your VM and access it from your Host's browser. You'll need to tell your server to bind to the VM IP at whatever port you want to use, for instance <code>192.168.18.187:8000</code>. For a <a href="https://www.djangoproject.com/">Django</a> server, I'd run: <code>python manage.py runserver 192.168.18.187:8000</code>. Then (if it successfully starts up) you can go to your Host browser and go to that address and the Default Switch should route your traffic to the VM running that webserver.</p>
+<p>From the VM, if you want to communicate with the Host services (say, a Docker image running <a href="https://www.pgadmin.org/">PgAdmin</a>; or your PostgreSQL server that's running on the Host), you can address them from the VM by using your Host's external IP address. For the above example, my Django web server running in my Ubuntu VM, would communicate with my Host's PostgreSQL database server at <code>10.155.43.82:5432</code>.</p>
 <p>Next time you reboot things, just check your IP addresses, and reconfigure your settings before starting up services again.</p>
 
 
@@ -425,7 +413,7 @@ if (!doNotTrack) {
           
 
           &nbsp;&bull;&nbsp;
-          2019
+          2020
 
           
             &nbsp;&bull;&nbsp;
@@ -434,7 +422,7 @@ if (!doNotTrack) {
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

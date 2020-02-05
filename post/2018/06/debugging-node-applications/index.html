@@ -29,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <link rel="canonical" href="https://chasesawyer.dev/post/2018/06/debugging-node-applications/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -282,7 +282,9 @@ if (!doNotTrack) {
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
   
   
 </span>
@@ -302,49 +304,48 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-
-<p>When developing an application or project with Node.js, debugging is an important aspect to getting to the bottom of issues. If you use an IDE (integrated development environment) or code editor that has built-in or supported debugging capacities, such as Visual Studio Code, then you have that ability already. But if you are someone who&rsquo;s developing with a more basic code editor - such as Sublime Text, then you can still debug your Node.js application, using Chrome Developer Tools as your debugger, as if you were debugging a live website.</p>
-
-<h3 id="background-node-debugging">Background - Node Debugging</h3>
-
+        <p>When developing an application or project with Node.js, debugging is an important aspect to getting to the bottom of issues. If you use an IDE (integrated development environment) or code editor that has built-in or supported debugging capacities, such as Visual Studio Code, then you have that ability already. But if you are someone who's developing with a more basic code editor - such as Sublime Text, then you can still debug your Node.js application, using Chrome Developer Tools as your debugger, as if you were debugging a live website.</p>
+<h3 id="background---node-debugging">Background - Node Debugging</h3>
 <p>Node creates a server and runs your application. When debugging, you need a client to talk to the server to tell it when to stop execution, catch errors, and  to set/catch breakpoints in the code. This is called an inspector client, and that interface is what is presented to you in the Chrome Developer Tools as well as when using the debugger mode in IDEs.</p>
-
 <h2 id="set-up">Set up</h2>
-
-<p>For this, you can use any Node server app. We&rsquo;ll be launching the app from the command line, and then open up Chrome and connect to the running Node server, which will be running in debug mode. Initiating the app in this way, it won&rsquo;t actually begin execution until the inspector client (Chrome) connects to Node server.</p>
-
+<p>For this, you can use any Node server app. We'll be launching the app from the command line, and then open up Chrome and connect to the running Node server, which will be running in debug mode. Initiating the app in this way, it won't actually begin execution until the inspector client (Chrome) connects to Node server.</p>
 <h3 id="start-node-in-debug-mode">Start Node in Debug mode</h3>
-
 <p>If you normally start your Node project server with something like</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">node app.js</code></pre></div>
-<p>Open a terminal in your Node project folder, and start it with the command</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">node --inspect-brk app.js</code></pre></div>
-<p>You should then be greeted with a message like this:</p>
-<div class="highlight"><pre class="chroma">Debugger listening on ws://127.0.0.1:9229/9b3ec4f2-b590-4372-b34c-1s4affc3a345
-For help see https://nodejs.org/en/docs/inspector</pre></div>
-<p>Then open chrome to the address <code>chrome://inspect</code></p>
-
-<p>From here, you should see your Node instance listed, including the file path to the app that&rsquo;s running. Click the &ldquo;inspect&rdquo; link below the file directory shown, and Chrome DevTools will open up. In the console, you should now see</p>
-<div class="highlight"><pre class="chroma">Debugger attached.</pre></div>
-<p>At this point, your code still hasn&rsquo;t actually begun running yet. DevTools has attached to the Node debugging instance, and has frozen your code at the very beginning of app.js. DevTools will now let you explore your code, and insert breakpoints - places where you want code to halt - before it starts executing your code.</p>
-
-<p>From here you can begin to debug your code to your heart&rsquo;s content, and dig into pesky bugs that might be plaguing you. Using an interactive debugger is also very useful for catching the state of your app when it crashes (runs into an exception) as the debugger will halt at that point, and you can inspect the state of your variables and dig deeper into what may have gone wrong to cause the exception.</p>
-
-<p>For a more in-depth guide on debugging and how to navigate Chrome&rsquo;s DevTools, check out the links below:</p>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node app.js
+</code></pre></td></tr></table>
+</div>
+</div><p>Open a terminal in your Node project folder, and start it with the command</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node --inspect-brk app.js
+</code></pre></td></tr></table>
+</div>
+</div><p>You should then be greeted with a message like this:</p>
+<pre><code>Debugger listening on ws://127.0.0.1:9229/9b3ec4f2-b590-4372-b34c-1s4affc3a345
+For help see https://nodejs.org/en/docs/inspector
+</code></pre><p>Then open chrome to the address <code>chrome://inspect</code></p>
+<p>From here, you should see your Node instance listed, including the file path to the app that's running. Click the &ldquo;inspect&rdquo; link below the file directory shown, and Chrome DevTools will open up. In the console, you should now see</p>
+<pre><code>Debugger attached.
+</code></pre><p>At this point, your code still hasn't actually begun running yet. DevTools has attached to the Node debugging instance, and has frozen your code at the very beginning of app.js. DevTools will now let you explore your code, and insert breakpoints - places where you want code to halt - before it starts executing your code.</p>
+<p>From here you can begin to debug your code to your heart's content, and dig into pesky bugs that might be plaguing you. Using an interactive debugger is also very useful for catching the state of your app when it crashes (runs into an exception) as the debugger will halt at that point, and you can inspect the state of your variables and dig deeper into what may have gone wrong to cause the exception.</p>
+<p>For a more in-depth guide on debugging and how to navigate Chrome's DevTools, check out the links below:</p>
 <ul>
 <li><a href="https://developers.google.com/web/tools/chrome-devtools/">https://developers.google.com/web/tools/chrome-devtools/</a></li>
 <li><a href="https://nodejs.org/en/docs/guides/debugging-getting-started/">https://nodejs.org/en/docs/guides/debugging-getting-started/</a></li>
 </ul>
-
 <p>For VS Code:</p>
-
 <ul>
 <li><a href="https://code.visualstudio.com/Docs/editor/debugging">https://code.visualstudio.com/Docs/editor/debugging</a></li>
 </ul>
-
-<p>As a side note, most modern browsers have debugging tools, and they all behave pretty similarly, with the exception of mobile browsers - mobile browsers (to my knowledge) don&rsquo;t come with the ability to debug the code running on them. But if you are debugging a mobile page, then you can run a page as if in a mobile browser from within Chrome or Firefox by opening the DevTools and entering Responsive Design mode. Check out <a href="https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode">https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode</a> for Mozilla&rsquo;s implementation of this tool, and how it can be helpful in quickly testing your site&rsquo;s reaction to small screens.</p>
+<p>As a side note, most modern browsers have debugging tools, and they all behave pretty similarly, with the exception of mobile browsers - mobile browsers (to my knowledge) don't come with the ability to debug the code running on them. But if you are debugging a mobile page, then you can run a page as if in a mobile browser from within Chrome or Firefox by opening the DevTools and entering Responsive Design mode. Check out <a href="https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode">https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode</a> for Mozilla's implementation of this tool, and how it can be helpful in quickly testing your site's reaction to small screens.</p>
 
 
         
@@ -445,7 +446,7 @@ For help see https://nodejs.org/en/docs/inspector</pre></div>
           
 
           &nbsp;&bull;&nbsp;
-          2019
+          2020
 
           
             &nbsp;&bull;&nbsp;
@@ -454,7 +455,7 @@ For help see https://nodejs.org/en/docs/inspector</pre></div>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

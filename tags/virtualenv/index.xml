@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>virtualenv on Chase Sawyer</title>
@@ -19,7 +19,7 @@
       <pubDate>Thu, 21 Feb 2019 09:26:35 -0800</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2019/02/maintaining-older-django-and-python-projects/</guid>
-      <description>I have been working on the backend for a project that I&amp;rsquo;ve written about {{previously&amp;ndash;link}}. The established tools server that will be supporting my new React frontend app(s) will be using a backend built on Python 2.7 and Django 1.11, and thus I&amp;rsquo;ve had to remember how to get a development environment set up that will appropriately support the project running locally on my machine. I have a personal site that runs on the same version of Django, but with Python 3.</description>
+      <description>I have been working on the backend for a project that I&#39;ve written about {{previously&amp;ndash;link}}. The established tools server that will be supporting my new React frontend app(s) will be using a backend built on Python 2.7 and Django 1.11, and thus I&#39;ve had to remember how to get a development environment set up that will appropriately support the project running locally on my machine. I have a personal site that runs on the same version of Django, but with Python 3.</description>
     </item>
     
   </channel>

@@ -29,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <link rel="canonical" href="https://chasesawyer.dev/post/2019/06/docker-balena-electron-raspberry-pi-digital-signage/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -282,7 +282,9 @@ if (!doNotTrack) {
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
   
   
 </span>
@@ -302,216 +304,312 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-
-<p>Fair warning: This is a work in progress, and I&rsquo;m still working out the details for this project.</p>
-
+        <p>Fair warning: This is a work in progress, and I'm still working out the details for this project.</p>
 <p><a href="https://github.com/uw-it-cte/wiw-events-shifts-display">Github Repository</a></p>
-
 <p>I have started to work on getting a digital signage solution set up where I can set up a <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/">Raspberry Pi3</a> to display information on a screen, and that has no local interaction (no UI, running headless without any keyboard/mouse). I wanted a solution to control updates to the app, which is where <a href="https://www.balena.io/">BalenaCloud</a> comes in (along with their handy <a href="https://www.balena.io/os/">OS</a> for the Raspberry Pi). I also wanted to figure out a way to develop the app that would display on the screen locally on my Windows machine, and still be able to push the same app to the Raspberry Pi.</p>
-
-<p>The biggest stumbling block or at least the steepest part of the learning curve for this project for me is that I&rsquo;m deploying several new tools in ways that I&rsquo;ve never done before. For one thing, I&rsquo;ve never used <a href="https://electronjs.org/">Electron</a> to create an app. I&rsquo;ve never used Balena or BalenaCloud. And I still don&rsquo;t completely understand <a href="https://www.docker.com/">Docker</a> core images and how they&rsquo;re created or how you might go about creating your own. On top of that, the architecture (which?) for a Raspberry Pi is different from the architecture (which?) on a Windows PC, which means that I can&rsquo;t run the same docker image on my PC as I need to run on the Pi, but have to either use a completely different core image with the same resources, or just trust that the Electron app will run the same on both (I haven&rsquo;t worked out all the bugs yet). Another block I had to get through was that most of the examples for running Electron on a Pi3 are about a year or more old, and there&rsquo;s been several updates to multiple components since then, and I want to use the latest versions of all the software if possible. Finally, I had some trouble finding an exact example from someone else that had this exact use case, and so I am taking pieces of lots of examples and putting them together to hopefully end up with a final product that achieves my goals.</p>
-
+<p>The biggest stumbling block or at least the steepest part of the learning curve for this project for me is that I'm deploying several new tools in ways that I've never done before. For one thing, I've never used <a href="https://electronjs.org/">Electron</a> to create an app. I've never used Balena or BalenaCloud. And I still don't completely understand <a href="https://www.docker.com/">Docker</a> core images and how they're created or how you might go about creating your own. On top of that, the architecture (which?) for a Raspberry Pi is different from the architecture (which?) on a Windows PC, which means that I can't run the same docker image on my PC as I need to run on the Pi, but have to either use a completely different core image with the same resources, or just trust that the Electron app will run the same on both (I haven't worked out all the bugs yet). Another block I had to get through was that most of the examples for running Electron on a Pi3 are about a year or more old, and there's been several updates to multiple components since then, and I want to use the latest versions of all the software if possible. Finally, I had some trouble finding an exact example from someone else that had this exact use case, and so I am taking pieces of lots of examples and putting them together to hopefully end up with a final product that achieves my goals.</p>
 <h2 id="project-overview">Project Overview!</h2>
-
 <p>Briefly, this is what I want this thing to do:</p>
-
 <ul>
 <li>Connect to an API and load data
-
 <ul>
 <li>API is REST-ful</li>
 <li>API uses tokens for app authentication</li>
 <li>API token is unrestricted and needs to be secret (it has read/write permission)</li>
-</ul></li>
+</ul>
+</li>
 <li>Transform and resolve multiple data aspects through multiple API requests
-
 <ul>
 <li>API has endpoints for schedule, users, locations, etc.</li>
-</ul></li>
+</ul>
+</li>
 <li>Display data on a screen in a semi-public space
-
 <ul>
 <li>Screen is wall-mounted</li>
 <li>24x7 uptime</li>
 <li>1080p</li>
 <li>Installation location is in an office, but not monitored, can be accessed any time by any staff</li>
-</ul></li>
+</ul>
+</li>
 <li>Refresh data periodically
-
 <ul>
 <li>Use cache/local database to avoid excessive API calls</li>
 <li>Update as often as 5 minutes, or as infrequently as every hour</li>
-</ul></li>
+</ul>
+</li>
 <li>Display status info
-
 <ul>
 <li>Iconography to display online/offline state, last update time, clock, etc.</li>
-</ul></li>
+</ul>
+</li>
 <li>Be graceful with errors
-
 <ul>
 <li>What does an API rejection look like vs offline? (use HTTP status codes, probably)</li>
-</ul></li>
+</ul>
+</li>
 <li>Allow remote management (BalenaCloud or OpenBalena)
-
 <ul>
 <li>Git repository watch</li>
 <li>CI/CD integration</li>
 <li>Slack integration</li>
 <li>Display endpoint remote reboot, shutdown, wipe, etc.</li>
-</ul></li>
 </ul>
-
-<p>BalenaCloud allows up to ten endpoints (managed display devices) for free. Since this project only needs to support 1 display at the moment, this is perfect. If I end up needing more than ten displays, then I&rsquo;ll probably set up OpenBalena, rather than pay for a cloud plan.</p>
-
-<p>Many of the dockerfile examples from balena / resin.io are kind of out of date, so I&rsquo;m going to be re-working a dockerfile from scratch. I also am using electron.js v5, which has an <a href="https://github.com/electron/electron/issues/17972">issue</a> with sandboxing the main chrome process that I have found a <a href="https://github.com/electron/electron/issues/17972#issuecomment-503647871">workaround</a> (pass Electron executable the <code>--no-sandbox</code> option) for, so that&rsquo;s good. I now have a working dockerfile that will build on the pi (or on balenaCloud) and display an electron app. The dockerfile is below.</p>
-
+</li>
+</ul>
+<p>BalenaCloud allows up to ten endpoints (managed display devices) for free. Since this project only needs to support 1 display at the moment, this is perfect. If I end up needing more than ten displays, then I'll probably set up OpenBalena, rather than pay for a cloud plan.</p>
+<p>Many of the dockerfile examples from balena / resin.io are kind of out of date, so I'm going to be re-working a dockerfile from scratch. I also am using electron.js v5, which has an <a href="https://github.com/electron/electron/issues/17972">issue</a> with sandboxing the main chrome process that I have found a <a href="https://github.com/electron/electron/issues/17972#issuecomment-503647871">workaround</a> (pass Electron executable the <code>--no-sandbox</code> option) for, so that's good. I now have a working dockerfile that will build on the pi (or on balenaCloud) and display an electron app. The dockerfile is below.</p>
 <h2 id="basic-config">Basic Config</h2>
-
 <h3 id="support-tools">Support tools</h3>
-
-<p>Since I&rsquo;m using balena / balenaCloud, I installed the <a href="https://github.com/balena-io/balena-cli">balena-cli</a> - I had trouble with getting it working from npm and so I just went with the &lsquo;download and extract to a location and add that to your system path&rsquo; method (standalone zip package) (similar to how I use <a href="https://gohugo.io/">Hugo</a>), since I didn&rsquo;t want to use the executable installer for a simple tool like this. Other than that, I&rsquo;m using Windows 10, <a href="https://code.visualstudio.com/">Visual Studio Code</a>, and <a href="https://www.getpostman.com/">Postman</a>. Postman is really helpful for exploring and testing the target API service, since it lets me run calls without needing all the code set up first. Typically I use Postman to mock all the example calls I&rsquo;m going to make to the target API, and then translate those over into code (usually Python, but for this it&rsquo;s in Node, same idea though).</p>
-
+<p>Since I'm using balena / balenaCloud, I installed the <a href="https://github.com/balena-io/balena-cli">balena-cli</a> - I had trouble with getting it working from npm and so I just went with the &lsquo;download and extract to a location and add that to your system path&rsquo; method (standalone zip package) (similar to how I use <a href="https://gohugo.io/">Hugo</a>), since I didn't want to use the executable installer for a simple tool like this. Other than that, I'm using Windows 10, <a href="https://code.visualstudio.com/">Visual Studio Code</a>, and <a href="https://www.getpostman.com/">Postman</a>. Postman is really helpful for exploring and testing the target API service, since it lets me run calls without needing all the code set up first. Typically I use Postman to mock all the example calls I'm going to make to the target API, and then translate those over into code (usually Python, but for this it's in Node, same idea though).</p>
 <h3 id="dockerfile">Dockerfile</h3>
-<div class="highlight"><pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="c"># Specify balena&#39;s maintained core image for Raspberry Pi3, Node 10.16, and Ubuntu Bionic</span><span class="err">
-</span><span class="err"></span><span class="k">FROM</span><span class="s"> balenalib/raspberrypi3-ubuntu-node:10.16-bionic</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># Install necessary modules to support Electron.js runtime, including xorg display and supporting libraries</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get install -y --no-install-recommends <span class="se">\
-</span><span class="se"></span>  apt-utils <span class="se">\
-</span><span class="se"></span>  clang <span class="se">\
-</span><span class="se"></span>  xserver-xorg-core <span class="se">\
-</span><span class="se"></span>  xserver-xorg-input-all <span class="se">\
-</span><span class="se"></span>  xserver-xorg-video-fbdev <span class="se">\
-</span><span class="se"></span>  xorg <span class="se">\
-</span><span class="se"></span>  libxcb-image0 <span class="se">\
-</span><span class="se"></span>  libxcb-util1 <span class="se">\
-</span><span class="se"></span>  xdg-utils <span class="se">\
-</span><span class="se"></span>  libdbus-1-dev <span class="se">\
-</span><span class="se"></span>  libgtk2.0-dev <span class="se">\
-</span><span class="se"></span>  libnotify-dev <span class="se">\
-</span><span class="se"></span>  libgnome-keyring-dev <span class="se">\
-</span><span class="se"></span>  libgconf2-dev <span class="se">\
-</span><span class="se"></span>  libasound2-dev <span class="se">\
-</span><span class="se"></span>  libcap-dev <span class="se">\
-</span><span class="se"></span>  libcups2-dev <span class="se">\
-</span><span class="se"></span>  libxtst-dev <span class="se">\
-</span><span class="se"></span>  libxss1 <span class="se">\
-</span><span class="se"></span>  libnss3-dev <span class="se">\
-</span><span class="se"></span>  libsmbclient <span class="se">\
-</span><span class="se"></span>  libssh-4 <span class="se">\
-</span><span class="se"></span>  fbset <span class="se">\
-</span><span class="se"></span>  libexpat-dev <span class="o">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># Set app working directory</span><span class="err">
-</span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /usr/src/app</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># Move package.json to app dir for dependency installation</span><span class="err">
-</span><span class="err"></span>COPY ./package.json .<span class="err">
-</span><span class="err"></span><span class="k">RUN</span> npm install <span class="o">&amp;&amp;</span> npm cache clean --force <span class="o">&amp;&amp;</span> rm -rf /tmp/*<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># Copy over app source code</span><span class="err">
-</span><span class="err"></span>COPY . .<span class="err">
-</span><span class="err"></span><span class="c"># Systemd</span><span class="err">
-</span><span class="err"></span><span class="k">ENV</span><span class="s"> INITSYSTEM on</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># set Xorg and FLUXBOX preferences</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> mkdir ~/.fluxbox<span class="err">
-</span><span class="err"></span><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;xset s off&#34;</span> &gt; ~?.fluxbox/startup <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;xserver-command=X -s 0 dpms&#34;</span> &gt;&gt; ~/.fluxbox/startup<span class="err">
-</span><span class="err"></span><span class="c"># Set xserver to run</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;#!/bin/bash&#34;</span> &gt; /etc/X11/xinit/xserverrc <span class="se">\
-</span><span class="se"></span>  <span class="nb">echo</span> <span class="s2">&#34;&#34;</span> &gt;&gt; /etc/X11/xinit/xserverrc <span class="se">\
-</span><span class="se"></span>  <span class="nb">echo</span> <span class="s1">&#39;exec /usr/bin/X -s 0 dpms -nocursor -nolisten tcp &#34;$@&#34;&#39;</span> &gt;&gt; /etc/X11/xinit/xserverrc<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># Start Electron app using a script</span><span class="err">
-</span><span class="err"></span><span class="k">CMD</span><span class="s"> [&#34;bash&#34;, &#34;/usr/src/app/start.sh&#34;]</span></code></pre></div>
-<h2 id="main">Main</h2>
-
-<h3 id="start-sh">start.sh</h3>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#75715e"># Specify balena&#39;s maintained core image for Raspberry Pi3, Node 10.16, and Ubuntu Bionic</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> balenalib/raspberrypi3-ubuntu-node:10.16-bionic</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Install necessary modules to support Electron.js runtime, including xorg display and supporting libraries</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y --no-install-recommends <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  apt-utils <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  clang <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  xserver-xorg-core <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  xserver-xorg-input-all <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  xserver-xorg-video-fbdev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  xorg <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libxcb-image0 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libxcb-util1 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  xdg-utils <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libdbus-1-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libgtk2.0-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libnotify-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libgnome-keyring-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libgconf2-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libasound2-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libcap-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libcups2-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libxtst-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libxss1 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libnss3-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libsmbclient <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libssh-4 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  fbset <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  libexpat-dev <span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set app working directory</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /usr/src/app</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Move package.json to app dir for dependency installation</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> ./package.json .<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> npm install <span style="color:#f92672">&amp;&amp;</span> npm cache clean --force <span style="color:#f92672">&amp;&amp;</span> rm -rf /tmp/*<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Copy over app source code</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Systemd</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> INITSYSTEM on<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># set Xorg and FLUXBOX preferences</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> mkdir ~/.fluxbox<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> echo <span style="color:#e6db74">&#34;xset s off&#34;</span> &gt; ~?.fluxbox/startup <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;xserver-command=X -s 0 dpms&#34;</span> &gt;&gt; ~/.fluxbox/startup<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set xserver to run</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> echo <span style="color:#e6db74">&#34;#!/bin/bash&#34;</span> &gt; /etc/X11/xinit/xserverrc <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  echo <span style="color:#e6db74">&#34;&#34;</span> &gt;&gt; /etc/X11/xinit/xserverrc <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  echo <span style="color:#e6db74">&#39;exec /usr/bin/X -s 0 dpms -nocursor -nolisten tcp &#34;$@&#34;&#39;</span> &gt;&gt; /etc/X11/xinit/xserverrc<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Start Electron app using a script</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;bash&#34;</span>, <span style="color:#e6db74">&#34;/usr/src/app/start.sh&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="main">Main</h2>
+<h3 id="startsh">start.sh</h3>
 <p>The electron app / executable is started and displayed through the connected screen using the following shell script. This runs in one of the dedicated docker containers running on the Pi3, so similar to running a GUI app on a desktop from within a docker container, you need to tell it how to connect the output visuals to the display.</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/bash
-</span><span class="cp"></span><span class="nb">export</span> <span class="nv">URL_LAUNCHER_NODE</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span> <span class="nv">NODE_ENV</span><span class="o">=</span>production
-<span class="c1"># By default Docker gives 64MB of shared memory, but to display heavy pages we need more:</span>
-umount /dev/shm <span class="o">&amp;&amp;</span> mount -t tmpfs shm /dev/shm
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>export URL_LAUNCHER_NODE<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+export NODE_ENV<span style="color:#f92672">=</span>production
+<span style="color:#75715e"># By default Docker gives 64MB of shared memory, but to display heavy pages we need more:</span>
+umount /dev/shm <span style="color:#f92672">&amp;&amp;</span> mount -t tmpfs shm /dev/shm
 
-<span class="c1"># use the locally installed electron module, rather than any that might be installed globally.</span>
-<span class="c1"># this also gives control to package.json as to which exact version of electron to use.</span>
-<span class="c1"># Below also sets an X instance with ONLY electronjs running, rather than a full desktop environment</span>
-<span class="c1"># saving a lot of resources (especially since this is for a headless display without any UI).</span>
+<span style="color:#75715e"># use the locally installed electron module, rather than any that might be installed globally.</span>
+<span style="color:#75715e"># this also gives control to package.json as to which exact version of electron to use.</span>
+<span style="color:#75715e"># Below also sets an X instance with ONLY electronjs running, rather than a full desktop environment</span>
+<span style="color:#75715e"># saving a lot of resources (especially since this is for a headless display without any UI).</span>
 
-rm /tmp/.X0-lock <span class="p">&amp;</span>&gt;/dev/null <span class="o">||</span> <span class="nb">true</span>
+rm /tmp/.X0-lock &amp;&gt;/dev/null <span style="color:#f92672">||</span> true
 
-<span class="c1"># Set whether we&#39;re using the PI TFT screen, rotation, etc. and start X else, using HDMI output, just start X</span>
-<span class="k">if</span> <span class="o">[</span> ! -c /dev/fb1 <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;TFT&#34;</span> <span class="o">=</span> <span class="s2">&#34;1&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  modprobe spi-bcm2708 <span class="o">||</span> <span class="nb">true</span>
-  modprobe fbtft_device <span class="nv">name</span><span class="o">=</span>pitft <span class="nv">verbose</span><span class="o">=</span><span class="m">0</span> <span class="nv">rotate</span><span class="o">=</span><span class="si">${</span><span class="nv">TFT_ROTATE</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span> <span class="o">||</span> <span class="nb">true</span>
-  sleep <span class="m">1</span>
-  mknod /dev/fb1 c <span class="k">$(</span>cat /sys/class/graphics/fb1/dev <span class="p">|</span> tr <span class="s1">&#39;:&#39;</span> <span class="s1">&#39; &#39;</span><span class="k">)</span> <span class="o">||</span> <span class="nb">true</span>
-  <span class="nv">FRAMEBUFFER</span><span class="o">=</span>/dev/fb1 startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app --enable-logging --no-sandbox
-<span class="k">else</span>
-  startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app --enable-logging --no-sandbox</code></pre></div>
-<h3 id="electron-app-notes">Electron App Notes</h3>
-
-<p>This app is really basic, since it only connects to one API and blindly presents that information on to a screen - there&rsquo;s no user input to handle, no other cycles beyond updating the screen every minute with new information from the API and perhaps displaying things like the current time. Since it doesn&rsquo;t need to handle a lot of complex items, I&rsquo;m not including anything exceptional, like a full framework like Vue or React, since these are somewhat overblown for what I need on this project. The most I&rsquo;m including for presentation is a minified compiled version of <a href="https://getbootstrap.com/docs/4.3/getting-started/download/">Bootstrap</a>.</p>
-
-<p>The trick is scheduling the screen refresh and how it&rsquo;s supposed to handle different states in terms of what the API returns, network status, etc. To handle this I&rsquo;m implementing a supervisory style main loop that deals with handling the cached data, loads up the environment variables, and reacts to differing application states from the environment (network link up/down/connected, API response codes - such as how to handle a 503 code).</p>
-
-<p>Figuring out where to put these elements (looping to refresh data, handling response codes, etc.) was a little tricky, since I couldn&rsquo;t decide if this should be something in the <code>renderer.js</code> file or <code>main.js</code>. The answer came from <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval#Ensure_that_execution_duration_is_shorter_than_interval_frequency">here (mdn)</a>. I was considering using <code>setInterval()</code> to create a never-ending loop, but instead decided to go with a recursive loop that never really ends, but recursively calls <code>setTimeout()</code>, with changing values of timeout intervals reacting to changes in app state, such as receiving a non-200 HTML status from the remote API, and using a multiplier on the recursive timeout to wait longer and longer between API requests, in the hopes of eventually receiving a good response again. So normally each data refresh is every 30 seconds. If an API call fails to return or returns a non-200 code, then the next call will wait 60 seconds, then 120 seconds, then 240, and so on. After a successful response, the state returns to a 30-second interval. The idea for this is partially inspired by <a href="https://en.wikipedia.org/wiki/Exponential_backoff">Exponential Backoff</a>, used in <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">TCP</a>.</p>
-
-<h4 id="renderer-js-starting-up">Renderer.js - Starting up</h4>
-
+<span style="color:#75715e"># Set whether we&#39;re using the PI TFT screen, rotation, etc. and start X else, using HDMI output, just start X</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -c /dev/fb1 <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;TFT&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+  modprobe spi-bcm2708 <span style="color:#f92672">||</span> true
+  modprobe fbtft_device name<span style="color:#f92672">=</span>pitft verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> rotate<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>TFT_ROTATE<span style="color:#66d9ef">:-</span>0<span style="color:#e6db74">}</span> <span style="color:#f92672">||</span> true
+  sleep <span style="color:#ae81ff">1</span>
+  mknod /dev/fb1 c <span style="color:#66d9ef">$(</span>cat /sys/class/graphics/fb1/dev | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span> <span style="color:#f92672">||</span> true
+  FRAMEBUFFER<span style="color:#f92672">=</span>/dev/fb1 startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app --enable-logging --no-sandbox
+<span style="color:#66d9ef">else</span>
+  startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app --enable-logging --no-sandbox
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="electron-app-notes">Electron App Notes</h3>
+<p>This app is really basic, since it only connects to one API and blindly presents that information on to a screen - there's no user input to handle, no other cycles beyond updating the screen every minute with new information from the API and perhaps displaying things like the current time. Since it doesn't need to handle a lot of complex items, I'm not including anything exceptional, like a full framework like Vue or React, since these are somewhat overblown for what I need on this project. The most I'm including for presentation is a minified compiled version of <a href="https://getbootstrap.com/docs/4.3/getting-started/download/">Bootstrap</a>.</p>
+<p>The trick is scheduling the screen refresh and how it's supposed to handle different states in terms of what the API returns, network status, etc. To handle this I'm implementing a supervisory style main loop that deals with handling the cached data, loads up the environment variables, and reacts to differing application states from the environment (network link up/down/connected, API response codes - such as how to handle a 503 code).</p>
+<p>Figuring out where to put these elements (looping to refresh data, handling response codes, etc.) was a little tricky, since I couldn't decide if this should be something in the <code>renderer.js</code> file or <code>main.js</code>. The answer came from <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval#Ensure_that_execution_duration_is_shorter_than_interval_frequency">here (mdn)</a>. I was considering using <code>setInterval()</code> to create a never-ending loop, but instead decided to go with a recursive loop that never really ends, but recursively calls <code>setTimeout()</code>, with changing values of timeout intervals reacting to changes in app state, such as receiving a non-200 HTML status from the remote API, and using a multiplier on the recursive timeout to wait longer and longer between API requests, in the hopes of eventually receiving a good response again. So normally each data refresh is every 30 seconds. If an API call fails to return or returns a non-200 code, then the next call will wait 60 seconds, then 120 seconds, then 240, and so on. After a successful response, the state returns to a 30-second interval. The idea for this is partially inspired by <a href="https://en.wikipedia.org/wiki/Exponential_backoff">Exponential Backoff</a>, used in <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">TCP</a>.</p>
+<h4 id="rendererjs---starting-up">Renderer.js - Starting up</h4>
 <p>Starting up the loop for API requests is pretty simple. Once the page is loaded, fire up a couple recursive loops to handle 2 main things: 1.) the clock a the bottom of the screen and 2.) the API data fetch.</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">handleReload</span><span class="p">(</span><span class="nx">interval</span><span class="p">,</span> <span class="nx">initialInterval</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// display the active reload interval in the page footer
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">reloadSpan</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;reload-interval&#39;</span><span class="p">);</span>
-  <span class="nx">reloadSpan</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`Reloading every </span><span class="si">${</span><span class="nx">interval</span> <span class="o">/</span> <span class="mi">1000</span><span class="si">}</span><span class="sb">s`</span><span class="p">;</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">getSchedule</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">const</span> <span class="nx">target</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">);</span>
-        <span class="nx">target</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">markupResults</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span> <span class="c1">// markupResults returns an array of HTML elements
-</span><span class="c1"></span>        <span class="nx">handleReload</span><span class="p">(</span><span class="nx">initialInterval</span><span class="p">,</span> <span class="nx">initialInterval</span><span class="p">);</span> <span class="c1">// resets interval to initial state
-</span><span class="c1"></span>      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// didn&#39;t receive a 200 code :( wait a bit longer before trying next time
-</span><span class="c1"></span>        <span class="nx">handleReload</span><span class="p">(</span><span class="nx">interval</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">initialInterval</span><span class="p">);</span>
-      <span class="p">}</span>
-    <span class="p">});</span>
-  <span class="p">},</span> <span class="nx">interval</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleReload</span>(<span style="color:#a6e22e">interval</span>, <span style="color:#a6e22e">initialInterval</span>) {
+  <span style="color:#75715e">// display the active reload interval in the page footer
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reloadSpan</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;reload-interval&#39;</span>);
+  <span style="color:#a6e22e">reloadSpan</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">Reloading every </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">interval</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000</span><span style="color:#e6db74">}</span><span style="color:#e6db74">s</span><span style="color:#e6db74">`</span>;
+  <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+    <span style="color:#a6e22e">getSchedule</span>().<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">result</span>) =&gt; {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>) {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;content&#39;</span>);
+        <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">markupResults</span>(<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">data</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>); <span style="color:#75715e">// markupResults returns an array of HTML elements
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">handleReload</span>(<span style="color:#a6e22e">initialInterval</span>, <span style="color:#a6e22e">initialInterval</span>); <span style="color:#75715e">// resets interval to initial state
+</span><span style="color:#75715e"></span>      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#75715e">// didn&#39;t receive a 200 code :( wait a bit longer before trying next time
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">handleReload</span>(<span style="color:#a6e22e">interval</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">initialInterval</span>);
+      }
+    });
+  }, <span style="color:#a6e22e">interval</span>);
+}
 
-<span class="kd">function</span> <span class="nx">showClock</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="k">const</span> <span class="nx">target</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;clock-row&#39;</span><span class="p">);</span>
-    <span class="nx">target</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">markupClock</span><span class="p">();</span>
-    <span class="nx">showClock</span><span class="p">();</span>
-  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
-<span class="p">}</span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">showClock</span>() {
+  <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;clock-row&#39;</span>);
+    <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">markupClock</span>();
+    <span style="color:#a6e22e">showClock</span>();
+  }, <span style="color:#ae81ff">1000</span>);
+}
 
-<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="k">const</span> <span class="nx">initialInterval</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">;</span> <span class="c1">// milliseconds - TODO: make this an Environment Variable
-</span><span class="c1"></span>  <span class="nx">handleReload</span><span class="p">(</span><span class="nx">initialInterval</span><span class="p">,</span> <span class="nx">initialInterval</span><span class="p">);</span>
-  <span class="nx">showClock</span><span class="p">();</span>
-<span class="p">};</span>
-</code></pre></div>
-<p>As soon as the page on the electron app has finished its initial load, the <code>window.onload</code> handler starts both recursive loops. This process continues indefinitely.</p>
-
+window.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">initialInterval</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">30000</span>; <span style="color:#75715e">// milliseconds - TODO: make this an Environment Variable
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">handleReload</span>(<span style="color:#a6e22e">initialInterval</span>, <span style="color:#a6e22e">initialInterval</span>);
+  <span style="color:#a6e22e">showClock</span>();
+};
+</code></pre></td></tr></table>
+</div>
+</div><p>As soon as the page on the electron app has finished its initial load, the <code>window.onload</code> handler starts both recursive loops. This process continues indefinitely.</p>
 <h3 id="deployment">Deployment</h3>
-
 <ol>
 <li>Set up the Raspberry Pi on the BalenaCloud dashboard, download and flash the BalenaOS image to the microSD card that will run the Pi.</li>
 <li>Update application- or device-level environment variables. These will allow devices in production to access the API using the key provided through the environment variables. This also allows a unified and quick location to update the key should it be changed or compromised. Note: updating environment variables will cause endpoint devices to reboot.</li>
-<li>Push the code in the repository to Balena using the balena-cli - this will use the project&rsquo;s Dockerfile to build the application image and then distribute it to all devices assigned to the application on the BalenaCloud Dashboard.</li>
+<li>Push the code in the repository to Balena using the balena-cli - this will use the project's Dockerfile to build the application image and then distribute it to all devices assigned to the application on the BalenaCloud Dashboard.</li>
 <li>Wait for the code to download onto the target device(s) and begin running.</li>
 </ol>
-
 <h2 id="local-development">Local Development</h2>
-
 <p>Runs fine with <code>npm start</code> which will run a local electron session, loading the code and opening a window on the desktop. Using dotenv, environment variables stored in a <code>.env</code> file will be loaded into the main process. When deployed via balena, these environment variables will not be loaded from the .env file (which should contain and store secrets that are not committed to source control) but from the environment variables loaded into the balena console (which are pushed down to target devices within scope).</p>
-
-<p>The .env file should contain API keys and any other things specific to this particular implementation that might change over time, but that wouldn&rsquo;t require any kind of code change / recompilation of the docker image.</p>
+<p>The .env file should contain API keys and any other things specific to this particular implementation that might change over time, but that wouldn't require any kind of code change / recompilation of the docker image.</p>
 
 
         
@@ -616,7 +714,7 @@ rm /tmp/.X0-lock <span class="p">&amp;</span>&gt;/dev/null <span class="o">||</s
           
 
           &nbsp;&bull;&nbsp;
-          2019
+          2020
 
           
             &nbsp;&bull;&nbsp;
@@ -625,7 +723,7 @@ rm /tmp/.X0-lock <span class="p">&amp;</span>&gt;/dev/null <span class="o">||</s
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

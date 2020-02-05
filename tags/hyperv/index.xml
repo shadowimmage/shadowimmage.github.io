@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hyperv on Chase Sawyer</title>
@@ -19,7 +19,7 @@
       <pubDate>Wed, 01 May 2019 11:44:57 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2019/05/hyper-v-local-networking/</guid>
-      <description>I had to set up an Ubuntu VM (Virtual Machine) on my machine recently and because I also use Docker, I had to learn exactly how Hyper-V handles networking tasks between the host machine and the virtual machines you set up. Hyper-V, as far as I understand, has 3 main networking methods called virtual switches. There&amp;rsquo;s actually a 4th option that comes out of the box, which is something of a hybrid between an &amp;ldquo;Internal Switch&amp;rdquo; and an &amp;ldquo;External Switch&amp;rdquo;.</description>
+      <description>I had to set up an Ubuntu VM (Virtual Machine) on my machine recently and because I also use Docker, I had to learn exactly how Hyper-V handles networking tasks between the host machine and the virtual machines you set up. Hyper-V, as far as I understand, has 3 main networking methods called virtual switches. There&#39;s actually a 4th option that comes out of the box, which is something of a hybrid between an &amp;ldquo;Internal Switch&amp;rdquo; and an &amp;ldquo;External Switch&amp;rdquo;.</description>
     </item>
     
   </channel>

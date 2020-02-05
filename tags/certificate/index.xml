@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>certificate on Chase Sawyer</title>
@@ -20,7 +20,7 @@
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/06/new-free-code-camp-cert/</guid>
       <description>I got my back-end (now API and Microservice) cert today from Free Code Camp! https://www.freecodecamp.org/certification/shadowimmage/apis-and-microservices Hooray!
-It&amp;rsquo;s been a year since I started working through the Free Code Camp curriculum, and it feels good to finally have finished the API work. I feel like I have a pretty solid grasp now on how to build and arrange an API, which I hope will help me in the future when I try to do more API work.</description>
+It&#39;s been a year since I started working through the Free Code Camp curriculum, and it feels good to finally have finished the API work. I feel like I have a pretty solid grasp now on how to build and arrange an API, which I hope will help me in the future when I try to do more API work.</description>
     </item>
     
   </channel>

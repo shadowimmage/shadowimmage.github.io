@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Chase Sawyer</title>
@@ -8,10 +8,55 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Thu, 25 Jul 2019 09:11:41 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jan 2020 13:04:13 -0800</lastBuildDate>
     
 	<atom:link href="https://chasesawyer.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>balena</title>
+      <link>https://chasesawyer.dev/tags/balena/</link>
+      <pubDate>Sat, 18 Jan 2020 13:04:13 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/tags/balena/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>note</title>
+      <link>https://chasesawyer.dev/tags/note/</link>
+      <pubDate>Sat, 18 Jan 2020 13:04:13 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/tags/note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>post</title>
+      <link>https://chasesawyer.dev/tags/post/</link>
+      <pubDate>Sat, 18 Jan 2020 13:04:13 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/tags/post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raspberrypi</title>
+      <link>https://chasesawyer.dev/tags/raspberrypi/</link>
+      <pubDate>Sat, 18 Jan 2020 13:04:13 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/tags/raspberrypi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>short</title>
+      <link>https://chasesawyer.dev/tags/short/</link>
+      <pubDate>Sat, 18 Jan 2020 13:04:13 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/tags/short/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>app</title>
@@ -46,15 +91,6 @@
       <pubDate>Thu, 25 Jul 2019 09:11:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/heroku/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>post</title>
-      <link>https://chasesawyer.dev/tags/post/</link>
-      <pubDate>Thu, 25 Jul 2019 09:11:41 -0700</pubDate>
-      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/tags/post/</guid>
       <description></description>
     </item>
     
@@ -109,15 +145,6 @@
       <pubDate>Thu, 27 Jun 2019 18:43:25 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>raspberrypi</title>
-      <link>https://chasesawyer.dev/tags/raspberrypi/</link>
-      <pubDate>Thu, 27 Jun 2019 18:43:25 -0700</pubDate>
-      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/tags/raspberrypi/</guid>
       <description></description>
     </item>
     
@@ -401,7 +428,7 @@
     </item>
     
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>https://chasesawyer.dev/tags/hugo/</link>
       <pubDate>Fri, 18 May 2018 14:45:08 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
@@ -428,15 +455,6 @@
     </item>
     
     <item>
-      <title>note</title>
-      <link>https://chasesawyer.dev/tags/note/</link>
-      <pubDate>Thu, 10 May 2018 21:04:59 -0700</pubDate>
-      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/tags/note/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>coffee</title>
       <link>https://chasesawyer.dev/tags/coffee/</link>
       <pubDate>Thu, 10 May 2018 08:45:29 -0700</pubDate>
@@ -451,15 +469,6 @@
       <pubDate>Thu, 10 May 2018 08:45:29 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/fwp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>short</title>
-      <link>https://chasesawyer.dev/tags/short/</link>
-      <pubDate>Thu, 10 May 2018 08:45:29 -0700</pubDate>
-      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
-      <guid>https://chasesawyer.dev/tags/short/</guid>
       <description></description>
     </item>
     

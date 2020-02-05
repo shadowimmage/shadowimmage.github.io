@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>post on Chase Sawyer</title>
@@ -8,10 +8,19 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Thu, 25 Jul 2019 09:11:41 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jan 2020 13:04:13 -0800</lastBuildDate>
     
 	<atom:link href="https://chasesawyer.dev/tags/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raspberry Pi HDMI Overscan</title>
+      <link>https://chasesawyer.dev/post/2020/01/raspberry-pi-hdmi-overscan/</link>
+      <pubDate>Sat, 18 Jan 2020 13:04:13 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/post/2020/01/raspberry-pi-hdmi-overscan/</guid>
+      <description>I had a problem when I moved my Raspberry Pi over to using a 4K display, which is just about the only resolution that professional displays come in these days, as manufacturers have all moved on to 4K as a standard. The problem was with overscanning and the display not having the ability to correctly scale the image signal coming from the Raspberry Pi, which was still a 1920x1080 signal.</description>
+    </item>
     
     <item>
       <title>Car Maintenance App</title>
@@ -19,7 +28,7 @@
       <pubDate>Thu, 25 Jul 2019 09:11:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2019/07/car-maintenance-app/</guid>
-      <description>New app in progress! Hopefully it won&amp;rsquo;t take months to complete. Should be pretty simple. Especially since this app is going to be primarily for me - and I&amp;rsquo;m not going to worry too too much about the UI elements. Thinking this is going to be primarily a django based app with templates and model-based views like the keys app.
+      <description>New app in progress! Hopefully it won&#39;t take months to complete. Should be pretty simple. Especially since this app is going to be primarily for me - and I&#39;m not going to worry too too much about the UI elements. Thinking this is going to be primarily a django based app with templates and model-based views like the keys app.
 Current State: Developing database models
 Purpose Provide myself and whoever wants it a place to track their car maintenance, and to make sure that they know when the next scheduled service for a particular maintenance item is due.</description>
     </item>
@@ -30,7 +39,7 @@ Purpose Provide myself and whoever wants it a place to track their car maintenan
       <pubDate>Thu, 27 Jun 2019 18:43:25 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2019/06/docker-balena-electron-raspberry-pi-digital-signage/</guid>
-      <description>Fair warning: This is a work in progress, and I&amp;rsquo;m still working out the details for this project.
+      <description>Fair warning: This is a work in progress, and I&#39;m still working out the details for this project.
 Github Repository
 I have started to work on getting a digital signage solution set up where I can set up a Raspberry Pi3 to display information on a screen, and that has no local interaction (no UI, running headless without any keyboard/mouse). I wanted a solution to control updates to the app, which is where BalenaCloud comes in (along with their handy OS for the Raspberry Pi).</description>
     </item>
@@ -41,7 +50,7 @@ I have started to work on getting a digital signage solution set up where I can 
       <pubDate>Mon, 20 May 2019 10:41:23 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2019/05/docker-infrastructure-project/</guid>
-      <description>I&amp;rsquo;m building a web infrastructure project that&amp;rsquo;s based around the project verbose-equals-true (referred to as VET from now on), which sets out to create a set of services to support modern web apps, using several Docker based images to collect everything into separate concerns. I like the philosophy behind the project, and it looks well thought out, however, as things are always changing in this landscape and nobody has the same development environment, there&amp;rsquo;s always going to be stumbling blocks.</description>
+      <description>I&#39;m building a web infrastructure project that&#39;s based around the project verbose-equals-true (referred to as VET from now on), which sets out to create a set of services to support modern web apps, using several Docker based images to collect everything into separate concerns. I like the philosophy behind the project, and it looks well thought out, however, as things are always changing in this landscape and nobody has the same development environment, there&#39;s always going to be stumbling blocks.</description>
     </item>
     
     <item>
@@ -50,7 +59,7 @@ I have started to work on getting a digital signage solution set up where I can 
       <pubDate>Wed, 01 May 2019 11:44:57 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2019/05/hyper-v-local-networking/</guid>
-      <description>I had to set up an Ubuntu VM (Virtual Machine) on my machine recently and because I also use Docker, I had to learn exactly how Hyper-V handles networking tasks between the host machine and the virtual machines you set up. Hyper-V, as far as I understand, has 3 main networking methods called virtual switches. There&amp;rsquo;s actually a 4th option that comes out of the box, which is something of a hybrid between an &amp;ldquo;Internal Switch&amp;rdquo; and an &amp;ldquo;External Switch&amp;rdquo;.</description>
+      <description>I had to set up an Ubuntu VM (Virtual Machine) on my machine recently and because I also use Docker, I had to learn exactly how Hyper-V handles networking tasks between the host machine and the virtual machines you set up. Hyper-V, as far as I understand, has 3 main networking methods called virtual switches. There&#39;s actually a 4th option that comes out of the box, which is something of a hybrid between an &amp;ldquo;Internal Switch&amp;rdquo; and an &amp;ldquo;External Switch&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -60,7 +69,7 @@ I have started to work on getting a digital signage solution set up where I can 
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2019/03/google-.dev-domains-github-pages-and-heroku-apps/</guid>
       <description>At the end of February 2019, Google released general access to the .dev top level domain. I had heard about this happening about a year ago, and am now the happy owner of two .dev domains! One of these is chasesawyer.dev and will soon be the new home of this site!
-But how to get it set up? When you buy a domain name, nothing is really set up for them - going to those addresses doesn&amp;rsquo;t point to anything Firefox and Google will just say &amp;ldquo;Server not found.</description>
+But how to get it set up? When you buy a domain name, nothing is really set up for them - going to those addresses doesn&#39;t point to anything Firefox and Google will just say &amp;ldquo;Server not found.</description>
     </item>
     
     <item>
@@ -69,7 +78,7 @@ But how to get it set up? When you buy a domain name, nothing is really set up f
       <pubDate>Thu, 21 Feb 2019 09:26:35 -0800</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2019/02/maintaining-older-django-and-python-projects/</guid>
-      <description>I have been working on the backend for a project that I&amp;rsquo;ve written about {{previously&amp;ndash;link}}. The established tools server that will be supporting my new React frontend app(s) will be using a backend built on Python 2.7 and Django 1.11, and thus I&amp;rsquo;ve had to remember how to get a development environment set up that will appropriately support the project running locally on my machine. I have a personal site that runs on the same version of Django, but with Python 3.</description>
+      <description>I have been working on the backend for a project that I&#39;ve written about {{previously&amp;ndash;link}}. The established tools server that will be supporting my new React frontend app(s) will be using a backend built on Python 2.7 and Django 1.11, and thus I&#39;ve had to remember how to get a development environment set up that will appropriately support the project running locally on my machine. I have a personal site that runs on the same version of Django, but with Python 3.</description>
     </item>
     
     <item>
@@ -79,7 +88,7 @@ But how to get it set up? When you buy a domain name, nothing is really set up f
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/10/long-time-update-new-projects/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;Author&amp;rsquo;s Note: this post has taken a long time to get written - so long, that I already have my 2018 Hactoberfest t-shirt and stickers! It&amp;rsquo;s content spans mid-October through December. I&amp;rsquo;ve done my best to make it a cohesive whole.&lt;/p&gt;
+&lt;p&gt;Author&#39;s Note: this post has taken a long time to get written - so long, that I already have my 2018 Hactoberfest t-shirt and stickers! It&#39;s content spans mid-October through December. I&#39;ve done my best to make it a cohesive whole.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -89,7 +98,7 @@ But how to get it set up? When you buy a domain name, nothing is really set up f
       <pubDate>Mon, 11 Jun 2018 13:04:19 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/06/debugging-node-applications/</guid>
-      <description>When developing an application or project with Node.js, debugging is an important aspect to getting to the bottom of issues. If you use an IDE (integrated development environment) or code editor that has built-in or supported debugging capacities, such as Visual Studio Code, then you have that ability already. But if you are someone who&amp;rsquo;s developing with a more basic code editor - such as Sublime Text, then you can still debug your Node.</description>
+      <description>When developing an application or project with Node.js, debugging is an important aspect to getting to the bottom of issues. If you use an IDE (integrated development environment) or code editor that has built-in or supported debugging capacities, such as Visual Studio Code, then you have that ability already. But if you are someone who&#39;s developing with a more basic code editor - such as Sublime Text, then you can still debug your Node.</description>
     </item>
     
     <item>
@@ -108,7 +117,7 @@ But how to get it set up? When you buy a domain name, nothing is really set up f
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/06/code-editors-vs.-word-processors/</guid>
       <description>Word processors are great for creating documents with a lot of rich formatting, but all that stuff can be a huge distraction. Code editors on the other hand are amazingly good for writing - the writing where the only thing that actually matters is the content, and not the format.
-While it&amp;rsquo;s probably been hashed out and written about a lot by other people, the one thing, the killer aspect of it for me, is the ability to scroll the page down, so that whenever you want, you can always return to that feeling of having a blank canvas to write upon.</description>
+While it&#39;s probably been hashed out and written about a lot by other people, the one thing, the killer aspect of it for me, is the ability to scroll the page down, so that whenever you want, you can always return to that feeling of having a blank canvas to write upon.</description>
     </item>
     
     <item>
@@ -118,7 +127,7 @@ While it&amp;rsquo;s probably been hashed out and written about a lot by other p
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/06/new-free-code-camp-cert/</guid>
       <description>I got my back-end (now API and Microservice) cert today from Free Code Camp! https://www.freecodecamp.org/certification/shadowimmage/apis-and-microservices Hooray!
-It&amp;rsquo;s been a year since I started working through the Free Code Camp curriculum, and it feels good to finally have finished the API work. I feel like I have a pretty solid grasp now on how to build and arrange an API, which I hope will help me in the future when I try to do more API work.</description>
+It&#39;s been a year since I started working through the Free Code Camp curriculum, and it feels good to finally have finished the API work. I feel like I have a pretty solid grasp now on how to build and arrange an API, which I hope will help me in the future when I try to do more API work.</description>
     </item>
     
     <item>
@@ -127,7 +136,7 @@ It&amp;rsquo;s been a year since I started working through the Free Code Camp cu
       <pubDate>Fri, 18 May 2018 14:45:08 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/logo-design/</guid>
-      <description>I spent my sick day today designing a new logo for the site using Inkscape. I knew that it had to be something that was unique, so I went online looking around for resources on designing and producing a logo. I know that SVGs are great, because you will never have scaling issues - if you need a larger version, you can simply export it at higher resolution. Or lower.</description>
+      <description>I spent my sick day today designing a new logo for the site using Inkscape. I knew that it had to be something that was unique, so I went online looking around for resources on designing and producing a logo. I know that SVGs are great, because you will never have scaling issues - if you need a larger version, you can simply export it at higher resolution. Or lower. Or whatever.</description>
     </item>
     
     <item>
@@ -155,7 +164,7 @@ Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for condit
       <pubDate>Wed, 09 May 2018 22:19:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/new-site-structure/</guid>
-      <description>I took some time this week to look into all the code that I&amp;rsquo;ve been collecting and producing over the last year or more and began to assess where everything was being stored and hosted. Since I build a lot of demos and try out new technologies on a pretty consistent (if not sporadic) basis, this has led me to a state where I have several projects hosted on Heroku, on AWS, and offline.</description>
+      <description>I took some time this week to look into all the code that I&#39;ve been collecting and producing over the last year or more and began to assess where everything was being stored and hosted. Since I build a lot of demos and try out new technologies on a pretty consistent (if not sporadic) basis, this has led me to a state where I have several projects hosted on Heroku, on AWS, and offline.</description>
     </item>
     
     <item>
@@ -165,7 +174,7 @@ Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for condit
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2018/05/new-static-site-with-hugo/</guid>
       <description>Built a new site, leaving Jekyll for Hugo, for my github.io page.
-Changes Moved all my old Jekyll files to a new subdirectory in order to maintain access to the old code and posts, and then transition all the content over to the main Hugo site as settings come together. One major advantage of Hugo is that the build process is super fast, so I&amp;rsquo;ve been looking at how to integrate CircleCI with Hugo builds.</description>
+Changes Moved all my old Jekyll files to a new subdirectory in order to maintain access to the old code and posts, and then transition all the content over to the main Hugo site as settings come together. One major advantage of Hugo is that the build process is super fast, so I&#39;ve been looking at how to integrate CircleCI with Hugo builds.</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>postgresql on Chase Sawyer</title>
@@ -28,7 +28,7 @@
       <pubDate>Wed, 30 May 2018 10:01:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/project/keysapp/</guid>
-      <description>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university&amp;rsquo;s AV department and it&amp;rsquo;s instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can&amp;rsquo;t be checked out twice; etc.</description>
+      <description>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university&#39;s AV department and it&#39;s instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can&#39;t be checked out twice; etc.</description>
     </item>
     
   </channel>

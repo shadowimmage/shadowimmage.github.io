@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on Chase Sawyer</title>
@@ -19,7 +19,7 @@
       <pubDate>Mon, 20 May 2019 10:41:23 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2019/05/docker-infrastructure-project/</guid>
-      <description>I&amp;rsquo;m building a web infrastructure project that&amp;rsquo;s based around the project verbose-equals-true (referred to as VET from now on), which sets out to create a set of services to support modern web apps, using several Docker based images to collect everything into separate concerns. I like the philosophy behind the project, and it looks well thought out, however, as things are always changing in this landscape and nobody has the same development environment, there&amp;rsquo;s always going to be stumbling blocks.</description>
+      <description>I&#39;m building a web infrastructure project that&#39;s based around the project verbose-equals-true (referred to as VET from now on), which sets out to create a set of services to support modern web apps, using several Docker based images to collect everything into separate concerns. I like the philosophy behind the project, and it looks well thought out, however, as things are always changing in this landscape and nobody has the same development environment, there&#39;s always going to be stumbling blocks.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@
       <pubDate>Thu, 21 Feb 2019 09:26:35 -0800</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2019/02/maintaining-older-django-and-python-projects/</guid>
-      <description>I have been working on the backend for a project that I&amp;rsquo;ve written about {{previously&amp;ndash;link}}. The established tools server that will be supporting my new React frontend app(s) will be using a backend built on Python 2.7 and Django 1.11, and thus I&amp;rsquo;ve had to remember how to get a development environment set up that will appropriately support the project running locally on my machine. I have a personal site that runs on the same version of Django, but with Python 3.</description>
+      <description>I have been working on the backend for a project that I&#39;ve written about {{previously&amp;ndash;link}}. The established tools server that will be supporting my new React frontend app(s) will be using a backend built on Python 2.7 and Django 1.11, and thus I&#39;ve had to remember how to get a development environment set up that will appropriately support the project running locally on my machine. I have a personal site that runs on the same version of Django, but with Python 3.</description>
     </item>
     
     <item>
@@ -46,7 +46,7 @@
       <pubDate>Wed, 30 May 2018 10:01:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/project/keysapp/</guid>
-      <description>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university&amp;rsquo;s AV department and it&amp;rsquo;s instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can&amp;rsquo;t be checked out twice; etc.</description>
+      <description>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university&#39;s AV department and it&#39;s instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can&#39;t be checked out twice; etc.</description>
     </item>
     
     <item>
@@ -55,7 +55,7 @@
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2017/06/python-tk-ui-notes-project-update/</guid>
-      <description>I&amp;rsquo;ve been making a lot of progress on the python-LEDSerialController project. There&amp;rsquo;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&amp;rsquo;s baked into Python already, and there&amp;rsquo;s nothing to configure to get it working. It doesn&amp;rsquo;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&amp;rsquo;s also had a lower bar to entry, despite some drawbacks with Tk&amp;rsquo;s documentation.</description>
+      <description>I&#39;ve been making a lot of progress on the python-LEDSerialController project. There&#39;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&#39;s baked into Python already, and there&#39;s nothing to configure to get it working. It doesn&#39;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&#39;s also had a lower bar to entry, despite some drawbacks with Tk&#39;s documentation.</description>
     </item>
     
   </channel>

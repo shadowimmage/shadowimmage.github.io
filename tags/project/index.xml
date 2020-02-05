@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>project on Chase Sawyer</title>
@@ -19,7 +19,7 @@
       <pubDate>Thu, 25 Jul 2019 09:11:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2019/07/car-maintenance-app/</guid>
-      <description>New app in progress! Hopefully it won&amp;rsquo;t take months to complete. Should be pretty simple. Especially since this app is going to be primarily for me - and I&amp;rsquo;m not going to worry too too much about the UI elements. Thinking this is going to be primarily a django based app with templates and model-based views like the keys app.
+      <description>New app in progress! Hopefully it won&#39;t take months to complete. Should be pretty simple. Especially since this app is going to be primarily for me - and I&#39;m not going to worry too too much about the UI elements. Thinking this is going to be primarily a django based app with templates and model-based views like the keys app.
 Current State: Developing database models
 Purpose Provide myself and whoever wants it a place to track their car maintenance, and to make sure that they know when the next scheduled service for a particular maintenance item is due.</description>
     </item>
@@ -39,7 +39,7 @@ Purpose Provide myself and whoever wants it a place to track their car maintenan
       <pubDate>Wed, 30 May 2018 10:01:41 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/project/keysapp/</guid>
-      <description>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university&amp;rsquo;s AV department and it&amp;rsquo;s instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can&amp;rsquo;t be checked out twice; etc.</description>
+      <description>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university&#39;s AV department and it&#39;s instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can&#39;t be checked out twice; etc.</description>
     </item>
     
     <item>

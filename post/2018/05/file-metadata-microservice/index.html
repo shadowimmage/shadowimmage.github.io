@@ -29,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <link rel="canonical" href="https://chasesawyer.dev/post/2018/05/file-metadata-microservice/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -280,7 +280,9 @@ if (!doNotTrack) {
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
   
   
 </span>
@@ -301,32 +303,44 @@ if (!doNotTrack) {
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>Full-stack microservice (really basic frontend in Pug/HTML) that takes a FormData object from a file upload form and returns the file size in bytes as part of a JSON response.</p>
-
 <h3 id="user-stories">User Stories</h3>
-
 <ul>
 <li>I can submit a FormData object that includes a file upload</li>
 <li>When I submit something, I will receive the file size in bytes within the JSON response</li>
 </ul>
-
 <h2 id="code">Code</h2>
+<h3 id="button-stylebackground-colorblack-typebutton-classbtn-btn-primaryview-on-githubnbspnbspspan-stylevertical-alignmiddlei-classfab-fa-github-button-iconispanbutton1"><a href="https://github.com/shadowimmage/fcc-backend-challenges/blob/master/controllers/api/api_challenges/filesize.js"><button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub  <span style="vertical-align:middle"><i class="fab fa-github button-icon"></i></span></button></a></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// upload page
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">upload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
+  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;filesize/upload&#39;</span>)
+}
 
-<h3 id="button-style-background-color-black-type-button-class-btn-btn-primary-view-on-github-nbsp-nbsp-span-style-vertical-align-middle-i-class-fab-fa-github-button-icon-i-span-button-1"><a href="https://github.com/shadowimmage/fcc-backend-challenges/blob/master/controllers/api/api_challenges/filesize.js"><button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub&nbsp;&nbsp;<span style="vertical-align:middle"><i class="fab fa-github button-icon"></i></span></button></a></h3>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// upload page
-</span><span class="c1"></span><span class="nx">exports</span><span class="p">.</span><span class="nx">upload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;filesize/upload&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1">// File Metadata Microservice - file upload result
-</span><span class="c1"></span><span class="nx">exports</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span>  <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span>
-    <span class="s1">&#39;filename&#39;</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">originalname</span><span class="p">,</span>
-    <span class="s1">&#39;size&#39;</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">size</span>
-  <span class="p">})</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="demo">Demo</h2>
-
+<span style="color:#75715e">// File Metadata Microservice - file upload result
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span>  <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
+  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>({
+    <span style="color:#e6db74">&#39;filename&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">originalname</span>,
+    <span style="color:#e6db74">&#39;size&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">size</span>
+  })
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="demo">Demo</h2>
 <p>View this code live on <a href="https://fcc-challenges.herokuapp.com/api/filesize/upload">Heroku</a></p>
 
         
@@ -356,26 +370,6 @@ if (!doNotTrack) {
         <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fchasesawyer.dev%2fpost%2f2018%2f05%2ffile-metadata-microservice%2f" target="_blank" title="Share on Google Plus">
-         <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-google-plus fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fchasesawyer.dev%2fpost%2f2018%2f05%2ffile-metadata-microservice%2f" target="_blank" title="Share on Facebook">
-        <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
               </span>
     </a>
 </li>
@@ -507,7 +501,7 @@ if (!doNotTrack) {
           
 
           &nbsp;&bull;&nbsp;
-          2019
+          2020
 
           
             &nbsp;&bull;&nbsp;
@@ -516,7 +510,7 @@ if (!doNotTrack) {
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

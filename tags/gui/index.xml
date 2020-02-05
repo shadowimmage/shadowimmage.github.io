@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gui on Chase Sawyer</title>
@@ -19,7 +19,7 @@
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2017/06/python-tk-ui-notes-project-update/</guid>
-      <description>I&amp;rsquo;ve been making a lot of progress on the python-LEDSerialController project. There&amp;rsquo;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&amp;rsquo;s baked into Python already, and there&amp;rsquo;s nothing to configure to get it working. It doesn&amp;rsquo;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&amp;rsquo;s also had a lower bar to entry, despite some drawbacks with Tk&amp;rsquo;s documentation.</description>
+      <description>I&#39;ve been making a lot of progress on the python-LEDSerialController project. There&#39;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&#39;s baked into Python already, and there&#39;s nothing to configure to get it working. It doesn&#39;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&#39;s also had a lower bar to entry, despite some drawbacks with Tk&#39;s documentation.</description>
     </item>
     
   </channel>

@@ -29,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <link rel="canonical" href="https://chasesawyer.dev/project/keysapp/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -280,7 +280,9 @@ if (!doNotTrack) {
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
   
   
 </span>
@@ -300,33 +302,22 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-
-<p>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university&rsquo;s AV department and it&rsquo;s instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can&rsquo;t be checked out twice; etc.). Each checkout and check-in is recorded and tracked. All changes in the database leave a history.</p>
-
+        <p>The Keys App was my first major project that sought to solve a problem with managing key checkouts without requiring a cumbersome customer database / sign up form. This would target an institution that mostly catered to internal customers, such as a university's AV department and it's instructors. It largely replicates a paper-form-based system, with an added layer of data validation and control (emails, phone numbers must be in a valid format; keys can only be returned by their original owners; keys can't be checked out twice; etc.). Each checkout and check-in is recorded and tracked. All changes in the database leave a history.</p>
 <p>This project was built entirely upon Django, with some Bootstrap for front-end styling. The app runs as a multi-part form with several steps and each is validated before progress is allowed. The backend leverages the built-in Django admin console and allows navigating and editing all records in the system, while also maintaining data integrity.</p>
-
 <h2 id="technologies">Technologies</h2>
-
 <p>The Keys App is a full stack project built with</p>
-
 <ul>
 <li>Python/Django</li>
 <li>PostgreSQL</li>
 <li>Bootstrap</li>
 <li>FontAwesome</li>
 </ul>
-
 <h2 id="database-schema">Database Schema</h2>
-
 <p>[To come]</p>
-
 <h2 id="demo">Demo</h2>
-
 <p>Hosted on Heroku: <a href="https://chase-sawyer-demos.herokuapp.com/keysApp/">https://chase-sawyer-demos.herokuapp.com/keysApp/</a></p>
 
-
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<link rel="stylesheet" href="https://chasesawyer.dev/css/hugo-easy-gallery.css" />
 <div class="box" >
   <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <div class="img">
@@ -369,26 +360,6 @@ if (!doNotTrack) {
         <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fchasesawyer.dev%2fproject%2fkeysapp%2f" target="_blank" title="Share on Google Plus">
-         <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-google-plus fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fchasesawyer.dev%2fproject%2fkeysapp%2f" target="_blank" title="Share on Facebook">
-        <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
               </span>
     </a>
 </li>
@@ -520,7 +491,7 @@ if (!doNotTrack) {
           
 
           &nbsp;&bull;&nbsp;
-          2019
+          2020
 
           
             &nbsp;&bull;&nbsp;
@@ -529,7 +500,7 @@ if (!doNotTrack) {
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

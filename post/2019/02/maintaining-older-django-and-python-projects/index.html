@@ -29,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <link rel="canonical" href="https://chasesawyer.dev/post/2019/02/maintaining-older-django-and-python-projects/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -282,7 +282,9 @@ if (!doNotTrack) {
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
   
   
 </span>
@@ -302,19 +304,12 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-
-<p>I have been working on the backend for a project that I&rsquo;ve written about {{previously&ndash;link}}. The established tools server that will be supporting my new React frontend app(s) will be using a backend built on Python 2.7 and Django 1.11, and thus I&rsquo;ve had to remember how to get a development environment set up that will appropriately support the project running locally on my machine. I have a personal site that runs on the same version of Django, but with Python 3.6 as the underlying code base. Having used these tools previously, I decided that it was time to bump my personal Django instance up to something more modern and learn what it would take to get my apps-demos server (available at chase-sawyer-demos.herokuapp.com) up to Django 2.1 with Python 3.7 backing it up. I also wanted to keep some notes here on what the experience has been like setting up a legacy development environment from scratch after not having worked on a project for some time or picking up someone else&rsquo;s project.</p>
-
+        <p>I have been working on the backend for a project that I've written about {{previously&ndash;link}}. The established tools server that will be supporting my new React frontend app(s) will be using a backend built on Python 2.7 and Django 1.11, and thus I've had to remember how to get a development environment set up that will appropriately support the project running locally on my machine. I have a personal site that runs on the same version of Django, but with Python 3.6 as the underlying code base. Having used these tools previously, I decided that it was time to bump my personal Django instance up to something more modern and learn what it would take to get my apps-demos server (available at chase-sawyer-demos.herokuapp.com) up to Django 2.1 with Python 3.7 backing it up. I also wanted to keep some notes here on what the experience has been like setting up a legacy development environment from scratch after not having worked on a project for some time or picking up someone else's project.</p>
 <p>Below are some of my notes and experiences on having gone through this process.</p>
-
 <h2 id="the-work-environment-and-long-file-names">The Work Environment and Long File Names</h2>
-
 <p>I had a further complication with this project in that some of the dependencies required were projects maintained by other groups here, were clearly developed on a MacOS or Linux environment as the file names and directories for files within these projects were too long for Windows to handle. This meant that I could not successfully clone the codebase on to my usual development computer (Windows 10 based). I dug through some documentation for Windows that stated that it can <em>technically</em> support longer than 260 or so characters, and that the NTFS filesystem has no technical reason to restrict these files from existing. However, many programs and utilities baked into Windows still use the maximum path length limit (like explorer.exe - the Windows file manager). I decided that instead of trying to hack Windows into working so that I could get a working copy of the backend server that I am using to host the API and database connections for this project, I could just use a VM. I am already using Hyper-V as part of having Docker running on my dev environment, and Hyper-V has a nearly-one-click solution to installing an Ubuntu 18.04 LTS VM on Windows, so I set that up as my designated Python 2.7 + Django 1.11 development instance so that I could handle the long paths required for this project to run successfully.</p>
-
-<p>Having set up an Ubuntu 18.04 LTS VM on my main Windows machine, I installed git, vscode, and virtualenv for Python, along with Python27 for Ubuntu so that I could get a working virtual environment set up for this project before I cloned in the existing backend project with all it&rsquo;s dependencies and get things up and running before starting my new backend app within that framework.</p>
-
-<p>But then I remembered something - Django is built around app reusability and so I went back to my app structure and moved it out into a super basic from-scratch Django project which allows me to work on any machine to build the app, without any dependence on the existing older project structure. This approach uses Django 1.11 to match the work environment&rsquo;s Django version, but uses the Python 3.7 version that I have installed on most all of my development machines - this shouldn&rsquo;t be too problematic, as Django 1.11 supports Python 3 and I have been taking steps to ensure that the coding I&rsquo;m doing is Python 2 and 3 compatible. I&rsquo;ll edit here if this turns out to be a bad idea.</p>
+<p>Having set up an Ubuntu 18.04 LTS VM on my main Windows machine, I installed git, vscode, and virtualenv for Python, along with Python27 for Ubuntu so that I could get a working virtual environment set up for this project before I cloned in the existing backend project with all it's dependencies and get things up and running before starting my new backend app within that framework.</p>
+<p>But then I remembered something - Django is built around app reusability and so I went back to my app structure and moved it out into a super basic from-scratch Django project which allows me to work on any machine to build the app, without any dependence on the existing older project structure. This approach uses Django 1.11 to match the work environment's Django version, but uses the Python 3.7 version that I have installed on most all of my development machines - this shouldn't be too problematic, as Django 1.11 supports Python 3 and I have been taking steps to ensure that the coding I'm doing is Python 2 and 3 compatible. I'll edit here if this turns out to be a bad idea.</p>
 
 
         
@@ -413,7 +408,7 @@ if (!doNotTrack) {
           
 
           &nbsp;&bull;&nbsp;
-          2019
+          2020
 
           
             &nbsp;&bull;&nbsp;
@@ -422,7 +417,7 @@ if (!doNotTrack) {
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

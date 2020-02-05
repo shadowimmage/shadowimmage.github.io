@@ -7,9 +7,9 @@
         <title>Python Tk UI Notes, Project Update</title>
         <meta property="og:title" content="Python Tk UI Notes, Project Update" />
         <meta name="twitter:title" content="Python Tk UI Notes, Project Update" />
-        <meta name="description" content="I&rsquo;ve been making a lot of progress on the python-LEDSerialController project. There&rsquo;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&rsquo;s baked into Python already, and there&rsquo;s nothing to configure to get it working. It doesn&rsquo;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&rsquo;s also had a lower bar to entry, despite some drawbacks with Tk&rsquo;s documentation." />
-        <meta property="og:description" content="I&rsquo;ve been making a lot of progress on the python-LEDSerialController project. There&rsquo;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&rsquo;s baked into Python already, and there&rsquo;s nothing to configure to get it working. It doesn&rsquo;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&rsquo;s also had a lower bar to entry, despite some drawbacks with Tk&rsquo;s documentation." />
-        <meta name="twitter:description" content="I&rsquo;ve been making a lot of progress on the python-LEDSerialController project. There&rsquo;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to …" />
+        <meta name="description" content="I&#39;ve been making a lot of progress on the python-LEDSerialController project. There&#39;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&#39;s baked into Python already, and there&#39;s nothing to configure to get it working. It doesn&#39;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&#39;s also had a lower bar to entry, despite some drawbacks with Tk&#39;s documentation." />
+        <meta property="og:description" content="I&#39;ve been making a lot of progress on the python-LEDSerialController project. There&#39;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&#39;s baked into Python already, and there&#39;s nothing to configure to get it working. It doesn&#39;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&#39;s also had a lower bar to entry, despite some drawbacks with Tk&#39;s documentation." />
+        <meta name="twitter:description" content="I&#39;ve been making a lot of progress on the python-LEDSerialController project. There&#39;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since …" />
     <meta name="author" content="Chase Sawyer" />
     
     
@@ -29,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <link rel="canonical" href="https://chasesawyer.dev/post/2017/06/python-tk-ui-notes-project-update/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -271,12 +271,16 @@ if (!doNotTrack) {
   
   <i class="fas fa-calendar"></i>&nbsp;Posted on June 21, 2017
   
+    &nbsp;(Last modified on January 20, 2020)
+  
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
   
   
 </span>
@@ -296,68 +300,109 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>I&rsquo;ve been making a lot of progress on the <a href="https://github.com/shadowimmage/python-LEDSerialController">python-LEDSerialController</a> project. There&rsquo;s been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it&rsquo;s baked into Python already, and there&rsquo;s nothing to configure to get it working. It doesn&rsquo;t look nearly as nice as something that would come out of using a more advanced UI toolkit, but it&rsquo;s also had a lower bar to entry, despite some drawbacks with Tk&rsquo;s documentation. Googling around for solutions to problems as they arise has proved to be effective though.</p>
-
-<p>Getting this project to run smoothly has been a challenge because I&rsquo;m using one thread to accomplish everything, which comes with the restriction that nothing can be blocking (at least not for long) without causing UI lag (bad) or causing responsiveness on the LED controller (Arduino) to lag. This is further complicated by the way that I&rsquo;ve built up the Arduino code to allow it to perform animations with the LED strips and check in on the serial buffer.</p>
-
+        <p>I've been making a lot of progress on the <a href="https://github.com/shadowimmage/python-LEDSerialController">python-LEDSerialController</a> project. There's been a lot to learn about how to run the original command line script with a GUI frontend. I chose to use Tk since it's baked into Python already, and there's nothing to configure to get it working. It doesn't look nearly as nice as something that would come out of using a more advanced UI toolkit, but it's also had a lower bar to entry, despite some drawbacks with Tk's documentation. Googling around for solutions to problems as they arise has proved to be effective though.</p>
+<p>Getting this project to run smoothly has been a challenge because I'm using one thread to accomplish everything, which comes with the restriction that nothing can be blocking (at least not for long) without causing UI lag (bad) or causing responsiveness on the LED controller (Arduino) to lag. This is further complicated by the way that I've built up the Arduino code to allow it to perform animations with the LED strips and check in on the serial buffer.</p>
 <p>All of this combines to create the following conditions:</p>
-
 <ul>
-<li>The Arduino only checks in with the computer when it&rsquo;s ready for a new command in between running pattern animations, which depends on the interval setting for the last command that was sent</li>
+<li>The Arduino only checks in with the computer when it's ready for a new command in between running pattern animations, which depends on the interval setting for the last command that was sent</li>
 <li>The UI only updates while the Python thread is not blocked or doing anything long-running</li>
-<li>Updating the Arduino requires checking the computer&rsquo;s serial buffer to see if the Arduino has signaled that it&rsquo;s ready for the next command.</li>
+<li>Updating the Arduino requires checking the computer's serial buffer to see if the Arduino has signaled that it's ready for the next command.</li>
 </ul>
-
 <p>Disadvantages of doing things this way:</p>
-
 <ul>
 <li>A pattern animation, such as the animated rainbow, will only run for a single cycle, and then stop. More to the point, without any serial input from the host computer, the Arduino will cease to update any LEDs at all.</li>
 <li>The host computer must continually update the Arduino (controller) with what to do next, including, telling it to do the same thing over again.</li>
 </ul>
-
 <p>Advantages of doing things this way:</p>
-
 <ul>
-<li>Any updates to state on the Python host program can update the controller with new information as soon as it&rsquo;s ready</li>
+<li>Any updates to state on the Python host program can update the controller with new information as soon as it's ready</li>
 <li>UI to Controller update delay is minimal</li>
 <li>UI can remain responsive while the controller is busy and not ready for communication</li>
 </ul>
-
-<p>Timing on the Tk application can be tricky in this situation: checking the serial input as often as possible can push CPU usage to 100%, and accomplishes nothing productive since the Arduino won&rsquo;t be ready for updates that frequently. On the other hand, checking too infrequently will lead to stuttering in continuous patterns, but will leave more time on the host PC for keeping the UI responsive.</p>
-
+<p>Timing on the Tk application can be tricky in this situation: checking the serial input as often as possible can push CPU usage to 100%, and accomplishes nothing productive since the Arduino won't be ready for updates that frequently. On the other hand, checking too infrequently will lead to stuttering in continuous patterns, but will leave more time on the host PC for keeping the UI responsive.</p>
 <p>The way I solved this was to ensure that any blocking actions are only executed when absolutely necessary. In this instance, I can use the pyserial in_waiting property to know when the Arduino has sent data that needs to be checked:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">serial_has_waiting</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="s2">&#34;&#34;&#34;Return true if there is serial data in the input buffer - non-Blocking&#34;&#34;&#34;</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmdMessenger</span><span class="o">.</span><span class="n">comm</span><span class="o">.</span><span class="n">in_waiting</span> <span class="o">!=</span> <span class="mi">0</span></code></pre></div>
-<p>Using that method allows me to avoid going into my incoming data handling code before there&rsquo;s anything in the input buffer to read:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getCommandSet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">):</span>
-    <span class="n">receivedCmdSet</span> <span class="o">=</span> <span class="bp">None</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">src</span> <span class="o">+</span> <span class="s1">&#39;: getCommand...&#39;</span><span class="p">)</span>
-    <span class="k">while</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdMessenger</span><span class="o">.</span><span class="n">comm</span><span class="o">.</span><span class="n">in_waiting</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="c1"># blocking - here as a final check before self.c.receive()</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">receivedCmdSet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">src</span> <span class="o">+</span> <span class="s1">&#39;: getCommand complete.&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">receivedCmdSet</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;CMDERROR&#34;</span><span class="p">):</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&#34;CMDERROR: &#34;</span> <span class="o">+</span> <span class="n">receivedCmdSet</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">receivedCmdSet</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">receivedCmdSet</span></code></pre></div>
-<p>The final piece is making a method that will be called for every cycle of the Tk <code>mainloop()</code> - first in main:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">setup</span><span class="p">():</span>
-            <span class="n">pre_run_commands</span><span class="p">()</span>
-            <span class="n">app</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="n">update_controller</span><span class="p">)</span> <span class="c1"># HERE</span>
-            <span class="n">app</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span> <span class="c1"># Called when user ends process with CTRL+C</span>
-        <span class="n">stop</span><span class="p">()</span></code></pre></div>
-<p>And within <code>update_controller()</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">update_controller</span><span class="p">():</span>
-    <span class="s2">&#34;&#34;&#34;Check the LED Controller, and issue, or re-issue a command as needed&#34;&#34;&#34;</span>
-    <span class="k">if</span> <span class="n">LEDController</span><span class="o">.</span><span class="n">serial_has_waiting</span><span class="p">():</span>
-        <span class="n">LEDController</span><span class="o">.</span><span class="n">repeat</span><span class="p">()</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="n">update_controller</span><span class="p">)</span> <span class="c1"># HERE</span></code></pre></div>
-<p>The important part here is the amount of time (in milliseconds) that the <code>app.after()</code> is given for the next check. Initially from main, I have it set at 500ms, since we want to get things going and allow a little time for the UI to get started before we start the serial communication with the Arduino in earnest. Later on, it&rsquo;s reduced to 75ms in <code>update_controller()</code> so that we can have enough time to update the UI, not overburden the CPU, and also be sure to catch input from the Arduino relatively quickly (within about 75ms, which is pretty fast). This balance is fast enough that animations on the Arduino don&rsquo;t perceptibly have a delay in between iterations.</p>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">serial_has_waiting</span>(self):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Return true if there is serial data in the input buffer - non-Blocking</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>cmdMessenger<span style="color:#f92672">.</span>comm<span style="color:#f92672">.</span>in_waiting <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Using that method allows me to avoid going into my incoming data handling code before there's anything in the input buffer to read:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getCommandSet</span>(self, src):
+    receivedCmdSet <span style="color:#f92672">=</span> None
+    logging<span style="color:#f92672">.</span>debug(src <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">: getCommand...</span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#66d9ef">while</span> (self<span style="color:#f92672">.</span>cmdMessenger<span style="color:#f92672">.</span>comm<span style="color:#f92672">.</span>in_waiting <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>): <span style="color:#75715e"># blocking - here as a final check before self.c.receive()</span>
+        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.1</span>)
+    receivedCmdSet <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>c<span style="color:#f92672">.</span>receive()
+    logging<span style="color:#f92672">.</span>debug(src <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">: getCommand complete.</span><span style="color:#e6db74">&#39;</span>)
+    <span style="color:#66d9ef">if</span> (receivedCmdSet[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">CMDERROR</span><span style="color:#e6db74">&#34;</span>):
+        logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">CMDERROR: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> receivedCmdSet[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>])
+    logging<span style="color:#f92672">.</span>debug(receivedCmdSet)
+    <span style="color:#66d9ef">return</span> receivedCmdSet
+</code></pre></td></tr></table>
+</div>
+</div><p>The final piece is making a method that will be called for every cycle of the Tk <code>mainloop()</code> - first in main:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#39;</span>:
+    <span style="color:#66d9ef">try</span>:
+        <span style="color:#66d9ef">if</span> setup():
+            pre_run_commands()
+            app<span style="color:#f92672">.</span>after(<span style="color:#ae81ff">500</span>, update_controller) <span style="color:#75715e"># HERE</span>
+            app<span style="color:#f92672">.</span>mainloop()
+    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyboardInterrupt</span>: <span style="color:#75715e"># Called when user ends process with CTRL+C</span>
+        stop()
+</code></pre></td></tr></table>
+</div>
+</div><p>And within <code>update_controller()</code>:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">update_controller</span>():
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">Check the LED Controller, and issue, or re-issue a command as needed</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">if</span> LEDController<span style="color:#f92672">.</span>serial_has_waiting():
+        LEDController<span style="color:#f92672">.</span>repeat()
+    app<span style="color:#f92672">.</span>after(<span style="color:#ae81ff">75</span>, update_controller) <span style="color:#75715e"># HERE</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The important part here is the amount of time (in milliseconds) that the <code>app.after()</code> is given for the next check. Initially from main, I have it set at 500ms, since we want to get things going and allow a little time for the UI to get started before we start the serial communication with the Arduino in earnest. Later on, it's reduced to 75ms in <code>update_controller()</code> so that we can have enough time to update the UI, not overburden the CPU, and also be sure to catch input from the Arduino relatively quickly (within about 75ms, which is pretty fast). This balance is fast enough that animations on the Arduino don't perceptibly have a delay in between iterations.</p>
 <p>I might tune these values more, but for now things seem to be running well enough that I can focus on further development of the UI and implementing more advanced actions through the Tk GUI, and eventually (long term) start building out connections to other applications and APIs that would allow the LED strip to react to events from other applications or web services.</p>
 
 
@@ -386,26 +431,6 @@ if (!doNotTrack) {
         <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fchasesawyer.dev%2fpost%2f2017%2f06%2fpython-tk-ui-notes-project-update%2f" target="_blank" title="Share on Google Plus">
-         <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-google-plus fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fchasesawyer.dev%2fpost%2f2017%2f06%2fpython-tk-ui-notes-project-update%2f" target="_blank" title="Share on Facebook">
-        <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
               </span>
     </a>
 </li>
@@ -537,7 +562,7 @@ if (!doNotTrack) {
           
 
           &nbsp;&bull;&nbsp;
-          2019
+          2020
 
           
             &nbsp;&bull;&nbsp;
@@ -546,7 +571,7 @@ if (!doNotTrack) {
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

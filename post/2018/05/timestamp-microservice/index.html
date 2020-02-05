@@ -29,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <link rel="canonical" href="https://chasesawyer.dev/post/2018/05/timestamp-microservice/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -280,7 +280,9 @@ if (!doNotTrack) {
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
   
   
 </span>
@@ -301,42 +303,70 @@ if (!doNotTrack) {
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>The goal is to create a microservice that will take a date string or a unix timestamp and make a JSON response with both versions of the given timestamp / date.</p>
-
 <h2 id="code">Code</h2>
-
-<h3 id="button-style-background-color-black-type-button-class-btn-btn-primary-view-on-github-nbsp-nbsp-span-style-vertical-align-middle-i-class-fab-fa-github-button-icon-i-span-button-1"><a href="https://github.com/shadowimmage/fcc-backend-challenges/blob/master/controllers/api/api_challenges/timestamp.js"><button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub&nbsp;&nbsp;<span style="vertical-align:middle"><i class="fab fa-github button-icon"></i></span></button></a></h3>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// timestamp.js
-</span><span class="c1">// Challenge 1 - Timestamp conversion UNIX &lt;--&gt; Standard
-</span><span class="c1"></span>
-<span class="nx">exports</span><span class="p">.</span><span class="nx">convert</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">timestamp</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">timestamp</span>
-  <span class="kd">var</span> <span class="nx">resData</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">unix</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nx">natural</span><span class="o">:</span> <span class="kc">null</span>
-  <span class="p">}</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">timestamp</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">resData</span><span class="p">)</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">const</span> <span class="nx">months</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;June&#39;</span><span class="p">,</span> <span class="s1">&#39;July&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;October&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;December&#39;</span><span class="p">]</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">)))</span> <span class="p">{</span>
-      <span class="c1">// is a string
-</span><span class="c1"></span>      <span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">)</span>
-      <span class="nx">resData</span><span class="p">.</span><span class="nx">natural</span> <span class="o">=</span> <span class="nx">months</span><span class="p">[</span><span class="nx">date</span><span class="p">.</span><span class="nx">getUTCMonth</span><span class="p">()]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getUTCDate</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getUTCFullYear</span><span class="p">()</span>
-      <span class="nx">resData</span><span class="p">.</span><span class="nx">unix</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">// is a number (expect unix time)
-</span><span class="c1"></span>      <span class="kd">var</span> <span class="nx">unixDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">timestamp</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
-      <span class="nx">resData</span><span class="p">.</span><span class="nx">natural</span> <span class="o">=</span> <span class="nx">months</span><span class="p">[</span><span class="nx">unixDate</span><span class="p">.</span><span class="nx">getUTCMonth</span><span class="p">()]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">unixDate</span><span class="p">.</span><span class="nx">getUTCDate</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nx">unixDate</span><span class="p">.</span><span class="nx">getUTCFullYear</span><span class="p">()</span>
-      <span class="nx">resData</span><span class="p">.</span><span class="nx">unix</span> <span class="o">=</span> <span class="nx">timestamp</span>
-    <span class="p">}</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">resData</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="demo">Demo</h2>
-
+<h3 id="button-stylebackground-colorblack-typebutton-classbtn-btn-primaryview-on-githubnbspnbspspan-stylevertical-alignmiddlei-classfab-fa-github-button-iconispanbutton1"><a href="https://github.com/shadowimmage/fcc-backend-challenges/blob/master/controllers/api/api_challenges/timestamp.js"><button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub  <span style="vertical-align:middle"><i class="fab fa-github button-icon"></i></span></button></a></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// timestamp.js
+</span><span style="color:#75715e"></span><span style="color:#75715e">// Challenge 1 - Timestamp conversion UNIX &lt;--&gt; Standard
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">convert</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">timestamp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">timestamp</span>
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">resData</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">unix</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+    <span style="color:#a6e22e">natural</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>
+  }
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">timestamp</span>) {
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>(<span style="color:#a6e22e">resData</span>)
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">months</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;January&#39;</span>, <span style="color:#e6db74">&#39;February&#39;</span>, <span style="color:#e6db74">&#39;March&#39;</span>, <span style="color:#e6db74">&#39;April&#39;</span>, <span style="color:#e6db74">&#39;May&#39;</span>, <span style="color:#e6db74">&#39;June&#39;</span>, <span style="color:#e6db74">&#39;July&#39;</span>, <span style="color:#e6db74">&#39;August&#39;</span>, <span style="color:#e6db74">&#39;September&#39;</span>, <span style="color:#e6db74">&#39;October&#39;</span>, <span style="color:#e6db74">&#39;November&#39;</span>, <span style="color:#e6db74">&#39;December&#39;</span>]
+    <span style="color:#66d9ef">if</span> (isNaN(parseInt(<span style="color:#a6e22e">timestamp</span>))) {
+      <span style="color:#75715e">// is a string
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">timestamp</span>)
+      <span style="color:#a6e22e">resData</span>.<span style="color:#a6e22e">natural</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">months</span>[<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getUTCMonth</span>()] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getUTCDate</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;, &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getUTCFullYear</span>()
+      <span style="color:#a6e22e">resData</span>.<span style="color:#a6e22e">unix</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getTime</span>() <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000</span>)
+    } <span style="color:#66d9ef">else</span> {
+      <span style="color:#75715e">// is a number (expect unix time)
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">unixDate</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">timestamp</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>)
+      <span style="color:#a6e22e">resData</span>.<span style="color:#a6e22e">natural</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">months</span>[<span style="color:#a6e22e">unixDate</span>.<span style="color:#a6e22e">getUTCMonth</span>()] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">unixDate</span>.<span style="color:#a6e22e">getUTCDate</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;, &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">unixDate</span>.<span style="color:#a6e22e">getUTCFullYear</span>()
+      <span style="color:#a6e22e">resData</span>.<span style="color:#a6e22e">unix</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">timestamp</span>
+    }
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>(<span style="color:#a6e22e">resData</span>)
+  }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="demo">Demo</h2>
 <p>View this code live on Heroku at fcc-challenges.herokuapp.com/&hellip;</p>
-
 <ul>
 <li>Unix-style input: <a href="https://fcc-challenges.herokuapp.com/api/timestamp/1450137600">api/timestamp/1450137600</a></li>
 <li>Timestamp input: <a href="https://fcc-challenges.herokuapp.com/api/timestamp/December%2015,%202015">api/timestamp/December%2015,%202015</a></li>
@@ -369,26 +399,6 @@ if (!doNotTrack) {
         <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fchasesawyer.dev%2fpost%2f2018%2f05%2ftimestamp-microservice%2f" target="_blank" title="Share on Google Plus">
-         <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-google-plus fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fchasesawyer.dev%2fpost%2f2018%2f05%2ftimestamp-microservice%2f" target="_blank" title="Share on Facebook">
-        <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
               </span>
     </a>
 </li>
@@ -520,7 +530,7 @@ if (!doNotTrack) {
           
 
           &nbsp;&bull;&nbsp;
-          2019
+          2020
 
           
             &nbsp;&bull;&nbsp;
@@ -529,7 +539,7 @@ if (!doNotTrack) {
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

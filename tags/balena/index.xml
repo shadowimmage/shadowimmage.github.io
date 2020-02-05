@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>balena on Chase Sawyer</title>
+    <link>https://chasesawyer.dev/tags/balena/</link>
+    <description>Recent content in balena on Chase Sawyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
+    <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
+    <lastBuildDate>Sat, 18 Jan 2020 13:04:13 -0800</lastBuildDate>
+    
+	<atom:link href="https://chasesawyer.dev/tags/balena/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry Pi HDMI Overscan</title>
+      <link>https://chasesawyer.dev/post/2020/01/raspberry-pi-hdmi-overscan/</link>
+      <pubDate>Sat, 18 Jan 2020 13:04:13 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/post/2020/01/raspberry-pi-hdmi-overscan/</guid>
+      <description>I had a problem when I moved my Raspberry Pi over to using a 4K display, which is just about the only resolution that professional displays come in these days, as manufacturers have all moved on to 4K as a standard. The problem was with overscanning and the display not having the ability to correctly scale the image signal coming from the Raspberry Pi, which was still a 1920x1080 signal.</description>
+    </item>
+    
+  </channel>
+</rss>

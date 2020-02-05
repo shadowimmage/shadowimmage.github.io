@@ -29,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <link rel="canonical" href="https://chasesawyer.dev/post/2018/05/url-shortener-microservice/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -280,7 +280,9 @@ if (!doNotTrack) {
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
   
   
 </span>
@@ -301,105 +303,171 @@ if (!doNotTrack) {
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>The challenge here was to create a URL Shortener microservice. It uses a database to associate a short url ID with the original url, and once created, the microservice will redirect visitors of the short URL to the original URL.</p>
-
 <p>Example creation input:</p>
-
 <ul>
 <li><a href="https://fcc-challenges.herokuapp.com/shortener/new/https://www.google.com">https://fcc-challenges.herokuapp.com/shortener/new/https://www.google.com</a></li>
 <li><a href="https://fcc-challenges.herokuapp.com/shortener/new/http://foo.com:80">https://fcc-challenges.herokuapp.com/shortener/new/http://foo.com:80</a></li>
 </ul>
-
 <p>Example creation output:</p>
-<div class="highlight"><pre class="chroma"><code class="language-JSON" data-lang="JSON"><span class="p">{</span>
-  <span class="nt">&#34;original_url&#34;</span><span class="p">:</span><span class="s2">&#34;http://foo.com:80&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;short_url&#34;</span><span class="p">:</span><span class="s2">&#34;https://fcc-challenges.herokuapp.com/shortener/8170&#34;</span>
-<span class="p">}</span></code></pre></div>
-<p>Usage:</p>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+  <span style="color:#f92672">&#34;original_url&#34;</span>:<span style="color:#e6db74">&#34;http://foo.com:80&#34;</span>,
+  <span style="color:#f92672">&#34;short_url&#34;</span>:<span style="color:#e6db74">&#34;https://fcc-challenges.herokuapp.com/shortener/8170&#34;</span>
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>Usage:</p>
 <ul>
 <li><code>https://fcc-challenges.herokuapp.com/shortener/2871</code></li>
 </ul>
-
 <p>Will redirect to:</p>
-
 <ul>
 <li><code>https://www.google.com/</code></li>
 </ul>
-
 <h2 id="demo">Demo</h2>
-
 <p>View this code live on Heroku at fcc-challenges.herokuapp.com/shortener/&hellip;</p>
-
 <ul>
 <li>URL Creation: <a href="https://fcc-challenges.herokuapp.com/shortener/new/https://www.google.com">new/https://www.google.com</a></li>
 <li>Retrieval: <a href="https://fcc-challenges.herokuapp.com/shortener/2871">2871</a></li>
 </ul>
-
 <h2 id="code">Code</h2>
-
-<h3 id="button-style-background-color-black-type-button-class-btn-btn-primary-view-on-github-nbsp-nbsp-span-style-vertical-align-middle-i-class-fab-fa-github-button-icon-i-span-button-1"><a href="https://github.com/shadowimmage/fcc-backend-challenges/blob/master/controllers/shortener/index.js"><button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub&nbsp;&nbsp;<span style="vertical-align:middle"><i class="fab fa-github button-icon"></i></span></button></a></h3>
-
+<h3 id="button-stylebackground-colorblack-typebutton-classbtn-btn-primaryview-on-githubnbspnbspspan-stylevertical-alignmiddlei-classfab-fa-github-button-iconispanbutton1"><a href="https://github.com/shadowimmage/fcc-backend-challenges/blob/master/controllers/shortener/index.js"><button style="background-color:Black" type="button" class="btn btn-primary">View on GitHub  <span style="vertical-align:middle"><i class="fab fa-github button-icon"></i></span></button></a></h3>
 <h4 id="shortener">Shortener</h4>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// URL Shortener (part1) - Short URL Creator
-</span><span class="c1"></span><span class="nx">exports</span><span class="p">.</span><span class="k">new</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">resData</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">original_url</span><span class="o">:</span> <span class="s1">&#39;invalid URL&#39;</span><span class="p">,</span>
-    <span class="nx">short_url</span><span class="o">:</span> <span class="kc">null</span>
-  <span class="p">}</span>
-  <span class="nx">resData</span><span class="p">.</span><span class="nx">short_url</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">+</span> <span class="s1">&#39;/shortener/&#39;</span>
-  <span class="c1">// console.log(req.url)
-</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-  <span class="c1">// console.log(req.url.slice(5))
-</span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">validUrl</span><span class="p">.</span><span class="nx">isUri</span><span class="p">(</span><span class="nx">url</span><span class="p">))</span> <span class="p">{</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// URL Shortener (part1) - Short URL Creator
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">exports</span>.<span style="color:#66d9ef">new</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">resData</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">original_url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;invalid URL&#39;</span>,
+    <span style="color:#a6e22e">short_url</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>
+  }
+  <span style="color:#a6e22e">resData</span>.<span style="color:#a6e22e">short_url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">hostname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/shortener/&#39;</span>
+  <span style="color:#75715e">// console.log(req.url)
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">5</span>)
+  <span style="color:#75715e">// console.log(req.url.slice(5))
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">validUrl</span>.<span style="color:#a6e22e">isUri</span>(<span style="color:#a6e22e">url</span>)) {
 
-    <span class="nx">resData</span><span class="p">.</span><span class="nx">original_url</span> <span class="o">=</span> <span class="nx">url</span>
-    <span class="kd">var</span> <span class="nx">collection</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">dbConn</span><span class="p">.</span><span class="nx">getDB</span><span class="p">().</span><span class="nx">collection</span><span class="p">(</span><span class="nx">shortUrlCollection</span><span class="p">)</span>
-    <span class="kd">var</span> <span class="nx">lastDoc</span> <span class="o">=</span> <span class="nx">collection</span><span class="p">.</span><span class="nx">find</span><span class="p">().</span><span class="nx">sort</span><span class="p">({</span> <span class="nx">index</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span> <span class="p">}).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nx">lastDoc</span><span class="p">.</span><span class="nx">project</span><span class="p">({</span><span class="nx">_id</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">index</span><span class="o">:</span> <span class="mi">1</span><span class="p">}).</span><span class="nx">toArray</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">documents</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-      <span class="kd">var</span> <span class="nx">insertIndex</span> <span class="o">=</span> <span class="mi">1</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">documents</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// console.log(documents[0].index);
-</span><span class="c1"></span>        <span class="nx">insertIndex</span> <span class="o">+=</span> <span class="nx">documents</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">index</span>
-      <span class="p">}</span>
-      <span class="nx">collection</span><span class="p">.</span><span class="nx">insertOne</span><span class="p">({</span>
-        <span class="nx">index</span><span class="o">:</span> <span class="nx">insertIndex</span><span class="p">,</span>
-        <span class="nx">url</span><span class="o">:</span> <span class="nx">resData</span><span class="p">.</span><span class="nx">original_url</span>
-      <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-        <span class="nx">resData</span><span class="p">.</span><span class="nx">short_url</span> <span class="o">+=</span> <span class="nx">insertIndex</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">resData</span><span class="p">)</span>
-      <span class="p">})</span>
-    <span class="p">})</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">//end valid url section
-</span><span class="c1"></span>    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">resData</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h4 id="resolver">Resolver</h4>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// URL Shortener (part 2) - Short URL resolver/redirector
-</span><span class="c1"></span><span class="nx">exports</span><span class="p">.</span><span class="nx">getId</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">collection</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">dbConn</span><span class="p">.</span><span class="nx">getDB</span><span class="p">().</span><span class="nx">collection</span><span class="p">(</span><span class="nx">shortUrlCollection</span><span class="p">)</span>
-    <span class="kd">var</span> <span class="nx">shortDestDoc</span> <span class="o">=</span> <span class="nx">collection</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span>
-      <span class="nx">index</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
-    <span class="p">}).</span><span class="nx">project</span><span class="p">({</span>
-      <span class="nx">_id</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nx">url</span><span class="o">:</span> <span class="mi">1</span>
-    <span class="p">}).</span><span class="nx">toArray</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">documents</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span style="color:#a6e22e">resData</span>.<span style="color:#a6e22e">original_url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">collection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">dbConn</span>.<span style="color:#a6e22e">getDB</span>().<span style="color:#a6e22e">collection</span>(<span style="color:#a6e22e">shortUrlCollection</span>)
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">lastDoc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">find</span>().<span style="color:#a6e22e">sort</span>({ <span style="color:#a6e22e">index</span><span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> }).<span style="color:#a6e22e">limit</span>(<span style="color:#ae81ff">1</span>)
+    <span style="color:#a6e22e">lastDoc</span>.<span style="color:#a6e22e">project</span>({<span style="color:#a6e22e">_id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">index</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>}).<span style="color:#a6e22e">toArray</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">documents</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>)
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">insertIndex</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">documents</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#75715e">// console.log(documents[0].index);
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">insertIndex</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">documents</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">index</span>
+      }
+      <span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">insertOne</span>({
+        <span style="color:#a6e22e">index</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">insertIndex</span>,
+        <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">resData</span>.<span style="color:#a6e22e">original_url</span>
+      }, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">r</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>)
+        <span style="color:#a6e22e">resData</span>.<span style="color:#a6e22e">short_url</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">insertIndex</span>
+        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>(<span style="color:#a6e22e">resData</span>)
+      })
+    })
+  } <span style="color:#66d9ef">else</span> { <span style="color:#75715e">//end valid url section
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>(<span style="color:#a6e22e">resData</span>)
+  }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="resolver">Resolver</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// URL Shortener (part 2) - Short URL resolver/redirector
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">getId</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">id</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">collection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">dbConn</span>.<span style="color:#a6e22e">getDB</span>().<span style="color:#a6e22e">collection</span>(<span style="color:#a6e22e">shortUrlCollection</span>)
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">shortDestDoc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">find</span>({
+      <span style="color:#a6e22e">index</span><span style="color:#f92672">:</span> parseInt(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">id</span>)
+    }).<span style="color:#a6e22e">project</span>({
+      <span style="color:#a6e22e">_id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+      <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>
+    }).<span style="color:#a6e22e">toArray</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">documents</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>)
 
-      <span class="k">if</span> <span class="p">(</span><span class="nx">documents</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="nx">documents</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">url</span><span class="p">)</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Invalid short URL id.&#39;</span><span class="p">)</span>
-      <span class="p">}</span>
-    <span class="p">})</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="o">:</span><span class="s1">&#39;invalid URL&#39;</span><span class="p">}))</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">documents</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">redirect</span>(<span style="color:#a6e22e">documents</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">url</span>)
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#e6db74">&#39;Invalid short URL id.&#39;</span>)
+      }
+    })
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({<span style="color:#e6db74">&#39;error&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;invalid URL&#39;</span>}))
+  }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
 
         
           <div class="blog-tags">
@@ -430,26 +498,6 @@ if (!doNotTrack) {
         <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fchasesawyer.dev%2fpost%2f2018%2f05%2furl-shortener-microservice%2f" target="_blank" title="Share on Google Plus">
-         <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-google-plus fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fchasesawyer.dev%2fpost%2f2018%2f05%2furl-shortener-microservice%2f" target="_blank" title="Share on Facebook">
-        <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
               </span>
     </a>
 </li>
@@ -581,7 +629,7 @@ if (!doNotTrack) {
           
 
           &nbsp;&bull;&nbsp;
-          2019
+          2020
 
           
             &nbsp;&bull;&nbsp;
@@ -590,7 +638,7 @@ if (!doNotTrack) {
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

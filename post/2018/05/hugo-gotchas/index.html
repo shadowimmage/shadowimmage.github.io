@@ -32,7 +32,7 @@ Is Strange (Hugo) (Template Logic) Hugo templates use strange logic - for condit
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chase Sawyer" />
     
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <link rel="canonical" href="https://chasesawyer.dev/post/2018/05/hugo-gotchas/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
@@ -274,12 +274,16 @@ if (!doNotTrack) {
   
   <i class="fas fa-calendar"></i>&nbsp;Posted on May 10, 2018
   
+    &nbsp;(Last modified on January 20, 2020)
+  
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
   
   
 </span>
@@ -299,46 +303,46 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-
-<h1 id="gotchas">Gotchas</h1>
-
+        <h1 id="gotchas">Gotchas</h1>
 <p>In order of the issue being found:</p>
-
 <h2 id="is-strange-hugo-template-logic">Is Strange (Hugo) (Template Logic)</h2>
-
 <p>Hugo templates use strange logic - for conditional statements, Hugo uses Polish or prefix notation for the operators. This meas that instead of writing <code>if this and that</code>, you have to write <code>if and this that</code>. For more complex arrangements of logical conditions, say for a situation in which you need to check three conditions, you have to write it as: <code>if and (first) ( and (second) (third))</code> which, in a infix notation style, would have been written <code>if first and second and third</code>.</p>
-
 <h2 id="hugo-uses-blackfriday">Hugo uses blackfriday</h2>
-
-<p>Hugo uses <a href="https://github.com/russross/blackfriday">blackfriday</a> as it&rsquo;s markdown engine. This is probably totally fine for most situations, except for when you want to make a list with more than 2 levels. For instance,</p>
-
+<p>Hugo uses <a href="https://github.com/russross/blackfriday">blackfriday</a> as it's markdown engine. This is probably totally fine for most situations, except for when you want to make a list with more than 2 levels. For instance,</p>
 <ul>
 <li>first
-
 <ul>
 <li>second
-
 <ul>
 <li>third</li>
-</ul></li>
-</ul></li>
 </ul>
-
-<p>In the above case, blackfriday normally will collapse the <em>second</em> and <em>third</em> levels both into the <em>second</em> level. I say normally because most linters and stye guides specify an indent of 2 spaces for markdown [citation needed]. If you come from github markdown style, then this is likely the case for you. Unfortunately there&rsquo;s an annoying bug in blackfriday that requires that the indent for each level be 4 spaces. If you don&rsquo;t notice this when scanning through the Hugo documentation on <a href="https://gohugo.io/content-management/formats/">content formats</a>, you&rsquo;ll likely run into a situation where you&rsquo;re confused about your list ending up somewhat flattened.</p>
-
-<p>Fortunately, most linters can be configured to have different indent settings. For Visual Studio Code (my current editor of choice), markdownlint can be configured with a <code>.markdownlint.json</code> file in the root of your project directory or in your <code>.vscode\settings.json</code> workspace settings file. This isn&rsquo;t a show stopper, but for me, wasted some time while I had to dig through to find the <a href="https://github.com/russross/blackfriday/issues/329">issue report</a> in blackfriday and then more time to read the markdownlint documentation and figure out how to reconfigure the indent setting to make sure that my lists in my Hugo site markdown will pass.</p>
-
-<p>Question for later:<br />
+</li>
+</ul>
+</li>
+</ul>
+<p>(in markdown:)</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">-</span> first
+    <span style="color:#66d9ef">-</span> second
+        <span style="color:#66d9ef">-</span> third
+</code></pre></td></tr></table>
+</div>
+</div><p>In the above case, blackfriday normally will collapse the <em>second</em> and <em>third</em> levels both into the <em>second</em> level. I say normally because most linters and stye guides specify an indent of 2 spaces for markdown [citation needed]. If you come from github markdown style, then this is likely the case for you. Unfortunately there's an annoying bug in blackfriday that requires that the indent for each level be 4 spaces. If you don't notice this when scanning through the Hugo documentation on <a href="https://gohugo.io/content-management/formats/">content formats</a>, you'll likely run into a situation where you're confused about your list ending up somewhat flattened.</p>
+<p>Fortunately, most linters can be configured to have different indent settings. For Visual Studio Code (my current editor of choice), markdownlint can be configured with a <code>.markdownlint.json</code> file in the root of your project directory or in your <code>.vscode\settings.json</code> workspace settings file. This isn't a show stopper, but for me, wasted some time while I had to dig through to find the <a href="https://github.com/russross/blackfriday/issues/329">issue report</a> in blackfriday and then more time to read the markdownlint documentation and figure out how to reconfigure the indent setting to make sure that my lists in my Hugo site markdown will pass.</p>
+<p>Question for later:<br>
 Can I catch this / use markdownlint in CircleCI builds?</p>
-
+<h3 id="update-january-2020">Update January 2020</h3>
+<p>Hugo has grown since</p>
 <h2 id="hugo-supports-emoji-in-markdown">Hugo Supports Emoji in Markdown</h2>
-
-<p>This wasn&rsquo;t super hard to figure out, but could be easier to find info on (I actually think that the Hugo documentation could use a way better table of contents, and better search). I nearly added an emoji css library to my site head in order to support emoji via <code>&lt;i&gt;</code> tags inline in the markdown file, but fortunately found that emoji are natively supported by Hugo, but you have to enable it with the <code>enableEmoji = true</code> setting in the site&rsquo;s root configuration. Once you enable emoji support for content files with that setting, you can easily insert emoji with their names between colons (eg <code>😩</code>).</p>
-
-<p>Protip: want larger emoji on your page? Have a header with an emoji rather than plain text. The emoji will scale to the predefined scale of the header. (Note: this will also anger the markdownlint gods, as the trailing &lsquo;:&rsquo; isn&rsquo;t allowed)</p>
-
-<h2 id="toc_4">😄</h2>
+<p>This wasn't super hard to figure out, but could be easier to find info on (I actually think that the Hugo documentation could use a way better table of contents, and better search). I nearly added an emoji css library to my site head in order to support emoji via <code>&lt;i&gt;</code> tags inline in the markdown file, but fortunately found that emoji are natively supported by Hugo, but you have to enable it with the <code>enableEmoji = true</code> setting in the site's root configuration. Once you enable emoji support for content files with that setting, you can easily insert emoji with their names between colons (eg <code>😩</code>).</p>
+<p>Protip: want larger emoji on your page? Have a header with an emoji rather than plain text. The emoji will scale to the predefined scale of the header. (Note: this will also anger the markdownlint gods, as the trailing &lsquo;:&rsquo; isn't allowed)</p>
+<h2 id="heading">😄</h2>
 
 
         
@@ -368,26 +372,6 @@ Can I catch this / use markdownlint in CircleCI builds?</p>
         <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fchasesawyer.dev%2fpost%2f2018%2f05%2fhugo-gotchas%2f" target="_blank" title="Share on Google Plus">
-         <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-google-plus fa-stack-1x fa-inverse"></i>
-              </span>
-    </a>
-</li>
-
-
-<li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fchasesawyer.dev%2fpost%2f2018%2f05%2fhugo-gotchas%2f" target="_blank" title="Share on Facebook">
-        <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
               </span>
     </a>
 </li>
@@ -519,7 +503,7 @@ Can I catch this / use markdownlint in CircleCI builds?</p>
           
 
           &nbsp;&bull;&nbsp;
-          2019
+          2020
 
           
             &nbsp;&bull;&nbsp;
@@ -528,7 +512,7 @@ Can I catch this / use markdownlint in CircleCI builds?</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

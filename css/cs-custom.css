@@ -67,10 +67,10 @@ a.sourcerer-badge {
 }
 
 /* Code Highlight Tweaks - Allow horizontal scroll on large blocks */
-
-.highlight pre {
+/* no longer needed as of hugo v0.62.2 */
+/* .highlight pre {
   overflow-x: scroll;
-}
+} */
 
 /* Site font overrides - should use loaded static fonts */
 
