@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iis on Chase Sawyer</title>
+    <link>https://chasesawyer.dev/tags/iis/</link>
+    <description>Recent content in iis on Chase Sawyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
+    <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
+    <lastBuildDate>Tue, 03 Mar 2020 18:43:27 -0800</lastBuildDate>
+    
+	<atom:link href="https://chasesawyer.dev/tags/iis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Django API Apps on Windows IIS</title>
+      <link>https://chasesawyer.dev/post/2020/03/django-api-apps-on-windows-iis/</link>
+      <pubDate>Tue, 03 Mar 2020 18:43:27 -0800</pubDate>
+      <author>shadowimmage@gmail.com (Chase Sawyer)</author>
+      <guid>https://chasesawyer.dev/post/2020/03/django-api-apps-on-windows-iis/</guid>
+      <description>&lt;p&gt;This is a guide on setting up Python/Django apps to run on a Windows server using IIS as the webserver. I&#39;ll go over the specifics below. We&#39;re starting things off with the following assumptions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Windows Server is installed somewhere and running with a static IP and domain name all set.&lt;/li&gt;
+&lt;li&gt;Server SSL Certificate has already been provisioned and set up. (Optional but extremely recommended to run HTTPS)&lt;/li&gt;
+&lt;li&gt;(not specifically necessary) any SSO setup/shibboleth stuff has already been set up. (This is if you want to leverage SSO login, etc.)&lt;/li&gt;
+&lt;li&gt;Everything is running 64-bit architecture.&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

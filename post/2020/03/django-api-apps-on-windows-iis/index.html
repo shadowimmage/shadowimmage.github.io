@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    
+        <title>Django API Apps on Windows IIS</title>
+        <meta property="og:title" content="Django API Apps on Windows IIS" />
+        <meta name="twitter:title" content="Django API Apps on Windows IIS" />
+        <meta name="description" content="How to set up Windows Server IIS to serve Django 3.0.3(&#43;) and Python 3.8" />
+        <meta property="og:description" content="How to set up Windows Server IIS to serve Django 3.0.3(&#43;) and Python 3.8" />
+        <meta name="twitter:description" content="How to set up Windows Server IIS to serve Django 3.0.3(&#43;) and Python 3.8" />
+    <meta name="author" content="Chase Sawyer" />
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://chasesawyer.dev/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://chasesawyer.dev/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://chasesawyer.dev/img/favicon-16x16.png">
+    <link rel="manifest" href="https://chasesawyer.dev/img/site.webmanifest">
+    <link rel="mask-icon" href="https://chasesawyer.dev/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+        <meta property="og:image" content="https://chasesawyer.dev/img/logo-plain.svg" />
+        <meta name="twitter:image" content="https://chasesawyer.dev/img/logo-plain.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://chasesawyer.dev/post/2020/03/django-api-apps-on-windows-iis/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Chase Sawyer" />
+    
+    <meta name="generator" content="Hugo 0.62.2" />
+    <link rel="canonical" href="https://chasesawyer.dev/post/2020/03/django-api-apps-on-windows-iis/" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://chasesawyer.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://chasesawyer.dev/css/syntax.css" /><link rel="stylesheet" href="https://chasesawyer.dev/css/codeblock.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+
+<link rel="stylesheet" href="https://chasesawyer.dev/css/cs-custom.css" />
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-119999962-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+    <body>
+        
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="pswp__bg"></div>
+    
+    <div class="pswp__scroll-wrap">
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+        <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="https://chasesawyer.dev/"><img class="navbar-brand" id="site-logo" src="https://chasesawyer.dev/img/logo-plain.svg" alt="Chase Sawyer" /></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://chasesawyer.dev/">
+        Chase Sawyer
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              
+                <a class="navexpand-parent-custom" title="Blog" href="/post/">Blog</a>
+                <a class="navlinks-parent hidden-sm hidden-md hidden-lg navexpand-custom" href="javascript:void(0)"></a>
+              
+              <div class="navlinks-children">
+                
+                  <a href="/tags">Tags</a>
+                
+                  <a href="/search">Search</a>
+                
+                  <a href="/post/">All Posts</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              
+                <a class="navexpand-parent-custom" title="Projects" href="/tags/project/">Projects</a>
+                <a class="navlinks-parent hidden-sm hidden-md hidden-lg navexpand-custom" href="javascript:void(0)"></a>
+              
+              <div class="navlinks-children">
+                
+                  <a href="/project/slackr25bot">R25 Slack Bot</a>
+                
+                  <a href="/project/keysapp">Keys App</a>
+                
+                  <a href="/project/rttapp">RTT App</a>
+                
+                  <a href="/project/dustcollector">Dust Collector CAD (UW)</a>
+                
+                  <a href="/tags/project/">All Projects</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Samples" href="/tags/sample/">Samples</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About / CV" href="/page/about/">About / CV</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Chase Sawyer" href="https://chasesawyer.dev/">
+            <img class="avatar-img" src="https://chasesawyer.dev/img/profile.jpg" alt="Chase Sawyer" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+        
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="pswp__bg"></div>
+    
+    <div class="pswp__scroll-wrap">
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Django API Apps on Windows IIS</h1>
+              
+              
+              
+                
+                  <h2 class="post-subheading">How to set up Windows Server IIS to serve Django 3.0.3(&#43;) and Python 3.8</h2>
+                
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 3, 2020
+  
+    &nbsp;(Last modified on March 30, 2020)
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Chase Sawyer
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+        
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <article role="main" class="blog-post">
+        
+
+<aside>
+    <h3>Contents</h3>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#python">Python</a>
+      <ul>
+        <li><a href="#virtualenv">Virtualenv</a></li>
+      </ul>
+    </li>
+    <li><a href="#iis-setup--prerequisites">IIS Setup / Prerequisites</a></li>
+    <li><a href="#set-up-django-application-directory-and-virtual-environment-for-python">Set Up Django Application Directory and Virtual Environment for Python</a></li>
+    <li><a href="#set-up-django-site-in-iis">Set Up Django Site in IIS</a></li>
+    <li><a href="#configure-django-and-iis-static-files">Configure Django and IIS Static Files</a>
+      <ul>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#move-files">Move Files</a></li>
+        <li><a href="#set-up-a-virtual-directory-for-iis-to-serve-the-static-files">Set Up a Virtual Directory for IIS to Serve the Static Files</a>
+          <ul>
+            <li><a href="#configure-handler-mappings-for-static-files">Configure Handler Mappings for Static Files</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#shibboleth--sso--remote-user">Shibboleth / SSO / Remote-User</a></li>
+  </ul>
+</nav>
+    <hr />
+</aside>
+
+
+
+        <p>This is a guide on setting up Python/Django apps to run on a Windows server using IIS as the webserver. I'll go over the specifics below. We're starting things off with the following assumptions:</p>
+<ol>
+<li>Windows Server is installed somewhere and running with a static IP and domain name all set.</li>
+<li>Server SSL Certificate has already been provisioned and set up. (Optional but extremely recommended to run HTTPS)</li>
+<li>(not specifically necessary) any SSO setup/shibboleth stuff has already been set up. (This is if you want to leverage SSO login, etc.)</li>
+<li>Everything is running 64-bit architecture.</li>
+</ol>
+<h2 id="python">Python</h2>
+<p>Install the latest Python version using the GUI Windows x64 installer downloaded from the <a href="https://www.python.org/downloads/release/python-382/">python.org</a>. As of writing, the latest version available is 3.8.2.</p>
+<p>Make the following settings changes to the Python installation (we're going for a minimal installation with just the Python core and a few niceties):</p>
+<ol>
+<li>Check option for &ldquo;Add Python 3.8 to PATH&rdquo;</li>
+<li>Click &ldquo;Customize Installation&rdquo;</li>
+<li><em>Deselect</em> all options except pip.</li>
+<li>click Next</li>
+<li>Check &ldquo;Install for all users&rdquo;</li>
+<li>Deselect &ldquo;Create shortcuts for installed applications&rdquo;</li>
+<li>Check &ldquo;Add Python to environment variables&rdquo;</li>
+<li>Check &ldquo;Precompile standard library&rdquo; (not specifically necessary, but doesn't hurt anything)</li>
+<li>NO &ldquo;debugging symbols&rdquo; or &ldquo;debug binaries&rdquo; (this is supposed to be a prod environment, after all)</li>
+<li>Change the Installation directory: <code>C:\Python38\</code></li>
+<li>Install.</li>
+</ol>
+<h3 id="virtualenv">Virtualenv</h3>
+<p>Once Python's installation is complete open an administrative terminal/Powershell window (<code>winkey</code>+<code>x</code>, <code>a</code>) and complete the following:</p>
+<blockquote>
+<p>Note: If any of the following commands come back with something like &ldquo;command not found&rdquo; double-check that <code>C:\Python38\</code> and <code>C:\Python38\Scripts\</code> are in the system PATH environment variable. If you had the terminal window before installing Python, close and re-open it. Or just add the Python directories to the system PATH manually.</p>
+</blockquote>
+<ol>
+<li>upgrade pip</li>
+</ol>
+<blockquote>
+<p><code>python -m pip --upgrade pip</code></p>
+</blockquote>
+<ol start="2">
+<li>install virtualenv</li>
+</ol>
+<blockquote>
+<p><code>pip install virtualenv</code></p>
+</blockquote>
+<h2 id="iis-setup--prerequisites">IIS Setup / Prerequisites</h2>
+<p>IIS needs to be installed, with the CGI option. Once that is installed there should be a directory <code>C:\inetpub\wwwroot\</code></p>
+<ol>
+<li>Open &ldquo;Windows Features&rdquo; (search for &ldquo;Windows Features&rdquo; &gt; &ldquo;Turn Windows Features on or off&rdquo; should be the result or Run (<code>winkey</code>+<code>r</code>) &gt; <code>optionalfeatures.exe</code></li>
+<li>Select IIS feature, with the additional options highlighted as in the below image.
+<ul>
+<li>CGI</li>
+<li>HTTP Redirection</li>
+<li>Request Monitor</li>
+</ul>
+</li>
+<li>OK</li>
+</ol>
+
+<link rel="stylesheet" href="https://chasesawyer.dev/css/hugo-easy-gallery.css" />
+<div class="box" style="max-width:60%">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="images/IIS_min_components.png" alt="Selected IIS features in Windows Features dialog"/>
+    </div>
+    <a href="images/IIS_min_components.png" itemprop="contentUrl"></a>
+      <figcaption><h4>Windows Features</h4>
+          <p>options may vary, features available may vary, etc. etc.</p>
+      </figcaption>
+  </figure>
+</div>
+
+<blockquote>
+<p>note: options may vary, features available may vary, etc. etc.</p>
+</blockquote>
+<ol start="4">
+<li>Test that the IIS server installation worked and that you can browse to <code>http://localhost</code> on a browser, and that you get the default IIS page.</li>
+</ol>
+<h2 id="set-up-django-application-directory-and-virtual-environment-for-python">Set Up Django Application Directory and Virtual Environment for Python</h2>
+<p>Here's where we set up the application folder that will host our Django application and all the required Python libraries to support that application without installing anything globally. This will make sure that if there's any other Python apps that need to run on the server or be served by the server, there won't be dependency version conflicts.</p>
+<ol>
+<li>Create an application folder to host your application. I wanted my app to be served from <code>&lt;webserver_root_url&gt;/app</code> so I put my application folder at <code>c:\inetpub\wwwroot\app\</code>. <strong>NOTE</strong> this does not necessarily <em>have</em> to be in your inetpub/wwwroot folder, it's just a bit easier to do it this way.</li>
+<li>Open an elevated console within the <code>\app</code> directory (typically will need to be elevated to do things in this directory because security stuff)</li>
+<li>Create a virtual environment with virtualenv</li>
+</ol>
+<blockquote>
+<p><code>&gt; virtualenv venv</code></p>
+</blockquote>
+<ol start="4">
+<li>This should create a directory called &ldquo;venv&rdquo; in <code>\app\</code>.</li>
+<li>Activate the virtual environment so that any Python or Pip commands work against it instead of the global Python environment.</li>
+</ol>
+<blockquote>
+<p><code>&gt; .\venv\Scripts\activate</code></p>
+</blockquote>
+<ol start="6">
+<li>Copy in your Django application, including your requirements.txt file.</li>
+<li>Install python dependencies from requirements:</li>
+</ol>
+<blockquote>
+<p><code>&gt; pip install -r requirements.txt</code></p>
+</blockquote>
+<ol start="8">
+<li>We'll need the latest wfastcgi python package too (in case it's not in your requirements, since it's not needed to run the development server):</li>
+</ol>
+<blockquote>
+<p><code>pip install wfastcgi</code></p>
+</blockquote>
+<p><strong>Note:</strong> if you run into problems with wfastcgi not working, or are getting errors like &ldquo;the fastcgi process exited unexpectedly&rdquo; then try to force wfastcgi to upgrade:</p>
+<blockquote>
+<p><code>pip install wfastcgi --upgrade</code></p>
+</blockquote>
+<h2 id="set-up-django-site-in-iis">Set Up Django Site in IIS</h2>
+<ol>
+<li>Open IIS manager (<code>winkey</code>+r) Run &gt; <code>inetmgr</code></li>
+<li>Select the Server and from the main page, double-click &ldquo;FastCGI Settings&rdquo;</li>
+<li>&ldquo;Add Application&rdquo;</li>
+<li>Fill out the settings dialog accordingly:
+<ul>
+<li>&ldquo;Full Path&rdquo;: Where your virtual environment's <code>python.exe</code> lives (such as <code>C:\inetpub\wwwroot\app\venv\Scripts\python.exe</code>)</li>
+<li>&ldquo;Arguments&rdquo;: path to <code>wfastcgi.py</code> which should also be in the virtual environment directory: <code>C:\inetpub\wwwroot\app\venv\Lib\site-packages\wfastcgi.py</code></li>
+<li>In the &ldquo;<strong>FastCGI Settings</strong>&rdquo; section, under &ldquo;<strong>General &gt; Environment Variables</strong>&rdquo; click on the &ldquo;(Collection)&rdquo; line, then on the little &ldquo;[&hellip;]&rdquo; button, which will allow entering Environment Variables specific to the runtime environment that Django will be running in when a request comes into the web server.
+<ul>
+<li>In the &ldquo;<strong>EnvironmentVariables Collection Editor</strong>&rdquo; window:</li>
+<li>Add: Name: <code>DJANGO_SETTINGS_MODULE</code> Value: <em>whatever matches up to your setting in <code>wsgi.py</code></em></li>
+<li>Add: Name: <code>PYTHONPATH</code> Value: <code>C:\inetpub\wwwroot\app</code></li>
+<li>Add: Name: <code>WSGI_HANDLER</code> Value: <code>django.core.wsgi.get_wsgi_application()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>This should correctly set up the environment for FastCGI to be able to run the Django application (assuming that the paths above match to where you're working from). <strong>Note (1):</strong> For <code>DJANGO_SETTINGS_MODULE</code> I used <code>server.environment</code> - this matches my environment, since I have <code>/app/server/environment.py</code> and <code>environment.py</code> lists out which server settings should be loaded. <strong>Note (2):</strong> All of the above settings for Environment Variables are case sensitive.</p>
+<ol start="5">
+<li>Close the Environment Variables window and the FastCGI Settings windows.</li>
+<li>On the left-hand pane of IIS Manager, under &ldquo;connections&rdquo; where the server we're working on, expand the server, and under &ldquo;<strong>Default</strong> Web Site**&quot;, there should be a listing of directories that are in <code>wwwroot\</code>. Here, we'll convert <code>\app\</code> into an application (right-click on the directory, then select &ldquo;convert to application&rdquo;)</li>
+<li>Open Handler Mappings for the application</li>
+<li>Click &ldquo;<strong>Add module mapping</strong>&rdquo; and enter the following settings:
+<ul>
+<li>Path: <code>*</code></li>
+<li>Module (dropdown): &ldquo;<strong>FastCgiModule</strong>&rdquo;</li>
+<li>Executable: <strong>type in:</strong> <code>C:\inetpub\wwwroot\app\venv\Scripts\python.exe|C:\inetpub\wwwroot\app\venv\site-packages\wfastcgi.py</code></li>
+<li>Name: &ldquo;Django Handler&rdquo; or &ldquo;Python FastCGI handler&rdquo; or whatever - it's just a friendly name for the mapping.</li>
+<li>Click &ldquo;<strong>Request Restrictions</strong>&rdquo;
+<ul>
+<li><strong>Deselect</strong> &ldquo;Invoke handler only if&hellip; mapped to:&rdquo;</li>
+<li>Verbs: All verbs</li>
+<li>Access: Script</li>
+</ul>
+</li>
+<li>Click OK</li>
+<li>Click OK</li>
+<li>When a popup asks &ldquo;Do you want to create a FastCGI Application for this executable?&rdquo; click &ldquo;No&rdquo; as that has already been handled / set up.</li>
+</ul>
+</li>
+<li>The handler should now show in the list of Handler Mappings.</li>
+<li>Click &ldquo;<strong>View Ordered List&hellip;</strong>&rdquo; on the right, and move the newly created handler to the top of the list. This will ensure that the python handler is the first one considered for all requests to this application.</li>
+</ol>
+<p>Restart your IIS website and it should now be working where the Django application should be reachable at <code>http://localhost/app/</code> (assuming your Django site has a page listed there).</p>
+<blockquote>
+<p>IIS restart commands:<br>
+<code>&gt; iisreset /stop</code><br>
+<code>&gt; net start e3svc</code></p>
+</blockquote>
+<h2 id="configure-django-and-iis-static-files">Configure Django and IIS Static Files</h2>
+<p>The Django development server automatically handles serving static files when working on your computer, but now that it's in a production environment, we need to collect the static files to a directory and then tell IIS to serve them from that directory. Most details on serving static files, as well as handling additional details should be found on Django's documentation site: <a href="https://docs.djangoproject.com/en/dev/howto/static-files/deployment/">static files deployment</a>.</p>
+<h3 id="settings">Settings</h3>
+<p>Django's settings need to be modified to include the options <code>STATIC_ROOT</code> and <code>STATIC_URL</code>.</p>
+<p><code>STATIC_ROOT</code> is used to tell Django's <code>collectstatic</code> command where in the filesystem to place the found static files. This location could, in theory, be anywhere on the filesystem, but it's good practice to keep these files in a location that makes sense in terms of compartmentalization and context. I put my files inside the project folder next to <code>manage.py</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># settings.py or prod.py or wherever your production settings may be...</span>
+STATIC_ROOT <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/inetpub/wwwroot/app/static/</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e"># Windows - assumes C as root; don&#39;t have to explicitly say &#34;C:&#34;</span>
+STATIC_URL <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/app/static/</span><span style="color:#e6db74">&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="move-files">Move Files</h3>
+<p>Run the <code>collectstatic</code> management command from the project directory.</p>
+<p>Activate the virtualenv:</p>
+<blockquote>
+<p><code>.\venv\scripts\activate</code></p>
+</blockquote>
+<p>Run the command:</p>
+<blockquote>
+<p><code>python manage.py collectstatic</code></p>
+</blockquote>
+<p>Say &ldquo;yes&rdquo; to the prompt from the <code>collectstatic</code> management command to confirm the directory you want to copy static files to.</p>
+<h3 id="set-up-a-virtual-directory-for-iis-to-serve-the-static-files">Set Up a Virtual Directory for IIS to Serve the Static Files</h3>
+<p>IIS needs to know where these files are located and how to serve them up when browsers request them. THe name of a virtual directory <strong>must match</strong> the value of the <code>STATIC_URL</code> setting in Django's <code>settings.py</code>, absent the beginning and trailing slashes. For this sample, the url is <code>app/static</code>.</p>
+<ol>
+<li>Open IIS Manager</li>
+<li>On the left pane, under “Connections&rdquo; expand the server’s tree</li>
+<li>Expand the “Sites” folder</li>
+<li>Right-Click the web site your app lives in (for me, I put everything in &ldquo;default web site&rdquo;)</li>
+<li>Click &ldquo;Add Virtual Directory&rdquo;</li>
+<li>Enter the following values:</li>
+</ol>
+<blockquote>
+<p>Alias: static<br>
+Physical Path: C:\inetpub\wwwroot\app\static</p>
+</blockquote>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="images/snip-static-virtual-dir.png" alt="static directory in the IIS directory tree"/>
+    </div>
+    <a href="images/snip-static-virtual-dir.png" itemprop="contentUrl"></a>
+      <figcaption><h4>static virtual directory in IIS</h4>
+          <p>Your &#34;static&#34; folder should now have a shortcut-looking icon on it, as shown here.</p>
+      </figcaption>
+  </figure>
+</div>
+
+<h4 id="configure-handler-mappings-for-static-files">Configure Handler Mappings for Static Files</h4>
+<ol>
+<li>Select the &ldquo;static&rdquo; virtual directory</li>
+<li>Open &ldquo;Handler Mappings&rdquo;</li>
+<li>On the right side, select &ldquo;View Ordered List&hellip;&rdquo;</li>
+<li>Move the &ldquo;StaticFile&rdquo; handler to the top of the list by selecting it, then on the right under &ldquo;Actions&rdquo; click &ldquo;Move Up&rdquo; until the handler is above all others. If IIS warns you about diverging from inheriting settings, click OK - this is what we want to do.</li>
+</ol>
+<p>At this point Django app(s) should be available and serving from IIS at /app or /app/admin from your webserver, with all the static assets and CSS loaded properly. If not, go back over the Static Files settings, and make sure that the static assets collected by <code>collectstatic</code> correctly found and placed all the files you're relying on in the correct location.</p>
+<h2 id="shibboleth--sso--remote-user">Shibboleth / SSO / Remote-User</h2>
+<p>A few things need to be added to middleware and authentication backends to enable use of the remote user environment variable set by shibboleth in IIS for purposes of authenticating users to Django / Apps.</p>
+<p>In <code>prod.py</code> (or wherever production settings are stored, like <code>settings.py</code>) add the following to allow reading of <code>REMOTE_USER</code> from the request:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">MIDDLEWARE <span style="color:#f92672">=</span> MIDDLEWARE <span style="color:#f92672">+</span> [
+    <span style="color:#75715e"># ADDDED REMOTE USER MIDDLEWARE FOR SHIBBOLETH AUTH</span>
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">django.contrib.auth.middleware.PersistentRemoteUserMiddleware</span><span style="color:#e6db74">&#39;</span>,
+]
+
+AUTHENTICATION_BACKENDS <span style="color:#f92672">=</span> [
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">django.contrib.auth.backends.RemoteUserBackend</span><span style="color:#e6db74">&#39;</span>,
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">django.contrib.auth.backends.ModelBackend</span><span style="color:#e6db74">&#39;</span>, <span style="color:#75715e">#Fallback</span>
+]
+</code></pre></td></tr></table>
+</div>
+</div><p>Note that in this case <code>PersistentRemoteUserMiddleware</code> is appended to the <strong>end</strong> of the <code>MIDDLEWARE</code> list, which is imported from <code>base.py</code>. If your configuration has other middleware that depends on specific ordering, then this solution may not be optimal for all cases.</p>
+<p>There are also two flavors of Remote User Middleware - the generic and the <code>.Persistent...</code> variety. For more details on use see <a href="https://docs.djangoproject.com/en/dev/howto/auth-remote-user/">Authenticating using REMOTE_USER</a>.</p>
+<hr>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://chasesawyer.dev//tags/post/">post</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/iis/">iis</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/django/">django</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/python/">python</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/windows/">windows</a>&nbsp;
+            
+              <a href="https://chasesawyer.dev//tags/tutorial/">tutorial</a>&nbsp;
+            
+          </div>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://chasesawyer.dev/post/2020/01/raspberry-pi-hdmi-overscan/" data-toggle="tooltip" data-placement="top" title="Raspberry Pi HDMI Overscan">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+        
+        <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:shadowimmage@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/shadowimmage" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.freecodecamp.org/shadowimmage" title="FreeCodeCamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-free-code-camp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/chase-sawyer" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://keybase.io/shadowimmage" title="Keybase">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-keybase fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://chasesawyer.dev">Chase Sawyer</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2020
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://chasesawyer.dev/">Chase Sawyer</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://chasesawyer.dev/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://chasesawyer.dev/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+    </body>
+</html>
+

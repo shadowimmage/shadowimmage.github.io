@@ -301,7 +301,12 @@ if (!doNotTrack) {
 <div class="container" role="main">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
       <article role="main" class="blog-post">
+        
+
+
+
         <p>This week I had an interesting discussion with another new developer who was getting started working on an Express-based project and was frustrated by their static files working one day, and seemingly without provocation, not working the next. I knew from experiencing the same feeling when dealing with static files both in Django and Express that a static file loading problem is difficult to resolve, and how often the problem is often a simple one that is nonetheless opaque to a new developer unfamiliar with file systems and path resolution.</p>
 <p>When static file loaders can't or don't load something, it's often not called  out as an error because when you tell the computer where the static files are, it doesn't make any assumptions about the contents there. And later on when you're trying to load your custom CSS or images and getting nothing loaded, and quiet browser 404 errors for the resource, but not the page overall, the result can be a maddening series of digging into documentation that doesn't often make clear the particulars of path names and how a single dot or slash can make all the difference in the world between success and failure.</p>
 <h2 id="file-paths">File Paths</h2>

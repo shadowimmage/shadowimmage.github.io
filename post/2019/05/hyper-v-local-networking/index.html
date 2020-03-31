@@ -301,7 +301,12 @@ if (!doNotTrack) {
 <div class="container" role="main">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
       <article role="main" class="blog-post">
+        
+
+
+
         <p>I had to set up an <a href="https://www.ubuntu.com/">Ubuntu</a> VM (<a href="https://en.wikipedia.org/wiki/Virtual_machine">Virtual Machine</a>) on my machine recently and because I also use <a href="https://www.docker.com/">Docker</a>, I had to learn exactly how <a href="https://en.wikipedia.org/wiki/Hyper-V">Hyper-V</a> handles networking tasks between the host machine and the virtual machines you set up. Hyper-V, as far as I understand, has 3 main networking methods called virtual switches. There's actually a 4th option that comes out of the box, which is something of a hybrid between an &ldquo;Internal Switch&rdquo; and an &ldquo;External Switch&rdquo;. The default switch is interesting, and not particularly intuitive, but after getting used to it, I find it really convenient, if a bit tedious to deal with. It is <strong>absolutely</strong> not something I recommend running anything in for long periods of time, or for anything upon which other people rely. It is, however, good for getting something set up quick and dirty - so long as you understand what it's doing.</p>
 <p>For the length of this article, it will be good to understand what a switch is, so read <a href="https://en.wikipedia.org/wiki/Network_switch">this Wikipedia article</a> if you are unfamiliar.</p>
 <p>So with that, here's a quick overview of what the Hyper-V switches are and can do.</p>
