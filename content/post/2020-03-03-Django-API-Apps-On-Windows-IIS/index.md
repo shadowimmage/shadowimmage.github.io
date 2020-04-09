@@ -213,7 +213,24 @@ Note that in this case `PersistentRemoteUserMiddleware` is appended to the **end
 
 There are also two flavors of Remote User Middleware - the generic and the `.Persistent...` variety. For more details on use see [Authenticating using REMOTE_USER][3].
 
+## Thanks and Resources
+
+Below is a listing of all the tabs I had open for reference when figuring this out and writing this.
+
+- Microsoft Docs: [How to Use HTTP Detailed Errors in IIS][4]
+- Stack Overflow: [python.exe the fastcgi process exited unexpectedly][5]
+- DigitalOcean community: [How to Deploy Python WSGI Applications Using uWSGI Web Server with Nginx][6]
+- Microsoft Docs: [Configure Python web apps for IIS][7]
+- Django Documentation: [How Django processes a request][8]
+- Nitin Nain: [Setting up Django on Windows IIS Server][9]
+
 ---
 [1]: https://www.python.org/downloads/release/python-382/
 [2]: https://docs.djangoproject.com/en/dev/howto/static-files/deployment/
 [3]: https://docs.djangoproject.com/en/dev/howto/auth-remote-user/
+[4]: https://docs.microsoft.com/en-us/iis/troubleshoot/diagnosing-http-errors/how-to-use-http-detailed-errors-in-iis
+[5]: https://stackoverflow.com/questions/42742324/python-exe-the-fastcgi-process-exited-unexpectedly
+[6]: https://www.digitalocean.com/community/tutorials/how-to-deploy-python-wsgi-applications-using-uwsgi-web-server-with-nginx
+[7]: https://docs.microsoft.com/en-us/visualstudio/python/configure-web-apps-for-iis-windows?view=vs-2019
+[8]: https://docs.djangoproject.com/en/3.0/topics/http/urls/#how-django-processes-a-request
+[9]: https://nitinnain.com/setting-up-and-running-django-on-windows-iis-server/
