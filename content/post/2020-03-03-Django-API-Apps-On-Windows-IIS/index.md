@@ -4,7 +4,7 @@ subtitle: "How to set up Windows Server IIS to serve Django 3.0.3(+) and Python 
 linkTitle:
 description:
 date: 2020-03-03T18:43:27-08:00
-lastmod: 2020-03-30T18:46:39-08:00
+lastmod: 2020-04-09T19:40:39-08:00
 tags: [post,iis,django,python,windows,tutorial]
 draft: false
 shareOff: false
@@ -40,13 +40,13 @@ Make the following settings changes to the Python installation (we're going for 
 
 ### Virtualenv
 
-Once Python's installation is complete open an administrative terminal/Powershell window (`winkey`+`x`, `a`) and complete the following:
+Once Python's installation is complete open an **administrative** terminal/Powershell window (`winkey`+`x`, `a`) and complete the following:
 
->Note: If any of the following commands come back with something like "command not found" double-check that `C:\Python38\` and `C:\Python38\Scripts\` are in the system PATH environment variable. If you had the terminal window before installing Python, close and re-open it. Or just add the Python directories to the system PATH manually.
+>Note: If any of the following commands come back with something like "command not found" double-check that `C:\Python38\` and `C:\Python38\Scripts\` are in the system PATH environment variable (run `$Env:Path` in powershell). If you had the terminal window before installing Python, close and re-open it. Or just add the Python directories to the system PATH manually.
 
 1. upgrade pip
 
-> `python -m pip --upgrade pip`
+> `python -m pip install --upgrade pip`
 
 2. install virtualenv
 
@@ -56,7 +56,9 @@ Once Python's installation is complete open an administrative terminal/Powershel
 
 IIS needs to be installed, with the CGI option. Once that is installed there should be a directory `C:\inetpub\wwwroot\`
 
-1. Open "Windows Features" (search for "Windows Features" > "Turn Windows Features on or off" should be the result or Run (`winkey`+`r`) > `optionalfeatures.exe`
+### Method 1
+
+1. Open "Windows Features" (search for "Windows Features" > "Turn Windows Features on or off" should be the result or Run (`winkey`+`r`) > `optionalfeatures.exe` -- If that doesn't do anything, try Method 2 Below.
 2. Select IIS feature, with the additional options highlighted as in the below image.
     - CGI
     - HTTP Redirection
@@ -64,9 +66,19 @@ IIS needs to be installed, with the CGI option. Once that is installed there sho
 3. OK
 
 {{< figure src="images/IIS_min_components.png" title="Windows Features" alt="Selected IIS features in Windows Features dialog" width="60%" caption="options may vary, features available may vary, etc. etc." >}}
->note: options may vary, features available may vary, etc. etc.
 
-4. Test that the IIS server installation worked and that you can browse to `http://localhost` on a browser, and that you get the default IIS page.
+### Method 2
+
+1. Open the Server Manager
+2. Click "Manage"
+3. Click "Add Roles and Features"
+4. Go through the wizard and ensure that all the features listed in Method 1 are selected, specifically IIS services and especially CGI, HTTP Redirection, and Request Monitor.
+
+{{< figure src="images/serverManagerAddRoles.png" title="Server Manager Screenshot" alt="Opening Server Manager and Adding Roles or Features" caption="Select Manage, then Add Roles and Features, then the wizard shown at 3️⃣ should show" >}}
+
+### Test
+
+Finally, test that the IIS server installation worked and that you can browse to `http://localhost` on a browser, and that you get the default IIS page.
 
 ## Set Up Django Application Directory and Virtual Environment for Python
 
