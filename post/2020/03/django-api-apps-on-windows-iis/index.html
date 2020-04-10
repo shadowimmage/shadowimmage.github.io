@@ -275,7 +275,7 @@ if (!doNotTrack) {
   
   <i class="fas fa-calendar"></i>&nbsp;Posted on March 3, 2020
   
-    &nbsp;(Last modified on March 30, 2020)
+    &nbsp;(Last modified on April 9, 2020)
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
@@ -316,7 +316,13 @@ if (!doNotTrack) {
         <li><a href="#virtualenv">Virtualenv</a></li>
       </ul>
     </li>
-    <li><a href="#iis-setup--prerequisites">IIS Setup / Prerequisites</a></li>
+    <li><a href="#iis-setup--prerequisites">IIS Setup / Prerequisites</a>
+      <ul>
+        <li><a href="#method-1">Method 1</a></li>
+        <li><a href="#method-2">Method 2</a></li>
+        <li><a href="#test">Test</a></li>
+      </ul>
+    </li>
     <li><a href="#set-up-django-application-directory-and-virtual-environment-for-python">Set Up Django Application Directory and Virtual Environment for Python</a></li>
     <li><a href="#set-up-django-site-in-iis">Set Up Django Site in IIS</a></li>
     <li><a href="#configure-django-and-iis-static-files">Configure Django and IIS Static Files</a>
@@ -331,6 +337,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#shibboleth--sso--remote-user">Shibboleth / SSO / Remote-User</a></li>
+    <li><a href="#thanks-and-resources">Thanks and Resources</a></li>
   </ul>
 </nav>
     <hr />
@@ -362,15 +369,15 @@ if (!doNotTrack) {
 <li>Install.</li>
 </ol>
 <h3 id="virtualenv">Virtualenv</h3>
-<p>Once Python's installation is complete open an administrative terminal/Powershell window (<code>winkey</code>+<code>x</code>, <code>a</code>) and complete the following:</p>
+<p>Once Python's installation is complete open an <strong>administrative</strong> terminal/Powershell window (<code>winkey</code>+<code>x</code>, <code>a</code>) and complete the following:</p>
 <blockquote>
-<p>Note: If any of the following commands come back with something like &ldquo;command not found&rdquo; double-check that <code>C:\Python38\</code> and <code>C:\Python38\Scripts\</code> are in the system PATH environment variable. If you had the terminal window before installing Python, close and re-open it. Or just add the Python directories to the system PATH manually.</p>
+<p>Note: If any of the following commands come back with something like &ldquo;command not found&rdquo; double-check that <code>C:\Python38\</code> and <code>C:\Python38\Scripts\</code> are in the system PATH environment variable (run <code>$Env:Path</code> in powershell). If you had the terminal window before installing Python, close and re-open it. Or just add the Python directories to the system PATH manually.</p>
 </blockquote>
 <ol>
 <li>upgrade pip</li>
 </ol>
 <blockquote>
-<p><code>python -m pip --upgrade pip</code></p>
+<p><code>python -m pip install --upgrade pip</code></p>
 </blockquote>
 <ol start="2">
 <li>install virtualenv</li>
@@ -380,8 +387,9 @@ if (!doNotTrack) {
 </blockquote>
 <h2 id="iis-setup--prerequisites">IIS Setup / Prerequisites</h2>
 <p>IIS needs to be installed, with the CGI option. Once that is installed there should be a directory <code>C:\inetpub\wwwroot\</code></p>
+<h3 id="method-1">Method 1</h3>
 <ol>
-<li>Open &ldquo;Windows Features&rdquo; (search for &ldquo;Windows Features&rdquo; &gt; &ldquo;Turn Windows Features on or off&rdquo; should be the result or Run (<code>winkey</code>+<code>r</code>) &gt; <code>optionalfeatures.exe</code></li>
+<li>Open &ldquo;Windows Features&rdquo; (search for &ldquo;Windows Features&rdquo; &gt; &ldquo;Turn Windows Features on or off&rdquo; should be the result or Run (<code>winkey</code>+<code>r</code>) &gt; <code>optionalfeatures.exe</code> &ndash; If that doesn't do anything, try Method 2 Below.</li>
 <li>Select IIS feature, with the additional options highlighted as in the below image.
 <ul>
 <li>CGI</li>
@@ -405,12 +413,29 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-<blockquote>
-<p>note: options may vary, features available may vary, etc. etc.</p>
-</blockquote>
-<ol start="4">
-<li>Test that the IIS server installation worked and that you can browse to <code>http://localhost</code> on a browser, and that you get the default IIS page.</li>
+<h3 id="method-2">Method 2</h3>
+<ol>
+<li>Open the Server Manager</li>
+<li>Click &ldquo;Manage&rdquo;</li>
+<li>Click &ldquo;Add Roles and Features&rdquo;</li>
+<li>Go through the wizard and ensure that all the features listed in Method 1 are selected, specifically IIS services and especially CGI, HTTP Redirection, and Request Monitor.</li>
 </ol>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="images/serverManagerAddRoles.png" alt="Opening Server Manager and Adding Roles or Features"/>
+    </div>
+    <a href="images/serverManagerAddRoles.png" itemprop="contentUrl"></a>
+      <figcaption><h4>Server Manager Screenshot</h4>
+          <p>Select Manage, then Add Roles and Features, then the wizard shown at 3️⃣ should show</p>
+      </figcaption>
+  </figure>
+</div>
+
+<h3 id="test">Test</h3>
+<p>Finally, test that the IIS server installation worked and that you can browse to <code>http://localhost</code> on a browser, and that you get the default IIS page.</p>
 <h2 id="set-up-django-application-directory-and-virtual-environment-for-python">Set Up Django Application Directory and Virtual Environment for Python</h2>
 <p>Here's where we set up the application folder that will host our Django application and all the required Python libraries to support that application without installing anything globally. This will make sure that if there's any other Python apps that need to run on the server or be served by the server, there won't be dependency version conflicts.</p>
 <ol>
@@ -590,6 +615,16 @@ AUTHENTICATION_BACKENDS <span style="color:#f92672">=</span> [
 </div>
 </div><p>Note that in this case <code>PersistentRemoteUserMiddleware</code> is appended to the <strong>end</strong> of the <code>MIDDLEWARE</code> list, which is imported from <code>base.py</code>. If your configuration has other middleware that depends on specific ordering, then this solution may not be optimal for all cases.</p>
 <p>There are also two flavors of Remote User Middleware - the generic and the <code>.Persistent...</code> variety. For more details on use see <a href="https://docs.djangoproject.com/en/dev/howto/auth-remote-user/">Authenticating using REMOTE_USER</a>.</p>
+<h2 id="thanks-and-resources">Thanks and Resources</h2>
+<p>Below is a listing of all the tabs I had open for reference when figuring this out and writing this.</p>
+<ul>
+<li>Microsoft Docs: <a href="https://docs.microsoft.com/en-us/iis/troubleshoot/diagnosing-http-errors/how-to-use-http-detailed-errors-in-iis">How to Use HTTP Detailed Errors in IIS</a></li>
+<li>Stack Overflow: <a href="https://stackoverflow.com/questions/42742324/python-exe-the-fastcgi-process-exited-unexpectedly">python.exe the fastcgi process exited unexpectedly</a></li>
+<li>DigitalOcean community: <a href="https://www.digitalocean.com/community/tutorials/how-to-deploy-python-wsgi-applications-using-uwsgi-web-server-with-nginx">How to Deploy Python WSGI Applications Using uWSGI Web Server with Nginx</a></li>
+<li>Microsoft Docs: <a href="https://docs.microsoft.com/en-us/visualstudio/python/configure-web-apps-for-iis-windows?view=vs-2019">Configure Python web apps for IIS</a></li>
+<li>Django Documentation: <a href="https://docs.djangoproject.com/en/3.0/topics/http/urls/#how-django-processes-a-request">How Django processes a request</a></li>
+<li>Nitin Nain: <a href="https://nitinnain.com/setting-up-and-running-django-on-windows-iis-server/">Setting up Django on Windows IIS Server</a></li>
+</ul>
 <hr>
 
         
