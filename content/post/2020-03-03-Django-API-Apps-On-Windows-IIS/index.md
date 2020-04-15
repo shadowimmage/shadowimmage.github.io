@@ -4,7 +4,7 @@ subtitle: "How to set up Windows Server IIS to serve Django 3.0.3(+) and Python 
 linkTitle:
 description:
 date: 2020-03-03T18:43:27-08:00
-lastmod: 2020-04-09T19:40:39-08:00
+lastmod: 2020-04-13T17:45:39-08:00
 tags: [post,iis,django,python,windows,tutorial]
 draft: false
 shareOff: false
@@ -72,7 +72,7 @@ IIS needs to be installed, with the CGI option. Once that is installed there sho
 1. Open the Server Manager
 2. Click "Manage"
 3. Click "Add Roles and Features"
-4. Go through the wizard and ensure that all the features listed in Method 1 are selected, specifically IIS services and especially CGI, HTTP Redirection, and Request Monitor.
+4. Go through the wizard and ensure that all the features listed in Method 1 are selected, specifically IIS services and especially CGI, HTTP Redirection, and Request Monitor. The items are the same as above in Method 1, but are organized a little differently.
 
 {{< figure src="images/serverManagerAddRoles.png" title="Server Manager Screenshot" alt="Opening Server Manager and Adding Roles or Features" caption="Select Manage, then Add Roles and Features, then the wizard shown at 3️⃣ should show" >}}
 
@@ -110,27 +110,31 @@ Here's where we set up the application folder that will host our Django applicat
 
 ## Set Up Django Site in IIS
 
+IIS has specific requirements around how a site is set up, in order for it to work properly. Specifically, each site must have at least 1 application and each application must have at least 1 virtual directory. [This page][10] from Microsoft Docs has detailed information on the requirements for a site to publish correctly on IIS.
+
 1. Open IIS manager (`winkey`+r) Run > `inetmgr`
 2. Select the Server and from the main page, double-click "FastCGI Settings"
 3. "Add Application"
 4. Fill out the settings dialog accordingly:
     - "Full Path": Where your virtual environment's `python.exe` lives (such as `C:\inetpub\wwwroot\app\venv\Scripts\python.exe`)
     - "Arguments": path to `wfastcgi.py` which should also be in the virtual environment directory: `C:\inetpub\wwwroot\app\venv\Lib\site-packages\wfastcgi.py`
-    - In the "**FastCGI Settings**" section, under "**General > Environment Variables**" click on the "(Collection)" line, then on the little "[...]" button, which will allow entering Environment Variables specific to the runtime environment that Django will be running in when a request comes into the web server.
+    - In the "**FastCGI Settings**" section, under "**General > Environment Variables**" click on the "(Collection)" line, then on the little ellipsis ("[...]") button, which will allow entering Environment Variables specific to the runtime environment that Django will be running in when a request comes into the web server.
       - In the "**EnvironmentVariables Collection Editor**" window:
-      - Add: Name: `DJANGO_SETTINGS_MODULE` Value: *whatever matches up to your setting in `wsgi.py`*
+      - Add: Name: `DJANGO_SETTINGS_MODULE` Value: *whatever matches up to your setting in `wsgi.py`.* For me this was `server.environment`
       - Add: Name: `PYTHONPATH` Value: `C:\inetpub\wwwroot\app`
       - Add: Name: `WSGI_HANDLER` Value: `django.core.wsgi.get_wsgi_application()`
+      - **If you want WSGI Logging:** Add: Name: `WSGI_LOG` Value: *wherever you want logs to be written.* I put: `C:\inetpub\logs\WSGI\app.log` (this file can get verbose, consider removing this once you've made sure the application is working well)
+          - **⚠ WARNING - READ THIS ⚠**: You must make sure that the local server's worker processes have write permission on this file or it's directory. If you do not, wfastcgi/python will crash out and IIS will throw 500 server errors. I spent days fighting with this. The easiest fix is to manually create the file `C:\inetpub\logs\WSGI\app.log` and then edit the security permissions on that file, granting full write permission to the local server group "`IIS_IUSRS`".
 
 This should correctly set up the environment for FastCGI to be able to run the Django application (assuming that the paths above match to where you're working from). **Note (1):** For `DJANGO_SETTINGS_MODULE` I used `server.environment` - this matches my environment, since I have `/app/server/environment.py` and `environment.py` lists out which server settings should be loaded. **Note (2):** All of the above settings for Environment Variables are case sensitive.
 
 5. Close the Environment Variables window and the FastCGI Settings windows.
-6. On the left-hand pane of IIS Manager, under "connections" where the server we're working on, expand the server, and under "**Default** Web Site**", there should be a listing of directories that are in `wwwroot\`. Here, we'll convert `\app\` into an application (right-click on the directory, then select "convert to application")
+6. On the left-hand pane of IIS Manager, under "connections" where the server we're working on, expand the server, and under "**Default Web Site**", there should be a listing of directories that are in `wwwroot\`. Here, we'll convert `\app\` into an application (right-click on the directory, then select "convert to application") - Click OK on the "Add Application" window that pops up.
 7. Open Handler Mappings for the application
 8. Click "**Add module mapping**" and enter the following settings:
     - Path: `*`
     - Module (dropdown): "**FastCgiModule**"
-    - Executable: **type in:** `C:\inetpub\wwwroot\app\venv\Scripts\python.exe|C:\inetpub\wwwroot\app\venv\site-packages\wfastcgi.py`
+    - Executable: **type in:** `C:\inetpub\wwwroot\app\venv\Scripts\python.exe|C:\inetpub\wwwroot\app\venv\Lib\site-packages\wfastcgi.py`
     - Name: "Django Handler" or "Python FastCGI handler" or whatever - it's just a friendly name for the mapping.
     - Click "**Request Restrictions**"
       - **Deselect** "Invoke handler only if... mapped to:"
@@ -205,6 +209,12 @@ At this point Django app(s) should be available and serving from IIS at /app or 
 
 ## Shibboleth / SSO / Remote-User
 
+### IIS / Shibboleth
+
+The Shibboleth service needs to be installed and configured on the webserver. Once installed and configured, the path to the API / App / Site must be listed in shibboleth's configuration file `Shibboleth2.xml`. By default this file can be found in `C:\opt\shibboleth-sp\etc\shibboleth\`.
+
+### Django Configuration
+
 A few things need to be added to middleware and authentication backends to enable use of the remote user environment variable set by shibboleth in IIS for purposes of authenticating users to Django / Apps.
 
 In `prod.py` (or wherever production settings are stored, like `settings.py`) add the following to allow reading of `REMOTE_USER` from the request:
@@ -235,6 +245,7 @@ Below is a listing of all the tabs I had open for reference when figuring this o
 - Microsoft Docs: [Configure Python web apps for IIS][7]
 - Django Documentation: [How Django processes a request][8]
 - Nitin Nain: [Setting up Django on Windows IIS Server][9]
+- Microsoft Docs: [About Sites, Applications, and Virtual Directories in IIS 7 and Above][10]
 
 ---
 [1]: https://www.python.org/downloads/release/python-382/
@@ -246,3 +257,4 @@ Below is a listing of all the tabs I had open for reference when figuring this o
 [7]: https://docs.microsoft.com/en-us/visualstudio/python/configure-web-apps-for-iis-windows?view=vs-2019
 [8]: https://docs.djangoproject.com/en/3.0/topics/http/urls/#how-django-processes-a-request
 [9]: https://nitinnain.com/setting-up-and-running-django-on-windows-iis-server/
+[10]: https://docs.microsoft.com/en-us/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#about-sites-applications-and-virtual-directories-in-iis-7-and-above
