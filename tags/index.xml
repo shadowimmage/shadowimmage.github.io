@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Tue, 03 Mar 2020 18:43:27 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2020 18:43:27 -0700</lastBuildDate>
     
 	<atom:link href="https://chasesawyer.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,7 +16,7 @@
     <item>
       <title>django</title>
       <link>https://chasesawyer.dev/tags/django/</link>
-      <pubDate>Tue, 03 Mar 2020 18:43:27 -0800</pubDate>
+      <pubDate>Tue, 03 Mar 2020 18:43:27 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/django/</guid>
       <description></description>
@@ -25,7 +25,7 @@
     <item>
       <title>iis</title>
       <link>https://chasesawyer.dev/tags/iis/</link>
-      <pubDate>Tue, 03 Mar 2020 18:43:27 -0800</pubDate>
+      <pubDate>Tue, 03 Mar 2020 18:43:27 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/iis/</guid>
       <description></description>
@@ -34,7 +34,7 @@
     <item>
       <title>post</title>
       <link>https://chasesawyer.dev/tags/post/</link>
-      <pubDate>Tue, 03 Mar 2020 18:43:27 -0800</pubDate>
+      <pubDate>Tue, 03 Mar 2020 18:43:27 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/post/</guid>
       <description></description>
@@ -43,7 +43,7 @@
     <item>
       <title>python</title>
       <link>https://chasesawyer.dev/tags/python/</link>
-      <pubDate>Tue, 03 Mar 2020 18:43:27 -0800</pubDate>
+      <pubDate>Tue, 03 Mar 2020 18:43:27 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/python/</guid>
       <description></description>
@@ -52,7 +52,7 @@
     <item>
       <title>tutorial</title>
       <link>https://chasesawyer.dev/tags/tutorial/</link>
-      <pubDate>Tue, 03 Mar 2020 18:43:27 -0800</pubDate>
+      <pubDate>Tue, 03 Mar 2020 18:43:27 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/tutorial/</guid>
       <description></description>
@@ -61,7 +61,7 @@
     <item>
       <title>windows</title>
       <link>https://chasesawyer.dev/tags/windows/</link>
-      <pubDate>Tue, 03 Mar 2020 18:43:27 -0800</pubDate>
+      <pubDate>Tue, 03 Mar 2020 18:43:27 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/tags/windows/</guid>
       <description></description>

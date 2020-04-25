@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>shadowimmage@gmail.com (Chase Sawyer)</managingEditor>
     <webMaster>shadowimmage@gmail.com (Chase Sawyer)</webMaster>
-    <lastBuildDate>Tue, 03 Mar 2020 18:43:27 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2020 18:43:27 -0700</lastBuildDate>
     
 	<atom:link href="https://chasesawyer.dev/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,7 +16,7 @@
     <item>
       <title>Django API Apps on Windows IIS</title>
       <link>https://chasesawyer.dev/post/2020/03/django-api-apps-on-windows-iis/</link>
-      <pubDate>Tue, 03 Mar 2020 18:43:27 -0800</pubDate>
+      <pubDate>Tue, 03 Mar 2020 18:43:27 -0700</pubDate>
       <author>shadowimmage@gmail.com (Chase Sawyer)</author>
       <guid>https://chasesawyer.dev/post/2020/03/django-api-apps-on-windows-iis/</guid>
       <description>&lt;p&gt;This is a guide on setting up Python/Django apps to run on a Windows server using IIS as the webserver. I&#39;ll go over the specifics below. We&#39;re starting things off with the following assumptions:&lt;/p&gt;
