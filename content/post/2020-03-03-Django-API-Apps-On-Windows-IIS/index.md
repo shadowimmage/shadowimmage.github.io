@@ -3,8 +3,8 @@ title: "Django API Apps on Windows IIS"
 subtitle: "How to set up Windows Server IIS to serve Django 3.0.3(+) and Python 3.8"
 linkTitle:
 description:
-date: 2020-03-03T18:43:27-08:00
-lastmod: 2020-04-13T17:45:39-08:00
+date: 2020-03-03T18:43:27-07:00
+lastmod: 2020-04-24T17:19:39-07:00
 tags: [post,iis,django,python,windows,tutorial]
 draft: false
 shareOff: false
@@ -108,6 +108,12 @@ Here's where we set up the application folder that will host our Django applicat
 
 > `pip install wfastcgi --upgrade`
 
+### MySQL Client Python Wheels (precompiled binary for Windows)
+
+Pip doesn't install `mysqlclient` correctly on Windows, at least not that I've been able to manage. The easiest way to get correct MySQL clients for Windows systems is from [Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.][11] Download the appropriate `mysqlclient` package for Windows there and then move that to the server. Install with
+
+> `pip install <path to .whl file>`
+
 ## Set Up Django Site in IIS
 
 IIS has specific requirements around how a site is set up, in order for it to work properly. Specifically, each site must have at least 1 application and each application must have at least 1 virtual directory. [This page][10] from Microsoft Docs has detailed information on the requirements for a site to publish correctly on IIS.
@@ -207,11 +213,42 @@ IIS needs to know where these files are located and how to serve them up when br
 
 At this point Django app(s) should be available and serving from IIS at /app or /app/admin from your webserver, with all the static assets and CSS loaded properly. If not, go back over the Static Files settings, and make sure that the static assets collected by `collectstatic` correctly found and placed all the files you're relying on in the correct location.
 
-## Shibboleth / SSO / Remote-User
+## Shibboleth / SSO / REMOTE_USER
 
-### IIS / Shibboleth
+**⚠ Warning: This section describes some elements of setting up SSO login / security for your sites and server.** I don't claim to be an authority on setting up Shibboleth or configurations, or the security implications of any of the settings and configuration in this section. Please review all the relevant security documentation / best practices for Shibboleth, Django, and/or IIS. This setup will use session authentication from a trusted Identity Provider (IDP) with Shibboleth in this case being set up as a Service Provider (SP).
 
-The Shibboleth service needs to be installed and configured on the webserver. Once installed and configured, the path to the API / App / Site must be listed in shibboleth's configuration file `Shibboleth2.xml`. By default this file can be found in `C:\opt\shibboleth-sp\etc\shibboleth\`.
+- [Shibboleth Wiki][12]
+- [Django Security][13]
+
+### IIS / Shibboleth (as Service Provider / SP)
+
+The Shibboleth service needs to be installed and configured on the webserver. Once installed and configured, the path to the API / App / Site must be listed in shibboleth's configuration file `Shibboleth2.xml`. By default this file can be found in `C:\opt\shibboleth-sp\etc\shibboleth\`. The relevant path(s) to change for shibboleth to protect a url path on the webserver is listed in the section noted below (note: `Shibboleth2.xml` tags shown are truncated).
+
+```xml
+<SPConfig>
+  <RequestMapper>
+    <RequestMap>
+      <Host name="your.server.fqdn">
+        <Path name="app" authType="shibboleth" requireSession="true"/>
+        ...
+```
+
+### REMOTE_USER / Shibboleth Setting
+
+In the same `Shibboleth2.xml` file, set the `REMOTE_USER` setting to whatever is provided by the associated identity provider. The setting can be changed as one of the attributes on the `ApplicationDefaults` element in the configuration file:
+
+```xml
+<SPConfig>
+  ...
+  <ApplicationDefaults entityID="Something"
+    REMOTE_USER="some SAML element to set to - Django can then use this for auth"
+    cipherSuites="some list of cipher suites">
+    ...
+```
+
+Setting the `REMOTE_USER` environment variable allows Django to read the logged in SSO username (or some other SAML value) and use that to see who is logged in in the session.
+
+Once any changes have been saved to `Shibboleth2.xml`, the Shibboleth service on the server needs to be restarted. Open Services (Run -> `services.msc`) -> select "Shibboleth Daemon (Default)" -> Restart.
 
 ### Django Configuration
 
@@ -247,6 +284,14 @@ Below is a listing of all the tabs I had open for reference when figuring this o
 - Nitin Nain: [Setting up Django on Windows IIS Server][9]
 - Microsoft Docs: [About Sites, Applications, and Virtual Directories in IIS 7 and Above][10]
 
+## Article Changes
+
+2020/04/24
+
+- Added this changelog because this article is getting revised a lot
+- Added notes on MySQL client and resource for precompiled wheels from [uci.edu][11]
+- Added more details on Shibboleth configuration steps to leverage preexisting SSO infrastructure for setting REMOTE_USER
+
 ---
 [1]: https://www.python.org/downloads/release/python-382/
 [2]: https://docs.djangoproject.com/en/dev/howto/static-files/deployment/
@@ -258,3 +303,6 @@ Below is a listing of all the tabs I had open for reference when figuring this o
 [8]: https://docs.djangoproject.com/en/3.0/topics/http/urls/#how-django-processes-a-request
 [9]: https://nitinnain.com/setting-up-and-running-django-on-windows-iis-server/
 [10]: https://docs.microsoft.com/en-us/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#about-sites-applications-and-virtual-directories-in-iis-7-and-above
+[11]: https://www.lfd.uci.edu/~gohlke/pythonlibs/
+[12]: https://wiki.shibboleth.net/confluence/display/SP3/Home
+[13]: https://docs.djangoproject.com/en/dev/topics/security/
